@@ -1,0 +1,3332 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Partnerize Partners API Schemas",
+  "description": "JSON Schema definitions extracted from the Partnerize Partners API (OAS 3.0.1)",
+  "definitions": {
+    "Partner": {
+      "properties": {
+        "abn": {
+          "type": "string"
+        },
+        "account_name": {
+          "type": "string"
+        },
+        "campaign_select": {
+          "type": "string"
+        },
+        "company_name": {
+          "type": "string"
+        },
+        "company_division": {
+          "type": "string"
+        },
+        "company_logo": {
+          "type": "string",
+          "nullable": true
+        },
+        "contact_email": {
+          "type": "string",
+          "format": "email"
+        },
+        "contact_locale": {
+          "$ref": "#/components/schemas/Locale"
+        },
+        "contact_name": {
+          "type": "string"
+        },
+        "default_currency": {
+          "$ref": "#/components/schemas/Currency"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the publisher"
+        },
+        "foreign_identifier": {
+          "type": "string"
+        },
+        "gst_registered": {
+          "type": "string"
+        },
+        "im_provider": {
+          "type": "string"
+        },
+        "im_username": {
+          "type": "string"
+        },
+        "is_affiliate_user": {
+          "$ref": "#/components/schemas/YesOrNo"
+        },
+        "is_foreign_network": {
+          "description": "Reporting only flag. All conversions will be automatically approved but will not be invoiceable.",
+          "$ref": "#/components/schemas/YesOrNo"
+        },
+        "is_lead_user": {
+          "$ref": "#/components/schemas/YesOrNo"
+        },
+        "legal_entity": {
+          "$ref": "#/components/schemas/Country"
+        },
+        "network_id": {
+          "type": "string",
+          "description": "ID of the network this publisher belongs to"
+        },
+        "network_notes": {
+          "type": "string"
+        },
+        "network_status": {
+          "$ref": "#/components/schemas/Status"
+        },
+        "operating_country": {
+          "$ref": "#/components/schemas/Country"
+        },
+        "phone": {
+          "type": "string",
+          "description": "Primary contact telephone number"
+        },
+        "phone_area": {
+          "type": "string",
+          "description": "Phone prefix to declare country or region"
+        },
+        "promotional_method_name": {
+          "type": "string"
+        },
+        "promotional_method": {
+          "type": "integer"
+        },
+        "publisher_id": {
+          "type": "string",
+          "description": "ID of the publisher"
+        },
+        "reporting_identifier": {
+          "type": "string"
+        },
+        "reporting_timezone": {
+          "type": "string"
+        },
+        "signup_ip": {
+          "type": "string",
+          "format": "ipv4"
+        },
+        "uk_vat_registered": {
+          "$ref": "#/components/schemas/YesOrNo"
+        },
+        "us_tax_state": {
+          "type": "string"
+        },
+        "vat_number": {
+          "type": "integer"
+        },
+        "vertical": {
+          "type": "integer"
+        },
+        "vertical_name": {
+          "type": "string"
+        },
+        "week_start": {
+          "type": "string"
+        }
+      }
+    },
+    "Partner_Campaign_Wrapper": {
+      "properties": {
+        "campaign": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/Campaign"
+            },
+            {
+              "properties": {
+                "campaign_custom_terms_and_conditions_id": {
+                  "type": "string"
+                },
+                "campaign_custom_terms_and_conditions_title": {
+                  "type": "string"
+                },
+                "publisher_status": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              },
+              "type": "object"
+            }
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "Partner_Campaign_Creative": {
+      "properties": {
+        "campaign_creative": {
+          "properties": {
+            "campaign_id": {
+              "description": "Id of the campaign",
+              "type": "string"
+            },
+            "creatives": {
+              "properties": {
+                "Banner": {
+                  "description": "number of Banner creatives",
+                  "type": "number"
+                },
+                "Email": {
+                  "description": "number of Emails",
+                  "type": "number"
+                },
+                "Feed": {
+                  "description": "number of Feeds",
+                  "type": "number"
+                },
+                "HTML": {
+                  "description": "number of HTML creatives",
+                  "type": "number"
+                },
+                "HTML Form": {
+                  "description": "number of HTML Forms",
+                  "type": "number"
+                },
+                "Text Link": {
+                  "description": "number of Text links",
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object"
+        }
+      }
+    },
+    "Feed": {
+      "properties": {
+        "feed": {
+          "properties": {
+            "campaign_feeds_id": {
+              "description": "ID of the Feed",
+              "type": "string"
+            },
+            "campaign_id": {
+              "description": "ID of the Campaign",
+              "type": "string"
+            },
+            "creative_id": {
+              "description": "ID of the Creative",
+              "type": "string"
+            },
+            "filename": {
+              "type": "string"
+            },
+            "filesize": {
+              "type": "number"
+            },
+            "filesize_compressed": {
+              "type": "number"
+            },
+            "last_processed": {
+              "description": "UNIX timestamp",
+              "type": "number"
+            },
+            "location": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "title": {
+              "description": "name of the Campaign",
+              "type": "string"
+            },
+            "updated": {
+              "description": "UNIX timestamp",
+              "type": "number"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "Selfbill": {
+      "properties": {
+        "selfbill": {
+          "properties": {
+            "creation_date": {
+              "type": "string"
+            },
+            "download": {
+              "description": "URL for PDF download",
+              "nullable": true,
+              "type": "string"
+            },
+            "item_download": {
+              "description": "URL for CSV item download",
+              "nullable": true,
+              "type": "string"
+            },
+            "items_in_bill": {
+              "type": "number"
+            },
+            "legal_entity": {
+              "$ref": "#/components/schemas/Country"
+            },
+            "majority_received_currency": {
+              "$ref": "#/components/schemas/Currency"
+            },
+            "net_value": {
+              "type": "number"
+            },
+            "paid_currency": {
+              "$ref": "#/components/schemas/Currency"
+            },
+            "payment_batch_id": {
+              "nullable": true,
+              "type": "string"
+            },
+            "payment_date": {
+              "nullable": true,
+              "type": "string"
+            },
+            "payment_detail_set_id": {
+              "type": "number"
+            },
+            "publisher_id": {
+              "description": "ID of the partner",
+              "type": "string"
+            },
+            "publisher_payment_detail_set_id": {
+              "nullable": true,
+              "type": "string"
+            },
+            "publisher_self_bill_id": {
+              "type": "string"
+            },
+            "publisher_self_bill_reference": {
+              "nullable": true,
+              "type": "string"
+            },
+            "self_bill_reference": {
+              "type": "string"
+            },
+            "selfbill_currency": {
+              "$ref": "#/components/schemas/Currency"
+            },
+            "status": {
+              "enum": [
+                "created"
+              ],
+              "type": "string"
+            },
+            "timestamp": {
+              "type": "string"
+            },
+            "total_value": {
+              "type": "number"
+            },
+            "tracked_currency": {
+              "$ref": "#/components/schemas/Currency"
+            },
+            "tracked_net_value": {
+              "type": "number"
+            },
+            "vat_rate": {
+              "type": "number"
+            },
+            "vat_value": {
+              "type": "number"
+            },
+            "withheld_tax": {
+              "type": "number"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "Payment_Details": {
+      "properties": {
+        "1011l22": {
+          "description": "Dynamic property name equal to the Payment details set Id. Example - 1011l22",
+          "properties": {
+            "publisher_payment_detail_set_id": {
+              "type": "string"
+            },
+            "country": {
+              "$ref": "#/components/schemas/Country"
+            },
+            "paid_currency": {
+              "$ref": "#/components/schemas/Currency"
+            },
+            "tracked_currency": {
+              "items": {
+                "$ref": "#/components/schemas/Currency"
+              },
+              "type": "array"
+            },
+            "payment_type_code": {
+              "type": "string"
+            },
+            "payment_type_name": {
+              "type": "string"
+            },
+            "automatic_self_bill_creation_date": {
+              "type": "string"
+            },
+            "automatic_self_bill_creation_threshold": {
+              "type": "string"
+            },
+            "suspended": {
+              "$ref": "#/components/schemas/YesOrNo"
+            },
+            "suspended_at": {
+              "type": "string"
+            },
+            "suspended_by": {
+              "type": "string"
+            },
+            "suspended_notes": {
+              "type": "string"
+            },
+            "payment_detail_values": {
+              "properties": {
+                "bank_address": {
+                  "type": "string"
+                },
+                "account_number": {
+                  "type": "number"
+                },
+                "account_name": {
+                  "type": "string"
+                },
+                "bank_name": {
+                  "type": "string"
+                },
+                "routing_number": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object"
+        }
+      }
+    },
+    "Link": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "campaign_id": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "destination_url": {
+          "type": "string"
+        },
+        "tracking_short_url": {
+          "type": "string"
+        },
+        "tracking_url": {
+          "type": "string"
+        },
+        "params": {
+          "items": {
+            "$ref": "#/components/schemas/Key_Value_Pair"
+          }
+        },
+        "active": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "Key_Value_Pair": {
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Partner_Overview_Base": {
+      "properties": {
+        "count": {
+          "type": "number"
+        },
+        "execution_time": {
+          "type": "string"
+        },
+        "start_date_time": {
+          "type": "string"
+        },
+        "end_date_time": {
+          "type": "string"
+        },
+        "total_impression_count": {
+          "type": "number"
+        },
+        "total_click_count": {
+          "type": "number"
+        },
+        "total_conversion_count": {
+          "description": "conversion count for each currency. E.g. \"USD\": 25, \"EUR\": 37",
+          "type": "object",
+          "properties": {
+            "currency_iso": {
+              "description": "key value pairs where the currency iso is the key. E.g. EUR: 37",
+              "type": "number"
+            }
+          }
+        },
+        "total_commission_value": {
+          "description": "commission value for each currency. E.g. \"USD\": 324.65, \"EUR\": 583.59",
+          "type": "object",
+          "properties": {
+            "currency_iso": {
+              "description": "key value pairs where the currency iso is the key. E.g. EUR: 37",
+              "type": "number"
+            }
+          }
+        },
+        "total_order_value": {
+          "description": "order value for each currency. E.g. \"USD\": 4000, \"EUR\": 5400.25",
+          "type": "object",
+          "properties": {
+            "currency_iso": {
+              "description": "key value pairs where the currency iso is the key. E.g. EUR: 37",
+              "type": "number"
+            }
+          }
+        },
+        "total_publisher_commission_value": {
+          "description": "commission value for each currency. E.g. \"USD\": 400, \"EUR\": 311.215",
+          "type": "object",
+          "properties": {
+            "currency_iso": {
+              "description": "key value pairs where the currency iso is the key. E.g. EUR: 37",
+              "type": "number"
+            }
+          }
+        },
+        "total_rejection_rate": {
+          "properties": {
+            "all_conversions_count": {
+              "type": "number"
+            },
+            "percentage": {
+              "type": "number"
+            },
+            "rejected_conversions_count": {
+              "type": "number"
+            }
+          },
+          "type": "object"
+        },
+        "total_quantity": {
+          "type": "number"
+        },
+        "total_clickthrough_rate": {
+          "type": "number"
+        },
+        "total_ordersize_avg": {
+          "type": "number"
+        }
+      }
+    },
+    "Partner_Overview_Currency_Stats": {
+      "properties": {
+        "impressions": {
+          "type": "number"
+        },
+        "clicks": {
+          "type": "number"
+        },
+        "currency": {
+          "items": {
+            "properties": {
+              "currency_iso": {
+                "description": "key value pairs where the `currency iso` is the key and the value is an object containing a set of stats for the currency",
+                "properties": {
+                  "commissions": {
+                    "type": "number"
+                  },
+                  "conversions": {
+                    "type": "number"
+                  },
+                  "ordervalue": {
+                    "type": "number"
+                  },
+                  "quantity": {
+                    "type": "number"
+                  },
+                  "publisher_commission": {
+                    "type": "number"
+                  },
+                  "ordervalue_avg": {
+                    "type": "number"
+                  },
+                  "conversion_rate": {
+                    "type": "number"
+                  },
+                  "earnings_per_click": {
+                    "type": "number"
+                  },
+                  "ordersize_avg": {
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "quantity": {
+          "type": "number"
+        },
+        "rejection_rate": {
+          "properties": {
+            "percentage": {
+              "type": "number"
+            },
+            "all_conversions_count": {
+              "type": "number"
+            },
+            "rejected_conversions_count": {
+              "type": "number"
+            }
+          },
+          "type": "object"
+        },
+        "clickthrough_rate": {
+          "type": "number"
+        },
+        "ordersize_avg": {
+          "type": "number"
+        }
+      }
+    },
+    "Partner_Overview_Primary": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Partner_Overview_Base"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "campaigns": {
+              "items": {
+                "properties": {
+                  "campaign": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Partner_Overview_Currency_Stats"
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "campaign_id": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "type": "array"
+            }
+          }
+        }
+      ]
+    },
+    "Partner_Overview_Country": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Partner_Overview_Base"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "countrys": {
+              "items": {
+                "properties": {
+                  "country": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Partner_Overview_Currency_Stats"
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "country_iso": {
+                            "$ref": "#/components/schemas/Country"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "type": "array"
+            }
+          }
+        }
+      ]
+    },
+    "Partner_Overview_Self": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Partner_Overview_Base"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "publishers": {
+              "items": {
+                "properties": {
+                  "publisher": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Partner_Overview_Currency_Stats"
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "publisher_id": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "type": "array"
+            }
+          }
+        }
+      ]
+    },
+    "Partner_Overview_Product": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Partner_Overview_Base"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "products": {
+              "items": {
+                "properties": {
+                  "product": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Partner_Overview_Currency_Stats"
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "product": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "type": "array"
+            }
+          }
+        }
+      ]
+    },
+    "Partner_Overview_Pubref": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Partner_Overview_Base"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "pubrefs": {
+              "items": {
+                "properties": {
+                  "pubref": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Partner_Overview_Currency_Stats"
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "reserved_tag_name": {
+                            "type": "boolean"
+                          },
+                          "pubref": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "type": "array"
+            }
+          }
+        }
+      ]
+    },
+    "Partner_Overview_Adref": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Partner_Overview_Base"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "adrefs": {
+              "items": {
+                "properties": {
+                  "adref": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Partner_Overview_Currency_Stats"
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "adref": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "type": "array"
+            }
+          }
+        }
+      ]
+    },
+    "Partner_Overview_Creative": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Partner_Overview_Base"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "creatives": {
+              "items": {
+                "properties": {
+                  "creative": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Partner_Overview_Currency_Stats"
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "reserved_tag_name": {
+                            "type": "boolean"
+                          },
+                          "creative_id": {
+                            "type": "string"
+                          },
+                          "creative_description": {
+                            "type": "string"
+                          },
+                          "creative_items": {
+                            "items": {
+                              "$ref": "#/components/schemas/Creative_Item"
+                            },
+                            "type": "array"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "type": "array"
+            }
+          }
+        }
+      ]
+    },
+    "Partner_Overview_Agent": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Partner_Overview_Base"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "agents": {
+              "items": {
+                "properties": {
+                  "agent": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Partner_Overview_Currency_Stats"
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "agent_name": {
+                            "type": "string"
+                          },
+                          "agent_items": {
+                            "items": {},
+                            "type": "array"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "type": "array"
+            }
+          }
+        }
+      ]
+    },
+    "Partner_Overview_Custref": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Partner_Overview_Base"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "custrefs": {
+              "items": {
+                "properties": {
+                  "custref": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Partner_Overview_Currency_Stats"
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "custref": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "type": "array"
+            }
+          }
+        }
+      ]
+    },
+    "Partner_Overview_Type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Partner_Overview_Base"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "types": {
+              "items": {
+                "properties": {
+                  "type": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Partner_Overview_Currency_Stats"
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "number"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "type": "array"
+            }
+          }
+        }
+      ]
+    },
+    "Partner_Overview_Device": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Partner_Overview_Base"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "devices": {
+              "items": {
+                "properties": {
+                  "device": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Partner_Overview_Currency_Stats"
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "device_id": {
+                            "type": "number"
+                          },
+                          "device_title": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "type": "array"
+            }
+          }
+        }
+      ]
+    },
+    "Partner_Overview_Source": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Partner_Overview_Base"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "sources": {
+              "items": {
+                "properties": {
+                  "source": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Partner_Overview_Currency_Stats"
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "source_id": {
+                            "type": "number"
+                          },
+                          "source_title": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "type": "array"
+            }
+          }
+        }
+      ]
+    },
+    "Partner_Overview_Partnership": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Partner_Overview_Base"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "parnterships": {
+              "items": {
+                "properties": {
+                  "parntership": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Partner_Overview_Currency_Stats"
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "parntership_id": {
+                            "type": "number"
+                          },
+                          "partnership_title": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "type": "array"
+            }
+          }
+        }
+      ]
+    },
+    "Partner_Overview_Metric": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Partner_Overview_Base"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "metrics": {
+              "items": {
+                "properties": {
+                  "metric": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Partner_Overview_Currency_Stats"
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "metric_id": {
+                            "type": "number"
+                          },
+                          "metric_title": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "type": "array"
+            }
+          }
+        }
+      ]
+    },
+    "Partner_Overview_Context": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Partner_Overview_Base"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "contexts": {
+              "items": {
+                "properties": {
+                  "context": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Partner_Overview_Currency_Stats"
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "context_id": {
+                            "type": "number"
+                          },
+                          "context_title": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "type": "array"
+            }
+          }
+        }
+      ]
+    },
+    "Partner_Overview_Period_Stats": {
+      "properties": {
+        "impressions": {
+          "type": "number"
+        },
+        "clicks": {
+          "type": "number"
+        },
+        "currency": {
+          "items": {
+            "properties": {
+              "currency_iso": {
+                "description": "key value pairs where the `currency iso` is the key and the value is an object containing a set of stats for the currency",
+                "properties": {
+                  "commissions": {
+                    "type": "number"
+                  },
+                  "conversions": {
+                    "type": "number"
+                  },
+                  "ordervalue": {
+                    "type": "number"
+                  },
+                  "quantity": {
+                    "type": "number"
+                  },
+                  "publisher_commission": {
+                    "type": "number"
+                  },
+                  "ordervalue_avg": {
+                    "type": "number"
+                  },
+                  "conversion_rate": {
+                    "type": "number"
+                  },
+                  "earnings_per_click": {
+                    "type": "number"
+                  },
+                  "ordersize_avg": {
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "quantity_all": {
+          "type": "number"
+        },
+        "conversions_all": {
+          "type": "number"
+        },
+        "conversions_rej": {
+          "type": "number"
+        },
+        "rejection_rate": {
+          "type": "number"
+        },
+        "clickthrough_rate": {
+          "type": "number"
+        },
+        "ordersize_avg": {
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "Partner_Overview_Period": {
+      "properties": {
+        "totals": {
+          "$ref": "#/components/schemas/Partner_Overview_Period_Stats"
+        }
+      },
+      "start_block": {
+        "type": "number"
+      },
+      "end_block": {
+        "type": "number"
+      },
+      "start_time": {
+        "type": "string"
+      },
+      "end_time": {
+        "type": "string"
+      },
+      "stats": {
+        "$ref": "#/components/schemas/Partner_Overview_Period_Stats"
+      }
+    },
+    "Partner_Overview_Multidate_Current": {
+      "properties": {
+        "period": {
+          "properties": {
+            "current": {
+              "$ref": "#/components/schemas/Partner_Overview_Period"
+            }
+          },
+          "type": "object"
+        },
+        "utc_offset": {
+          "type": "number"
+        }
+      }
+    },
+    "Partner_Overview_Multidate_Ranges": {
+      "properties": {
+        "period": {
+          "items": {
+            "properties": {
+              "range{index}": {
+                "description": "an indexed range. E.g. range0, range1, etc.",
+                "$ref": "#/components/schemas/Partner_Overview_Period"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "utc_offset": {
+          "type": "number"
+        }
+      }
+    },
+    "Partner_Conversions": {
+      "properties": {
+        "total_conversion_count": {
+          "description": "conversion count for each currency. E.g. \"USD\": 25, \"EUR\": 37",
+          "type": "object",
+          "properties": {
+            "currency_iso": {
+              "description": "key value pairs where the currency iso is the key. E.g. EUR: 37",
+              "type": "number"
+            }
+          }
+        },
+        "total_publisher_commission": {
+          "description": "total commission for each currency. E.g. \"USD\": 250.5, \"EUR\": 180.9",
+          "type": "object",
+          "properties": {
+            "currency_iso": {
+              "description": "key value pairs where the currency iso is the key. E.g. EUR: 37",
+              "type": "number"
+            }
+          }
+        },
+        "total_value": {
+          "description": "total order value. E.g. \"USD\": 435.5, \"EUR\": 267.9",
+          "type": "object",
+          "properties": {
+            "currency_iso": {
+              "description": "key value pairs where the currency iso is the key. E.g. EUR: 37",
+              "type": "number"
+            }
+          }
+        },
+        "start_date_time_utc": {
+          "type": "string"
+        },
+        "end_date_time_utc": {
+          "type": "string"
+        },
+        "start_date_time": {
+          "type": "string"
+        },
+        "end_date_time": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "number"
+        },
+        "meta_data": {
+          "type": "array",
+          "description": "Key value pairs of meta data",
+          "items": {
+            "properties": {
+              "key": {
+                "description": "A key value pair.",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "count": {
+          "type": "number"
+        },
+        "execution_time": {
+          "type": "string"
+        },
+        "conversions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/Conversion_Data"
+          }
+        }
+      },
+      "type": "object"
+    },
+    "Partner_Clicks": {
+      "properties": {
+        "unique_click_count": {
+          "description": "total count of unique clicks",
+          "type": "number"
+        },
+        "start_date_time_utc": {
+          "type": "string"
+        },
+        "end_date_time_utc": {
+          "type": "string"
+        },
+        "start_date_time": {
+          "type": "string"
+        },
+        "end_date_time": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "number"
+        },
+        "offset": {
+          "type": "number"
+        },
+        "count": {
+          "type": "number"
+        },
+        "execution_time": {
+          "type": "string"
+        },
+        "clicks": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Click"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "meta_data": {
+                    "type": "array",
+                    "description": "Key value pairs of meta data",
+                    "items": {
+                      "properties": {
+                        "key": {
+                          "description": "A key value pair.",
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "type": "object"
+    },
+    "Conversion_Data": {
+      "type": "object",
+      "properties": {
+        "conversion_id": {
+          "description": "Id of the conversion",
+          "example": "111111l314",
+          "type": "string"
+        },
+        "campaign_id": {
+          "description": "Id of the campaign",
+          "example": "111111l29",
+          "type": "string"
+        },
+        "publisher_id": {
+          "description": "Id of the partner",
+          "example": "111111l92",
+          "type": "string"
+        },
+        "conversion_time": {
+          "type": "string"
+        },
+        "creative_type": {
+          "type": "number"
+        },
+        "creative_id": {
+          "type": "number"
+        },
+        "specific_creative_id": {
+          "type": "number"
+        },
+        "currency": {
+          "$ref": "#/components/schemas/Currency"
+        },
+        "publisher_reference": {
+          "type": "string"
+        },
+        "advertiser_reference": {
+          "type": "string"
+        },
+        "conversion_reference": {
+          "type": "string"
+        },
+        "customer_type": {
+          "enum": [
+            "new",
+            "existing"
+          ],
+          "type": "string"
+        },
+        "referer_ip": {
+          "type": "string"
+        },
+        "source_referer": {
+          "type": "string"
+        },
+        "last_modified": {
+          "type": "string"
+        },
+        "conversion_type": {
+          "description": "the conversion type id",
+          "type": "number"
+        },
+        "country": {
+          "$ref": "#/components/schemas/Country"
+        },
+        "customer_reference": {
+          "type": "string"
+        },
+        "ref_device_id": {
+          "type": "number"
+        },
+        "ref_partnership_model_id": {
+          "type": "number"
+        },
+        "ref_traffic_source_id": {
+          "type": "number"
+        },
+        "ref_conversion_metric_id": {
+          "type": "number"
+        },
+        "ref_user_context_id": {
+          "type": "number"
+        },
+        "campaign_title": {
+          "type": "string"
+        },
+        "publisher_name": {
+          "type": "string"
+        },
+        "click": {
+          "$ref": "#/components/schemas/Click"
+        },
+        "ref_conversion_metric": {
+          "type": "string"
+        },
+        "ref_device": {
+          "type": "string"
+        },
+        "ref_partnership_model": {
+          "type": "string"
+        },
+        "ref_traffic_source": {
+          "type": "string"
+        },
+        "ref_user_context": {
+          "type": "string"
+        },
+        "conversion_value": {
+          "properties": {
+            "conversion_status": {
+              "$ref": "#/components/schemas/Conversion_Status"
+            },
+            "value": {
+              "type": "number"
+            }
+          },
+          "publisher_commission": {
+            "type": "number"
+          }
+        },
+        "meta_data": {
+          "type": "array",
+          "description": "Key value pairs of meta data",
+          "items": {
+            "properties": {
+              "key": {
+                "description": "A key value pair.",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "conversion_items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/Conversion_Item"
+          }
+        },
+        "was_disputed": {
+          "type": "boolean"
+        },
+        "conversion_lag": {
+          "type": "number"
+        },
+        "clickref": {
+          "type": "string"
+        }
+      }
+    },
+    "Click": {
+      "properties": {
+        "campaign_id": {
+          "description": "Id of the campaign",
+          "example": "111111l29",
+          "type": "string"
+        },
+        "publisher_id": {
+          "description": "Id of the partner",
+          "example": "111111l92",
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "set_time": {
+          "type": "string"
+        },
+        "set_ip": {
+          "type": "string"
+        },
+        "last_used": {
+          "type": "number"
+        },
+        "last_ip": {
+          "type": "string"
+        },
+        "publisher_reference": {
+          "type": "string"
+        },
+        "referer": {
+          "type": "string"
+        },
+        "creative_id": {
+          "type": "number"
+        },
+        "creative_type": {
+          "type": "number"
+        },
+        "specific_creative_id": {
+          "type": "number"
+        },
+        "ref_device_id": {
+          "type": "number"
+        },
+        "ref_traffic_source_id": {
+          "type": "number"
+        },
+        "ref_partnership_model_id": {
+          "type": "number"
+        },
+        "ref_user_context_id": {
+          "type": "number"
+        },
+        "ref_device": {
+          "type": "string"
+        },
+        "ref_traffic_source": {
+          "type": "string"
+        },
+        "ref_partnership_model": {
+          "type": "string"
+        },
+        "ref_user_context": {
+          "type": "string"
+        },
+        "clickref": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Conversion_Item": {
+      "properties": {
+        "conversion_item_id": {
+          "type": "string"
+        },
+        "sku": {
+          "type": "number"
+        },
+        "category": {
+          "type": "string"
+        },
+        "item_value": {
+          "type": "number"
+        },
+        "item_publisher_commission": {
+          "type": "number"
+        },
+        "item_status": {
+          "type": "string"
+        },
+        "last_update": {
+          "type": "string"
+        },
+        "publisher_self_bill_id": {
+          "type": "number"
+        },
+        "approved_at": {
+          "type": "string"
+        },
+        "item_status_id": {
+          "type": "number"
+        },
+        "reject_reason": {
+          "type": "string"
+        },
+        "voucher_codes": [],
+        "meta_data": {
+          "type": "array",
+          "description": "Key value pairs of meta data",
+          "items": {
+            "properties": {
+              "key": {
+                "description": "A key value pair.",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "payable": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "Conversion_Status": {
+      "enum": [
+        "pending",
+        "approved",
+        "rejected"
+      ],
+      "type": "string"
+    },
+    "Campaign_Terms_And_Condition": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "example": "111111l10"
+        },
+        "created_at": {
+          "type": "string",
+          "example": "2020-01-01T00:00:00+0000"
+        },
+        "locale": {
+          "type": "string",
+          "example": "en_us"
+        },
+        "content": {
+          "type": "string",
+          "example": "<p>Lorem Ipsum</p>"
+        },
+        "campaign_id": {
+          "type": "string",
+          "example": "111111l5"
+        }
+      }
+    },
+    "Campaign_Terms_And_Condition_Acknowledgement": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "example": "111111l551"
+        },
+        "partner_id": {
+          "type": "string",
+          "example": "111111l34"
+        },
+        "campaign_terms_and_conditions_id": {
+          "type": "string",
+          "example": "111111l50"
+        },
+        "created_at": {
+          "type": "string",
+          "example": "2020-01-01T00:00:00+0000"
+        },
+        "created_by": {
+          "type": "string",
+          "example": "111111l2"
+        }
+      }
+    },
+    "Campaign": {
+      "oneOf": [
+        {
+          "properties": {
+            "default_commission_rate": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        {
+          "properties": {
+            "default_commission_value": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      ],
+      "properties": {
+        "advertiser_id": {
+          "description": "ID of the brand the campaign should belong to",
+          "type": "string"
+        },
+        "allow_deep_linking": {
+          "$ref": "#/components/schemas/YesOrNo"
+        },
+        "allow_third_party_pixel": {
+          "$ref": "#/components/schemas/YesOrNo"
+        },
+        "append_url_parameters": {
+          "type": "string"
+        },
+        "associated_campaigns": {
+          "type": "string"
+        },
+        "automated_invoicing_date": {
+          "type": "number"
+        },
+        "automated_invoicing_po_number": {
+          "type": "string"
+        },
+        "auto_approve_publisher": {
+          "$ref": "#/components/schemas/YesOrNo"
+        },
+        "auto_rejected_ips": {
+          "nullable": true,
+          "type": "string"
+        },
+        "budget_summary_interval": {
+          "nullable": true,
+          "type": "number"
+        },
+        "budget_summary_start_time": {
+          "nullable": true,
+          "type": "string"
+        },
+        "campaign_currency_conversions": {},
+        "campaign_id": {
+          "description": "ID of the campaign",
+          "type": "string"
+        },
+        "campaign_languages": {
+          "nullable": true,
+          "properties": {},
+          "type": "object"
+        },
+        "campaign_logo": {
+          "nullable": true,
+          "type": "string"
+        },
+        "campaign_notes": {
+          "type": "string"
+        },
+        "campaign_overloads": {},
+        "commission_by_meta": {
+          "type": "string"
+        },
+        "commission_by_meta_label": {
+          "type": "string"
+        },
+        "commissions": {},
+        "conversion_hiatus_period": {
+          "type": "number"
+        },
+        "conversion_type": {
+          "type": "string"
+        },
+        "cookie_period": {
+          "type": "number"
+        },
+        "cookie_status": {
+          "nullable": true,
+          "type": "string"
+        },
+        "default_currency": {
+          "$ref": "#/components/schemas/Currency"
+        },
+        "default_override": {
+          "type": "number"
+        },
+        "deferred_lead_submission": {
+          "nullable": true,
+          "type": "string"
+        },
+        "description": {
+          "nullable": true,
+          "properties": {
+            "en": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "destination_url": {
+          "type": "string"
+        },
+        "dont_consolidate": {
+          "$ref": "#/components/schemas/YesOrNo"
+        },
+        "dont_invoice": {
+          "$ref": "#/components/schemas/YesOrNo"
+        },
+        "extra_restricted_deep_linking": {
+          "type": "string"
+        },
+        "force_approve_period": {
+          "type": "number"
+        },
+        "hidden_campaign": {
+          "$ref": "#/components/schemas/YesOrNo"
+        },
+        "invoice_address_1": {
+          "nullable": true,
+          "type": "string"
+        },
+        "invoice_address_2": {
+          "nullable": true,
+          "type": "string"
+        },
+        "invoice_address_3": {
+          "nullable": true,
+          "type": "string"
+        },
+        "invoice_address_4": {
+          "nullable": true,
+          "type": "string"
+        },
+        "invoice_address_country": {
+          "nullable": true,
+          "type": "string"
+        },
+        "invoice_address_postcode": {
+          "nullable": true,
+          "type": "string"
+        },
+        "invoice_company": {
+          "nullable": true,
+          "type": "string"
+        },
+        "invoice_contact": {
+          "nullable": true,
+          "type": "string"
+        },
+        "invoice_only": {
+          "nullable": true,
+          "type": "string"
+        },
+        "ip_tracking_time": {
+          "type": "number"
+        },
+        "is_cpc": {
+          "$ref": "#/components/schemas/YesOrNo"
+        },
+        "lead_confirmation_url_fail": {
+          "type": "string"
+        },
+        "lead_confirmation_url_success": {
+          "type": "string"
+        },
+        "meta_field_values_field_limit": {
+          "type": "number"
+        },
+        "meta_field_values_total_limit": {
+          "type": "number"
+        },
+        "multiple_conversions_per_click": {
+          "anyOf": [
+            {
+              "enum": [
+                "y",
+                "n"
+              ],
+              "type": "string"
+            },
+            {
+              "enum": [
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+              ],
+              "type": "number"
+            }
+          ]
+        },
+        "network_fee": {
+          "nullable": true,
+          "type": "string"
+        },
+        "pay_publisher_directly": {
+          "$ref": "#/components/schemas/YesOrNo"
+        },
+        "payment_date": {
+          "nullable": true,
+          "type": "string"
+        },
+        "prepend_url_string": {
+          "description": "Prepend all destination URLs",
+          "nullable": true,
+          "type": "string"
+        },
+        "recurring_payment_setup": {
+          "$ref": "#/components/schemas/YesOrNo"
+        },
+        "report_meta_purge_period": {
+          "description": "The number of days that Meta Reports will be stored before being purged",
+          "nullable": true,
+          "type": "number"
+        },
+        "reporting_timezone": {
+          "enum": [
+            "Australia/Sydney",
+            "UTC",
+            "Europe/London",
+            "CET",
+            "GMT"
+          ],
+          "type": "string"
+        },
+        "restricted_deep_linking": {
+          "$ref": "#/components/schemas/YesOrNo"
+        },
+        "secure_tracking": {
+          "$ref": "#/components/schemas/YesOrNo"
+        },
+        "status": {
+          "$ref": "#/components/schemas/Status"
+        },
+        "terms": {
+          "nullable": true,
+          "properties": {
+            "en": {
+              "properties": {
+                "terms": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object"
+        },
+        "test_mode": {
+          "$ref": "#/components/schemas/YesOrNo"
+        },
+        "title": {
+          "type": "string"
+        },
+        "tq_auto_approve": {
+          "type": "number"
+        },
+        "tq_enabled": {
+          "$ref": "#/components/schemas/YesOrNo"
+        },
+        "tq_enabled_publishers": {
+          "type": "string"
+        },
+        "tracking_method": {
+          "enum": [
+            "pixel",
+            "api",
+            "s2s"
+          ],
+          "type": "string"
+        },
+        "tracking_subdomain": {
+          "nullable": true,
+          "type": "string"
+        },
+        "unique_conversion_refs": {
+          "enum": [
+            "y",
+            "n",
+            "ignore"
+          ],
+          "type": "string"
+        },
+        "vertical_id": {
+          "type": "number"
+        },
+        "vertical_name": {
+          "type": "string"
+        },
+        "week_start": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "advertiser_id",
+        "title",
+        "destination_url"
+      ],
+      "type": "object"
+    },
+    "Voucher_Code_Wrapper": {
+      "properties": {
+        "voucher_code": {
+          "$ref": "#/components/schemas/Voucher_Code"
+        }
+      },
+      "type": "object"
+    },
+    "Voucher_Code": {
+      "properties": {
+        "commission_groups": {
+          "description": "Commission groups associated with the voucher",
+          "items": {
+            "$ref": "#/components/schemas/Commission_Group_Wrapper"
+          },
+          "type": "array"
+        },
+        "description": {
+          "type": "string"
+        },
+        "voucher_code": {
+          "type": "string"
+        },
+        "active": {
+          "$ref": "#/components/schemas/YesOrNo"
+        },
+        "campaign_id": {
+          "description": "ID of the Campaign",
+          "type": "string"
+        },
+        "on_expiry": {
+          "type": "string"
+        },
+        "on_invalid_user": {
+          "type": "string"
+        },
+        "voucher_code_id": {
+          "description": "ID of the Voucher Code",
+          "type": "string"
+        },
+        "start_date_time": {
+          "type": "string"
+        },
+        "end_date_time": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Commission_Group_Wrapper": {
+      "properties": {
+        "commission_group": {
+          "$ref": "#/components/schemas/Commission_Group"
+        }
+      },
+      "type": "object"
+    },
+    "Commission_Group": {
+      "properties": {
+        "campaign_id": {
+          "description": "ID of the campaign",
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "publishers": {
+          "description": "IDs of the publishers to be associated with the group",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "active": {
+          "$ref": "#/components/schemas/YesOrNo"
+        },
+        "commission_group_id": {
+          "description": "ID of the commission group",
+          "type": "string"
+        },
+        "last_modified": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "campaign_id"
+      ],
+      "type": "object"
+    },
+    "Creative_Wrapper": {
+      "properties": {
+        "creative": {
+          "$ref": "#/components/schemas/Creative"
+        }
+      },
+      "type": "object"
+    },
+    "Creative": {
+      "properties": {
+        "creative_id": {
+          "description": "ID of the creative",
+          "type": "string"
+        },
+        "advertiser_reference": {
+          "type": "string"
+        },
+        "creative_items": {
+          "items": {
+            "$ref": "#/components/schemas/Creative_Item"
+          },
+          "type": "array"
+        },
+        "creative_tracking_link": {
+          "type": "string"
+        },
+        "creative_tracking_link_rotate": {
+          "type": "string"
+        },
+        "default_specific_creative_id": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "destination": {
+          "type": "string"
+        },
+        "dynamic_tracking_link": {
+          "type": "string"
+        },
+        "height": {
+          "type": "number"
+        },
+        "html_tracking_link": {
+          "type": "string"
+        },
+        "limits": {
+          "type": "string"
+        },
+        "preview": {
+          "type": "string"
+        },
+        "width": {
+          "type": "number"
+        },
+        "tags": {
+          "type": "string"
+        },
+        "active": {
+          "$ref": "#/components/schemas/YesOrNo"
+        },
+        "campaign_id": {
+          "description": "ID of the campaign",
+          "type": "string"
+        },
+        "creative_type_id": {
+          "type": "number"
+        },
+        "custom_append_url_parameters": {
+          "type": "string"
+        },
+        "custom_prepend_url_parameters": {
+          "type": "string"
+        },
+        "start_date_time": {
+          "type": "string"
+        },
+        "end_date_time": {
+          "type": "string"
+        },
+        "created_by": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "creative_type_id"
+      ],
+      "type": "object"
+    },
+    "Creative_Item": {
+      "properties": {
+        "content_type": {
+          "type": "string"
+        },
+        "creative_item_id": {
+          "description": "ID of the creative item",
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "filename": {
+          "type": "string"
+        },
+        "img_url": {
+          "type": "string"
+        },
+        "preview": {
+          "type": "string"
+        },
+        "specific_destination": {
+          "type": "string"
+        },
+        "created_by": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "string"
+        },
+        "active": {
+          "$ref": "#/components/schemas/YesOrNo"
+        },
+        "campaign_id": {
+          "description": "ID of the campaign",
+          "type": "string"
+        },
+        "creative_type_id": {
+          "type": "number"
+        },
+        "custom_append_url_parameters": {
+          "type": "string"
+        },
+        "custom_prepend_url_parameters": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "creative_type_id"
+      ],
+      "type": "object"
+    },
+    "Partner_Website": {
+      "properties": {
+        "publisher_id": {
+          "description": "ID of the partner the website belongs to",
+          "type": "string"
+        },
+        "active": {
+          "$ref": "#/components/schemas/YesOrNo"
+        },
+        "primary": {
+          "$ref": "#/components/schemas/YesOrNo"
+        },
+        "website_country": {
+          "$ref": "#/components/schemas/Country"
+        },
+        "website_name": {
+          "type": "string"
+        },
+        "website_type": {
+          "type": "number"
+        },
+        "website_type_name": {
+          "type": "string"
+        },
+        "website_url": {
+          "type": "string"
+        },
+        "website_vertical": {
+          "type": "number"
+        },
+        "website_vertical_name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "website_url"
+      ],
+      "type": "object"
+    },
+    "Partner_Website_Wrapper": {
+      "properties": {
+        "website": {
+          "allOf": [
+            {
+              "type": "object",
+              "properties": {
+                "website_id": {
+                  "description": "ID of the partner website",
+                  "type": "string"
+                }
+              }
+            },
+            {
+              "$ref": "#/components/schemas/Partner_Website"
+            }
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "Partner_Database": {
+      "properties": {
+        "publisher_id": {
+          "description": "ID of the partner the database belongs to",
+          "type": "string"
+        },
+        "active": {
+          "$ref": "#/components/schemas/YesOrNo"
+        },
+        "creation_method": {
+          "type": "string"
+        },
+        "database_name": {
+          "type": "string"
+        },
+        "female": {
+          "type": "number"
+        },
+        "male": {
+          "type": "number"
+        },
+        "max_age": {
+          "type": "number"
+        },
+        "min_age": {
+          "type": "number"
+        },
+        "size": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "database_name",
+        "creation_method",
+        "size"
+      ],
+      "type": "object"
+    },
+    "Partner_Database_Wrapper": {
+      "properties": {
+        "database": {
+          "allOf": [
+            {
+              "type": "object",
+              "properties": {
+                "database_id": {
+                  "description": "ID of the partner database",
+                  "type": "string"
+                }
+              }
+            },
+            {
+              "$ref": "#/components/schemas/Partner_Database"
+            }
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "Partner_Payment_Summary": {
+      "properties": {
+        "execution_time": {
+          "type": "string"
+        },
+        "summary": {
+          "properties": {
+            "available": {
+              "description": "Amount of money available to the partner to withdraw",
+              "title": "The propery name* is the currency code and the value is amount of money, e.g. 'GBP':'12.45'",
+              "additionalProperties": {
+                "type": "number",
+                "description": "Amount of money"
+              },
+              "type": "object"
+            },
+            "confirmed": {
+              "description": "Amount that will be available once issued brand's invoices are paid",
+              "title": "The propery name* is the currency code and the value is amount of money, e.g. 'GBP':'12.45'",
+              "additionalProperties": {
+                "type": "number",
+                "description": "Amount of money"
+              },
+              "type": "object"
+            },
+            "pending": {
+              "description": "Total value of pending conversions",
+              "title": "The propery name* is the currency code and the value is amount of money, e.g. 'GBP':'12.45'",
+              "additionalProperties": {
+                "type": "number",
+                "description": "Amount of money"
+              },
+              "type": "object"
+            },
+            "approved": {
+              "description": "Total value of approved conversions",
+              "title": "The propery name* is the currency code and the value is amount of money, e.g. 'GBP':'12.45'",
+              "additionalProperties": {
+                "type": "number",
+                "description": "Amount of money"
+              },
+              "type": "object"
+            },
+            "paid": {
+              "description": "Amount already paid",
+              "title": "The propery name* is the currency code and the value is amount of money, e.g. 'GBP':'12.45'",
+              "additionalProperties": {
+                "type": "number",
+                "description": "Amount of money"
+              },
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "Transaction_Query_Wrapper": {
+      "properties": {
+        "transaction_query": {
+          "$ref": "#/components/schemas/Transaction_Query"
+        }
+      },
+      "type": "object"
+    },
+    "Transaction_Query": {
+      "properties": {
+        "campaign": {
+          "properties": {
+            "advertiser_id": {
+              "type": "string"
+            },
+            "campaign_id": {
+              "type": "string"
+            },
+            "created": {
+              "type": "string"
+            },
+            "created_by": {
+              "type": "string"
+            },
+            "default_override": {
+              "type": "string"
+            },
+            "hidden_campaign": {
+              "$ref": "#/components/schemas/YesOrNo"
+            },
+            "last_modified": {
+              "type": "string"
+            },
+            "network_fee": {
+              "type": "string"
+            },
+            "payment_date": {
+              "type": "string"
+            },
+            "reporting_timezone": {
+              "$ref": "#/components/schemas/Timezones"
+            },
+            "status": {
+              "$ref": "#/components/schemas/Status"
+            },
+            "title": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "vertical_id": {
+              "type": "number"
+            },
+            "week_start": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "campaign_id": {
+          "type": "string"
+        },
+        "camref": {
+          "type": "string"
+        },
+        "conversion_currency": {
+          "$ref": "#/components/schemas/Currency"
+        },
+        "conversion_date_time": {
+          "type": "string"
+        },
+        "conversion_id": {
+          "type": "string"
+        },
+        "conversion_reference": {
+          "type": "string"
+        },
+        "conversion_value": {
+          "type": "number"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "current_state": {
+          "$ref": "#/components/schemas/Transaction_Query_State"
+        },
+        "expected_commission": {
+          "type": "number"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "publisher": {
+          "properties": {
+            "agreed_to_latest_network_terms": {
+              "$ref": "#/components/schemas/YesOrNo"
+            },
+            "created": {
+              "type": "string"
+            },
+            "created_by": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "network_id": {
+              "type": "string"
+            },
+            "network_status": {
+              "type": "string"
+            },
+            "publisher_id": {
+              "type": "string"
+            },
+            "ref_terms_and_conditions_locale_id": {
+              "type": "string"
+            },
+            "reporting_timezone": {
+              "$ref": "#/components/schemas/Timezones"
+            },
+            "signup_ip": {
+              "type": "string"
+            },
+            "week_start": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "publisher_id": {
+          "type": "string"
+        },
+        "publisher_reference": {
+          "type": "string"
+        },
+        "state_history": {
+          "$ref": "#/components/schemas/Transaction_Query_State_History"
+        },
+        "transaction_query_id": {
+          "type": "string"
+        },
+        "transaction_query_type": {
+          "$ref": "#/components/schemas/Transaction_Query_Type"
+        },
+        "updated_at": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Transaction_Query_State": {
+      "enum": [
+        "pending",
+        "approved",
+        "rejected"
+      ],
+      "type": "string"
+    },
+    "Transaction_Query_State_History": {
+      "properties": {
+        "conversion_expected_commission": {
+          "type": "number"
+        },
+        "conversion_item_id": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "state": {
+          "$ref": "#/components/schemas/Transaction_Query_State"
+        },
+        "transaction_query_id": {
+          "type": "string"
+        },
+        "transaction_query_state_id": {
+          "type": "string"
+        },
+        "user_id": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Transaction_Query_Type": {
+      "enum": [
+        "untracked",
+        "incorrect_commission",
+        "declined"
+      ],
+      "type": "string"
+    },
+    "YesOrNo": {
+      "enum": [
+        "y",
+        "n"
+      ],
+      "type": "string"
+    },
+    "Currency": {
+      "enum": [
+        "GBP",
+        "USD",
+        "EUR",
+        "JPY"
+      ],
+      "type": "string"
+    },
+    "Status": {
+      "type": "string",
+      "enum": [
+        "a",
+        "p",
+        "r",
+        "n"
+      ]
+    },
+    "Country": {
+      "enum": [
+        "AD",
+        "AE",
+        "AF",
+        "AG",
+        "AI",
+        "AL",
+        "AM",
+        "AO",
+        "AQ",
+        "AR",
+        "AS",
+        "AT",
+        "AU",
+        "AW",
+        "AX",
+        "AZ",
+        "BA",
+        "BB",
+        "BD",
+        "BE",
+        "BF",
+        "BG",
+        "BH",
+        "BI",
+        "BJ",
+        "BL",
+        "BM",
+        "BN",
+        "BO",
+        "BQ",
+        "BR",
+        "BS",
+        "BT",
+        "BV",
+        "BW",
+        "BY",
+        "BZ",
+        "CA",
+        "CC",
+        "CD",
+        "CF",
+        "CG",
+        "CH",
+        "CI",
+        "CK",
+        "CL",
+        "CM",
+        "CN",
+        "CO",
+        "CR",
+        "CU",
+        "CV",
+        "CW",
+        "CX",
+        "CY",
+        "CZ",
+        "DE",
+        "DJ",
+        "DK",
+        "DM",
+        "DO",
+        "DZ",
+        "EC",
+        "EE",
+        "EG",
+        "EH",
+        "ER",
+        "ES",
+        "ET",
+        "FI",
+        "FJ",
+        "FK",
+        "FM",
+        "FO",
+        "FR",
+        "GA",
+        "GB",
+        "GD",
+        "GE",
+        "GF",
+        "GG",
+        "GH",
+        "GI",
+        "GL",
+        "GM",
+        "GN",
+        "GP",
+        "GQ",
+        "GR",
+        "GS",
+        "GT",
+        "GU",
+        "GW",
+        "GY",
+        "HK",
+        "HM",
+        "HN",
+        "HR",
+        "HT",
+        "HU",
+        "ID",
+        "IE",
+        "IL",
+        "IM",
+        "IN",
+        "IO",
+        "IQ",
+        "IR",
+        "IS",
+        "IT",
+        "JE",
+        "JM",
+        "JO",
+        "JP",
+        "KE",
+        "KG",
+        "KH",
+        "KI",
+        "KM",
+        "KN",
+        "KP",
+        "KR",
+        "KW",
+        "KY",
+        "KZ",
+        "LA",
+        "LB",
+        "LC",
+        "LI",
+        "LK",
+        "LR",
+        "LS",
+        "LT",
+        "LU",
+        "LV",
+        "LY",
+        "MA",
+        "MC",
+        "MD",
+        "ME",
+        "MF",
+        "MG",
+        "MH",
+        "MK",
+        "ML",
+        "MM",
+        "MN",
+        "MO",
+        "MP",
+        "MQ",
+        "MR",
+        "MS",
+        "MT",
+        "MU",
+        "MV",
+        "MW",
+        "MX",
+        "MY",
+        "MZ",
+        "NA",
+        "NC",
+        "NE",
+        "NF",
+        "NG",
+        "NI",
+        "NL",
+        "NO",
+        "NP",
+        "NR",
+        "NU",
+        "NZ",
+        "OM",
+        "PA",
+        "PE",
+        "PF",
+        "PG",
+        "PH",
+        "PK",
+        "PL",
+        "PM",
+        "PN",
+        "PR",
+        "PS",
+        "PT",
+        "PW",
+        "PY",
+        "QA",
+        "RE",
+        "RO",
+        "RS",
+        "RU",
+        "RW",
+        "SA",
+        "SB",
+        "SC",
+        "SD",
+        "SE",
+        "SG",
+        "SH",
+        "SI",
+        "SJ",
+        "SK",
+        "SL",
+        "SM",
+        "SN",
+        "SO",
+        "SR",
+        "SS",
+        "ST",
+        "SV",
+        "SX",
+        "SY",
+        "SZ",
+        "TC",
+        "TD",
+        "TF",
+        "TG",
+        "TH",
+        "TJ",
+        "TK",
+        "TL",
+        "TM",
+        "TN",
+        "TO",
+        "TR",
+        "TT",
+        "TV",
+        "TW",
+        "TZ",
+        "UA",
+        "UG",
+        "UM",
+        "US",
+        "UY",
+        "UZ",
+        "VA",
+        "VC",
+        "VE",
+        "VG",
+        "VI",
+        "VN",
+        "VU",
+        "WF",
+        "WS",
+        "XK",
+        "YE",
+        "YT",
+        "ZA",
+        "ZM",
+        "ZW"
+      ],
+      "type": "string"
+    },
+    "Locale": {
+      "enum": [
+        "bg",
+        "cs",
+        "da",
+        "de",
+        "de_at",
+        "en",
+        "en_au",
+        "en_ca",
+        "en_us",
+        "es",
+        "es_mx",
+        "el",
+        "et",
+        "fi",
+        "fl",
+        "fr",
+        "fr_ca",
+        "hu",
+        "id",
+        "it",
+        "jp",
+        "ko",
+        "ko_kr",
+        "lt",
+        "lv",
+        "ms_my",
+        "mt",
+        "my",
+        "nl",
+        "no",
+        "pl",
+        "po",
+        "pt",
+        "pt_br",
+        "ro",
+        "ru",
+        "sg",
+        "sk",
+        "sl",
+        "sv",
+        "sv_se",
+        "th",
+        "tl",
+        "tr",
+        "vi",
+        "zh_cn",
+        "zh_hk"
+      ],
+      "type": "string"
+    },
+    "Timezones": {
+      "enum": [
+        "Australia/Sydney",
+        "UTC",
+        "Europe/London",
+        "CET",
+        "GMT"
+      ],
+      "type": "string"
+    },
+    "Reference_Country": {
+      "properties": {
+        "country": {
+          "properties": {
+            "area_sq_km": {
+              "type": "number"
+            },
+            "capital": {
+              "type": "string"
+            },
+            "continent_iso": {
+              "type": "string"
+            },
+            "continent_name": {
+              "type": "string"
+            },
+            "currency_iso": {
+              "description": "The ISO of the currency",
+              "type": "string"
+            },
+            "east": {
+              "type": "string"
+            },
+            "fips_code": {
+              "type": "string"
+            },
+            "geoname_id": {
+              "type": "number"
+            },
+            "iso": {
+              "description": "The ISO code for the country",
+              "type": "string"
+            },
+            "iso3": {
+              "type": "string"
+            },
+            "iso_numeric": {
+              "type": "string"
+            },
+            "languages": {
+              "type": "string"
+            },
+            "north": {
+              "type": "string"
+            },
+            "population": {
+              "type": "number"
+            },
+            "printable_name": {
+              "description": "The dictionary word for the locale",
+              "type": "string"
+            },
+            "ref_country_id": {
+              "description": "ID of the country",
+              "type": "number"
+            },
+            "south": {
+              "type": "string"
+            },
+            "west": {
+              "type": "string"
+            },
+            "zone": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "Reference_Currency": {
+      "properties": {
+        "currency": {
+          "properties": {
+            "currency_id": {
+              "description": "The id of the currency",
+              "type": "number"
+            },
+            "iso": {
+              "description": "The ISO value for the currency",
+              "type": "string"
+            },
+            "minor_unit": {
+              "description": "The number of decimal places",
+              "type": "number"
+            },
+            "name": {
+              "description": "The name of the currency",
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "Timezone": {
+      "properties": {
+        "timezone": {
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "local_time": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "ref_timezone_id": {
+              "type": "number"
+            },
+            "utc_offset": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "Device": {
+      "properties": {
+        "device": {
+          "properties": {
+            "ref_device_id": {
+              "type": "number"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "skip_invoice": {
+              "type": "number"
+            },
+            "skip_selfbill": {
+              "type": "number"
+            },
+            "skip_override": {
+              "type": "number"
+            },
+            "key": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "User_Context": {
+      "properties": {
+        "user_context": {
+          "properties": {
+            "ref_user_context_id": {
+              "type": "number"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "skip_invoice": {
+              "type": "string"
+            },
+            "skip_selfbill": {
+              "type": "string"
+            },
+            "skip_override": {
+              "type": "string"
+            },
+            "key": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "Traffic_Source": {
+      "properties": {
+        "traffic_source": {
+          "properties": {
+            "ref_traffic_source_id": {
+              "type": "number"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "skip_invoice": {
+              "type": "string"
+            },
+            "skip_selfbill": {
+              "type": "string"
+            },
+            "skip_override": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "Conversion_Type": {
+      "properties": {
+        "conversion_type": {
+          "properties": {
+            "available_to_invoice": {
+              "$ref": "#/components/schemas/YesOrNo"
+            },
+            "available_to_selfbill": {
+              "$ref": "#/components/schemas/YesOrNo"
+            },
+            "conversion_type": {
+              "description": "The name of the extra field",
+              "type": "string"
+            },
+            "conversion_type_id": {
+              "description": "The id of the conversion type",
+              "type": "number"
+            },
+            "description": {
+              "type": "string"
+            },
+            "exclude_from_override_rules": {
+              "$ref": "#/components/schemas/YesOrNo"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "Conversion_Metric": {
+      "properties": {
+        "partnership_model": {
+          "properties": {
+            "ref_conversion_metric_id": {
+              "type": "number"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "skip_invoice": {
+              "type": "string"
+            },
+            "skip_selfbill": {
+              "type": "string"
+            },
+            "skip_override": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "Partnership_Model": {
+      "properties": {
+        "partnership_model": {
+          "properties": {
+            "ref_partnership_model_id": {
+              "type": "number"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "skip_invoice": {
+              "type": "string"
+            },
+            "skip_selfbill": {
+              "type": "string"
+            },
+            "skip_override": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    }
+  }
+}

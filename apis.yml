@@ -35,6 +35,10 @@ apis:
     properties:
       - type: Documentation
         url: https://api-docs.partnerize.com/brand/
+      - type: OpenAPI
+        url: openapi/partnerize-brands-api-openapi.yml
+      - type: JSONSchema
+        url: json-schema/partnerize-brands-api-schema.json
     contact:
       - FN: Partnerize Support
         email: support@partnerize.com
@@ -55,6 +59,10 @@ apis:
     properties:
       - type: Documentation
         url: https://api-docs.partnerize.com/partner/
+      - type: OpenAPI
+        url: openapi/partnerize-partners-api-openapi.yml
+      - type: JSONSchema
+        url: json-schema/partnerize-partners-api-schema.json
     contact:
       - FN: Partnerize Support
         email: support@partnerize.com
@@ -69,6 +77,16 @@ common:
     url: https://www.linkedin.com/company/partnerize
   - type: Blog
     url: https://partnerize.com/resources/blog
+  - type: BlogRSS
+    url: https://partnerize.com/feed
+  - type: Blogs
+    url: blogs/blogs.json
+  - type: Vocabulary
+    url: vocabulary/partnerize-vocabulary.yml
+  - type: JSONLDContext
+    url: json-ld/partnerize-context.jsonld
+  - type: Examples
+    url: examples/partnerize-examples.json
   - type: Pricing
     url: https://partnerize.com/pricing
   - type: X

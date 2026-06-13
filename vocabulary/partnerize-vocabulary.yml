@@ -1,0 +1,1009 @@
+vocabulary: partnerize
+description: Vocabulary terms for the Partnerize affiliate and partner marketing API
+url: https://api-docs.partnerize.com/
+terms:
+- term: Attribution
+  description: 'Note: Attribution is a limited availability BETA feature.
+
+    Attribution features allow you to control who the transaction is attributed to,
+    based on the the configured rules. To process attribution rules we analyse clicks
+    within the click trail going back the length of the cookie period for the campaign.'
+  source: brands-api-tag
+- term: Brand_Account
+  description: Schema for Brand_Account
+  source: brands-api-schema
+- term: Brand_Account_Wrapper
+  description: Schema for Brand_Account_Wrapper
+  source: brands-api-schema
+- term: Brand_Click
+  description: Schema for Brand_Click
+  source: brands-api-schema
+- term: Brand_Clicks
+  description: Schema for Brand_Clicks
+  source: brands-api-schema
+- term: Brand_Conversions
+  description: Schema for Brand_Conversions
+  source: brands-api-schema
+- term: Brand_Filter_Set
+  description: Schema for Brand_Filter_Set
+  source: brands-api-schema
+- term: Brand_Overview_Adref
+  description: Schema for Brand_Overview_Adref
+  source: brands-api-schema
+- term: Brand_Overview_Agent
+  description: Schema for Brand_Overview_Agent
+  source: brands-api-schema
+- term: Brand_Overview_Base
+  description: Schema for Brand_Overview_Base
+  source: brands-api-schema
+- term: Brand_Overview_Context
+  description: Schema for Brand_Overview_Context
+  source: brands-api-schema
+- term: Brand_Overview_Country
+  description: Schema for Brand_Overview_Country
+  source: brands-api-schema
+- term: Brand_Overview_Creative
+  description: Schema for Brand_Overview_Creative
+  source: brands-api-schema
+- term: Brand_Overview_Currency_Stats
+  description: Schema for Brand_Overview_Currency_Stats
+  source: brands-api-schema
+- term: Brand_Overview_Custref
+  description: Schema for Brand_Overview_Custref
+  source: brands-api-schema
+- term: Brand_Overview_Device
+  description: Schema for Brand_Overview_Device
+  source: brands-api-schema
+- term: Brand_Overview_Metric
+  description: Schema for Brand_Overview_Metric
+  source: brands-api-schema
+- term: Brand_Overview_Multidate_Current
+  description: Schema for Brand_Overview_Multidate_Current
+  source: brands-api-schema
+- term: Brand_Overview_Multidate_Ranges
+  description: Schema for Brand_Overview_Multidate_Ranges
+  source: brands-api-schema
+- term: Brand_Overview_Partnership
+  description: Schema for Brand_Overview_Partnership
+  source: brands-api-schema
+- term: Brand_Overview_Period
+  description: Schema for Brand_Overview_Period
+  source: brands-api-schema
+- term: Brand_Overview_Period_Stats
+  description: Schema for Brand_Overview_Period_Stats
+  source: brands-api-schema
+- term: Brand_Overview_Primary
+  description: Schema for Brand_Overview_Primary
+  source: brands-api-schema
+- term: Brand_Overview_Product
+  description: Schema for Brand_Overview_Product
+  source: brands-api-schema
+- term: Brand_Overview_Pubref
+  description: Schema for Brand_Overview_Pubref
+  source: brands-api-schema
+- term: Brand_Overview_Self
+  description: Schema for Brand_Overview_Self
+  source: brands-api-schema
+- term: Brand_Overview_Source
+  description: Schema for Brand_Overview_Source
+  source: brands-api-schema
+- term: Brand_Overview_Type
+  description: Schema for Brand_Overview_Type
+  source: brands-api-schema
+- term: Brands
+  description: 'A User can create one or more Brand accounts. A User can also have
+    access to one or more Brand accounts -
+
+    this is determined by the User''s permissions. A Network admin may choose to grant
+    a User access to multiple
+
+    entities within their Network.'
+  source: brands-api-tag
+- term: Campaign
+  description: Schema for Campaign
+  source: brands-api-schema
+- term: Campaign Group Campaigns
+  description: Campaigns can be grouped together.
+  source: brands-api-tag
+- term: Campaign Terms and Conditions
+  description: Endpoints for retrieving campaign terms and conditions which are in
+    affect.
+  source: partners-api-tag
+- term: Campaign Terms and Conditions Acknowledgments
+  description: Endpoints for retrieving and management the confirmations of changes
+    existing campaign terms and conditions. <br><br> Each change to a set of campaign
+    terms and conditions are recoreded, these changes can be flag as been acknowledged
+    by a user by creating a campaign terms and conditions acknowledgment instances.
+  source: partners-api-tag
+- term: Campaign Transaction Queries
+  description: 'Transaction Queries (TQs) allow Partners to raise disputes about conversions
+    with a Brand.
+
+    There are three types of Transaction Queries:
+
+    - Untracked: A conversion has not been tracked.
+
+    - Incorrect Commission: A conversion does not have the correct Partner commission
+    value.
+
+    - Declined: The Brand has rejected a conversion.'
+  source: brands-api-tag
+- term: Campaign_Extra_Field
+  description: Schema for Campaign_Extra_Field
+  source: brands-api-schema
+- term: Campaign_Terms_And_Condition
+  description: Schema for Campaign_Terms_And_Condition
+  source: partners-api-schema
+- term: Campaign_Terms_And_Condition_Acknowledgement
+  description: Schema for Campaign_Terms_And_Condition_Acknowledgement
+  source: partners-api-schema
+- term: Campaign_Wrapper
+  description: Schema for Campaign_Wrapper
+  source: brands-api-schema
+- term: Campaigns
+  description: A Campaign is owned by a Brand and a Brand may have multiple Campaigns.
+    A Campaign represents an entity which the Brand uses to represent something that
+    they wish to allow Partners the chance to promote. A Campaign dictates what products/events/conversions
+    can be promoted, and lets the Partners understand what Commission they would earn
+    for generating sales/events/conversions. The Brand has complete control over their
+    Campaigns and dictates which Partners they accept onto the Campaign to promote
+    their services.
+  source: brands-api-tag
+- term: Click
+  description: Schema for Click
+  source: brands-api-schema
+- term: Clicks
+  description: Endpoints for analysing click data
+  source: brands-api-tag
+- term: Commission_Group
+  description: Schema for Commission_Group
+  source: brands-api-schema
+- term: Commission_Group_Wrapper
+  description: Schema for Commission_Group_Wrapper
+  source: brands-api-schema
+- term: Commissions
+  description: Commissions
+  source: brands-api-tag
+- term: Commissions CSV Download
+  description: Commissions CSV Download
+  source: brands-api-tag
+- term: Conversion_Data
+  description: Schema for Conversion_Data
+  source: brands-api-schema
+- term: Conversion_Item
+  description: Schema for Conversion_Item
+  source: brands-api-schema
+- term: Conversion_Metric
+  description: Schema for Conversion_Metric
+  source: brands-api-schema
+- term: Conversion_Status
+  description: Schema for Conversion_Status
+  source: brands-api-schema
+- term: Conversion_Type
+  description: Schema for Conversion_Type
+  source: brands-api-schema
+- term: Conversions
+  description: Endpoints for analysing conversion data
+  source: brands-api-tag
+- term: Country
+  description: Schema for Country
+  source: brands-api-schema
+- term: Creative
+  description: Schema for Creative
+  source: brands-api-schema
+- term: Creative_Item
+  description: Schema for Creative_Item
+  source: brands-api-schema
+- term: Creative_Tag
+  description: Schema for Creative_Tag
+  source: brands-api-schema
+- term: Creative_Tag_Wrapper
+  description: Schema for Creative_Tag_Wrapper
+  source: brands-api-schema
+- term: Creative_Wrapper
+  description: Schema for Creative_Wrapper
+  source: brands-api-schema
+- term: Creatives
+  description: 'A Brand may wish to offer pre-generated _Creative_ so that the Partners
+    can advertise the Brand easily. It is possible to categorise Creative with tags
+    and there are 3 distinct Creative formats: Image, HTML and Text. Brands can organise
+    their Creatives in a flexible structure by using _Creative Tags_.'
+  source: brands-api-tag
+- term: Currency
+  description: Schema for Currency
+  source: brands-api-schema
+- term: Current User
+  description: Endpoints for current User
+  source: brands-api-tag
+- term: Custom Terms and Conditions
+  description: Manage partner specific terms and conditions. You can use this group
+    of endpoints to create custom terms and conditions for certain partners.
+  source: brands-api-tag
+- term: Deal
+  description: Schema for Deal
+  source: brands-api-schema
+- term: Deal_Wrapper
+  description: Schema for Deal_Wrapper
+  source: brands-api-schema
+- term: Deals
+  description: A Brand may want to offer a specific Deal to Partners on a specific
+    Campaign. These Deals represent a timed promotion which can be programmatically
+    ingested into the Partner's platform and offered dynamically to their user base.
+  source: brands-api-tag
+- term: Deep link domains
+  description: 'Endpoints dealing with the management of tracking deep link domains
+
+    '
+  source: brands-api-tag
+- term: Device
+  description: Schema for Device
+  source: brands-api-schema
+- term: Exclusive Code
+  description: Exclusive codes are assigned to a partner. If a partner’s exclusive
+    code is redeemed, the partner wins the sale - even if they don’t contribute any
+    clicks.
+  source: brands-api-tag
+- term: Exports
+  description: 'Depending on the query parameters, an export request may need to be
+    processed asynchronously. When that happens a background job will be automatically
+    created, and the API response will describe the job rather than the export (see
+    [Jobs v1](#operation/get_job_v1)).
+
+
+    If the `complete_email` parameter has been set the export will be sent to the
+    given address once the background job is complete.
+
+    '
+  source: brands-api-tag
+- term: Feed
+  description: Schema for Feed
+  source: brands-api-schema
+- term: Feed_Wrapper
+  description: Schema for Feed_Wrapper
+  source: brands-api-schema
+- term: Filter_Set_Body
+  description: Schema for Filter_Set_Body
+  source: brands-api-schema
+- term: Fraud
+  description: Endpoints for handling fraud incidents reports from data science.
+  source: brands-api-tag
+- term: Fraud_Incident_Base
+  description: Schema for Fraud_Incident_Base
+  source: brands-api-schema
+- term: Fraud_Incident_Metric_Basic
+  description: Schema for Fraud_Incident_Metric_Basic
+  source: brands-api-schema
+- term: Fraud_Incident_Metric_Basket
+  description: Schema for Fraud_Incident_Metric_Basket
+  source: brands-api-schema
+- term: Fraud_Incident_Metric_Conversion_Value
+  description: Schema for Fraud_Incident_Metric_Conversion_Value
+  source: brands-api-schema
+- term: Fraud_Incident_Metric_Ttc
+  description: Schema for Fraud_Incident_Metric_Ttc
+  source: brands-api-schema
+- term: Fraud_Incident_Type_IP_Address
+  description: Schema for Fraud_Incident_Type_IP_Address
+  source: brands-api-schema
+- term: Fraud_Incident_Type_Partner
+  description: Schema for Fraud_Incident_Type_Partner
+  source: brands-api-schema
+- term: Impressions
+  description: Endpoints for analysing impression data
+  source: brands-api-tag
+- term: In-Cart
+  description: Define a period leading up to the time of purchase where clicks will
+    be ignored and not attributed with a commission. Helps prevent last-click poaching.
+  source: brands-api-tag
+- term: Introduction
+  description: "The Analytics API provides access to our Analytical Data Platform;\
+    \ it has an expressive easy to use request structure that allows you to write\
+    \ fluent queries to access your data. There is up to 1000x speed improvement for\
+    \ specific queries and operations compared to the legacy Reporting (v1) API and\
+    \ allows for more in-depth insight into your data. The Analytics API also powers\
+    \ the Analytics Reporting UI.\n\nThe below covers the core concepts of the Analytics\
+    \ API, head over to the [Tutorials](#tag/Tutorials) section for more examples.\n\
+    \n## Metrics and Dimensions \n\nAnalytics has two common data types `Dimension`\
+    \ and `Metric`. Metrics are the quantitative measurements of data and dimensions\
+    \ are the labels used to describe them—or, in even easier terms: numeric values\
+    \ always express metrics while non-numerical values express dimensions. An example\
+    \ in the context of Analytics, `total_clicks` would be a metric and `country`\
+    \ would be a dimension, an in-depth explanation into each is below.\n\n\n### Metrics\n\
+    \nAll endpoints allow you to return one or more metrics, except for the `filter`\
+    \ endpoint, which will only return metrics if you sort by a metric.\n\n\nYou can\
+    \ supply a single metric:\n\n```\n\"metrics\": [\"total_clicks\"]\n\n```\n\nOr\
+    \ multiple metrics:\n\n```\n\"metrics\": [\"total_clicks\", \"total_clicks_converted\"\
+    ]\n\n```\nYou should request multiple metrics in one request rather than making\
+    \ multiple requests where possible. The metrics will be returned in the response\
+    \ object in the same casing they are supplied.\n\n\n#### Metric Approximation\n\
+    \nFor performance reasons, we apply approximations by default to a small set of\
+    \ metric types; this is similar to how Google Analytics uses sampling techniques\
+    \ for aggregated metrics to improve performance.\n\nCurrently, approximations\
+    \ are applied to the Click Metrics; the metrics that are approximated are `total_unique_clicks`.\
+    \ Furthermore, you'll be able to identify which metrics are approximated by looking\
+    \ at the `X-Approximate-Metrics` response header.\n\nAll financial metrics, such\
+    \ as `total_commission` and `total_partner_commission` are never approximated.\n\
+    \n\n\n### Dimensions\n\nAs mentioned above, a dimension is a non-numeric value.\
+    \ All endpoints support the ability to filter by a dimension, see the \"Filtering\"\
+    \ section below. The \"Explode\" and \"Filter\" endpoints support the ability\
+    \ to return the dimension values. \n\n## Data Sources and Endpoint Types\n\nIn\
+    \ Analytics there are three datasources:\n\n1. Clicks\n2. Conversions - Including\
+    \ Conversion Items\n3. Impressions\n\n\nand there are 4 endpoint types:\n\n1.\
+    \ Count\n2. Explode\n3. Timeseries\n4. Filter\n\n\n### Count \n\nA count endpoint\
+    \ can return one or multiple metrics, useful to present top-level figures used\
+    \ on Dashboards, for example.\n\n### Explode\n\nThe explode endpoint returns metrics\
+    \ grouped either by date or multiple dimensions (see the [Tutorials](#tag/Tutorials)\
+    \ for an example). It's called explode as it's 'Exploding' the data out, using\
+    \ a tabular format as an example it allows for grouping the data like the following:\n\
+    \n\n```\n+-------------+---------------+---------+----------+-------------------+------------------+\n\
+    | campaign_id | campaign_name | country | currency | total_order_value | total_commission\
+    \ |\n+-------------+---------------+---------+----------+-------------------+------------------+\n\
+    | 1           | Japan         | JP      | JPY      | 500               | 120.31\
+    \           |\n+-------------+---------------+---------+----------+-------------------+------------------+\n\
+    | 2           | Japan         | GB      | USD      | 400               | 50.12\
+    \            |\n+-------------+---------------+---------+----------+-------------------+------------------+\n\
+    | 3           | US            | US      | USD      | 300               | 31.13\
+    \            |\n+-------------+---------------+---------+----------+-------------------+------------------+\n\
+    | 4           | Italy         | IT      | EUR      | 200               | 90.00\
+    \            |\n+-------------+---------------+---------+----------+-------------------+------------------+\n\
+    ```\n\nNote that the explode endpoint doesn't support zero filling, meaning that\
+    \ if there is no data for a particular record it will be excluded from the resulting\
+    \ response instead of being included with zero values. \n\n### Timeseries\n\n\
+    The Time series endpoints allow you to obtain metrics over intervals in time and\
+    \ ordered chronologically. Timeseries calls are performant and are great for powering\
+    \ plot style charts. One or multiple metrics can be requested with time series;\
+    \ however, it can only ever be grouped by a date-time. \n\n### URI Structures\n\
+    \   \nThe data source to use is embedded the the URI, with the following format:\n\
+    \n```\n/v3/brand/analytics/<data-source>/<endpoint>\n```\n\nFor example, the URI\
+    \ for using `explode` on the `conversions` data source would be:\n\n```\n/v3/brand/analytics/conversions/explode\n\
+    ```\n\nIt isn't possible to retrieve data belonging to multiple data sources in\
+    \ one endpoint call. So for example, to get the total number of clicks and the\
+    \ total number of conversions, two API calls will need to be made to both the\
+    \ `conversion` and `click` data sources.\n\n## Explode - Group By Dimension Response\
+    \ Values\n\nWhen using the Explode Endpoint and grouping by particular dimensions\
+    \ in some instances, you will be returned both an `_id` and `_name` for the dimension,\
+    \ while others return only the dimension. See the full list of return properties\
+    \ below:\n\n\n| Dimension            | Return Properties                     \
+    \       |\n|----------------------|----------------------------------------------|\n\
+    | advertiser_reference | advertiser_reference                         |\n| browser_family\
+    \       | browser_family                               |\n| browser_major    \
+    \    | browser_major                                |\n| browser_minor       \
+    \ | browser_minor                                |\n| browser_patch        | browser_patch\
+    \                                |\n| campaign             | campaign_id, campaign_name\
+    \                   |\n| category             | category                     \
+    \                |\n| conversion_metric    | conversion_metric_id, conversion_metric_name\
+    \ |\n| conversion_reference | conversion_reference                         |\n\
+    | conversion_status    | conversion_status                            |\n| conversion_type\
+    \      | conversion_type_id, conversion_type_name     |\n| country           \
+    \   | country                                      |\n| currency             |\
+    \ currency                                     |\n| customer_type        | customer_type\
+    \                                |\n| date_time            | date_time       \
+    \                             |\n| device               | device_id, device_name\
+    \                       |\n| os_family            | os_family                \
+    \                    |\n| os_major             | os_major                    \
+    \                 |\n| os_minor             | os_minor                       \
+    \              |\n| os_patch             | os_patch                          \
+    \           |\n| partner              | partner_id, partner_name             \
+    \        |\n| partnership_model    | partnership_model_id, partnership_model_name\
+    \ |\n| sku                  | sku                                          |\n\
+    | traffic_source       | traffic_source_id, traffic_source_name       |\n| type\
+    \                 | type                                         |\n| user_context\
+    \         | user_context_id, user_context_name           |\n| voucher_code   \
+    \      | voucher_code                                 |\n| voucher_status    \
+    \   | voucher_status                               |\n\n\n## Request Structure\n\
+    \nThis section outlines the commonality of the request structures between all\
+    \ endpoints.\n\n\n### Scope\n\nA scope is used to specify the `campaign` ID's\
+    \ that you wish to filter by.  \n\n\n```\n\"scope\": {\n  \"campaigns\": [\"1\"\
+    , \"2\"],\n}\n\n```\n\nThe example above will first check you have access to campaign\
+    \ ID's `1` and `2`. If you do have access, you will receive results for those\
+    \ two campaigns.\n\nIf you do not have access to one or more requested `campaigns`\
+    \ you will receive a `403 Forbidden` response.\n\nPlease see the [Tutorials](#tag/Tutorials)\
+    \ section for an example of how to filter by partners.\n\n### Date Time Ranges\n\
+    \nFor each call, you are required to provide a date-time range. You can specify\
+    \ multiple date ranges if you like which operate on an `_OR_` basis, rather than\
+    \ an `_AND_` basis.\n\nYou can specify a single range:\n\n```\n\"date_time_ranges\"\
+    : [\n  {\n    \"start\": \"2020-10-0T00:00:00\",\n    \"end\": \"2020-10-31T23:59:59\"\
+    \n  }\n]\n```\n\nAlternatively, you could specify multiple ranges; this example\
+    \ would give you results for Black Fridays for the past three years:\n\n```\n\
+    ...\n\"date_time_ranges\": [\n  {\n    \"start\": \"2017-11-24T00:00:00\",\n \
+    \   \"end\": \"2017-11-24T23:59:59\"\n  },\n  {\n    \"start\": \"2018-11-23T00:00:00\"\
+    ,\n    \"end\": \"2018-11-23T23:59:59\"\n  },\n  {\n    \"start\": \"2019-11-29T00:00:00\"\
+    ,\n    \"end\": \"2019-11-29T23:59:59\"\n  }\n]\n...\n```\n\n### Top\n\nThe `top`\
+    \ property is used to limit the number of results. If not specified it defaults\
+    \ to `10000` results and there is an upper limit of `50000`.\n`10000` should be\
+    \ sufficient to group your data day, publisher and campaign over one month.\n\n\
+    ### Filtering\n\nThe API supports filtering by multiple dimensions supporting\
+    \ multiple operations. Filters operate on the `_AND_` basis and can be compounded.\
+    \ \n\nThe below is an example filtering conversions where the device is a desktop\
+    \ `AND` the country is `EQUAL` to US `AND` the currency is `NOT EQUAL` to GBP.\n\
+    \n```\n\n\"filter_by\": [\n  {\n    \"field\": \"device_id\",\n    \"value\":\
+    \ \"2\"\n  },\n  {\n    \"field\": \"country\",\n    \"value\": \"US\"\n  }\n\
+    \  {\n    \"field\": \"currency\",\n    \"value\": \"GBP\",\n    \"not\": true\n\
+    \  }\n]\n```\n\n\nCurrently filtering by metrics is not yet supported.\n\n####\
+    \ Property Filter Values\n\n##### Reference Endpoints\n\nBelow is a map of the\
+    \ properties that have reference endpoints. You can use these to find the available\
+    \ values to filter by.\n\n\n| Name                 | Reference Endpoint      \
+    \                                 |\n|----------------------|----------------------------------------------------------|\n\
+    | conversion_metric_id | [/reference/conversion_metric/](#tag/Conversion-Metrics)\
+    \ |\n| conversion_type_id   | [/reference/conversion_type/](#tag/Conversion-Types)\
+    \     |\n| country              | [/reference/country/](#tag/Countries)      \
+    \              |\n| currency             | [/reference/currency/](#tag/Countries)\
+    \                   |\n| device_id            | [/reference/devices/](#tag/Devices)\
+    \                     |\n| partnership_model_id | [/reference/partnership_model/](#tag/Partnership-Models)\
+    \ |\n| traffic_source_id    | [/reference/traffic_source/](#tag/Traffic-Sources)\
+    \       |\n| user_context_id      | [/reference/user_context/](#tag/User-Contexts)\
+    \           |\n\n\n##### Other\n\nBelow is a map of available values to filter\
+    \ by for properties that *do* not have reference endpoints.\n\n###### `conversion_status`\n\
+    \n```\napproved\npending\nrejected\n```\n\n###### `voucher_status`\n\n```\nexpired\n\
+    ignored\ninvalid\nunknown\nvalid\n```\n\n\n### Timezones\n\nYou can set the timezone\
+    \ by using the `timezone` property. The list of supported timezones can be found\
+    \ using the reference API endpoint; see [/reference/timezone/](#tag/Timezones).\n\
+    \n\n```\n\"timezone\": \"CET\"\n\n```\n\n\nYou should see this timezone reflected\
+    \ in the offset of the date-times in the response whenever you group by date,\
+    \ or use the `time-series` endpoint.\n\n\n```\n{\n  \"date\": \"2020-04-03T00:00:00+02:00\"\
+    ,\n}\n```\n\nTimezone offsets such as `2020-05-01T00:00:00+02:00` will be ignored\
+    \ and the `timezone` property must be used instead.\n\n\n### Custom Request and\
+    \ Response Headers\n\n| Name                  | Type     | Description       \
+    \                                                                            \
+    \                                                                            \
+    \                                      |\n|-----------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n\
+    | X-Total-Row-Count     | Response | Returns the total number of rows for the\
+    \ given request, used  within the context of the Explode endpoint. This has to\
+    \ be requested  in the JSON body of the request setting `include_total_row_count`\
+    \ to `true` |\n| X-Approximate-Metrics | Response | Returns a list of metrics\
+    \ that are approximated - see the  Metric Approximation section above.       \
+    \                                                                            \
+    \                               |\n\n\n \n## Currency Conversion\n\nIf you ask\
+    \ for a currency based metric, `total_order_value`, for example, you should also\
+    \ specify an `output_currency` using the ISO 4217 format. If you don't provide\
+    \ an output currency, it will default to `USD`. Currently, the API only supports\
+    \ one currency output per request. The list of supported currencies can be found\
+    \ using the reference API endpoint; see [/reference/currencies/](/#tag/Currencies).\n\
+    \n\n```\n\"output_currency\": \"GBP\"\n```\n\nThe exchange rate used is the exchange\
+    \ rate for the given day of the API call. This means that between day to day usage,\
+    \ you will experience fluctuations in the financial totals due to changing exchange\
+    \ rates.\n\n\n## Rate-limiting\n\nTo ensure the reliability of our Analytics Platform\
+    \ and to ensure it remains stable for all our clients, the Analytics API is rate-limited.\
+    \ Analytics API uses its own rate-limiting algorithm and allowance, which is separate\
+    \ from the rest of the Partnerize API endpoints. Its rate-limiting error responses\
+    \ are the same as the standard error response for v3 endpoints. See the [Rate\
+    \ Limits](#section/Common-API-Conventions/Rate-Limits) section for details.\n\n\
+    The query costs are calculated based upon the endpoint and the date-time range\
+    \ that is requested. The breakdown of these is shown below.\n\n| Date Range |\
+    \ Explode | Count | Time Series | Filter |\n|------------|---------|-------|-------------|--------|\n\
+    | < 1 Year   | 3       | 2     | 2           | 3      |\n| 1+ Year    | 5    \
+    \   | 3     | 3           | 5      |\n| 2+ Year    | 10      | 4     | 4     \
+    \      | 6      |\n| 3+ year    | 12      | 5     | 5           | 7      |\n|\
+    \ 4+ year    | 15      | 6     | 6           | 8      |\n\n\n\nAs an example,\
+    \ if you are requesting 2+ years of data from the Explode endpoint that would\
+    \ allow you to make a total of 6 API calls over a period of 60 seconds.\n\n**Rate\
+    \ Limits costs and quotas are continually reviewed. These can either increased\
+    \ or decreased based upon the following criteria, the volume of data for your\
+    \ account, to ensure platform stability or to accommodate functionality changes\
+    \ within the API. We, therefore, recommend that your code has the appropriate\
+    \ error handling and logging to accommodate for such changes.**\n\n\n### Recommendations\n\
+    \nTo avoid being throttled, it's best to design your API integration using best\
+    \ practices:\n\n- Only request the data that your integration requires.\n- Implement\
+    \ caching for data that your integration uses often.\n- Ensure that your code\
+    \ has appropriate error handling and respecting the `X-RateLimit-Retry-After`\
+    \ header to ensure your code doesn't keep trying to make requests.\n- Modulate\
+    \ the rate of requests, whilst the API caters for bursty traffic, respecting the\
+    \ request limits will increase the stability of your integration.\n"
+  source: brands-api-tag
+- term: Invoice
+  description: Schema for Invoice
+  source: brands-api-schema
+- term: Invoice_Wrapper
+  description: Schema for Invoice_Wrapper
+  source: brands-api-schema
+- term: Invoices
+  description: So that Brands can receive payment for all approved conversion events
+    they have generated across a Brand's Campaigns, the Brand must raise an Invoice
+    and send payment to Partnerize. Once the payment has cleared, all funds will be
+    deposited into the relevant Partner accounts.
+  source: brands-api-tag
+- term: Key Performance Indicators
+  description: A measurable value that demonstrates how effectively a client is achieving
+    key business objectives within their affiliate program. Key performance indicators
+    are used to evaluate success at reaching goals.
+  source: brands-api-tag
+- term: Key_Value_Pair
+  description: Schema for Key_Value_Pair
+  source: partners-api-schema
+- term: Legal_Entities
+  description: Schema for Legal_Entities
+  source: brands-api-schema
+- term: Link
+  description: Schema for Link
+  source: partners-api-schema
+- term: Locale
+  description: Schema for Locale
+  source: brands-api-schema
+- term: Meta Attributes
+  description: 'Based on all tracked events, a real-time cache of currencies and non
+    standard conversion and conversion item
+
+    attributes are kept for all Campaigns and Partners. This endpoint can be used
+    to determine what non standard
+
+    data might appear in reports/exports and is also useful when building an external
+    app which will display Conversion data.'
+  source: brands-api-tag
+- term: Meta Fields
+  description: Meta Fields Endpoints
+  source: brands-api-tag
+- term: My Brands
+  description: Information about the brands the authenticated partner is associated
+    with
+  source: partners-api-tag
+- term: Network
+  description: Schema for Network
+  source: brands-api-schema
+- term: Network Partners
+  description: 'A Brand can view all Partners who are created on their network. This
+    endpoint is not specific to a Campaign,
+
+    therefore it pools all available Partners who have been created or are able to
+    access their Network.   ​
+
+    It is also possible to accept new Partners onto the Network, or to reject any
+    approved or pending Partners
+
+    from the Network. If a Partners is rejected from the Network, they will be automatically
+    rejected from all participating Campaigns.'
+  source: brands-api-tag
+- term: Network Terms and Conditions
+  description: Terms and conditions endpoint that returns terms and conditions that
+    must be accepted by a partner to join the network.
+  source: brands-api-tag
+- term: Network_Wrapper
+  description: Schema for Network_Wrapper
+  source: brands-api-schema
+- term: Networks
+  description: 'All API calls are contextual to the User that is making the request,
+    and all User accounts are associated with the
+
+    Network that they are created on. Each network has a unique `application_user_key`.'
+  source: brands-api-tag
+- term: Participating Partners
+  description: 'Before Partners can generate conversions for a Campaign, they must
+    be approved to do so. A Partner can apply to
+
+    be part of a Campaign, or the Brand can choose to add the Partner(s) of their
+    choice to their own Campaign.
+
+    Furthermore, if a Brand has stipulated their own unique set of Campaign Terms
+    and Conditions, the Partner
+
+    must explicitly agree to these if they are to be fully approved on the Campaign.'
+  source: brands-api-tag
+- term: Partner
+  description: Schema for Partner
+  source: partners-api-schema
+- term: Partner Commissions
+  description: Partner Commissions Endpoints
+  source: brands-api-tag
+- term: Partner Groups
+  description: A Campaign owner can organise Partners into Partner Groups, also known
+    as Commission Groups. These Groups can be used for Reporting purposes, Commission
+    offers and Voucher Code allocation.
+  source: brands-api-tag
+- term: Partner_Campaign_Creative
+  description: Schema for Partner_Campaign_Creative
+  source: partners-api-schema
+- term: Partner_Campaign_Wrapper
+  description: Schema for Partner_Campaign_Wrapper
+  source: partners-api-schema
+- term: Partner_Clicks
+  description: Schema for Partner_Clicks
+  source: partners-api-schema
+- term: Partner_Conversions
+  description: Schema for Partner_Conversions
+  source: partners-api-schema
+- term: Partner_Database
+  description: Schema for Partner_Database
+  source: partners-api-schema
+- term: Partner_Database_Wrapper
+  description: Schema for Partner_Database_Wrapper
+  source: partners-api-schema
+- term: Partner_Overview_Adref
+  description: Schema for Partner_Overview_Adref
+  source: partners-api-schema
+- term: Partner_Overview_Agent
+  description: Schema for Partner_Overview_Agent
+  source: partners-api-schema
+- term: Partner_Overview_Base
+  description: Schema for Partner_Overview_Base
+  source: partners-api-schema
+- term: Partner_Overview_Context
+  description: Schema for Partner_Overview_Context
+  source: partners-api-schema
+- term: Partner_Overview_Country
+  description: Schema for Partner_Overview_Country
+  source: partners-api-schema
+- term: Partner_Overview_Creative
+  description: Schema for Partner_Overview_Creative
+  source: partners-api-schema
+- term: Partner_Overview_Currency_Stats
+  description: Schema for Partner_Overview_Currency_Stats
+  source: partners-api-schema
+- term: Partner_Overview_Custref
+  description: Schema for Partner_Overview_Custref
+  source: partners-api-schema
+- term: Partner_Overview_Device
+  description: Schema for Partner_Overview_Device
+  source: partners-api-schema
+- term: Partner_Overview_Metric
+  description: Schema for Partner_Overview_Metric
+  source: partners-api-schema
+- term: Partner_Overview_Multidate_Current
+  description: Schema for Partner_Overview_Multidate_Current
+  source: partners-api-schema
+- term: Partner_Overview_Multidate_Ranges
+  description: Schema for Partner_Overview_Multidate_Ranges
+  source: partners-api-schema
+- term: Partner_Overview_Partnership
+  description: Schema for Partner_Overview_Partnership
+  source: partners-api-schema
+- term: Partner_Overview_Period
+  description: Schema for Partner_Overview_Period
+  source: partners-api-schema
+- term: Partner_Overview_Period_Stats
+  description: Schema for Partner_Overview_Period_Stats
+  source: partners-api-schema
+- term: Partner_Overview_Primary
+  description: Schema for Partner_Overview_Primary
+  source: partners-api-schema
+- term: Partner_Overview_Product
+  description: Schema for Partner_Overview_Product
+  source: partners-api-schema
+- term: Partner_Overview_Pubref
+  description: Schema for Partner_Overview_Pubref
+  source: partners-api-schema
+- term: Partner_Overview_Self
+  description: Schema for Partner_Overview_Self
+  source: partners-api-schema
+- term: Partner_Overview_Source
+  description: Schema for Partner_Overview_Source
+  source: partners-api-schema
+- term: Partner_Overview_Type
+  description: Schema for Partner_Overview_Type
+  source: partners-api-schema
+- term: Partner_Payment_Summary
+  description: Schema for Partner_Payment_Summary
+  source: partners-api-schema
+- term: Partner_Website
+  description: Schema for Partner_Website
+  source: partners-api-schema
+- term: Partner_Website_Wrapper
+  description: Schema for Partner_Website_Wrapper
+  source: partners-api-schema
+- term: Partnerize Tag Features
+  description: Partnerize Tag features are what power the Partnerize Tag, delivering
+    Partnerize functionality to websites through the Partnerize Tag. <br><br> Partnerize
+    Tag Features come in all shapes and sizes depending on the intended use case.
+    <br><br> To find out more about Partnerize Tag Features and how they can be used,
+    head over to the [Partnerize Help Hub](https://help.phgsupport.com/hc/en-us).
+  source: brands-api-tag
+- term: Partnerize Tags
+  description: Partnerize Tags allow the creation, management and automated serving
+    of various Partnerize features into websites. <br><br> All generated Partnerize
+    Tags include a `url` of which can be embedded into websites to serve back the
+    enabled features of that tag in JavaScript content. <br><br> Partnerize Tags only
+    need to be integrated once, allowing features of the tag to be updated at any
+    time using the Partnerize Tags APIs. <br><br> To view available features of the
+    Partnerize Tag, use the [List Partnerize Tag Features](#operation/listPartnerizeTagFeatures)
+    API.
+  source: brands-api-tag
+- term: Partnership_Model
+  description: Schema for Partnership_Model
+  source: brands-api-schema
+- term: Payment_Details
+  description: Schema for Payment_Details
+  source: partners-api-schema
+- term: Preferred Partner
+  description: Campaigns can have one preferred partner at any time. A sale will be
+    attributed to a preferred partner if they contribute any clicks to that sale.
+  source: brands-api-tag
+- term: Product Feeds
+  description: 'A Brand may want to offer a selection of Product Feeds to their Partners
+    on a specific Campaign.
+
+    When a Product Feed is created, it will be periodically downloaded and parsed
+    for all Partners who participate on the Campaign to ensure their tracking links
+    are inserted for all anchor links within the Product Feed.
+
+    Any text based file format is supported.'
+  source: brands-api-tag
+- term: Promotional Commissions
+  description: Promotional Commission Endpoints
+  source: brands-api-tag
+- term: Promotional_Method
+  description: Schema for Promotional_Method
+  source: brands-api-schema
+- term: Publisher
+  description: Schema for Publisher
+  source: brands-api-schema
+- term: Publisher_Database
+  description: Schema for Publisher_Database
+  source: brands-api-schema
+- term: Publisher_Database_Wrapper
+  description: Schema for Publisher_Database_Wrapper
+  source: brands-api-schema
+- term: Publisher_Website
+  description: Schema for Publisher_Website
+  source: brands-api-schema
+- term: Publisher_Website_Wrapper
+  description: Schema for Publisher_Website_Wrapper
+  source: brands-api-schema
+- term: Publisher_Wrapper
+  description: Schema for Publisher_Wrapper
+  source: brands-api-schema
+- term: Publishers
+  description: Partner management endpoints
+  source: brands-api-tag
+- term: Publishers_V2_Filters
+  description: Schema for Publishers_V2_Filters
+  source: brands-api-schema
+- term: Reference_Country
+  description: Schema for Reference_Country
+  source: brands-api-schema
+- term: Reference_Currency
+  description: Schema for Reference_Currency
+  source: brands-api-schema
+- term: Reference_Currency_Country
+  description: Schema for Reference_Currency_Country
+  source: brands-api-schema
+- term: Reference_Locale
+  description: Schema for Reference_Locale
+  source: brands-api-schema
+- term: Reporting on Meta data
+  description: Reporting Meta is functionality that allows Brands to generate reports
+    based on specific meta data.
+  source: brands-api-tag
+- term: Saved Reports
+  description: Manage sets of filters for reporting. Those can be saved for either
+    a single campaign or a campaign group.
+  source: brands-api-tag
+- term: Self-billing
+  description: Once funds have been received from the Brand, Partnerize will allocate
+    all Commissions to the relevant Partners.
+  source: partners-api-tag
+- term: Selfbill
+  description: Schema for Selfbill
+  source: partners-api-schema
+- term: Split
+  description: Split all CPA commissions between the initiator (first click), contributors
+    (supporting click) and convertor (last click) in the click chain.
+  source: brands-api-tag
+- term: Status
+  description: Schema for Status
+  source: brands-api-schema
+- term: Suppressed Code
+  description: Suppressed codes are assigned to a campaign. If a suppressed code is
+    matched, the sale is no longer rewarded - even if there are supporting clicks.
+  source: brands-api-tag
+- term: Term
+  description: Schema for Term
+  source: brands-api-schema
+- term: Term_Wrapper
+  description: Schema for Term_Wrapper
+  source: brands-api-schema
+- term: Tiers
+  description: Commission Tiers Endpoints
+  source: brands-api-tag
+- term: Timezone
+  description: Schema for Timezone
+  source: brands-api-schema
+- term: Timezones
+  description: Schema for Timezones
+  source: brands-api-schema
+- term: Traffic_Source
+  description: Schema for Traffic_Source
+  source: brands-api-schema
+- term: Transaction_Query
+  description: Schema for Transaction_Query
+  source: brands-api-schema
+- term: Transaction_Query_Reason
+  description: Schema for Transaction_Query_Reason
+  source: brands-api-schema
+- term: Transaction_Query_State
+  description: Schema for Transaction_Query_State
+  source: brands-api-schema
+- term: Transaction_Query_State_History
+  description: Schema for Transaction_Query_State_History
+  source: brands-api-schema
+- term: Transaction_Query_Type
+  description: Schema for Transaction_Query_Type
+  source: brands-api-schema
+- term: Transaction_Query_Wrapper
+  description: Schema for Transaction_Query_Wrapper
+  source: brands-api-schema
+- term: Tutorials
+  description: "This section contains tutorials to serve as a good jumping-off point\
+    \ on how to do basic queries against the Analytics API. If you have any feedback\
+    \ or think it would be useful to provide more examples, please reach out and let\
+    \ us know.\n\n\n## Getting single top level metrics for multiple campaigns.\n\n\
+    Let's say for example, that you wish to get the Total Conversions Items and Total\
+    \ Partner Commission in GBP; this can be achieved by using the Conversion Count\
+    \ Endpoint to retrieve single count metrics.\n\nThis can be done by using the\
+    \ `/v3/brand/analytics/conversions/count` endpoint.\n\n\nSpecify the following\
+    \ metrics:\n\n```\n{\n   \"metrics\":[\n      \"total_conversion_items\",\n  \
+    \    \"total_partner_commission\"\n   ]\n}\n```\n\n\nSpecify the date time range:\
+    \ \n\n\n```\n{\n   \"date_time_ranges\":[\n      {\n         \"start\":\"2020-10-01T00:00:00\"\
+    ,\n         \"end\":\"2020-12-31T23:59:59\"\n      }\n   ],\n   \"metrics\":[\n\
+    \      \"total_conversion_items\", \"total_partner_commission\"\n   ]\n}\n```\n\
+    \nThen specify the output currency:\n\n```\n{\n   \"date_time_ranges\":[\n   \
+    \   {\n         \"start\":\"2020-10-01T00:00:00\",\n         \"end\":\"2020-12-31T23:59:59\"\
+    \n      }\n   ],\n   \"metrics\":[\n      \"total_conversion_items\", \"total_partner_commission\"\
+    \n   ],\n   \"output_currency\": \"GBP\"\n}\n```\n\n\nFinally, specify the Campaign\
+    \ IDs:\n\n\n```\n{\n   \"scope\":{\n      \"campaigns\":[\n         \"campaign_id_1\"\
+    ,\n         \"campaign_id_2\"\n      ]\n   },\n   \"date_time_ranges\":[\n   \
+    \   {\n         \"start\":\"2020-10-31T00:00:00\",\n         \"end\":\"2020-10-31T23:59:59\"\
+    \n      },\n      {\n         \"start\":\"2020-12-25T00:00:00\",\n         \"\
+    end\":\"2020-12-25T23:59:59\"\n      }\n   ],\n   \"metrics\":[\n      \"total_conversions\"\
+    , \"total_conversion_items\"\n   ],\n   \"output_currency\": \"GBP\"\n}\n```\n\
+    \n\nThe result will look like this:\n\n```\n{\n   \"data\":{\n      \"total_conversion_items\"\
+    :235,\n      \"total_partner_commission\":1200.50\n   }\n}\n```\n\n\n## Get the\
+    \ total Conversion Order Value, Commission Broken Down by Campaign, Country and\
+    \ Currency.\n\nLet's say for example you want to see the total order value and\
+    \ commission broken down by campaign, country and currency and sorted by the total\
+    \ commission, which in tabular format looks like:\n\n```\n+-------------+---------------+---------+----------------+----------+-------------------+------------------+\n\
+    | campaign_id | campaign_name | country | country_name   | currency | total_order_value\
+    \ | total_commission |\n|             |               |         |            \
+    \    |          |                   |                  |\n+-------------+---------------+---------+----------------+----------+-------------------+------------------+\n\
+    | 1           | Japan         | JP      | Japan          | JPY      | 500.00 \
+    \           | 123.12           |\n+-------------+---------------+---------+----------------+----------+-------------------+------------------+\n\
+    | 1           | Japan         | GB      | United Kingdom | USD      | 400.00 \
+    \           | 50.12            |\n+-------------+---------------+---------+----------------+----------+-------------------+------------------+\n\
+    | 2           | US            | US      | United States  | USD      | 350.00 \
+    \           | 31.33            |\n+-------------+---------------+---------+----------------+----------+-------------------+------------------+\n\
+    | 3           | Italy         | IT      | Italy          | EUR      | 100.00 \
+    \           | 9.01             |\n+-------------+---------------+---------+----------------+----------+-------------------+------------------+\n\
+    ```\n\n\nTo do this you can use the `/brand/analytics/conversions/explode` endpoint\
+    \ like in the previous example above.\n\n\nUsing the example JSON body from above\
+    \ this would look like:\n\n```\n{\n   \"metrics\":[\n      \"total_order_value\"\
+    ,\n      \"total_commission\"\n   ],\n   \"group_by\":[\n      \"campaign\",\n\
+    \      \"country\",\n      \"currency\"\n   ],\n   \"order_by\":[\n      {\n \
+    \        \"field\":\"total_commission\",\n         \"direction\":\"DESCENDING\"\
+    \n      }\n   ],\n   \"top\":10,\n   \"scope\":{\n      \"campaigns\":[\n    \
+    \     \"1\",\n         \"2\",\n         \"3\",\n         \"4\",\n         \"5\"\
+    \n      ]\n   },\n   \"date_time_ranges\":[\n      {\n         \"start\":\"2019-01-01T00:00:00\"\
+    ,\n         \"end\":\"2019-12-31T23:59:59\"\n      }\n   ]\n}\n```\n\nand a response\
+    \ should look like the following:\n\n```\n{\n   \"data\":[\n      {\n        \
+    \ \"campaign_id\":\"11111l63\",\n         \"campaign_name\":\"Campaign 1\",\n\
+    \         \"currency\": \"GBP\",\n         \"country\": \"US\",\n         \"total_order_value\"\
+    :1000,\n         \"total_commission\":1000,\n      },\n      {\n         \"campaign_id\"\
+    :\"11111l65\",\n         \"campaign_name\":\"Campaign 2\",\n         \"currency\"\
+    : \"USD\",\n         \"country\": \"IT\",\n         \"total_order_value\":1000,\n\
+    \         \"total_commission\":1000,\n      },\n   ]\n}\n```\n\n## Get the Total\
+    \ Partner Commision for approved and pending Converison broken down by Partner\
+    \ and Conversion Status\n\nLet's say you want to see the total partner commission\
+    \ broken down by partner and conversion status ordered by total partner commission\
+    \ where the conversions are approved or pending which in tabular format looks\
+    \ like:\n\nTo do this you can use the `/v3/brand/analytics/conversions/explode`\
+    \ endpoint like in the previous example above.\n\n\n```\n+------------+--------------+----------+--------------------------+\n\
+    | partner_id | partner_name | status   | total_partner_commission |\n|       \
+    \     |              |          |                          |\n+------------+--------------+----------+--------------------------+\n\
+    | 1          | Partner 1    | pending  | 200.00                   |\n+------------+--------------+----------+--------------------------+\n\
+    | 1          | Partner 1    | approved | 150.00                   |\n|       \
+    \     |              |          |                          |\n|            | \
+    \             |          |                          |\n+------------+--------------+----------+--------------------------+\n\
+    | 2          | Partner 2    | pending  | 350.00                   |\n+------------+--------------+----------+--------------------------+\n\
+    | 2          | Partner 2    | approved | 100.00                   |\n+------------+--------------+----------+--------------------------+\n\
+    ``` \n\nTo do the filtering it requires a `filter_by` property:\n\n```\n\"filter_by\"\
+    :[\n  {\n     \"field\":\"conversion_status\",\n     \"operator\":\"EQUALS\",\n\
+    \     \"value\":[\n        \"approved\",\n        \"pending\"\n     ]\n  }\n]\n\
+    ```\n\n\nThe full request body would look like as follows:\n\n\n```\n{\n   \"\
+    metrics\":[\n      \"total_partner_commission\"\n   ],\n   \"group_by\":[\n  \
+    \    \"partner\",\n      \"conversion_status\"\n   ],\n   \"order_by\":[\n   \
+    \   {\n         \"field\":\"total_partner_commission\",\n         \"direction\"\
+    :\"DESCENDING\"\n      }\n   ],\n   \"top\":10,\n   \"scope\":{\n      \"campaigns\"\
+    :[\n         \"1\",\n         \"2\",\n         \"3\",\n         \"4\",\n     \
+    \    \"5\"\n      ]\n   },\n   \"filter_by\":[\n      {\n         \"field\":\"\
+    conversion_status\",\n         \"operator\":\"EQUALS\",\n         \"value\":[\n\
+    \            \"approved\",\n            \"pending\"\n         ]\n      }\n   ],\n\
+    \   \"date_time_ranges\":[\n      {\n         \"start\":\"2019-01-01T00:00:00\"\
+    ,\n         \"end\":\"2019-12-31T23:59:59\"\n      }\n   ]\n}\n```\n\n## Get the\
+    \ total of number of clicks broken down by Campaign and day for all countries\
+    \ except the US\n\nLet's say you want to see the total number of clicks across\
+    \ your campaigns, broken down by day for all countries except the US, in a tabular\
+    \ format this looks like the following:\n\n\nTo do this you can use the `/v3/brand/analytics/clicks/explode`\
+    \ endpoint.\n\n\n```\n+---------------------------+-------------+---------------+---------+----------------+--------------+\n\
+    | date_time                 | campaign_id | campaign_name | country | country_name\
+    \   | total_clicks |\n|                           |             |            \
+    \   |         |                |              |\n+---------------------------+-------------+---------------+---------+----------------+--------------+\n\
+    | 2020-03-02T00:00:00+02:00 | 1           | Campaign 1    | JP      | Japan  \
+    \        | 2000         |\n+---------------------------+-------------+---------------+---------+----------------+--------------+\n\
+    | 2020-03-02T00:00:00+02:00 | 1           | Campaign 2    | IT      | Italy  \
+    \        | 1000         |\n+---------------------------+-------------+---------------+---------+----------------+--------------+\n\
+    | 2020-03-03T00:00:00+02:00 | 1           | Campaign 2    | GB      | United Kingdom\
+    \ | 500          |\n+---------------------------+-------------+---------------+---------+----------------+--------------+\n\
+    | 2020-03-03T00:00:00+02:00 | 1           | Campaign 4    | DE      | Germany\
+    \        | 250          |\n+---------------------------+-------------+---------------+---------+----------------+--------------+\n\
+    ```\n\n\nTo group it by day you need to set the `interval` - this is in [ISO 8601\
+    \ duration](https://en.wikipedia.org/wiki/ISO_8601#Durations) format. For example,\
+    \ one day is `P1D`, or if you want it by month `P1M` or even hourly `PT1H`.\n\n\
+    The request body would look the following: - note the `not` property in `filter_by`.\
+    \ This is the equivalent of saying `NOT EQUAL`\n\n\n```\n{\n   \"metrics\":[\n\
+    \      \"total_clicks\"\n   ],\n   \"group_by\":[\n      \"date_time\",\n    \
+    \  \"campaign\",\n      \"country\"\n   ],\n   \"order_by\":[\n      {\n     \
+    \    \"field\":\"total_clicks\",\n         \"direction\":\"DESCENDING\"\n    \
+    \  }\n   ],\n   \"top\":10,\n   \"scope\":{\n      \"campaigns\":[\n         \"\
+    1\",\n         \"2\",\n         \"3\",\n         \"4\",\n         \"5\"\n    \
+    \  ]\n   },\n   \"filter_by\":[\n      {\n         \"field\":\"country\",\n  \
+    \       \"operator\":\"EQUALS\",\n         \"value\":[\n            \"US\"\n \
+    \        ],\n         \"not\": true\n      }\n   ],\n   \"interval\": {\n    \
+    \  \"field\": \"date_time\",\n      \"period\": \"P1D\"\n   },\n   \"date_time_ranges\"\
+    :[\n      {\n         \"start\":\"2019-01-01T00:00:00\",\n         \"end\":\"\
+    2019-12-31T23:59:59\"\n      }\n   ]\n}\n```\n\nIt's essential to understand that\
+    \ Explode does not support zero filling - so if there isn't data for particular\
+    \ interval it will not be returned in the response, to use zero filling then please\
+    \ use the Time Series endpoint. Furthermore, if you don't need to group by multiple\
+    \ dimensions, then we recommend using the TimeSeries endpoint, which is much faster\
+    \ and costs less rate-limiting tokens. See the tutorial below for an example.\
+    \ Note when grouping by date using the explode endpoint you don't get a `start_date`\
+    \ and `end_date` like the TimeSeries endpoint.\n\n\n## Using the TimeSeries endpoint\
+    \ to show the total conversion items and commission over time\n\nAs previously\
+    \ mentioned above, the time-series endpoint is much more performant, and the query\
+    \ cost will be less. Let's say you want to render a chart, and want to plot over\
+    \ a week in daily intervals how many conversion items have been tracked along\
+    \ with the commission. The `timeseries` endpoint will return data grouped by a\
+    \ specified date interval. It also supports zero filling - so if there isn't data\
+    \ for a particular interval, the metrics will be set to zero. This is why this\
+    \ endpoint is useful for driving charts and graphs. Again, we highly recommend\
+    \ this over using the Explode endpoint.\n\nUse the POST method on the URI `/v3/brand/analytics/conversions/timeseries`.\n\
+    \nWith the request body of: \n\n```\n{\n   \"metrics\":[\n      \"total_conversion_items\"\
+    ,\n      \"total_commission\"\n   ],\n   \"output_currency\":\"GBP\",\n   \"interval\"\
+    :{\n      \"period\":\"P1D\"\n   },\n   \"scope\":{\n      \"campaigns\":[\n \
+    \        \"1\",\n         \"2\"\n      ]\n   },\n   \"date_time_ranges\":[\n \
+    \     {\n         \"start\":\"2019-01-01T00:00:00\",\n         \"end\":\"2019-12-31T23:59:59\"\
+    \n      }\n   ]\n}\n```\n\nThe endpoint result would look like:\n\n\n```\n{\n\
+    \  \"data\": [\n    {\n      \"date_time_range\": {\n        \"start\": \"2020-03-01T00:00:00+00:00\"\
+    ,\n        \"end\": \"2020-03-02T00:00:00+00:00\"\n      },\n      \"total_conversions\"\
+    : 151,\n      \"total_order_value\": 34300.311980922306\n    },\n    {\n     \
+    \ \"date_time_range\": {\n        \"start\": \"2020-03-02T00:00:00+00:00\",\n\
+    \        \"end\": \"2020-03-03T00:00:00+00:00\"\n      },\n      \"total_conversion_items\"\
+    : 145,\n      \"total_commission\": 45835.76083435612\n    }\n}\n```\n\nA notable\
+    \ difference is that for TimeSeries you get a start and end date in the response\
+    \ body unlike the Explode endpoint when grouping by date. "
+  source: brands-api-tag
+- term: US_State
+  description: Schema for US_State
+  source: brands-api-schema
+- term: User_Context
+  description: Schema for User_Context
+  source: brands-api-schema
+- term: User_Publisher
+  description: Schema for User_Publisher
+  source: brands-api-schema
+- term: User_Publisher_Wrapper
+  description: Schema for User_Publisher_Wrapper
+  source: brands-api-schema
+- term: Vertical
+  description: Schema for Vertical
+  source: brands-api-schema
+- term: Voucher Codes
+  description: A Voucher references a coupon code, or voucher code which the Brand
+    offers to their customers to usually perform a price discount at the end of the
+    transaction. Specific rules can be set to defined Vouchers ensuring that only
+    valid codes can be used and can also be restricted to specific Partners.
+  source: brands-api-tag
+- term: Voucher Commissions
+  description: Voucher Commission Endpoints
+  source: brands-api-tag
+- term: Voucher_Code
+  description: Schema for Voucher_Code
+  source: brands-api-schema
+- term: Voucher_Code_Wrapper
+  description: Schema for Voucher_Code_Wrapper
+  source: brands-api-schema
+- term: Website_Type
+  description: Schema for Website_Type
+  source: brands-api-schema
+- term: YesOrNo
+  description: Schema for YesOrNo
+  source: brands-api-schema
+- term: type
+  description: Schema for type
+  source: brands-api-schema

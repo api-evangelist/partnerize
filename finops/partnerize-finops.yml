@@ -1,0 +1,80 @@
+name: Partnerize FinOps
+description: FinOps framework alignment for Partnerize API consumption and
+  partnership program spend management. Covers cost visibility, optimization,
+  and governance for brands and publishers using Partnerize's affiliate and
+  partner marketing platform.
+url: https://partnerize.com/pricing
+specificationVersion: '1.0'
+framework: FinOps Framework 1.0
+domains:
+  - name: Understanding Cloud Usage and Cost
+    description: Gaining visibility into Partnerize platform costs and
+      API-driven commission spend.
+    capabilities:
+      - name: Cost Allocation
+        description: Attribute partner commission spend, platform fees, and
+          API usage costs to specific campaigns, brands, or business units
+          using Partnerize campaign and network identifiers.
+        maturity: Crawl
+      - name: Data Ingestion and Normalization
+        description: Pull cost and performance data via Partnerize Brands API
+          (v1/v2) reporting endpoints to normalize commission and payment
+          data for financial analysis.
+        maturity: Walk
+      - name: Reporting and Analytics
+        description: Use Partnerize's Analytics API (v3) and Reporting API (v1)
+          to build dashboards tracking partner commissions, conversion costs,
+          and ROI by campaign, region, and publisher.
+        maturity: Run
+  - name: Performance and Accountability
+    description: Optimizing Partnerize spend and ensuring program financial
+      accountability.
+    capabilities:
+      - name: Optimization and Planning
+        description: Use performance data from the Partnerize Partners API to
+          identify high-value publishers and optimize commission structures.
+          Leverage tiered and promotional commission models (v2) to control
+          spend.
+        maturity: Walk
+      - name: Budgeting and Forecasting
+        description: Leverage Partnerize's payments API (v1) and campaign
+          management data to forecast commission liabilities and budget
+          affiliate program costs. The all-inclusive pricing model aids
+          predictable cost planning.
+        maturity: Walk
+  - name: Organizational Alignment
+    description: Aligning Partnerize usage with organizational financial
+      governance.
+    capabilities:
+      - name: FinOps Practice Operations
+        description: Establish internal processes for reviewing Partnerize
+          API usage, commission disbursements, and platform fees against
+          budget. Apply the License or Performance pricing model based on
+          program growth stage.
+        maturity: Crawl
+      - name: Cloud Policy and Governance
+        description: Use dual API key authentication (X-Application-Key,
+          X-User-Api-Key) with role-based access to enforce governance over
+          who can trigger payments and modify commission structures via API.
+        maturity: Walk
+cost_categories:
+  - name: Platform License Fee
+    description: Fixed or performance-based fee for Partnerize platform access.
+      Custom-quoted; no public pricing tiers.
+    type: Subscription
+  - name: Partner Commissions
+    description: Commission payments disbursed to publishers and partners
+      through the Partnerize payments system. Variable cost tied directly
+      to affiliate program performance.
+    type: Variable
+  - name: Integration and Professional Services
+    description: Optional managed services for full program management,
+      agency-supported, or in-house management levels.
+    type: Service
+notes:
+  - Partnerize states its pricing is all-inclusive with no overage penalties
+    or tariff-based charges.
+  - The Performance-based pricing model directly ties platform costs to
+    program results, aligning FinOps incentives.
+  - API-driven automation of commission management and reporting supports
+    FinOps cost optimization practices.

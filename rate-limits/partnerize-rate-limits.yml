@@ -1,0 +1,42 @@
+name: Partnerize API Rate Limits
+description: Partnerize enforces rate limiting across its REST APIs. When rate
+  limits are exceeded, the API returns an HTTP 429 Too Many Requests response.
+  Specific numerical thresholds are not publicly documented and may vary by
+  account tier.
+url: https://api-docs.partnerize.com/brand/
+specificationVersion: '0.1'
+limits:
+  - name: Request Rate Limit
+    description: A limit on the number of API requests per unit of time for a
+      given account. Specific thresholds are not publicly disclosed and are
+      determined per account.
+    type: RequestsPerPeriod
+    period: Unknown
+    limit: Contact Partnerize for account-specific limits
+  - name: Rate Limit Error Response
+    description: When the rate limit is exceeded, the API responds with HTTP
+      status 429 Too Many Requests. Callers should implement backoff and
+      retry logic when receiving this status code.
+    type: ErrorResponse
+    httpStatus: 429
+    message: Too Many Requests
+headers:
+  - name: X-Application-Key
+    description: Account-level application key required on every API request.
+      Passed as an HTTP header or query parameter.
+    in: header
+    required: true
+  - name: X-User-Api-Key
+    description: User-level API key required on every API request. Passed as
+      an HTTP header or query parameter. Headers are preferred over query
+      parameters to avoid exposing credentials in logs.
+    in: header
+    required: true
+notes:
+  - Specific per-minute or per-hour rate limit thresholds are not publicly
+    documented by Partnerize.
+  - Both authentication keys (X-Application-Key and X-User-Api-Key) must be
+    present on every request.
+  - Contact support@partnerize.com for account-specific rate limit information.
+  - The API supports three versioned endpoints (v1, v2, v3); rate limits
+    may apply across or per version.

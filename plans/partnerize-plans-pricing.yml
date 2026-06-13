@@ -1,0 +1,63 @@
+name: Partnerize Plans and Pricing
+description: Partnerize offers custom enterprise pricing with no publicly listed
+  tiers. Pricing is tailored based on platform model, service level, program
+  structure, and scale. Two main pricing models are available — a fixed license
+  fee and a performance-based percentage fee.
+url: https://partnerize.com/pricing
+specificationVersion: '0.1'
+plans:
+  - name: License Model
+    description: Fixed platform fee model for brands wanting predictable costs
+      regardless of performance volume. Covers full access to the Partnerize
+      platform including campaign management, partner discovery, analytics,
+      and reporting.
+    url: https://partnerize.com/pricing
+    pricing:
+      - name: Platform Fee
+        description: Fixed monthly license fee; custom quoted based on program
+          size, number of campaigns, regions, and currencies supported.
+        type: Flat
+        custom: true
+    features:
+      - Campaign Management
+      - Partner Discovery and Recruitment
+      - Commission Management
+      - Attribution Tracking
+      - Payments Processing
+      - Analytics and Reporting
+      - Brand Safety and Fraud Prevention
+      - API Access
+      - Mobile SDK Access
+      - Integrations (Salesforce Commerce Cloud, etc.)
+  - name: Performance Model
+    description: Percentage-based fee model for brands preferring costs tied to
+      program performance. Fee is calculated as a percentage of managed
+      spend or commissions. No overage penalties for programs exceeding
+      expectations.
+    url: https://partnerize.com/pricing
+    pricing:
+      - name: Performance Fee
+        description: Percentage-based fee on managed spend or commissions; custom
+          quoted. All-inclusive with no tariff-based pricing or extra
+          integration fees.
+        type: Revenue Share
+        custom: true
+    features:
+      - Campaign Management
+      - Partner Discovery and Recruitment
+      - Commission Management
+      - Attribution Tracking
+      - Payments Processing
+      - Analytics and Reporting
+      - Brand Safety and Fraud Prevention
+      - API Access
+      - Mobile SDK Access
+      - Integrations (Salesforce Commerce Cloud, etc.)
+notes:
+  - Partnerize does not publish specific pricing on its website.
+  - Pricing is obtained via a custom quote process.
+  - The company states pricing is all-inclusive with no overage penalties.
+  - Service levels available include full program management, in-house
+    management, and agency-supported management.
+  - Programs can be structured for single or global regions and multiple
+    currencies.

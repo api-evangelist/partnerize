@@ -1,0 +1,1009 @@
+"""
+Partnerize GraphQL Schema
+Conceptual schema for the Partnerize affiliate and partnership management platform.
+Covers brands, partners, campaigns, conversions, commissions, payments, reporting, and tracking.
+"""
+
+# ─── Scalars ────────────────────────────────────────────────────────────────
+
+scalar DateTime
+scalar Date
+scalar Decimal
+scalar JSON
+scalar URL
+
+# ─── Enums ──────────────────────────────────────────────────────────────────
+
+enum PartnerStatus {
+  ACTIVE
+  INACTIVE
+  PENDING
+  SUSPENDED
+  REJECTED
+}
+
+enum PartnerType {
+  PUBLISHER
+  AFFILIATE
+  INFLUENCER
+  CONTENT
+  COUPON
+  CASHBACK
+  LOYALTY
+  COMPARISON
+  SOCIAL
+}
+
+enum CampaignStatus {
+  ACTIVE
+  PAUSED
+  ENDED
+  DRAFT
+  PENDING_APPROVAL
+}
+
+enum CampaignType {
+  CPA
+  CPS
+  CPL
+  CPC
+  CPM
+  HYBRID
+}
+
+enum ConversionStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  REVERSED
+  PAID
+}
+
+enum CommissionType {
+  PERCENTAGE
+  FIXED
+  TIERED
+  OVERRIDE
+  BONUS
+}
+
+enum TransactionStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  REVERSED
+  PAID
+  LOCKED
+}
+
+enum CreativeType {
+  BANNER
+  TEXT_LINK
+  HTML
+  VIDEO
+  RICH_MEDIA
+  VOUCHER
+  PRODUCT_FEED
+}
+
+enum MetricType {
+  CLICKS
+  IMPRESSIONS
+  CONVERSIONS
+  REVENUE
+  COMMISSION
+  EPC
+  CVR
+  AOV
+}
+
+enum AttributionModel {
+  LAST_CLICK
+  FIRST_CLICK
+  LINEAR
+  TIME_DECAY
+  POSITION_BASED
+  DATA_DRIVEN
+}
+
+enum WebhookEvent {
+  CONVERSION_CREATED
+  CONVERSION_APPROVED
+  CONVERSION_REJECTED
+  CONVERSION_REVERSED
+  PAYMENT_PROCESSED
+  PARTNER_JOINED
+  CAMPAIGN_UPDATED
+  COMMISSION_CHANGED
+}
+
+# ─── Partner ────────────────────────────────────────────────────────────────
+
+type Partner {
+  id: ID!
+  partnerRef: String!
+  name: String!
+  type: PartnerType!
+  status: PartnerStatus!
+  details: PartnerDetails!
+  profile: PartnerProfile
+  campaigns: [Campaign!]!
+  commissions: [Commission!]!
+  payments: [Payment!]!
+  clicks: [Click!]!
+  conversions: [Conversion!]!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type PartnerDetails {
+  partnerId: ID!
+  email: String!
+  phone: String
+  website: URL
+  country: String
+  currency: String
+  locale: String
+  timezone: String
+  approvalStatus: String
+  applicationDate: DateTime
+  approvedDate: DateTime
+  rejectionReason: String
+  tags: [String!]!
+}
+
+type PartnerProfile {
+  partnerId: ID!
+  displayName: String
+  description: String
+  logoUrl: URL
+  websiteUrl: URL
+  promotionalMethods: [String!]!
+  trafficSources: [String!]!
+  audienceSize: Int
+  primaryCountry: String
+  targetCountries: [String!]!
+  socialProfiles: JSON
+  accountManagerId: String
+}
+
+# ─── Publisher ───────────────────────────────────────────────────────────────
+
+type Publisher {
+  id: ID!
+  publisherRef: String!
+  name: String!
+  status: PartnerStatus!
+  details: PublisherDetails!
+  partner: Partner
+  campaigns: [Campaign!]!
+  metrics: [Metric!]!
+  createdAt: DateTime!
+}
+
+type PublisherDetails {
+  publisherId: ID!
+  email: String!
+  website: URL
+  country: String
+  currency: String
+  trafficTypes: [String!]!
+  verticals: [String!]!
+  monthlyTraffic: Int
+  audienceDescription: String
+}
+
+# ─── Advertiser ──────────────────────────────────────────────────────────────
+
+type Advertiser {
+  id: ID!
+  advertiserRef: String!
+  name: String!
+  status: String!
+  details: AdvertiserDetails!
+  brands: [Brand!]!
+  campaigns: [Campaign!]!
+  createdAt: DateTime!
+}
+
+type AdvertiserDetails {
+  advertiserId: ID!
+  email: String!
+  website: URL
+  industry: String
+  country: String
+  currency: String
+  accountManagerId: String
+  billingContact: String
+  contractStartDate: Date
+  contractEndDate: Date
+}
+
+# ─── Brand ───────────────────────────────────────────────────────────────────
+
+type Brand {
+  id: ID!
+  brandRef: String!
+  name: String!
+  advertiser: Advertiser!
+  details: BrandDetails!
+  campaigns: [Campaign!]!
+  creatives: [Creative!]!
+  createdAt: DateTime!
+}
+
+type BrandDetails {
+  brandId: ID!
+  displayName: String!
+  description: String
+  logoUrl: URL
+  websiteUrl: URL!
+  primaryColor: String
+  industry: String
+  country: String
+  currency: String
+  trackingDomain: String
+  defaultCommissionGroupId: String
+}
+
+# ─── Campaign ────────────────────────────────────────────────────────────────
+
+type Campaign {
+  id: ID!
+  campaignRef: String!
+  name: String!
+  status: CampaignStatus!
+  type: CampaignType!
+  details: CampaignDetails!
+  brand: Brand!
+  advertiser: Advertiser!
+  partners: [Partner!]!
+  commissionGroups: [CommissionGroup!]!
+  creatives: [Creative!]!
+  vouchers: [Voucher!]!
+  segments: [Segment!]!
+  metrics: [Metric!]!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type CampaignDetails {
+  campaignId: ID!
+  description: String
+  startDate: Date
+  endDate: Date
+  cookieDuration: Int
+  trackingUrl: URL
+  termsAndConditions: String
+  approvalMode: String
+  defaultCurrency: String
+  targetCountries: [String!]!
+  categories: [String!]!
+  restrictions: String
+  deepLinkingEnabled: Boolean!
+  voucherTrackingEnabled: Boolean!
+  mobileTrackingEnabled: Boolean!
+}
+
+# ─── Conversion ───────────────────────────────────────────────────────────────
+
+type Conversion {
+  id: ID!
+  conversionRef: String!
+  status: ConversionStatus!
+  details: ConversionDetails!
+  campaign: Campaign!
+  partner: Partner!
+  click: Click
+  commissions: [Commission!]!
+  transaction: Transaction
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type ConversionDetails {
+  conversionId: ID!
+  conversionRef: String!
+  conversionTime: DateTime!
+  approvalDate: DateTime
+  orderRef: String
+  orderValue: Decimal
+  currency: String!
+  country: String
+  customerReference: String
+  ipAddress: String
+  userAgent: String
+  metadata: JSON
+  items: [FeedItem!]!
+}
+
+# ─── Click ────────────────────────────────────────────────────────────────────
+
+type Click {
+  id: ID!
+  clickRef: ClickUUID!
+  details: ClickDetails!
+  campaign: Campaign!
+  partner: Partner!
+  creative: Creative
+  conversion: Conversion
+  createdAt: DateTime!
+}
+
+type ClickDetails {
+  clickId: ID!
+  clickTime: DateTime!
+  ipAddress: String
+  userAgent: String
+  country: String
+  device: String
+  browser: String
+  os: String
+  referrer: URL
+  landingPage: URL
+  customParameters: JSON
+}
+
+type ClickUUID {
+  value: String!
+  clickRef: String!
+  createdAt: DateTime!
+}
+
+# ─── Impression ───────────────────────────────────────────────────────────────
+
+type Impression {
+  id: ID!
+  impressionRef: String!
+  details: ImpressionDetails!
+  campaign: Campaign!
+  partner: Partner!
+  creative: Creative
+  createdAt: DateTime!
+}
+
+type ImpressionDetails {
+  impressionId: ID!
+  impressionTime: DateTime!
+  ipAddress: String
+  country: String
+  device: String
+  creative: Creative
+  placementUrl: URL
+}
+
+# ─── Creative ────────────────────────────────────────────────────────────────
+
+type Creative {
+  id: ID!
+  creativeRef: String!
+  name: String!
+  type: CreativeType!
+  details: CreativeDetails!
+  campaign: Campaign!
+  size: CreativeSize
+  clicks: Int!
+  impressions: Int!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type CreativeDetails {
+  creativeId: ID!
+  title: String
+  description: String
+  imageUrl: URL
+  destinationUrl: URL!
+  htmlCode: String
+  width: Int
+  height: Int
+  fileSize: Int
+  mimeType: String
+  startDate: Date
+  endDate: Date
+  isActive: Boolean!
+  language: String
+  targetCountries: [String!]!
+}
+
+type CreativeSize {
+  width: Int!
+  height: Int!
+  label: String!
+  iabStandard: Boolean!
+}
+
+# ─── Commission ───────────────────────────────────────────────────────────────
+
+type CommissionGroup {
+  id: ID!
+  groupRef: String!
+  name: String!
+  campaign: Campaign!
+  commissions: [Commission!]!
+  partners: [Partner!]!
+  isDefault: Boolean!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Commission {
+  id: ID!
+  commissionRef: String!
+  type: CommissionType!
+  details: CommissionDetails!
+  amount: CommissionAmount!
+  conversion: Conversion
+  partner: Partner!
+  campaign: Campaign!
+  commissionGroup: CommissionGroup
+  createdAt: DateTime!
+}
+
+type CommissionDetails {
+  commissionId: ID!
+  description: String
+  startDate: Date
+  endDate: Date
+  productCategory: String
+  minimumOrderValue: Decimal
+  maximumOrderValue: Decimal
+  isActive: Boolean!
+  priority: Int
+  conditions: JSON
+}
+
+type CommissionAmount {
+  value: Decimal!
+  currency: String!
+  rate: Decimal
+  isPercentage: Boolean!
+  calculatedOn: String
+}
+
+# ─── Transaction ─────────────────────────────────────────────────────────────
+
+type Transaction {
+  id: ID!
+  transactionRef: String!
+  status: TransactionStatus!
+  details: TransactionDetails!
+  conversion: Conversion!
+  partner: Partner!
+  campaign: Campaign!
+  payment: Payment
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type TransactionDetails {
+  transactionId: ID!
+  orderRef: String
+  orderValue: Decimal!
+  commissionValue: Decimal!
+  currency: String!
+  conversionTime: DateTime!
+  approvalDate: DateTime
+  lockDate: DateTime
+  paymentDate: Date
+  lineItems: [FeedItem!]!
+  metadata: JSON
+}
+
+# ─── Payment ─────────────────────────────────────────────────────────────────
+
+type Payment {
+  id: ID!
+  paymentRef: String!
+  details: PaymentDetails!
+  partner: Partner!
+  transactions: [Transaction!]!
+  createdAt: DateTime!
+}
+
+type PaymentDetails {
+  paymentId: ID!
+  amount: Decimal!
+  currency: String!
+  paymentDate: Date!
+  paymentMethod: String!
+  paymentStatus: String!
+  invoiceNumber: String
+  periodStart: Date!
+  periodEnd: Date!
+  bankReference: String
+  notes: String
+}
+
+# ─── Voucher ─────────────────────────────────────────────────────────────────
+
+type Voucher {
+  id: ID!
+  voucherRef: String!
+  code: VoucherCode!
+  details: VoucherDetails!
+  campaign: Campaign!
+  partner: Partner
+  conversions: [Conversion!]!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type VoucherDetails {
+  voucherId: ID!
+  name: String!
+  description: String
+  discountType: String!
+  discountValue: Decimal!
+  minimumOrderValue: Decimal
+  startDate: Date
+  endDate: Date
+  usageLimit: Int
+  usageCount: Int!
+  isActive: Boolean!
+  applicableProducts: [String!]!
+  excludedProducts: [String!]!
+}
+
+type VoucherCode {
+  code: String!
+  isUnique: Boolean!
+  expiresAt: DateTime
+  usageCount: Int!
+  maxUsage: Int
+}
+
+# ─── Feed Item ───────────────────────────────────────────────────────────────
+
+type FeedItem {
+  id: ID!
+  itemRef: String!
+  details: FeedItemDetails!
+  conversion: Conversion
+  transaction: Transaction
+}
+
+type FeedItemDetails {
+  itemId: ID!
+  sku: String
+  name: String!
+  category: String
+  quantity: Int!
+  unitPrice: Decimal!
+  totalPrice: Decimal!
+  currency: String!
+  brand: String
+  imageUrl: URL
+  productUrl: URL
+  commissionValue: Decimal
+  commissionRate: Decimal
+}
+
+# ─── Segment ─────────────────────────────────────────────────────────────────
+
+type Segment {
+  id: ID!
+  segmentRef: String!
+  name: String!
+  campaign: Campaign!
+  details: SegmentDetails!
+  partners: [Partner!]!
+  createdAt: DateTime!
+}
+
+type SegmentDetails {
+  segmentId: ID!
+  description: String
+  segmentType: String!
+  criteria: JSON
+  partnerCount: Int!
+  isDefault: Boolean!
+  commissionGroupId: String
+}
+
+# ─── Report ───────────────────────────────────────────────────────────────────
+
+type Report {
+  id: ID!
+  reportRef: String!
+  name: String!
+  details: ReportDetails!
+  metrics: [Metric!]!
+  generatedAt: DateTime!
+}
+
+type ReportDetails {
+  reportId: ID!
+  reportType: String!
+  startDate: Date!
+  endDate: Date!
+  granularity: String!
+  filters: JSON
+  dimensions: [String!]!
+  currency: String!
+  timezone: String!
+  totalRows: Int!
+  downloadUrl: URL
+}
+
+# ─── Metric ───────────────────────────────────────────────────────────────────
+
+type Metric {
+  id: ID!
+  type: MetricType!
+  value: Decimal!
+  details: MetricDetails
+  currency: String
+  date: Date!
+  campaignId: String
+  partnerId: String
+}
+
+type MetricDetails {
+  metricId: ID!
+  label: String!
+  description: String
+  calculationMethod: String
+  comparisonPeriodValue: Decimal
+  changePercent: Decimal
+  isEstimated: Boolean!
+}
+
+# ─── Attribution ──────────────────────────────────────────────────────────────
+
+type Attribution {
+  id: ID!
+  conversionId: ID!
+  model: AttributionModel!
+  details: AttributionDetails!
+  touchpoints: [Click!]!
+  createdAt: DateTime!
+}
+
+type AttributionDetails {
+  attributionId: ID!
+  conversionRef: String!
+  modelName: String!
+  totalTouchpoints: Int!
+  attributedPartnerId: String!
+  attributedClickRef: String!
+  windowDays: Int!
+  crossDevice: Boolean!
+  notes: String
+}
+
+# ─── Token / APIKey ───────────────────────────────────────────────────────────
+
+type Token {
+  id: ID!
+  tokenRef: String!
+  type: String!
+  scopes: [String!]!
+  expiresAt: DateTime
+  createdAt: DateTime!
+  lastUsedAt: DateTime
+  isActive: Boolean!
+}
+
+type APIKey {
+  id: ID!
+  keyRef: String!
+  name: String!
+  prefix: String!
+  scopes: [String!]!
+  createdAt: DateTime!
+  expiresAt: DateTime
+  lastUsedAt: DateTime
+  isActive: Boolean!
+  createdBy: String
+}
+
+# ─── Webhook ──────────────────────────────────────────────────────────────────
+
+type Webhook {
+  id: ID!
+  webhookRef: String!
+  url: URL!
+  events: [WebhookEvent!]!
+  isActive: Boolean!
+  secret: String
+  headers: JSON
+  retryPolicy: WebhookRetryPolicy!
+  deliveries: [WebhookDelivery!]!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type WebhookRetryPolicy {
+  maxRetries: Int!
+  retryIntervalSeconds: Int!
+  timeoutSeconds: Int!
+}
+
+type WebhookDelivery {
+  id: ID!
+  event: WebhookEvent!
+  payload: JSON!
+  responseStatus: Int
+  responseBody: String
+  deliveredAt: DateTime
+  success: Boolean!
+  attemptNumber: Int!
+}
+
+# ─── Queries ──────────────────────────────────────────────────────────────────
+
+type Query {
+  # Partner queries
+  partner(id: ID!): Partner
+  partners(status: PartnerStatus, type: PartnerType, campaignId: ID, limit: Int, offset: Int): [Partner!]!
+
+  # Publisher queries
+  publisher(id: ID!): Publisher
+  publishers(status: PartnerStatus, campaignId: ID, limit: Int, offset: Int): [Publisher!]!
+
+  # Advertiser queries
+  advertiser(id: ID!): Advertiser
+  advertisers(limit: Int, offset: Int): [Advertiser!]!
+
+  # Brand queries
+  brand(id: ID!): Brand
+  brands(advertiserId: ID, limit: Int, offset: Int): [Brand!]!
+
+  # Campaign queries
+  campaign(id: ID!): Campaign
+  campaigns(status: CampaignStatus, type: CampaignType, brandId: ID, advertiserId: ID, limit: Int, offset: Int): [Campaign!]!
+
+  # Conversion queries
+  conversion(id: ID!): Conversion
+  conversions(status: ConversionStatus, campaignId: ID, partnerId: ID, startDate: Date, endDate: Date, limit: Int, offset: Int): [Conversion!]!
+
+  # Click queries
+  click(id: ID!): Click
+  clicks(campaignId: ID, partnerId: ID, startDate: Date, endDate: Date, limit: Int, offset: Int): [Click!]!
+
+  # Impression queries
+  impression(id: ID!): Impression
+  impressions(campaignId: ID, partnerId: ID, startDate: Date, endDate: Date, limit: Int, offset: Int): [Impression!]!
+
+  # Commission queries
+  commissionGroup(id: ID!): CommissionGroup
+  commissionGroups(campaignId: ID, limit: Int, offset: Int): [CommissionGroup!]!
+  commission(id: ID!): Commission
+  commissions(campaignId: ID, partnerId: ID, type: CommissionType, limit: Int, offset: Int): [Commission!]!
+
+  # Transaction queries
+  transaction(id: ID!): Transaction
+  transactions(status: TransactionStatus, campaignId: ID, partnerId: ID, startDate: Date, endDate: Date, limit: Int, offset: Int): [Transaction!]!
+
+  # Payment queries
+  payment(id: ID!): Payment
+  payments(partnerId: ID, startDate: Date, endDate: Date, limit: Int, offset: Int): [Payment!]!
+
+  # Creative queries
+  creative(id: ID!): Creative
+  creatives(campaignId: ID, type: CreativeType, limit: Int, offset: Int): [Creative!]!
+
+  # Voucher queries
+  voucher(id: ID!): Voucher
+  vouchers(campaignId: ID, partnerId: ID, limit: Int, offset: Int): [Voucher!]!
+
+  # Segment queries
+  segment(id: ID!): Segment
+  segments(campaignId: ID, limit: Int, offset: Int): [Segment!]!
+
+  # Report queries
+  report(id: ID!): Report
+  reports(limit: Int, offset: Int): [Report!]!
+
+  # Attribution queries
+  attribution(conversionId: ID!, model: AttributionModel): Attribution
+
+  # Webhook queries
+  webhook(id: ID!): Webhook
+  webhooks(limit: Int, offset: Int): [Webhook!]!
+
+  # API key queries
+  apiKey(id: ID!): APIKey
+  apiKeys(limit: Int, offset: Int): [APIKey!]!
+}
+
+# ─── Mutations ────────────────────────────────────────────────────────────────
+
+type Mutation {
+  # Partner mutations
+  createPartner(input: CreatePartnerInput!): Partner!
+  updatePartner(id: ID!, input: UpdatePartnerInput!): Partner!
+  approvePartner(id: ID!, campaignId: ID!): Partner!
+  rejectPartner(id: ID!, campaignId: ID!, reason: String): Partner!
+
+  # Campaign mutations
+  createCampaign(input: CreateCampaignInput!): Campaign!
+  updateCampaign(id: ID!, input: UpdateCampaignInput!): Campaign!
+  pauseCampaign(id: ID!): Campaign!
+  activateCampaign(id: ID!): Campaign!
+
+  # Conversion mutations
+  approveConversion(id: ID!): Conversion!
+  rejectConversion(id: ID!, reason: String): Conversion!
+  reverseConversion(id: ID!, reason: String!): Conversion!
+
+  # Commission mutations
+  createCommissionGroup(input: CreateCommissionGroupInput!): CommissionGroup!
+  updateCommissionGroup(id: ID!, input: UpdateCommissionGroupInput!): CommissionGroup!
+  createCommission(input: CreateCommissionInput!): Commission!
+  updateCommission(id: ID!, input: UpdateCommissionInput!): Commission!
+
+  # Creative mutations
+  createCreative(input: CreateCreativeInput!): Creative!
+  updateCreative(id: ID!, input: UpdateCreativeInput!): Creative!
+  deleteCreative(id: ID!): Boolean!
+
+  # Voucher mutations
+  createVoucher(input: CreateVoucherInput!): Voucher!
+  updateVoucher(id: ID!, input: UpdateVoucherInput!): Voucher!
+
+  # Segment mutations
+  createSegment(input: CreateSegmentInput!): Segment!
+  updateSegment(id: ID!, input: UpdateSegmentInput!): Segment!
+  addPartnerToSegment(segmentId: ID!, partnerId: ID!): Segment!
+  removePartnerFromSegment(segmentId: ID!, partnerId: ID!): Segment!
+
+  # Webhook mutations
+  createWebhook(input: CreateWebhookInput!): Webhook!
+  updateWebhook(id: ID!, input: UpdateWebhookInput!): Webhook!
+  deleteWebhook(id: ID!): Boolean!
+  testWebhook(id: ID!): WebhookDelivery!
+
+  # API key mutations
+  createAPIKey(input: CreateAPIKeyInput!): APIKey!
+  revokeAPIKey(id: ID!): Boolean!
+}
+
+# ─── Input Types ─────────────────────────────────────────────────────────────
+
+input CreatePartnerInput {
+  name: String!
+  email: String!
+  type: PartnerType!
+  website: URL
+  country: String
+  currency: String
+}
+
+input UpdatePartnerInput {
+  name: String
+  email: String
+  status: PartnerStatus
+  website: URL
+  country: String
+}
+
+input CreateCampaignInput {
+  name: String!
+  brandId: ID!
+  type: CampaignType!
+  startDate: Date
+  endDate: Date
+  description: String
+  defaultCurrency: String!
+  cookieDuration: Int
+}
+
+input UpdateCampaignInput {
+  name: String
+  status: CampaignStatus
+  endDate: Date
+  description: String
+  cookieDuration: Int
+}
+
+input CreateCommissionGroupInput {
+  campaignId: ID!
+  name: String!
+  isDefault: Boolean
+}
+
+input UpdateCommissionGroupInput {
+  name: String
+  isDefault: Boolean
+}
+
+input CreateCommissionInput {
+  campaignId: ID!
+  commissionGroupId: ID!
+  type: CommissionType!
+  value: Decimal!
+  currency: String
+  isPercentage: Boolean!
+  startDate: Date
+  endDate: Date
+  productCategory: String
+}
+
+input UpdateCommissionInput {
+  type: CommissionType
+  value: Decimal
+  isPercentage: Boolean
+  startDate: Date
+  endDate: Date
+  isActive: Boolean
+}
+
+input CreateCreativeInput {
+  campaignId: ID!
+  name: String!
+  type: CreativeType!
+  destinationUrl: URL!
+  imageUrl: URL
+  htmlCode: String
+  width: Int
+  height: Int
+  startDate: Date
+  endDate: Date
+}
+
+input UpdateCreativeInput {
+  name: String
+  destinationUrl: URL
+  imageUrl: URL
+  htmlCode: String
+  startDate: Date
+  endDate: Date
+  isActive: Boolean
+}
+
+input CreateVoucherInput {
+  campaignId: ID!
+  name: String!
+  code: String!
+  discountType: String!
+  discountValue: Decimal!
+  startDate: Date
+  endDate: Date
+  usageLimit: Int
+  minimumOrderValue: Decimal
+}
+
+input UpdateVoucherInput {
+  name: String
+  discountValue: Decimal
+  endDate: Date
+  usageLimit: Int
+  isActive: Boolean
+}
+
+input CreateSegmentInput {
+  campaignId: ID!
+  name: String!
+  segmentType: String!
+  description: String
+  commissionGroupId: ID
+}
+
+input UpdateSegmentInput {
+  name: String
+  description: String
+  commissionGroupId: ID
+}
+
+input CreateWebhookInput {
+  url: URL!
+  events: [WebhookEvent!]!
+  secret: String
+  headers: JSON
+}
+
+input UpdateWebhookInput {
+  url: URL
+  events: [WebhookEvent!]
+  isActive: Boolean
+  secret: String
+  headers: JSON
+}
+
+input CreateAPIKeyInput {
+  name: String!
+  scopes: [String!]!
+  expiresAt: DateTime
+}

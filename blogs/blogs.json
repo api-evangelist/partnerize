@@ -3,5 +3,31 @@
   "blogURL": "https://partnerize.com/resources/blog",
   "confirmed": true,
   "lastChecked": "2026-06-13",
-  "posts": []
+  "posts": [],
+  "repo": "partnerize",
+  "feeds": [
+    {
+      "source": "https://www.linkedin.com/company/partnerize",
+      "feed_url": "https://www.linkedin.com/company/partnerize",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    },
+    {
+      "source": "https://partnerize.com/resources/blog",
+      "feed_url": "https://partnerize.com/feed",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
+    },
+    {
+      "source": "https://partnerize.com/feed",
+      "feed_url": "https://partnerize.com/feed",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-06-14T20:42:17Z"
 }

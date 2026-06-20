@@ -4,7 +4,7 @@ description: Affiliate and partner marketing platform with a REST API for managi
   publisher partnerships, tracking sales, processing commissions, and accessing performance
   analytics.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/partnerize/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'

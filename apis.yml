@@ -79,7 +79,7 @@ common:
   url: https://partnerize.com/resources/blog
 - type: BlogRSS
   url: https://partnerize.com/feed
-- type: Blogs
+- type: Blog
   url: blogs/blogs.json
 - type: Vocabulary
   url: vocabulary/partnerize-vocabulary.yml

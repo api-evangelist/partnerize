@@ -67,6 +67,8 @@ apis:
   - FN: Partnerize Support
     email: support@partnerize.com
 common:
+- type: DomainSecurity
+  url: security/partnerize-domain-security.yml
 - type: Website
   url: https://partnerize.com
 - type: Documentation

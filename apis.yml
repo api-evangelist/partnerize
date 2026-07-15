@@ -67,6 +67,8 @@ apis:
   - FN: Partnerize Support
     email: support@partnerize.com
 common:
+- type: AgenticAccess
+  url: agentic-access/partnerize-agentic-access.yml
 - type: DomainSecurity
   url: security/partnerize-domain-security.yml
 - type: Website

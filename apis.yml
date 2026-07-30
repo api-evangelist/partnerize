@@ -4,7 +4,19 @@ description: Affiliate and partner marketing platform with a REST API for managi
   publisher partnerships, tracking sales, processing commissions, and accessing performance
   analytics.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/partnerize.png
 url: https://raw.githubusercontent.com/api-evangelist/partnerize/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -20,8 +32,9 @@ tags:
 apis:
 - aid: partnerize:brands-api
   name: Partnerize Brands API
-  description: REST API for brands to manage networks, campaigns, payments, commissions,
-    attribution, and partner relationships across the Partnerize platform.
+  description: >-
+    REST API for brands to manage networks, campaigns, payments, commissions, attribution, and partner
+    relationships across the Partnerize platform.
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -43,29 +56,1574 @@ apis:
   contact:
   - FN: Partnerize Support
     email: support@partnerize.com
-- aid: partnerize:partners-api
-  name: Partnerize Partners API
-  description: REST API for publishers and partners to manage campaigns, tracking
-    links, commissions, payments, reporting, and analytics across the Partnerize network.
-  humanURL: https://api-docs.partnerize.com/partner/
+- aid: partnerize:partnerize-attribution-api
+  name: Partnerize Attribution API
+  description: >-
+    Note: Attribution is a limited availability BETA feature.
+
+    Attribution features allow you to control who the transaction is attributed to, based on the the configured
+    rules. To process attribution rules we analyse clicks within the click trail going back the length
+    of the cookie period for the campaign.
+  humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
-  - Partners
-  - Publishers
-  - Campaigns
-  - Tracking Links
-  - Reporting
-  - Analytics
+  - Attribution
   properties:
+  - type: OpenAPI
+    url: openapi/partnerize-attribution-api-openapi.yml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
-  - type: OpenAPI
-    url: openapi/partnerize-partners-api-openapi.yml
   - type: JSONSchema
     url: json-schema/partnerize-partners-api-schema.json
-  contact:
-  - FN: Partnerize Support
-    email: support@partnerize.com
+- aid: partnerize:partnerize-available-commission-api
+  name: Partnerize Available Commission API
+  description: The Available Commission API from Partnerize — 1 operation(s) for available commission.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Available Commission
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-available-commission-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-brand-clicks-api
+  name: Partnerize Brand Clicks API
+  description: The Brand Clicks API from Partnerize — 1 operation(s) for brand clicks.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Brand Clicks
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-brand-clicks-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-brand-conversions-api
+  name: Partnerize Brand Conversions API
+  description: The Brand Conversions API from Partnerize — 1 operation(s) for brand conversions.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Brand Conversions
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-brand-conversions-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-brand-discovery-v2-api
+  name: Partnerize Brand Discovery (v2) API
+  description: The Brand Discovery (v2) API from Partnerize — 2 operation(s) for brand discovery (v2).
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Brand Discovery (v2)
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-brand-discovery-v2-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-campaign-conversions-api
+  name: Partnerize Campaign Conversions API
+  description: The Campaign Conversions API from Partnerize — 1 operation(s) for campaign conversions.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Campaign Conversions
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-campaign-conversions-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-campaign-extra-fields-api
+  name: Partnerize Campaign Extra Fields API
+  description: >-
+    The Campaign Extra Fields API from Partnerize — 1 operation(s) for campaign extra fields.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Campaign Extra Fields
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-campaign-extra-fields-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-campaign-group-campaigns-api
+  name: Partnerize Campaign Group Campaigns API
+  description: Campaigns can be grouped together.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Campaign Group Campaigns
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-campaign-group-campaigns-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-campaign-invitations-v2-api
+  name: Partnerize Campaign Invitations (v2) API
+  description: >-
+    The Campaign Invitations (v2) API from Partnerize — 3 operation(s) for campaign invitations (v2).
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Campaign Invitations (v2)
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-campaign-invitations-v2-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-campaign-references-v1-api
+  name: Partnerize Campaign References (v1) API
+  description: >-
+    The Campaign References (v1) API from Partnerize — 1 operation(s) for campaign references (v1).
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Campaign References (v1)
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-campaign-references-v1-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-campaign-requests-and-invites-api
+  name: Partnerize Campaign Requests and Invites API
+  description: >-
+    The Campaign Requests and Invites API from Partnerize — 8 operation(s) for campaign requests and invites.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Campaign Requests and Invites
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-campaign-requests-and-invites-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-campaign-requests-v2-api
+  name: Partnerize Campaign Requests (v2) API
+  description: >-
+    The Campaign Requests (v2) API from Partnerize — 1 operation(s) for campaign requests (v2).
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Campaign Requests (v2)
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-campaign-requests-v2-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-campaign-terms-and-conditions-acknowledgments-api
+  name: Partnerize Campaign Terms and Conditions Acknowledgments API
+  description: >-
+    Endpoints for retrieving and management the confirmations of changes existing campaign terms and conditions.
+    <br><br> Each change to a set of campaign terms and conditions are recoreded, these changes can be
+    flag as been acknowledged by a user by creating a campaign terms and conditions acknowledgment instances.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Campaign Terms and Conditions Acknowledgments
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-campaign-terms-and-conditions-acknowledgments-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-campaign-terms-and-conditions-api
+  name: Partnerize Campaign Terms and Conditions API
+  description: >-
+    The Campaign Terms and Conditions API from Partnerize — 3 operation(s) for campaign terms and conditions.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Campaign Terms and Conditions
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-campaign-terms-and-conditions-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-campaign-transaction-queries-api
+  name: Partnerize Campaign Transaction Queries API
+  description: >-
+    Transaction Queries (TQs) allow Partners to raise disputes about conversions with a Brand.
+
+    There are three types of Transaction Queries:
+
+    - Untracked: A conversion has not been tracked.
+
+    - Incorrect Commission: A conversion does not have the correct Partner commission value.
+
+    - Declined: The Brand has rejected a conversion.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Campaign Transaction Queries
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-campaign-transaction-queries-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-campaign-v3-api
+  name: Partnerize Campaign v3 API
+  description: The Campaign v3 API from Partnerize — 2 operation(s) for campaign v3.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Campaign v3
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-campaign-v3-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-campaigns-api
+  name: Partnerize Campaigns API
+  description: >-
+    A Campaign is owned by a Brand and a Brand may have multiple Campaigns. A Campaign represents an entity
+    which the Brand uses to represent something that they wish to allow Partners the chance to promote.
+    A Campaign dictates what products/events/conversions can be promoted, and lets the Partners understand
+    what Commission they would earn for generating sales/events/conversions. The Brand has complete control
+    over their Campaigns and dictates which Partners they accept onto the Campaign to promote their services.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Campaigns
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-campaigns-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-campaigns-v1-api
+  name: Partnerize Campaigns (v1) API
+  description: The Campaigns (v1) API from Partnerize — 1 operation(s) for campaigns (v1).
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Campaigns (v1)
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-campaigns-v1-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-clicks-api
+  name: Partnerize Clicks API
+  description: Endpoints for analysing click data
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Clicks
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-clicks-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-commission-groups-api
+  name: Partnerize Commission Groups API
+  description: The Commission Groups API from Partnerize — 1 operation(s) for commission groups.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Commission Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-commission-groups-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-commission-groups-v1-api
+  name: Partnerize Commission Groups (v1) API
+  description: >-
+    The Commission Groups (v1) API from Partnerize — 1 operation(s) for commission groups (v1).
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Commission Groups (v1)
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-commission-groups-v1-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-commissions-api
+  name: Partnerize Commissions API
+  description: Commissions
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Commissions
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-commissions-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-commissions-csv-download-api
+  name: Partnerize Commissions CSV Download API
+  description: Commissions CSV Download
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Commissions CSV Download
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-commissions-csv-download-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-communication-templates-api
+  name: Partnerize Communication Templates API
+  description: >-
+    The Communication Templates API from Partnerize — 3 operation(s) for communication templates.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Communication Templates
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-communication-templates-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-communications-api
+  name: Partnerize Communications API
+  description: The Communications API from Partnerize — 7 operation(s) for communications.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Communications
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-communications-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-conversion-metrics-api
+  name: Partnerize Conversion Metrics API
+  description: The Conversion Metrics API from Partnerize — 1 operation(s) for conversion metrics.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Conversion Metrics
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-conversion-metrics-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-conversion-types-api
+  name: Partnerize Conversion Types API
+  description: The Conversion Types API from Partnerize — 1 operation(s) for conversion types.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Conversion Types
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-conversion-types-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-conversions-api
+  name: Partnerize Conversions API
+  description: Endpoints for analysing conversion data
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Conversions
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-conversions-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-countries-api
+  name: Partnerize Countries API
+  description: The Countries API from Partnerize — 1 operation(s) for countries.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Countries
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-countries-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-creatives-api
+  name: Partnerize Creatives API
+  description: >-
+    A Brand may wish to offer pre-generated _Creative_ so that the Partners can advertise the Brand easily.
+    It is possible to categorise Creative with tags and there are 3 distinct Creative formats: Image,
+    HTML and Text. Brands can organise their Creatives in a flexible structure by using _Creative Tags_.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Creatives
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-creatives-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-creatives-v1-api
+  name: Partnerize Creatives (v1) API
+  description: The Creatives (v1) API from Partnerize — 2 operation(s) for creatives (v1).
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Creatives (v1)
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-creatives-v1-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-currencies-api
+  name: Partnerize Currencies API
+  description: The Currencies API from Partnerize — 1 operation(s) for currencies.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Currencies
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-currencies-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-currency-countries-api
+  name: Partnerize Currency countries API
+  description: The Currency countries API from Partnerize — 1 operation(s) for currency countries.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Currency countries
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-currency-countries-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-current-user-api
+  name: Partnerize Current User API
+  description: Endpoints for current User
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Current User
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-current-user-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-custom-terms-and-conditions-api
+  name: Partnerize Custom Terms and Conditions API
+  description: >-
+    Manage partner specific terms and conditions. You can use this group of endpoints to create custom
+    terms and conditions for certain partners.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Custom Terms and Conditions
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-custom-terms-and-conditions-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-databases-api
+  name: Partnerize Databases API
+  description: The Databases API from Partnerize — 2 operation(s) for databases.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Databases
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-databases-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-deals-api
+  name: Partnerize Deals API
+  description: >-
+    A Brand may want to offer a specific Deal to Partners on a specific Campaign. These Deals represent
+    a timed promotion which can be programmatically ingested into the Partner's platform and offered dynamically
+    to their user base.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Deals
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-deals-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-deep-link-domains-api
+  name: Partnerize Deep link domains API
+  description: Endpoints dealing with the management of tracking deep link domains
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Deep link domains
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-deep-link-domains-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-devices-api
+  name: Partnerize Devices API
+  description: The Devices API from Partnerize — 1 operation(s) for devices.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Devices
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-devices-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-discovery-settings-api
+  name: Partnerize Discovery Settings API
+  description: The Discovery Settings API from Partnerize — 1 operation(s) for discovery settings.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Discovery Settings
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-discovery-settings-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-exclusive-code-api
+  name: Partnerize Exclusive Code API
+  description: >-
+    Exclusive codes are assigned to a partner. If a partner’s exclusive code is redeemed, the partner
+    wins the sale - even if they don’t contribute any clicks.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Exclusive Code
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-exclusive-code-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-exports-api
+  name: Partnerize Exports API
+  description: >-
+    Depending on the query parameters, an export request may need to be processed asynchronously. When
+    that happens a background job will be automatically created, and the API response will describe the
+    job rather than the export (see [Jobs v1](#operation/get_job_v1)).
+
+
+    If the `complete_email` parameter has been set the export will be sent to the given address once the
+    background job is complete.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Exports
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-exports-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-feeds-v1-api
+  name: Partnerize Feeds (v1) API
+  description: The Feeds (v1) API from Partnerize — 1 operation(s) for feeds (v1).
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Feeds (v1)
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-feeds-v1-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-filter-sets-api
+  name: Partnerize Filter Sets API
+  description: The Filter Sets API from Partnerize — 1 operation(s) for filter sets.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Filter Sets
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-filter-sets-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-impressions-api
+  name: Partnerize Impressions API
+  description: Endpoints for analysing impression data
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Impressions
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-impressions-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-in-cart-api
+  name: Partnerize In-Cart API
+  description: >-
+    Define a period leading up to the time of purchase where clicks will be ignored and not attributed
+    with a commission. Helps prevent last-click poaching.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - In-Cart
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-in-cart-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-incidents-api
+  name: Partnerize Incidents API
+  description: The Incidents API from Partnerize — 7 operation(s) for incidents.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Incidents
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-incidents-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-invoices-api
+  name: Partnerize Invoices API
+  description: >-
+    So that Brands can receive payment for all approved conversion events they have generated across a
+    Brand's Campaigns, the Brand must raise an Invoice and send payment to Partnerize. Once the payment
+    has cleared, all funds will be deposited into the relevant Partner accounts.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Invoices
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-invoices-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-jobs-api
+  name: Partnerize Jobs API
+  description: The Jobs API from Partnerize — 6 operation(s) for jobs.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Jobs
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-jobs-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-jobs-v1-api
+  name: Partnerize Jobs (v1) API
+  description: The Jobs (v1) API from Partnerize — 1 operation(s) for jobs (v1).
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Jobs (v1)
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-jobs-v1-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-locales-api
+  name: Partnerize Locales API
+  description: The Locales API from Partnerize — 1 operation(s) for locales.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Locales
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-locales-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-meta-attributes-api
+  name: Partnerize Meta Attributes API
+  description: >-
+    Based on all tracked events, a real-time cache of currencies and non standard conversion and conversion
+    item
+
+    attributes are kept for all Campaigns and Partners. This endpoint can be used to determine what non
+    standard
+
+    data might appear in reports/exports and is also useful when building an external app which will display
+    Conversion data.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Meta Attributes
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-meta-attributes-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-meta-fields-api
+  name: Partnerize Meta Fields API
+  description: Meta Fields Endpoints
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Meta Fields
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-meta-fields-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-metrics-api
+  name: Partnerize Metrics API
+  description: The Metrics API from Partnerize — 1 operation(s) for metrics.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Metrics
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-metrics-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-my-brands-api
+  name: Partnerize My Brands API
+  description: Information about the brands the authenticated partner is associated with
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - My Brands
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-my-brands-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-network-partners-api
+  name: Partnerize Network Partners API
+  description: >-
+    A Brand can view all Partners who are created on their network. This endpoint is not specific to a
+    Campaign,
+
+    therefore it pools all available Partners who have been created or are able to access their Network.   ​
+
+    It is also possible to accept new Partners onto the Network, or to reject any approved or pending
+    Partners
+
+    from the Network. If a Partners is rejected from the Network, they will be automatically rejected
+    from all participating Campaigns.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Network Partners
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-network-partners-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-network-terms-and-conditions-acknowledgments-v3-api
+  name: Partnerize Network Terms and Conditions Acknowledgments (v3) API
+  description: >-
+    The Network Terms and Conditions Acknowledgments (v3) API from Partnerize — 1 operation(s) for network
+    terms and conditions acknowledgments (v3).
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Network Terms and Conditions Acknowledgments (v3)
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-network-terms-and-conditions-acknowledgments-v3-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-network-terms-and-conditions-api
+  name: Partnerize Network Terms and Conditions API
+  description: >-
+    Terms and conditions endpoint that returns terms and conditions that must be accepted by a partner
+    to join the network.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Network Terms and Conditions
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-network-terms-and-conditions-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-network-terms-and-conditions-v3-api
+  name: Partnerize Network Terms and Conditions (v3) API
+  description: >-
+    The Network Terms and Conditions (v3) API from Partnerize — 1 operation(s) for network terms and conditions
+    (v3).
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Network Terms and Conditions (v3)
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-network-terms-and-conditions-v3-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-networks-api
+  name: Partnerize Networks API
+  description: >-
+    All API calls are contextual to the User that is making the request, and all User accounts are associated
+    with the
+
+    Network that they are created on. Each network has a unique `application_user_key`.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Networks
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-networks-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-paid-search-violations-api
+  name: Partnerize Paid Search Violations API
+  description: >-
+    The Paid Search Violations API from Partnerize — 2 operation(s) for paid search violations.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Paid Search Violations
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-paid-search-violations-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-participating-partners-api
+  name: Partnerize Participating Partners API
+  description: >-
+    Before Partners can generate conversions for a Campaign, they must be approved to do so. A Partner
+    can apply to
+
+    be part of a Campaign, or the Brand can choose to add the Partner(s) of their choice to their own
+    Campaign.
+
+    Furthermore, if a Brand has stipulated their own unique set of Campaign Terms and Conditions, the
+    Partner
+
+    must explicitly agree to these if they are to be fully approved on the Campaign.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Participating Partners
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-participating-partners-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-participations-api
+  name: Partnerize Participations API
+  description: The Participations API from Partnerize — 1 operation(s) for participations.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Participations
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-participations-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-partner-clicks-api
+  name: Partnerize Partner Clicks API
+  description: The Partner Clicks API from Partnerize — 1 operation(s) for partner clicks.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Partner Clicks
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-partner-clicks-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-partner-commissions-api
+  name: Partnerize Partner Commissions API
+  description: Partner Commissions Endpoints
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Partner Commissions
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-partner-commissions-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-partner-conversions-api
+  name: Partnerize Partner Conversions API
+  description: The Partner Conversions API from Partnerize — 1 operation(s) for partner conversions.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Partner Conversions
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-partner-conversions-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-partner-details-api
+  name: Partnerize Partner Details API
+  description: The Partner Details API from Partnerize — 1 operation(s) for partner details.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Partner Details
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-partner-details-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-partner-groups-api
+  name: Partnerize Partner Groups API
+  description: >-
+    A Campaign owner can organise Partners into Partner Groups, also known as Commission Groups. These
+    Groups can be used for Reporting purposes, Commission offers and Voucher Code allocation.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Partner Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-partner-groups-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-partner-payable-api
+  name: Partnerize Partner Payable API
+  description: The Partner Payable API from Partnerize — 1 operation(s) for partner payable.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Partner Payable
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-partner-payable-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-partner-whitelisting-api
+  name: Partnerize Partner Whitelisting API
+  description: The Partner Whitelisting API from Partnerize — 1 operation(s) for partner whitelisting.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Partner Whitelisting
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-partner-whitelisting-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-partnerize-tag-features-api
+  name: Partnerize Partnerize Tag Features API
+  description: >-
+    Partnerize Tag features are what power the Partnerize Tag, delivering Partnerize functionality to
+    websites through the Partnerize Tag. <br><br> Partnerize Tag Features come in all shapes and sizes
+    depending on the intended use case. <br><br> To find out more about Partnerize Tag Features and how
+    they can be used, head over to the [Partnerize Help Hub](https://help.phgsupport.com/hc/en-us).
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Partnerize Tag Features
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-partnerize-tag-features-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-partnerize-tags-api
+  name: Partnerize Partnerize Tags API
+  description: >-
+    Partnerize Tags allow the creation, management and automated serving of various Partnerize features
+    into websites. <br><br> All generated Partnerize Tags include a `url` of which can be embedded into
+    websites to serve back the enabled features of that tag in JavaScript content. <br><br> Partnerize
+    Tags only need to be integrated once, allowing features of the tag to be updated at any time using
+    the Partnerize Tags APIs. <br><br> To view available features of the Partnerize Tag, use the [List
+    Partnerize Tag Features](#operation/listPartnerizeTagFeatures) API.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Partnerize Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-partnerize-tags-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-partnership-models-api
+  name: Partnerize Partnership Models API
+  description: The Partnership Models API from Partnerize — 1 operation(s) for partnership models.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Partnership Models
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-partnership-models-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-payment-details-api
+  name: Partnerize Payment Details API
+  description: The Payment Details API from Partnerize — 1 operation(s) for payment details.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Payment Details
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-payment-details-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-placeholders-api
+  name: Partnerize Placeholders API
+  description: The Placeholders API from Partnerize — 1 operation(s) for placeholders.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Placeholders
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-placeholders-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-platform-communications-api
+  name: Partnerize Platform Communications API
+  description: >-
+    The Platform Communications API from Partnerize — 5 operation(s) for platform communications.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Platform Communications
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-platform-communications-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-preferred-partner-api
+  name: Partnerize Preferred Partner API
+  description: >-
+    Campaigns can have one preferred partner at any time. A sale will be attributed to a preferred partner
+    if they contribute any clicks to that sale.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Preferred Partner
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-preferred-partner-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-product-feeds-api
+  name: Partnerize Product Feeds API
+  description: >-
+    A Brand may want to offer a selection of Product Feeds to their Partners on a specific Campaign.
+
+    When a Product Feed is created, it will be periodically downloaded and parsed for all Partners who
+    participate on the Campaign to ensure their tracking links are inserted for all anchor links within
+    the Product Feed.
+
+    Any text based file format is supported.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Product Feeds
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-product-feeds-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-promotional-commissions-api
+  name: Partnerize Promotional Commissions API
+  description: Promotional Commission Endpoints
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Promotional Commissions
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-promotional-commissions-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-promotional-methods-api
+  name: Partnerize Promotional Methods API
+  description: The Promotional Methods API from Partnerize — 1 operation(s) for promotional methods.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Promotional Methods
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-promotional-methods-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-publishers-api
+  name: Partnerize Publishers API
+  description: Partner management endpoints
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Publishers
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-publishers-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-reporting-on-meta-data-api
+  name: Partnerize Reporting on Meta data API
+  description: >-
+    Reporting Meta is functionality that allows Brands to generate reports based on specific meta data.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Reporting on Meta data
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-reporting-on-meta-data-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-saved-reports-api
+  name: Partnerize Saved Reports API
+  description: >-
+    Manage sets of filters for reporting. Those can be saved for either a single campaign or a campaign
+    group.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Saved Reports
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-saved-reports-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-self-billing-api
+  name: Partnerize Self-billing API
+  description: >-
+    Once funds have been received from the Brand, Partnerize will allocate all Commissions to the relevant
+    Partners.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Self-billing
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-self-billing-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-split-api
+  name: Partnerize Split API
+  description: >-
+    Split all CPA commissions between the initiator (first click), contributors (supporting click) and
+    convertor (last click) in the click chain.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Split
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-split-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-summary-api
+  name: Partnerize Summary API
+  description: The Summary API from Partnerize — 1 operation(s) for summary.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Summary
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-summary-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-suppressed-code-api
+  name: Partnerize Suppressed Code API
+  description: >-
+    Suppressed codes are assigned to a campaign. If a suppressed code is matched, the sale is no longer
+    rewarded - even if there are supporting clicks.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Suppressed Code
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-suppressed-code-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-terms-and-conditions-api
+  name: Partnerize Terms and Conditions API
+  description: The Terms and Conditions API from Partnerize — 2 operation(s) for terms and conditions.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Terms and Conditions
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-terms-and-conditions-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-tiered-commissions-api
+  name: Partnerize Tiered Commissions API
+  description: The Tiered Commissions API from Partnerize — 1 operation(s) for tiered commissions.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Tiered Commissions
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-tiered-commissions-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-tiers-api
+  name: Partnerize Tiers API
+  description: Commission Tiers Endpoints
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Tiers
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-tiers-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-timezones-api
+  name: Partnerize Timezones API
+  description: The Timezones API from Partnerize — 1 operation(s) for timezones.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Timezones
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-timezones-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-tracking-links-api
+  name: Partnerize Tracking Links API
+  description: The Tracking Links API from Partnerize — 2 operation(s) for tracking links.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Tracking Links
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-tracking-links-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-traffic-sources-api
+  name: Partnerize Traffic Sources API
+  description: The Traffic Sources API from Partnerize — 1 operation(s) for traffic sources.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Traffic Sources
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-traffic-sources-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-transaction-queries-api
+  name: Partnerize Transaction Queries API
+  description: The Transaction Queries API from Partnerize — 3 operation(s) for transaction queries.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Transaction Queries
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-transaction-queries-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-transaction-query-reasons-api
+  name: Partnerize Transaction Query Reasons API
+  description: >-
+    The Transaction Query Reasons API from Partnerize — 2 operation(s) for transaction query reasons.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Transaction Query Reasons
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-transaction-query-reasons-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-us-states-api
+  name: Partnerize US States API
+  description: The US States API from Partnerize — 1 operation(s) for us states.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - US States
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-us-states-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-user-contexts-api
+  name: Partnerize User Contexts API
+  description: The User Contexts API from Partnerize — 1 operation(s) for user contexts.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - User Contexts
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-user-contexts-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-verticals-api
+  name: Partnerize Verticals API
+  description: The Verticals API from Partnerize — 1 operation(s) for verticals.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Verticals
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-verticals-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-voucher-codes-api
+  name: Partnerize Voucher Codes API
+  description: >-
+    A Voucher references a coupon code, or voucher code which the Brand offers to their customers to usually
+    perform a price discount at the end of the transaction. Specific rules can be set to defined Vouchers
+    ensuring that only valid codes can be used and can also be restricted to specific Partners.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Voucher Codes
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-voucher-codes-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-voucher-codes-v1-api
+  name: Partnerize Voucher Codes (v1) API
+  description: The Voucher Codes (v1) API from Partnerize — 1 operation(s) for voucher codes (v1).
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Voucher Codes (v1)
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-voucher-codes-v1-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-voucher-commissions-api
+  name: Partnerize Voucher Commissions API
+  description: Voucher Commission Endpoints
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Voucher Commissions
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-voucher-commissions-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-website-types-api
+  name: Partnerize Website Types API
+  description: The Website Types API from Partnerize — 1 operation(s) for website types.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Website Types
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-website-types-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
+- aid: partnerize:partnerize-websites-api
+  name: Partnerize Websites API
+  description: The Websites API from Partnerize — 2 operation(s) for websites.
+  humanURL: https://api-docs.partnerize.com/brand/
+  baseURL: https://api.partnerize.com
+  tags:
+  - Websites
+  properties:
+  - type: OpenAPI
+    url: openapi/partnerize-websites-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.partnerize.com/partner/
+  - type: JSONSchema
+    url: json-schema/partnerize-partners-api-schema.json
 common:
 - type: AgenticAccess
   url: agentic-access/partnerize-agentic-access.yml

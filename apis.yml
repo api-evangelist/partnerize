@@ -1,8 +1,13 @@
 aid: partnerize
 name: Partnerize
-description: Affiliate and partner marketing platform with a REST API for managing
-  publisher partnerships, tracking sales, processing commissions, and accessing performance
-  analytics.
+description: Partnerize is a partnership-automation platform for affiliate, influencer
+  and performance marketing, used by brands to discover and recruit partners, track
+  clicks and conversions, calculate and pay commissions, guard against fraud, and report
+  on channel performance. Its API is built API-first — the Partnerize console runs on top
+  of it — and is published as two OpenAPI documents, a Brands API and a Partners API,
+  covering 327 operations across three concurrent versions (v1, v2 and v3) on
+  api.partnerize.com, authenticated with HTTP Basic over an application key and a user
+  API key.
 type: Index
 accessModel:
   pricing: unknown
@@ -19,7 +24,7 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/partnerize.png
 url: https://raw.githubusercontent.com/api-evangelist/partnerize/refs/heads/main/apis.yml
 created: '2026-06-13'
-modified: '2026-06-13'
+modified: '2026-08-13'
 specificationVersion: '0.19'
 tags:
 - Affiliate Marketing
@@ -49,6 +54,8 @@ apis:
     url: https://api-docs.partnerize.com/brand/
   - type: OpenAPI
     url: openapi/partnerize-brands-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-brands-overlay.yaml
   - type: JSONSchema
     url: json-schema/partnerize-brands-api-schema.json
   - url: graphql/partnerize-graphql.md
@@ -71,6 +78,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-attribution-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-attribution-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -85,6 +94,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-available-commission-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-available-commission-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -99,6 +110,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-brand-clicks-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-brand-clicks-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -113,6 +126,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-brand-conversions-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-brand-conversions-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -127,6 +142,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-brand-discovery-v2-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-brand-discovery-v2-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -141,6 +158,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-campaign-conversions-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-campaign-conversions-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -156,6 +175,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-campaign-extra-fields-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-campaign-extra-fields-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -170,6 +191,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-campaign-group-campaigns-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-campaign-group-campaigns-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -185,6 +208,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-campaign-invitations-v2-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-campaign-invitations-v2-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -200,6 +225,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-campaign-references-v1-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-campaign-references-v1-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -215,6 +242,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-campaign-requests-and-invites-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-campaign-requests-and-invites-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -230,6 +259,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-campaign-requests-v2-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-campaign-requests-v2-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -247,6 +278,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-campaign-terms-and-conditions-acknowledgments-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-campaign-terms-and-conditions-acknowledgments-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -262,6 +295,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-campaign-terms-and-conditions-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-campaign-terms-and-conditions-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -285,6 +320,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-campaign-transaction-queries-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-campaign-transaction-queries-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -299,6 +336,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-campaign-v3-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-campaign-v3-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -318,6 +357,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-campaigns-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-campaigns-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -332,6 +373,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-campaigns-v1-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-campaigns-v1-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -346,6 +389,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-clicks-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-clicks-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -360,6 +405,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-commission-groups-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-commission-groups-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -375,6 +422,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-commission-groups-v1-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-commission-groups-v1-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -389,6 +438,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-commissions-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-commissions-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -403,6 +454,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-commissions-csv-download-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-commissions-csv-download-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -418,6 +471,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-communication-templates-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-communication-templates-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -432,6 +487,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-communications-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-communications-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -446,6 +503,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-conversion-metrics-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-conversion-metrics-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -460,6 +519,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-conversion-types-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-conversion-types-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -474,6 +535,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-conversions-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-conversions-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -488,6 +551,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-countries-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-countries-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -505,6 +570,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-creatives-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-creatives-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -519,6 +586,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-creatives-v1-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-creatives-v1-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -533,6 +602,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-currencies-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-currencies-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -547,6 +618,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-currency-countries-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-currency-countries-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -561,6 +634,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-current-user-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-current-user-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -577,6 +652,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-custom-terms-and-conditions-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-custom-terms-and-conditions-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -591,6 +668,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-databases-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-databases-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -608,6 +687,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-deals-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-deals-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -622,6 +703,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-deep-link-domains-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-deep-link-domains-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -636,6 +719,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-devices-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-devices-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -650,6 +735,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-discovery-settings-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-discovery-settings-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -666,6 +753,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-exclusive-code-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-exclusive-code-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -687,6 +776,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-exports-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-exports-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -701,6 +792,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-feeds-v1-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-feeds-v1-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -715,6 +808,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-filter-sets-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-filter-sets-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -729,6 +824,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-impressions-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-impressions-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -745,6 +842,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-in-cart-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-in-cart-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -759,6 +858,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-incidents-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-incidents-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -776,6 +877,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-invoices-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-invoices-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -790,6 +893,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-jobs-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-jobs-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -804,6 +909,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-jobs-v1-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-jobs-v1-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -818,6 +925,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-locales-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-locales-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -840,6 +949,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-meta-attributes-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-meta-attributes-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -854,6 +965,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-meta-fields-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-meta-fields-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -868,6 +981,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-metrics-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-metrics-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -882,6 +997,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-my-brands-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-my-brands-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -906,6 +1023,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-network-partners-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-network-partners-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -922,6 +1041,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-network-terms-and-conditions-acknowledgments-v3-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-network-terms-and-conditions-acknowledgments-v3-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -938,6 +1059,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-network-terms-and-conditions-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-network-terms-and-conditions-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -954,6 +1077,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-network-terms-and-conditions-v3-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-network-terms-and-conditions-v3-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -972,6 +1097,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-networks-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-networks-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -987,6 +1114,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-paid-search-violations-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-paid-search-violations-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1011,6 +1140,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-participating-partners-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-participating-partners-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1025,6 +1156,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-participations-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-participations-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1039,6 +1172,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-partner-clicks-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-partner-clicks-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1053,6 +1188,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-partner-commissions-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-partner-commissions-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1067,6 +1204,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-partner-conversions-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-partner-conversions-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1081,6 +1220,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-partner-details-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-partner-details-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1097,6 +1238,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-partner-groups-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-partner-groups-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1111,6 +1254,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-partner-payable-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-partner-payable-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1125,6 +1270,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-partner-whitelisting-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-partner-whitelisting-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1143,6 +1290,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-partnerize-tag-features-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-partnerize-tag-features-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1163,6 +1312,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-partnerize-tags-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-partnerize-tags-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1177,6 +1328,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-partnership-models-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-partnership-models-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1191,6 +1344,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-payment-details-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-payment-details-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1205,6 +1360,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-placeholders-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-placeholders-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1220,6 +1377,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-platform-communications-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-platform-communications-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1236,6 +1395,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-preferred-partner-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-preferred-partner-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1257,6 +1418,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-product-feeds-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-product-feeds-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1271,6 +1434,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-promotional-commissions-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-promotional-commissions-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1285,6 +1450,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-promotional-methods-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-promotional-methods-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1299,6 +1466,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-publishers-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-publishers-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1314,6 +1483,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-reporting-on-meta-data-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-reporting-on-meta-data-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1330,6 +1501,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-saved-reports-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-saved-reports-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1346,6 +1519,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-self-billing-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-self-billing-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1362,6 +1537,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-split-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-split-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1376,6 +1553,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-summary-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-summary-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1392,6 +1571,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-suppressed-code-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-suppressed-code-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1406,6 +1587,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-terms-and-conditions-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-terms-and-conditions-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1420,6 +1603,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-tiered-commissions-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-tiered-commissions-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1434,6 +1619,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-tiers-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-tiers-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1448,6 +1635,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-timezones-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-timezones-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1462,6 +1651,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-tracking-links-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-tracking-links-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1476,6 +1667,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-traffic-sources-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-traffic-sources-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1490,6 +1683,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-transaction-queries-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-transaction-queries-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1505,6 +1700,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-transaction-query-reasons-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-transaction-query-reasons-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1519,6 +1716,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-us-states-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-us-states-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1533,6 +1732,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-user-contexts-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-user-contexts-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1547,6 +1748,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-verticals-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-verticals-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1564,6 +1767,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-voucher-codes-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-voucher-codes-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1578,6 +1783,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-voucher-codes-v1-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-voucher-codes-v1-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1592,6 +1799,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-voucher-commissions-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-voucher-commissions-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1606,6 +1815,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-website-types-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-website-types-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1620,6 +1831,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/partnerize-websites-api-openapi.yml
+  - type: Overlay
+    url: overlays/partnerize-websites-overlay.yaml
   - type: Documentation
     url: https://api-docs.partnerize.com/partner/
   - type: JSONSchema
@@ -1659,6 +1872,57 @@ common:
   url: rate-limits/partnerize-rate-limits.yml
 - type: FinOps
   url: finops/partnerize-finops.yml
+- type: DeveloperPortal
+  url: https://api-docs.partnerize.com/
+- type: APIReference
+  url: https://api-docs.partnerize.com/brand/
+- type: GettingStarted
+  url: https://api-docs.partnerize.com/brand/#section/Quick-Start
+- type: Support
+  url: https://partnerize.com/contact
+- type: SignUp
+  url: https://signup.partnerize.com/signup/en
+- type: Login
+  url: https://console.partnerize.com
+- type: TermsOfService
+  url: https://partnerize.com/legal/terms
+- type: PrivacyPolicy
+  url: https://partnerize.com/legal/privacy-policy
+- type: GitHubOrganization
+  url: https://github.com/performancehorizongroup
+- type: Packages
+  url: packages/partnerize-packages.yml
+- type: SDKs
+  url: packages/partnerize-packages.yml
+- type: LLMsTxt
+  url: llms/partnerize-llms.txt
+- type: Authentication
+  url: authentication/partnerize-authentication.yml
+- type: Conventions
+  url: conventions/partnerize-conventions.yml
+- type: ErrorCatalog
+  url: errors/partnerize-problem-types.yml
+- type: ErrorCodes
+  url: errors/partnerize-error-codes.yml
+- type: Lifecycle
+  url: lifecycle/partnerize-lifecycle.yml
+- type: Deprecation
+  url: https://api-docs.partnerize.com/brand/#section/API-Change-Management-Policy
+- type: ChangeLog
+  url: changelog/partnerize-changelog.yml
+- type: Conformance
+  url: conformance/partnerize-conformance.yml
+- type: DataModel
+  url: data-model/partnerize-data-model.yml
+- type: MCPServer
+  url: mcp/partnerize-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-08-13'
+  status: enriched
+  artifacts_added: 121
+  pass: local-v1

@@ -1,0 +1,57 @@
+# Partnerize llms.txt
+Last updated: 2025-10-20
+The XML sitemap of this website can be found [here](https://partnerize.com/sitemap_index.xml).
+
+> Partnerize is an AI-powered affiliate / partnership automation platform that helps businesses manage, track, and pay their online sales partners, affiliates, and influencers.
+
+## Pages
+- [Company](https://partnerize.com/company): We power profitable growth for marketers through advanced technology, brand protection, and a comprehensive service practice.
+- [Contact](https://partnerize.com/contact): Contact Partnerize to learn more about our partner automation platform and comprehensive service practice.
+- [Terms](https://partnerize.com/legal/terms): Legal terms governing use of the platform.
+- [Privacy Statement](https://partnerize.com/legal/privacy-policy): This Privacy Policy describes the information we collect, how it may be used, and with whom it may be shared.
+- [Home](https://partnerize.com/): Partnerize is an AI-powered affiliate / partnership automation platform.
+- [Platform](https://partnerize.com/platform): Partnerize offers a simplified end-to-end partnership automation toolset.
+- [Discover](https://partnerize.com/platform/discover): Automated, data-driven partner discovery, recruitment, and optimization.
+- [Track](https://partnerize.com/platform/track): Capture data to maximize channel growth.
+- [Manage](https://partnerize.com/platform/manage): Flexible communication, collaboration, and commissioning.
+- [Measure](https://partnerize.com/platform/measure): Automation and reporting tools for partnership optimization.
+- [Pay](https://partnerize.com/platform/pay): Effortless payment process execution.
+- [Protect](https://partnerize.com/platform/protect): Brand safety and fraud prevention.
+- [Integrations](https://partnerize.com/integrations): Ecommerce platform plugins and integrations.
+- [Services](https://partnerize.com/services): Overview of Partnerize services.
+- [Marketers](https://partnerize.com/marketers): Solutions for marketers.
+- [Retail](https://partnerize.com/marketers/retail): Retail partnership solutions.
+- [Travel](https://partnerize.com/marketers/travel): Travel partnership solutions.
+- [Finance](https://partnerize.com/marketers/finance): Financial services partnership solutions.
+- [Partners](https://partnerize.com/partners): Access to partnership programs.
+- [Affiliates](https://partnerize.com/partners/affiliates): Affiliate program details.
+- [Influencer](https://partnerize.com/partners/influencer): Influencer partnership opportunities.
+- [Content](https://partnerize.com/partners/content): Performance partnership resources.
+- [Agencies](https://partnerize.com/agencies): Technology for agencies.
+- [Resources](https://partnerize.com/resources): Guides, webinars, and tutorials.
+- [Events](https://partnerize.com/resources/events): Partnerize events.
+- [Blog](https://partnerize.com/resources/blog): Affiliate Marketing and Partnerships Blog.
+- [Calculator](https://partnerize.com/partner-program-assessment-retail-edition-intro): Partner Program Assessment tool for retailers.
+- [Leadership](https://partnerize.com/company/leadership): Meet the Partnerize team.
+- [Careers](https://partnerize.com/company/careers): Careers at Partnerize.
+- [Referral Program](https://partnerize.com/partnerize-referral-program): Referral program details.
+- [Press](https://partnerize.com/company/press): News and press releases.
+- [Why Partnerize?](https://partnerize.com/why-partnerize): Reasons to choose Partnerize.
+- [Why Partnerships?](https://partnerize.com/why-partnerships): Value of partnerships.
+- [Pricing](https://partnerize.com/pricing): Pricing information.
+- [Log in](https://console.partnerize.com): Client login portal for existing users of the Partnerize platform.
+
+## Blog Posts
+Featured blog articles:
+- [The 10 Best Australian Affiliate Programs](https://partnerize.com/resources/blog/the-10-best-australian-affiliate-programs)
+- [The Best Affiliate Programs in the USA](https://partnerize.com/resources/blog/the-best-affiliate-programs-in-the-usa)
+- [The Best Affiliate Programs in the UK](https://partnerize.com/resources/blog/the-best-affiliate-programs-in-the-uk)
+- [Best Affiliate Programs in Dubai](https://partnerize.com/resources/blog/best-affiliate-programs-in-dubai)
+- [B2B Partner Marketing Strategies That Drive Sales](https://partnerize.com/resources/blog/b2b-partner-marketing-strategies-that-drive-sales)
+
+## Learning Resource Types
+- [Articles](https://partnerize.com/resources/type/articles): In-depth articles.
+- [eGuides](https://partnerize.com/resources/type/eguides): Downloadable guides.
+- [Releases](https://partnerize.com/resources/type/releases): Product and company releases.
+- [Videos](https://partnerize.com/resources/type/videos): Video resources.
+- [Case Studies](https://partnerize.com/resources/type/case-studies): Success stories and case studies.

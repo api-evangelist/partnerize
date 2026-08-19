@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Placeholders API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Placeholders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Placeholders list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/communication-placeholders"
+          },
+          "docs": "Returns a list of all available placeholders"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

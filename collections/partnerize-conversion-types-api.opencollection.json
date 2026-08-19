@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Conversion Types API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Conversion Types",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Conversion Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/reference/conversion_type"
+          },
+          "docs": "List all the conversion types."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

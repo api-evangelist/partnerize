@@ -1,0 +1,209 @@
+generated: '2026-08-13'
+method: derived
+source: openapi/*.yml
+docs: https://api-docs.partnerize.com/brand/
+name: Partnerize Data Model
+description: >-
+  Entity-relationship graph for the Partnerize platform, derived from the 169
+  components.schemas and the path hierarchy across the 104 OpenAPI documents in openapi/.
+  Partnerize's model is a containment tree — Network contains Campaigns, a Campaign is
+  joined by Partners through a Participation, and everything measurable (Click, Conversion,
+  Commission) hangs off that join. Relationships below are read from path nesting and from
+  id-reference fields, not from $ref links: the published schemas are mostly flat and
+  reference each other by id rather than by embedding, so the graph is implicit in the URL
+  structure.
+id_conventions:
+  format: >-
+    Partnerize ids are short opaque alphanumeric strings containing digits and lowercase
+    letters (e.g. campaign 111111l1, job 111111l11, user 1111l111). They are not UUIDs and
+    not integers, though several v1 resources (network_id, invoice ids) use plain integers.
+  note: >-
+    There are no type prefixes. A bare id string carries no indication of which entity it
+    belongs to, so a caller must track entity type alongside every identifier.
+entities:
+  - name: Network
+    schema: Network
+    id: network_id
+    type: integer
+    root: true
+    description: >-
+      The top-level tenancy. A network owns campaigns, partners and users, and the
+      application_key half of every API credential identifies which network the request is
+      made against.
+    key_fields: [network_id, network_name, network_application_id, auto_approve_publishers, default_campaign_id, network_locale, network_contact_email]
+  - name: Brand
+    schema: Brand_Account
+    aliases: [Advertiser]
+    description: >-
+      The advertiser side of a partnership. Legacy v1 paths call this an advertiser
+      (/user/advertiser/{advertiser_id}); v3 calls the context /v3/brand.
+  - name: Campaign
+    schema: Campaign
+    id: campaign_id
+    description: >-
+      A brand's partner program. The central object of the model — voucher codes,
+      creatives, product feeds, deals, commissions, terms and conditions, transaction
+      queries and every reporting surface are all scoped to a campaign.
+    key_fields: [campaign_id, status, testMode, hidden, shown]
+  - name: Partner
+    schema: Publisher
+    aliases: [Publisher]
+    id: publisher_id
+    description: >-
+      The publisher, affiliate, influencer or content partner promoting a campaign. Older
+      endpoints say publisher; current terminology is partner. Both appear in live paths.
+  - name: Participation
+    schema: Publisher_Wrapper
+    description: >-
+      The join between a Campaign and a Partner, addressed at
+      /campaign/{campaign_id}/publisher/{publisher_id}. Carries approval status and is what
+      commissions, tracking links and reporting are actually scoped by.
+  - name: PartnerGroup
+    description: A named grouping of partners within a campaign, used to target commissions and communications.
+  - name: PartnerCollection
+    description: A network-level named set of partners (/v2/networks/{network_id}/partner-collections).
+  - name: Commission
+    schema: Commission_Group
+    id: commissionId
+    description: >-
+      The rule that converts a conversion into money owed to a partner. Supports tiers,
+      promotional and voucher variants, migration between structures, and retirement.
+    key_fields: [commissionId, campaignId, publisherId]
+  - name: Click
+    schema: Click
+    description: >-
+      A tracked click on a partner's tracking link. Queryable through the v3 analytics
+      surface and exportable as CSV.
+  - name: Conversion
+    schema: Conversion_Data
+    description: >-
+      A tracked sale or event attributed to a partner. Carries conversion items (basket
+      lines), a conversion type, a status and metrics.
+  - name: ConversionItem
+    schema: Conversion_Item
+    description: A single basket line within a conversion.
+  - name: TrackingLink
+    schema: Link
+    id: link_id
+    description: The partner-specific destination URL that generates clicks and carries the click reference.
+  - name: VoucherCode
+    schema: Voucher_Code
+    description: A campaign voucher/discount code, optionally exclusive to one partner and attracting its own commission rules.
+  - name: Creative
+    schema: Creative
+    description: A banner or other creative asset a partner can place, grouped by creative tags.
+  - name: ProductFeed
+    schema: Feed
+    description: A product data feed a partner can consume to build content.
+  - name: Deal
+    schema: Deal
+    id: deal_id
+    description: A time-bounded campaign offer surfaced to partners.
+  - name: TermsAndConditions
+    schema: Term
+    description: Campaign, network and custom terms documents, plus their per-partner acknowledgements.
+  - name: TransactionQuery
+    schema: Transaction_Query
+    description: >-
+      A dispute raised against a conversion, with a reason, a type and a state history —
+      the object behind the partner-dispute workflow.
+  - name: Invoice
+    schema: Invoice
+    id: invoice_id
+    description: A brand-facing invoice for platform fees and partner commissions.
+  - name: PaymentDetails
+    schema: Payment_Details
+    description: >-
+      A partner's payout instrument. This is the most sensitive object in the model —
+      the published validation constraints include IBAN country/character/checksum and BIC
+      bank-code checks, so real bank identifiers pass through this surface.
+  - name: SelfBill
+    schema: Selfbill
+    description: The self-billing invoice Partnerize raises on a partner's behalf.
+  - name: Job
+    id: jobID
+    description: >-
+      An asynchronous batch operation (bulk conversion create/update, exports), with tasks,
+      percentage_complete, and a replay operation.
+  - name: FraudIncident
+    schema: Fraud_Incident_Base
+    description: >-
+      A brand-safety or fraud event detected on a campaign, with typed metrics (basket,
+      conversion value, time-to-conversion, IP address, partner).
+  - name: SavedReport
+    schema: Brand_Filter_Set
+    description: A stored filter set over the reporting surface, scoped to a campaign group.
+  - name: MetaField
+    description: Customer-defined custom fields, with Meta Attributes and their own reporting surface.
+  - name: Website
+    schema: Publisher_Website
+    description: A partner's registered promotional website, typed by Website Type and Promotional Method.
+  - name: Communication
+    description: Platform and campaign messaging to partners, built from communication templates and placeholders.
+relationships:
+  - {from: Network, to: Campaign, type: has_many, via: 'path /network/{network_id} → /campaign'}
+  - {from: Network, to: Partner, type: has_many, via: 'GET /network/{network_id}/publisher'}
+  - {from: Network, to: PartnerCollection, type: has_many, via: '/v2/networks/{network_id}/partner-collections'}
+  - {from: Network, to: TermsAndConditions, type: has_many, via: 'network terms and conditions (v1 and v3)'}
+  - {from: Brand, to: Campaign, type: has_many, via: 'GET /user/advertiser/{advertiser_id}/campaign'}
+  - {from: Brand, to: Invoice, type: has_many, via: 'GET /user/advertiser/{advertiser_id}/invoice'}
+  - {from: Campaign, to: Participation, type: has_many, via: '/campaign/{campaign_id}/publisher'}
+  - {from: Participation, to: Partner, type: belongs_to, via: publisher_id}
+  - {from: Participation, to: Campaign, type: belongs_to, via: campaign_id}
+  - {from: Campaign, to: Commission, type: has_many, via: '/v2/campaigns/{campaignId}/commissions'}
+  - {from: Commission, to: Partner, type: has_many, via: '/v2/campaigns/{campaignId}/publishers/{publisherId}/commissions'}
+  - {from: Campaign, to: VoucherCode, type: has_many, via: '/campaign/{campaign_id}/voucher_code'}
+  - {from: Campaign, to: Creative, type: has_many, via: '/campaign/{campaign_id}/creative'}
+  - {from: Creative, to: Creative, type: has_many, via: 'creative tags (/campaign/{campaign_id}/creative/tags)'}
+  - {from: Campaign, to: ProductFeed, type: has_many, via: '/campaign/{campaign_id}/feed'}
+  - {from: Campaign, to: Deal, type: has_many, via: '/campaign/{campaign_id}/deal'}
+  - {from: Campaign, to: TermsAndConditions, type: has_many, via: 'campaign terms and conditions + acknowledgments'}
+  - {from: Campaign, to: TransactionQuery, type: has_many, via: '/campaign transaction queries'}
+  - {from: Campaign, to: FraudIncident, type: has_many, via: '/v2/campaigns/{campaign_id}/fraud/metrics'}
+  - {from: Campaign, to: MetaField, type: has_many, via: 'campaign extra fields and meta fields'}
+  - {from: Partner, to: TrackingLink, type: has_many, via: '/v2/publishers/{publisher_id}/links'}
+  - {from: TrackingLink, to: Click, type: has_many, via: 'clickref generated on click'}
+  - {from: Click, to: Conversion, type: has_one, via: 'click reference carried into the conversion (clickref)'}
+  - {from: Conversion, to: ConversionItem, type: has_many, via: 'conversion_items collection on the conversion'}
+  - {from: Conversion, to: ConversionType, type: belongs_to, via: conversion type}
+  - {from: Conversion, to: Commission, type: has_many, via: 'commission calculated per conversion'}
+  - {from: Conversion, to: TransactionQuery, type: has_many, via: 'a dispute is raised against a conversion'}
+  - {from: TransactionQuery, to: TransactionQueryState, type: has_many, via: Transaction_Query_State_History}
+  - {from: Partner, to: PaymentDetails, type: has_one, via: partner payment details}
+  - {from: Partner, to: SelfBill, type: has_many, via: self-billing}
+  - {from: Partner, to: Website, type: has_many, via: partner websites}
+  - {from: Website, to: WebsiteType, type: belongs_to, via: website type reference}
+  - {from: Website, to: PromotionalMethod, type: belongs_to, via: promotional method reference}
+  - {from: Partner, to: PartnerGroup, type: has_many, via: campaign partner groups}
+  - {from: Job, to: Task, type: has_many, via: 'GET /v3/jobs/{jobID}/tasks'}
+  - {from: Campaign, to: Job, type: has_many, via: 'bulk conversion operations return a job id'}
+  - {from: SavedReport, to: Campaign, type: belongs_to, via: campaign group filter set}
+reference_data:
+  description: >-
+    Read-only lookup collections shared across the model. Every one is its own API entry in
+    apis.yml, which is why the catalog carries 104 API entries for what is really two
+    published documents.
+  entities: [Country, Currency, Currency_Country, Locale, Timezone, US_State, Vertical, Device, Traffic_Source, Website_Type, Promotional_Method, Partnership_Model, Conversion_Type, Conversion_Status, Conversion_Metric, Transaction_Query_Reason, Transaction_Query_Type, Legal_Entities]
+analytics_surface:
+  description: >-
+    The v3 analytics surface is a separate projection over Click and Conversion rather than
+    a set of entities. Four verbs — count, filter, explode, timeseries — are offered
+    symmetrically for both, and symmetrically for both audience contexts (/v3/brand and
+    /v3/partner), which is where the duplicate operationIds in the catalog come from
+    (postConversionsFilter exists once under brand and once under partner).
+  overview_schemas: [Brand_Overview_*, Partner_Overview_*]
+  dimensions: [adref, agent, context, country, creative, custref, device, partnership, product, pubref, source, type, period]
+audience_split:
+  description: >-
+    The model is published twice, once per audience, and the two documents are not
+    symmetric. The Brands API carries 175 paths and 99 schemas; the Partners API carries 77
+    paths and 70 schemas. Publisher/Partner, Brand_Overview_*/Partner_Overview_* and
+    Publisher_Website/Partner_Website are the same concepts renamed per audience — a
+    consumer integrating both sides maintains two vocabularies for one data core.
+counts:
+  entities: 27
+  relationships: 37
+  schemas_published: 169
+  spec_files: 104
+  operations: 327
+render: null

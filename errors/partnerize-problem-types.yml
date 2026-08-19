@@ -1,0 +1,188 @@
+generated: '2026-08-13'
+method: searched
+source: https://api-docs.partnerize.com/brand/#section/Version-3-API-Conventions/Errors
+derived_from: openapi/*.yml
+name: Partnerize Error Catalog
+description: >-
+  HTTP-level error catalog for the Partnerize API. The status list and semantics are
+  searched from the published HTTP Status Codes Summary tables in the Version 2 and
+  Version 3 API Conventions; the per-operation coverage counts are derived from the 327
+  operations across the 104 OpenAPI documents in openapi/. Partnerize does not use RFC
+  9457 problem+json — it ships a proprietary error envelope that changes shape between
+  API versions.
+format: proprietary
+rfc9457: false
+content_type: application/json
+envelopes:
+  - version: v1
+    shape: |
+      {
+        "error": {
+          "message": "Too Many Requests",
+          "type": "429"
+        }
+      }
+    fields:
+      - {name: "error.message", type: string, description: Human-readable message}
+      - {name: "error.type", type: string, description: 'Carries the HTTP status code as a string in the documented example'}
+  - version: v2
+    shape: |
+      {
+        "error": {
+          "errors": [
+            {
+              "property": "evaluation_period",
+              "type": "validation_error",
+              "code": "required_property",
+              "message": "Parameter 'evaluation_period' is required"
+            }
+          ],
+          "code": "400",
+          "message": "Bad Request"
+        }
+      }
+    fields:
+      - {name: "error.errors[]", type: array, description: One entry per individual failure that triggered the error}
+      - {name: "error.errors[].property", type: string, description: The attribute the error relates to}
+      - {name: "error.errors[].message", type: string, description: Human-friendly message describing the error}
+      - {name: "error.errors[].code", type: string, description: 'A slug identifying the error type (see errors/partnerize-error-codes.yml)'}
+      - {name: "error.errors[].type", type: string, description: 'Text classification, e.g. validation_error or error'}
+      - {name: "error.code", type: string, description: 'Error code representing the error(s); typically matches the HTTP status code'}
+      - {name: "error.message", type: string, description: Human-friendly summary message}
+  - version: v3
+    shape: |
+      {
+        "error": {
+          "errors": [
+            {
+              "property": "[name]",
+              "message": "The attribute expected to be of type 'string' but 'integer' given.",
+              "code": "6a6c32c0-de05-4301-89dd-4a72133c137f",
+              "type": "validation_error"
+            }
+          ],
+          "code": "400",
+          "message": "Bad Request"
+        }
+      }
+    fields:
+      - {name: "error.errors[].code", type: string, format: uuid, description: 'A UUID drawn from a fixed validation-constraint registry — see errors/partnerize-error-codes.yml'}
+    note: >-
+      Same outer envelope as v2, but the per-error code is a UUID rather than a slug. The
+      UUIDs are stable Symfony validation-constraint identifiers and Partnerize publishes
+      the full table, so they are machine-mappable — but they are opaque to a human and
+      carry no hint of the failure without the lookup table.
+problems:
+  - status: 400
+    title: Bad Request
+    description: >-
+      The request could not be processed because it contains missing or invalid
+      information. On v3 an unrecognised parameter in the request BODY also produces a
+      400, while unrecognised headers and query-string parameters are silently ignored.
+    codes_registry: errors/partnerize-error-codes.yml
+    operations_declaring: 25
+    retryable: false
+    remediation: >-
+      Read error.errors[] — each entry names the offending property and the constraint it
+      violated. Fix the payload before retrying; the same request will fail identically.
+  - status: 401
+    title: Unauthorized
+    description: >-
+      The request could not be authenticated because of wrong or invalid credentials in
+      the Authorization header.
+    example_message: >-
+      Your API credentials can be found in Account settings. 'Username' will be your 'User
+      application key' and 'Password' will be your 'User API key'
+    code: unauthorized
+    operations_declaring: 3
+    retryable: false
+    remediation: >-
+      Re-derive the header as Basic base64(application_key:user_api_key) from the console
+      Settings → Account settings values. See authentication/partnerize-authentication.yml.
+  - status: 403
+    title: Forbidden
+    description: The authenticated user is not authorized to perform this action on this resource.
+    example_message: "You do not have 'read' permission on campaign with id '1'"
+    code: unauthorized
+    operations_declaring: 20
+    retryable: false
+    remediation: >-
+      The credential is valid but the user's access rights do not cover the resource.
+      Escalate to a Partnerize user with the required permission — retrying will not help.
+    note: >-
+      Sixteen operations describe this status as "Unauthorised" and four as "Unauthorised
+      request", which reads as 401 in the spec text even though it is 403. A client
+      branching on the description rather than the status will mis-handle it.
+  - status: 404
+    title: Not Found
+    description: The request includes a resource URI that cannot be found by the server.
+    code: entity_not_found
+    example_message: "campaign not found for id '1'"
+    operations_declaring: 18
+    retryable: false
+    remediation: Verify the resource id and the API version segment in the path.
+    note: >-
+      404 is overloaded as an authorization signal. Partnerize documents that when a user
+      lacks READ permission on a resource — and therefore is not allowed to know it exists
+      — the response is 404 Not Found rather than 403 Forbidden. An agent cannot
+      distinguish "this id is wrong" from "you may not see this" on a 404.
+  - status: 405
+    title: Method Not Allowed
+    description: The request method is not allowed for the resource identified by the request URI.
+    code: routing_error
+    example_message: index not supported
+    operations_declaring: 1
+    retryable: false
+  - status: 429
+    title: Too Many Requests
+    description: The user has exceeded the quota for a particular request.
+    operations_declaring: 0
+    retryable: true
+    retry_signal: X-RateLimit-Retry-After
+    remediation: >-
+      Back off for X-RateLimit-Retry-After seconds, or until X-RateLimit-Reset elapses,
+      then retry. See rate-limits/partnerize-rate-limits.yml.
+    note: >-
+      429 is documented in the reference for all three API versions with a worked response
+      body per version, but it is declared on ZERO of the 327 operations in the published
+      OpenAPI. A generated client will not model the one error every high-volume caller
+      hits.
+  - status: 500
+    title: Internal Server Error
+    description: >-
+      Generic server error. The server encountered an unexpected condition that prevented
+      it from fulfilling the request.
+    operations_declaring: 0
+    retryable: true
+  - status: 503
+    title: Service Unavailable
+    description: The service is temporarily unavailable.
+    operations_declaring: 12
+    retryable: true
+    note: >-
+      Six of the twelve are described as "Fraud Service Unavailable" on the fraud metrics
+      and incidents operations — a named downstream dependency that can fail independently
+      of the rest of the platform.
+coverage:
+  operations_total: 327
+  spec_files: 104
+  declared_4xx_5xx_responses:
+    '400': 25
+    '401': 3
+    '403': 20
+    '404': 18
+    '405': 1
+    '503': 12
+  documented_but_never_declared: [429, 500]
+gaps:
+  - >-
+    Error responses are declared on a small minority of operations: 79 of 327 operations
+    carry any 4xx or 5xx response at all, and only 3 declare 401 even though every
+    operation requires authentication.
+  - >-
+    No operation declares a response schema for the error envelope — the shapes above come
+    from the reference prose, not from components.schemas, so a code generator produces no
+    error type.
+  - >-
+    Error descriptions in the spec are one or two words ("Failure", "Unauthorised") and in
+    several places contradict the status they are attached to.

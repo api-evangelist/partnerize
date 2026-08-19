@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Partnership Models API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Partnership Models",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Partnership Models",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/reference/partnership_model"
+          },
+          "docs": "List all available partnership models."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,92 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Partner Groups API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Partner Groups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all Partner (Commission) Groups for a given campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/commission_group",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of the campaign"
+              }
+            ]
+          },
+          "docs": "View all Partner (Commission) Groups for a campaign with all associated partners."
+        },
+        {
+          "info": {
+            "name": "Retrieve a Partner (Commission) Group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/commission_group/:commission_group_id",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of the campaign"
+              },
+              {
+                "name": "commission_group_id",
+                "value": "10l169",
+                "type": "path",
+                "description": "ID of the Partner (Commission) group"
+              }
+            ]
+          },
+          "docs": "Retrieves the specified Partner (Commission) Group."
+        },
+        {
+          "info": {
+            "name": "Create Partner (Commission) Groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/commission_group",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create new Partner (Commission) Groups. To add Partners into the Partner (Commission) Group pass them in a `publishers` array."
+        },
+        {
+          "info": {
+            "name": "Update Partner (Commission) Groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.partnerize.com/commission_group",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Partner (Commission) Groups by referencing the `commission_group_id` in each Group object within the `commission_groups` array."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

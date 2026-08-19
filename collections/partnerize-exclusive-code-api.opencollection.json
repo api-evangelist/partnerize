@@ -1,0 +1,192 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Exclusive Code API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Exclusive Code",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List All Exclusive Codes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/attribution/exclusive-codes",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Campaign"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Used to limit the response to a number of results"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Used to offset the results we're returning"
+              },
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "Search for specific codes or partner names"
+              },
+              {
+                "name": "dates",
+                "value": "",
+                "type": "query",
+                "description": "Search for codes within a date-time range. Comma separated start and end date-times"
+              },
+              {
+                "name": "statuses",
+                "value": "",
+                "type": "query",
+                "description": "A comma separated list of statuses to return results for"
+              }
+            ]
+          },
+          "docs": "Show a list of all configured exclusive codes. May be filtered with several filters."
+        },
+        {
+          "info": {
+            "name": "Create an Exclusive Code",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/attribution/exclusive-codes",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Campaign"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an Exclusive Code configuration"
+        },
+        {
+          "info": {
+            "name": "Delete Exclusive Codes",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/attribution/exclusive-codes",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Campaign"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete Exclusive Codes. This is only possible if the Exclusive Codes are scheduled, otherwise an error will occur."
+        },
+        {
+          "info": {
+            "name": "Get an Exclusive Code",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/attribution/exclusive-codes/:id",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Campaign"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Exclusive Code"
+              }
+            ]
+          },
+          "docs": "Get an Exclusive Code instance"
+        },
+        {
+          "info": {
+            "name": "Update an Exclusive Code",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/attribution/exclusive-codes/:id",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Campaign"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Exclusive Code"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an Exclusive Code. All request body properties are optional but at least one must be specified for update."
+        },
+        {
+          "info": {
+            "name": "Delete an Exclusive Code",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/attribution/exclusive-codes/:id",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Campaign"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Exclusive Code"
+              }
+            ]
+          },
+          "docs": "Delete an Exclusive Code"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,195 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Voucher Commissions API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Voucher Commissions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Voucher Commissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/campaign/:campaignId/optimisation/voucher/commission",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "11111l1",
+                "type": "path",
+                "description": "The ID of the campaign to list the Voucher commissions for"
+              },
+              {
+                "name": "at",
+                "value": "2021-07-02T12:00:00+01:00",
+                "type": "query",
+                "description": "Check the Voucher commissions for a given moment"
+              }
+            ]
+          },
+          "docs": "This endpoint lists all active and scheduled Voucher commissions for the given campaign.\n"
+        },
+        {
+          "info": {
+            "name": "Create Voucher Commission",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/campaign/:campaignId/optimisation/voucher/commission",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "11111l1",
+                "type": "path",
+                "description": "The ID of the campaign the voucher commission belongs to"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint saves a given Voucher Commission"
+        },
+        {
+          "info": {
+            "name": "Show Voucher Commissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/campaign/:campaignId/optimisation/voucher/commission/:commissionId",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "11111l1",
+                "type": "path",
+                "description": "The ID of the campaign to list the Voucher commissions for"
+              },
+              {
+                "name": "commissionId",
+                "value": "11111l1",
+                "type": "path",
+                "description": "The ID of the commission to edit the Voucher commissions for"
+              }
+            ]
+          },
+          "docs": "This endpoint shows an active or scheduled Voucher commission for the given campaign.\n"
+        },
+        {
+          "info": {
+            "name": "Edit Voucher Commissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.partnerize.com/campaign/:campaignId/optimisation/voucher/commission/:commissionId",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "11111l1",
+                "type": "path",
+                "description": "The ID of the campaign to list the Voucher commissions for"
+              },
+              {
+                "name": "commissionId",
+                "value": "11111l1",
+                "type": "path",
+                "description": "The ID of the commission to edit the Voucher commissions for"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint edits all active and scheduled Voucher commission for the given campaign.\n"
+        },
+        {
+          "info": {
+            "name": "Delete Scheduled Voucher Commission",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.partnerize.com/campaign/:campaignId/optimisation/voucher/commission/:commissionId",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "11111l1",
+                "type": "path",
+                "description": "The ID of the campaign the voucher commission belongs to"
+              },
+              {
+                "name": "commissionId",
+                "value": "11111l1",
+                "type": "path",
+                "description": "The ID of the commission to retire the Voucher commissions for"
+              }
+            ]
+          },
+          "docs": "This endpoint deletes a scheduled Voucher Commission. Active Voucher Commissions should be retired."
+        },
+        {
+          "info": {
+            "name": "Retire Active Voucher Commission",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/campaign/:campaignId/optimisation/voucher/commission/:commissionId/retire",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "11111l1",
+                "type": "path",
+                "description": "The ID of the campaign the voucher commission belongs to"
+              },
+              {
+                "name": "commissionId",
+                "value": "11111l1",
+                "type": "path",
+                "description": "The ID of the commission to retire the Voucher commissions for"
+              }
+            ]
+          },
+          "docs": "This endpoint retires an active Voucher Commission. Scheduled Voucher Commissions should be deleted."
+        },
+        {
+          "info": {
+            "name": "List Partner Voucher Commissions For Specific Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/publishers/:publisherId/commissions/voucher",
+            "params": [
+              {
+                "name": "publisherId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the partner to list commissions for"
+              },
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign to list the partner commissions for"
+              }
+            ]
+          },
+          "docs": "This endpoint lists partner voucher commissions for the given partner and campaign.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

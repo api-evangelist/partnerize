@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Campaign References (v1) API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Campaign References (v1)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Lists Campaign References",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/reference/publisher/camref/:publisher_id",
+            "params": [
+              {
+                "name": "publisher_id",
+                "value": "1111l123",
+                "type": "path",
+                "description": "ID of partner"
+              }
+            ]
+          },
+          "docs": "Lists campaign references"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

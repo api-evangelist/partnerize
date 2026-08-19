@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Invoices API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Invoices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all Invoices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/user/advertiser/:advertiser_id/invoice",
+            "params": [
+              {
+                "name": "advertiser_id",
+                "value": "10l110",
+                "type": "path",
+                "description": "ID of the Brand"
+              }
+            ]
+          },
+          "docs": "View all Invoices that have been created."
+        },
+        {
+          "info": {
+            "name": "Retrieve an Invoice",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/user/advertiser/:advertiser_id/invoice/:invoice_id",
+            "params": [
+              {
+                "name": "advertiser_id",
+                "value": "10l110",
+                "type": "path",
+                "description": "ID of the Brand"
+              },
+              {
+                "name": "invoice_id",
+                "value": "1101l1536",
+                "type": "path",
+                "description": "ID of the Invoice"
+              }
+            ]
+          },
+          "docs": "View an individual Invoice."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

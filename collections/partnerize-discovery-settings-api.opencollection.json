@@ -1,0 +1,58 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Discovery Settings API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Discovery Settings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List discovery settings for brands",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/networks/:networkId/marketplace/settings/advertisers",
+            "params": [
+              {
+                "name": "show_test_mode",
+                "value": "",
+                "type": "path",
+                "description": "Decide if campaigns should be returned if they are in test mode (default value: false)"
+              },
+              {
+                "name": "show_hidden",
+                "value": "",
+                "type": "path",
+                "description": "Decide if campaigns should be returned if they are hidden (default value: false)"
+              }
+            ]
+          },
+          "docs": "Retrieve a list of brands and their campaign discovery settings\n"
+        },
+        {
+          "info": {
+            "name": "Update Brand Marketplace settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.partnerize.com/v2/networks/:networkId/marketplace/settings/advertisers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update the discovery settings of the brand\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

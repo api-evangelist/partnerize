@@ -1,0 +1,80 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Creatives (v1) API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Creatives (v1)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all Creatives on each participating Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/user/publisher/:publisher_id/creative",
+            "params": [
+              {
+                "name": "publisher_id",
+                "value": "1l1007802",
+                "type": "path",
+                "description": "ID of the partner"
+              }
+            ]
+          },
+          "docs": "View a summary of all Creatives available on each participating Campaign."
+        },
+        {
+          "info": {
+            "name": "List Creatives on a Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/user/publisher/:publisher_id/campaign/:campaign_id/creative",
+            "params": [
+              {
+                "name": "publisher_id",
+                "value": "1l1007802",
+                "type": "path",
+                "description": "ID of the partner"
+              },
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of the campaign"
+              },
+              {
+                "name": "status",
+                "value": "y",
+                "type": "query",
+                "description": "Filter creatives by active status"
+              },
+              {
+                "name": "tags",
+                "value": "any-value",
+                "type": "query",
+                "description": "Filter by tags"
+              },
+              {
+                "name": "creative_type_id",
+                "value": "111l10",
+                "type": "query",
+                "description": "Filter by creative_type_id"
+              }
+            ]
+          },
+          "docs": "View all Creatives for the specified Campaign."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

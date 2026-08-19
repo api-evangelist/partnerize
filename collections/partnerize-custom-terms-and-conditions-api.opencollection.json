@@ -1,0 +1,168 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Custom Terms and Conditions API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Custom Terms and Conditions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List All Custom Terms and Conditions for given campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/custom_terms/",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the campaign"
+              }
+            ]
+          },
+          "docs": "List All Custom Terms and Conditions for given campaign"
+        },
+        {
+          "info": {
+            "name": "Create Custom Terms and Conditions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/custom_terms/",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the campaign"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates Custom Terms and Conditions for a given campaign and associates them with the provided partners."
+        },
+        {
+          "info": {
+            "name": "List Partner's Terms and Conditions for a capaign.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/custom_terms/publisher/:publisher_id",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the campaign"
+              },
+              {
+                "name": "publisher_id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the Partner"
+              }
+            ]
+          },
+          "docs": "List Terms and Conditions for a Partner on the specified campaign."
+        },
+        {
+          "info": {
+            "name": "Delete specific Custom Terms and Conditions",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/custom_terms/:custom_terms_id",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the Campaign"
+              },
+              {
+                "name": "custom_terms_id",
+                "value": "",
+                "type": "path",
+                "description": "Id of the Campaign Terms and Conditions to delete"
+              }
+            ]
+          },
+          "docs": "Delete Campaign Terms and Conditions for a given campaign."
+        },
+        {
+          "info": {
+            "name": "Associate Custom Terms and Conditions with Partners",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/custom_terms/custom_terms_id/association",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the Campaign"
+              },
+              {
+                "name": "custom_terms_id",
+                "value": "",
+                "type": "path",
+                "description": "ID of Campaign Terms and Conditions to associate with a list of Partners"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Associate the Custom Terms and Conditions with a list of Partners."
+        },
+        {
+          "info": {
+            "name": "Remove associations between the Custom Terms and Conditions and Partners",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/custom_terms/custom_terms_id/association",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the Campaign"
+              },
+              {
+                "name": "custom_terms_id",
+                "value": "",
+                "type": "path",
+                "description": "ID of Campaign Terms and Conditions to associate with a list of Partners"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Remove associations between the Custom Terms and Conditions and a list of Partners. If all associations are removed successfully a `200 OK` status code response is returned. In the cases where there were errors a `207 Multi-status` response is returned and the body of the response will contain the list of errors for the failed ones."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

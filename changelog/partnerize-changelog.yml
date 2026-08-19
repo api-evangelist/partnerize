@@ -1,0 +1,110 @@
+generated: '2026-08-13'
+method: searched
+source: https://github.com/PerformanceHorizonGroup/partnerize-mobile-sdk-ios/releases
+name: Partnerize Change Log
+description: >-
+  What Partnerize publishes about change, and what it does not. There is NO dated
+  changelog or release-notes feed for the Brands or Partners REST API — the only dated,
+  versioned change record Partnerize publishes is the GitHub release history of its two
+  mobile SDKs, captured below. The API side is covered by a change-management POLICY
+  (classes of change and notice periods) rather than a log of what actually changed.
+scheme: semver
+scope: mobile-sdk
+api_changelog:
+  published: false
+  probes:
+    - {url: 'https://api-docs.partnerize.com/changelog', status: 404}
+    - {url: 'https://partnerize.com/resources/type/releases', status: 200, note: 'company press releases, not product release notes; entries carry no dates'}
+  detail: >-
+    Neither published API document (Brands, Partners) contains a changelog, release-notes
+    or "what's new" section. Both declare info.version 1.4.99, which tracks the
+    documentation build and not any of the three live API versions (v1, v2, v3). A
+    consumer cannot answer "what changed in the API last month" from anything Partnerize
+    publishes.
+  policy_instead:
+    url: https://api-docs.partnerize.com/brand/#section/API-Change-Management-Policy
+    summary: >-
+      Backwards-compatible changes ship with no advance notice and are communicated only by
+      updating the documentation. Breaking changes and resource deprecations get at least
+      three months' notice, delivered by email to affected consumers, with the resource
+      marked Obsolete in the docs. Hotfixes for stability or security may waive the notice
+      period.
+    detail: lifecycle/partnerize-lifecycle.yml
+    consequence: >-
+      Because non-breaking changes are announced only by a documentation edit and the docs
+      carry no changelog, a consumer's only mechanism for detecting an additive change is
+      to diff the published OpenAPI themselves.
+current_version:
+  ios_sdk: 3.0.2
+  android_sdk: 3.0.2
+  api_spec_declared: 1.4.99
+  api_versions_live: [v1, v2, v3]
+entries:
+  - version: 3.0.2
+    date: '2026-06-22'
+    component: ios-sdk
+    breaking: false
+    source: https://github.com/PerformanceHorizonGroup/partnerize-mobile-sdk-ios/releases/tag/3.0.2
+  - version: 3.0.2
+    date: '2026-06-15'
+    component: android-sdk
+    breaking: false
+    source: https://github.com/PerformanceHorizonGroup/partnerize-mobile-sdk-android/releases/tag/3.0.2
+    note: Also the Maven Central publication date for com.partnerize:mobile-tracking-sdk:3.0.2.
+  - version: 3.0.1
+    date: '2026-05-05'
+    component: ios-sdk
+    breaking: false
+    source: https://github.com/PerformanceHorizonGroup/partnerize-mobile-sdk-ios/releases/tag/3.0.1
+  - version: 3.0.1
+    date: '2026-05-05'
+    component: android-sdk
+    breaking: false
+    source: https://github.com/PerformanceHorizonGroup/partnerize-mobile-sdk-android/releases/tag/3.0.1
+  - version: 3.0.0
+    date: '2026-04-21'
+    component: android-sdk
+    breaking: true
+    highlights:
+      - 'New coordinate: com.partnerize:mobile-tracking-sdk replaces com.partnerize.android:tracking'
+      - 'Dual-platform initialisation — PartnerizeTracking.partnerize(context) and PartnerizeTracking.ascend(context, apiKey)'
+      - 'Minimum requirements raised to Android API 26, Gradle 8.7, Java 17 / Kotlin 1.8'
+    source: https://github.com/PerformanceHorizonGroup/partnerize-mobile-sdk-android/releases/tag/3.0.0
+  - version: 3.0.0
+    date: '2026-04-15'
+    component: ios-sdk
+    breaking: true
+    highlights:
+      - 'CocoaPods distribution deprecated from 3.0.0 onward; Swift Package Manager becomes the recommended path'
+      - 'Ascend platform support added alongside Partnerize tracking'
+      - 'Minimum requirements raised to iOS 15.0, Xcode 26.0, Swift Tools 6.2'
+    source: https://github.com/PerformanceHorizonGroup/partnerize-mobile-sdk-ios/releases/tag/3.0.0
+  - version: 2.1.3
+    date: '2024-04-16'
+    component: ios-sdk
+    breaking: false
+    note: 'Last version published to CocoaPods (pod published 2024-04-17).'
+    source: https://github.com/PerformanceHorizonGroup/partnerize-mobile-sdk-ios/releases/tag/2.1.3
+  - version: 2.1.2
+    date: '2024-02-08'
+    component: ios-sdk
+    breaking: false
+    source: https://github.com/PerformanceHorizonGroup/partnerize-mobile-sdk-ios/releases/tag/2.1.2
+  - version: 2.0.0
+    date: '2022-05-17'
+    component: ios-sdk
+    breaking: true
+    highlights:
+      - Migrated to Swift
+      - Migrated to xcframework
+    source: https://github.com/PerformanceHorizonGroup/partnerize-mobile-sdk-ios/releases/tag/2.0.0
+notes:
+  - >-
+    Release bodies are empty on every 3.x tag on both platforms — the version and date are
+    real and published, but Partnerize writes no release notes into them. The highlights
+    recorded above for the 3.0.0 releases are read from the provider's own installation
+    documentation, not from the release body.
+  - >-
+    Between 2.1.3 (April 2024) and 3.0.0 (April 2026) the iOS SDK went two years without a
+    release, then shipped three versions in ten weeks. The Android line has no published
+    releases before 3.0.0 at all.

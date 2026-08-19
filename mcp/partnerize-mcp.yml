@@ -1,0 +1,170 @@
+generated: '2026-08-13'
+method: derived
+status: candidate
+source: openapi/*.yml
+name: Partnerize MCP Server (candidate)
+description: >-
+  Partnerize publishes no Model Context Protocol server. This is a DERIVED candidate tool
+  set, mapped one-to-one onto real operationIds in the 104 OpenAPI documents in openapi/,
+  offered as a design starting point — nothing here is running anywhere. No endpoint URL
+  is asserted because none exists; guessing one would read as a verified agent surface.
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: api-key
+  verified: derived
+  note: >-
+    mode: none — no hosted remote server and no stdio package. The auth field records what
+    a server WOULD need: HTTP Basic over the User Application Key and User API Key
+    (authentication/partnerize-authentication.yml), which is an api-key-class credential,
+    not OAuth. Searches of the provider docs, the PerformanceHorizonGroup GitHub
+    organisation, npm (@partnerize/*, partnerize-mcp) and public MCP registries returned
+    nothing.
+search_evidence:
+  - {source: 'https://api-docs.partnerize.com/brand/ and /partner/', result: 'no MCP, agent or LLM tooling section in either published document'}
+  - {source: 'https://github.com/PerformanceHorizonGroup', result: 'no MCP repository among the 36 public repositories'}
+  - {source: 'registry.npmjs.org', result: 'partnerize, @partnerize/sdk, partnerize-sdk, partnerize-api all 404'}
+  - {source: 'https://partnerize.com/llms.txt', result: '200, but marketing-site scope only — it lists no API surface and no tools'}
+server:
+  name: partnerize
+  transport: null
+  url: null
+tools:
+  - name: list_campaigns
+    description: List all campaigns visible to the authenticated user.
+    source_operation: openapi/partnerize-campaigns-api-openapi.yml#listAllCampaigns
+    category: campaigns
+  - name: get_campaign
+    description: Retrieve a single campaign by id.
+    source_operation: 'openapi/partnerize-campaigns-api-openapi.yml#Retrieve a Campaign'
+    category: campaigns
+  - name: list_network_partners
+    description: List every partner on a network.
+    source_operation: openapi/partnerize-network-partners-api-openapi.yml#listAllPartnersOnTheNetwork
+    category: partners
+  - name: list_publishers
+    description: List the publishers (partners) on a network, with filtering.
+    source_operation: openapi/partnerize-publishers-api-openapi.yml#get-publishers
+    category: partners
+  - name: get_publisher_details
+    description: Retrieve the profile of one publisher on a network.
+    source_operation: openapi/partnerize-publishers-api-openapi.yml#get-publisher-details
+    category: partners
+  - name: list_participating_partners
+    description: List the partners participating in a campaign.
+    source_operation: 'openapi/partnerize-participating-partners-api-openapi.yml#List all Participating Partners'
+    category: partners
+  - name: list_commissions
+    description: List the commission structures configured on a campaign.
+    source_operation: openapi/partnerize-commissions-api-openapi.yml#get-commissions
+    category: commissions
+  - name: get_commission
+    description: Retrieve one commission structure.
+    source_operation: openapi/partnerize-commissions-api-openapi.yml#get-commission
+    category: commissions
+  - name: list_active_partner_commissions
+    description: List the commissions currently active for a partner on a campaign.
+    source_operation: openapi/partnerize-commissions-api-openapi.yml#get-active-publisher-commissions
+    category: commissions
+  - name: query_conversions
+    description: Filter conversions in the v3 analytics surface.
+    source_operation: openapi/partnerize-conversions-api-openapi.yml#postConversionsFilter
+    category: analytics
+  - name: count_conversions
+    description: Count conversions matching a v3 analytics filter.
+    source_operation: openapi/partnerize-conversions-api-openapi.yml#postConversionsCount
+    category: analytics
+  - name: conversions_timeseries
+    description: Return a conversion time series from the v3 analytics surface.
+    source_operation: openapi/partnerize-conversions-api-openapi.yml#postConversionsTimeseries
+    category: analytics
+  - name: query_clicks
+    description: Filter clicks in the v3 analytics surface.
+    source_operation: openapi/partnerize-clicks-api-openapi.yml#postClicksFilter
+    category: analytics
+  - name: clicks_timeseries
+    description: Return a click time series from the v3 analytics surface.
+    source_operation: openapi/partnerize-clicks-api-openapi.yml#postClicksTimeseries
+    category: analytics
+  - name: get_brand_conversions_report
+    description: Retrieve the granular brand conversions report for a campaign (cursor-paginated).
+    source_operation: openapi/partnerize-brand-conversions-api-openapi.yml#brand-conversions
+    category: reporting
+  - name: get_partner_conversions_report
+    description: Retrieve the granular partner conversions report for a publisher (cursor-paginated).
+    source_operation: openapi/partnerize-partner-conversions-api-openapi.yml#partner-conversions
+    category: reporting
+  - name: get_partner_payable_report
+    description: Retrieve the payable report for a partner.
+    source_operation: openapi/partnerize-partner-payable-api-openapi.yml#partner-payable
+    category: payments
+  - name: get_partner_payments_summary
+    description: Summarise the value of a partner's conversions.
+    source_operation: 'openapi/partnerize-summary-api-openapi.yml#Partner payments summary'
+    category: payments
+  - name: list_invoices
+    description: List invoices for a brand.
+    source_operation: 'openapi/partnerize-invoices-api-openapi.yml#List all Invoices'
+    category: payments
+  - name: list_tracking_links
+    description: Retrieve the tracking links for a publisher.
+    source_operation: 'openapi/partnerize-tracking-links-api-openapi.yml#Retrieve Tracking Links'
+    category: tracking
+  - name: create_tracking_link
+    description: Create a tracking link for a publisher.
+    source_operation: 'openapi/partnerize-tracking-links-api-openapi.yml#Create Tracking Links'
+    category: tracking
+  - name: list_voucher_codes
+    description: List the voucher codes on a campaign.
+    source_operation: 'openapi/partnerize-voucher-codes-api-openapi.yml#List all Voucher Codes'
+    category: promotions
+  - name: list_creatives
+    description: List the creatives available on a campaign.
+    source_operation: 'openapi/partnerize-creatives-api-openapi.yml#List all Creatives for a Campaign'
+    category: promotions
+  - name: list_product_feeds
+    description: List the product feeds attached to a campaign.
+    source_operation: 'openapi/partnerize-product-feeds-api-openapi.yml#List all Product Feeds'
+    category: promotions
+  - name: list_deals
+    description: List the deals on a campaign.
+    source_operation: 'openapi/partnerize-deals-api-openapi.yml#List all Campaign Deals'
+    category: promotions
+  - name: get_fraud_metrics
+    description: List fraud metrics for a campaign.
+    source_operation: openapi/partnerize-metrics-api-openapi.yml#get-fraud-metrics
+    category: brand-safety
+  - name: list_jobs
+    description: List the asynchronous jobs for the authenticated user.
+    source_operation: openapi/partnerize-jobs-api-openapi.yml#get_jobs
+    category: jobs
+  - name: get_job
+    description: Get the status of one asynchronous job, including percentage_complete.
+    source_operation: openapi/partnerize-jobs-api-openapi.yml#get_job
+    category: jobs
+  - name: get_job_tasks
+    description: List the tasks belonging to an asynchronous job.
+    source_operation: openapi/partnerize-jobs-api-openapi.yml#get_job_tasks
+    category: jobs
+coverage:
+  tools_derived: 29
+  rest_operations_total: 327
+  spec_files: 104
+  note: >-
+    Deliberately read-biased. Twenty-seven of the twenty-nine candidates are reads; only
+    create_tracking_link writes, and no candidate is offered for commission creation,
+    partner approval, conversion submission or payment operations. Partnerize operations
+    move real money to real partners and the API publishes no idempotency-key contract
+    (conventions/partnerize-conventions.yml), so an unattended retry of a write has no
+    supported deduplication path. See agentic-access/partnerize-agentic-access.yml for the
+    per-operation execution contracts.
+crosswalk:
+  emitted: false
+  reason: >-
+    No tool crosswalk artifact is written. A crosswalk binds a REAL MCP tool list (or
+    GraphQL schema) to backing OpenAPI operations; Partnerize has neither a published MCP
+    server nor a live GraphQL endpoint — graphql/partnerize-graphql.md is itself a
+    conceptual schema, not an introspected one — so a crosswalk here would map derived
+    artifacts to derived artifacts and record no real divergence.

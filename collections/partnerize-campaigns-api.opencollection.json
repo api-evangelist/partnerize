@@ -1,0 +1,136 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Campaigns API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Campaigns",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all Campaigns",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/campaign",
+            "params": [
+              {
+                "name": "network_id",
+                "value": "11l100",
+                "type": "query",
+                "description": "ID of the network"
+              }
+            ]
+          },
+          "docs": "Return the details of all Campaigns attached to the Network account and visible to the authenticated User.\nThe output is contextual based on the permissions of the User making the request to the endpoint. A limited Campaign\nschema will be utilised for any Campaign that the User does not have appropriate permissions to view."
+        },
+        {
+          "info": {
+            "name": "Create a Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/campaign",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "To create a new Campaign, the Brand must pass their associated `advertiser_id`."
+        },
+        {
+          "info": {
+            "name": "Retrieve a Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/campaign/:campaign_id",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of the campaign"
+              }
+            ]
+          },
+          "docs": "Outputs the specified Campaign."
+        },
+        {
+          "info": {
+            "name": "Delete a Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/campaign/:campaign_id",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of the campaign"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "To delete a specific campaign, you must pass 3 required parameters:\n\n1. `'action' => 'delete'`\n\n2. `'campaign_id' => ''`\n\n3. `'retire_reason' => 'some excuse'`."
+        },
+        {
+          "info": {
+            "name": "Update a Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.partnerize.com/campaign/:campaign_id",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of the campaign"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update the specified Campaign."
+        },
+        {
+          "info": {
+            "name": "List all Brand Campaigns",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/user/advertiser/:advertiser_id/campaign",
+            "params": [
+              {
+                "name": "advertiser_id",
+                "value": "10l110",
+                "type": "path",
+                "description": "ID of the brand"
+              }
+            ]
+          },
+          "docs": "This endpoint will output a listing of all Campaigns that reside under the provided Brand on the Network and the output is contextual based on the permissions of the User making the request to the endpoint.\nA limited Campaign schema will be utilised for any Campaign that the User does not have appropriate permissions to view."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

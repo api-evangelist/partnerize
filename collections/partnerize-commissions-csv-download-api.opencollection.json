@@ -1,0 +1,61 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Commissions CSV Download API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Commissions CSV Download",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "CSV Download.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/commissions/all.csv",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign for the commissions"
+              },
+              {
+                "name": "start_date_time",
+                "value": "",
+                "type": "query",
+                "description": "Limits list to commissions active at/from this date"
+              },
+              {
+                "name": "end_date_time",
+                "value": "",
+                "type": "query",
+                "description": "Limits list to commissions active until this date"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Limits list to commissions of specified types"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "Limits list to commissions with specified status"
+              }
+            ]
+          },
+          "docs": "Request a CSV for a Commission report which includes all individual items defined for the Campaign. Each item represents a commission type of default, standard, promotional or voucher commission and rates.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

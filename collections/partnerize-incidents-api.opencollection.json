@@ -1,0 +1,296 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Incidents API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Incidents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Incidents",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaign_id/fraud/incidents",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "",
+                "type": "path",
+                "description": "Campaign ID"
+              },
+              {
+                "name": "partner_id",
+                "value": "",
+                "type": "query",
+                "description": "Partner ID to filter"
+              },
+              {
+                "name": "ip_address",
+                "value": "",
+                "type": "query",
+                "description": "IP address to filter"
+              },
+              {
+                "name": "metric",
+                "value": "",
+                "type": "query",
+                "description": "Filter the query by incident `metric`. This parameter must be used in conjunction with `type`.\n"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Filter the query by incident `type`. This parameter must be used in conjunction with `metric`.\n"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "Filter the query by incident `status`."
+              },
+              {
+                "name": "start_date",
+                "value": "",
+                "type": "query",
+                "description": "Only include incidents after this date."
+              },
+              {
+                "name": "end_date",
+                "value": "",
+                "type": "query",
+                "description": "Only include incidents before this date."
+              },
+              {
+                "name": "cursor_id",
+                "value": "",
+                "type": "query",
+                "description": "Cursor used for pagination."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Limit the number of incidents returned."
+              }
+            ]
+          },
+          "docs": "Get all incidents that are not dismissed ordered by date descending"
+        },
+        {
+          "info": {
+            "name": "Get Incident",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaign_id/fraud/incidents/:incident_id",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "",
+                "type": "path",
+                "description": "Campaign ID"
+              },
+              {
+                "name": "incident_id",
+                "value": "",
+                "type": "path",
+                "description": "Incident ID"
+              }
+            ]
+          },
+          "docs": "Get a specific incident"
+        },
+        {
+          "info": {
+            "name": "Delete Incident",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaign_id/fraud/incidents/:incident_id",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "",
+                "type": "path",
+                "description": "Campaign ID"
+              },
+              {
+                "name": "incident_id",
+                "value": "",
+                "type": "path",
+                "description": "Incident ID"
+              }
+            ]
+          },
+          "docs": "Delete a specific incident"
+        },
+        {
+          "info": {
+            "name": "Get Incidents Aggregation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaign_id/fraud/incidents-aggregation",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "",
+                "type": "path",
+                "description": "Campaign ID"
+              },
+              {
+                "name": "start_date",
+                "value": "",
+                "type": "query",
+                "description": "Only include incidents after this date."
+              },
+              {
+                "name": "end_date",
+                "value": "",
+                "type": "query",
+                "description": "Only include incidents before this date."
+              }
+            ]
+          },
+          "docs": "Get an aggregated total of incidents by day"
+        },
+        {
+          "info": {
+            "name": "Reject Partner",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaign_id/fraud/incidents/:incident_id/reject-partner",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "",
+                "type": "path",
+                "description": "Campaign ID"
+              },
+              {
+                "name": "incident_id",
+                "value": "",
+                "type": "path",
+                "description": "Incident ID"
+              }
+            ]
+          },
+          "docs": "Reject a Partner due to fraudulent claims. This means that the partner will no longer be valid for this Campaign"
+        },
+        {
+          "info": {
+            "name": "Reject Fraudulent Conversions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaign_id/fraud/incidents/:incident_id/reject-conversions",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "",
+                "type": "path",
+                "description": "Campaign ID"
+              },
+              {
+                "name": "incident_id",
+                "value": "",
+                "type": "path",
+                "description": "Incident ID"
+              }
+            ]
+          },
+          "docs": "Reject fraudulent conversions for the Incident"
+        },
+        {
+          "info": {
+            "name": "Set Incident Conversion status to Pending",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaign_id/fraud/incidents/:incident_id/pend-conversions",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "",
+                "type": "path",
+                "description": "Campaign ID"
+              },
+              {
+                "name": "incident_id",
+                "value": "",
+                "type": "path",
+                "description": "Incident ID"
+              }
+            ]
+          },
+          "docs": "Set Incident Conversion status to Pending"
+        },
+        {
+          "info": {
+            "name": "List Incident-partners",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaign_id/fraud/incident-partners",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "",
+                "type": "path",
+                "description": "Campaign ID"
+              },
+              {
+                "name": "metric",
+                "value": "",
+                "type": "query",
+                "description": "Filter the query by incident `metric`. This parameter must be used in conjunction with `type`.\n"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Filter the query by incident `type`. This parameter must be used in conjunction with `metric`.\n"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "Filter the query by incident `status`."
+              },
+              {
+                "name": "start_date",
+                "value": "",
+                "type": "query",
+                "description": "Only consider incidents after this date."
+              },
+              {
+                "name": "end_date",
+                "value": "",
+                "type": "query",
+                "description": "Only consider incidents before this date."
+              }
+            ]
+          },
+          "docs": "Get a list of all partners that are associated with incidents."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,90 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Network Partners API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Network Partners",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create network partner",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/user/publisher",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create partners on your network."
+        },
+        {
+          "info": {
+            "name": "Create network partner with user account",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/user",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create partners on your network with their own Partnerize user account, allowing them to login directly to the Partnerize platform."
+        },
+        {
+          "info": {
+            "name": "List all Partners on the Network",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/network/:network_id/publisher",
+            "params": [
+              {
+                "name": "network_id",
+                "value": "1l1000003",
+                "type": "path",
+                "description": "ID of the network"
+              }
+            ]
+          },
+          "docs": "View all Partners on the Network."
+        },
+        {
+          "info": {
+            "name": "Update Partner's Network status",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/network/:network_id/publisher",
+            "params": [
+              {
+                "name": "network_id",
+                "value": "1l1000003",
+                "type": "path",
+                "description": "ID of the network"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update the `network_status` of a Partner by passing each `publisher_id` along with the relevant `network_status` in an object within a `publishers` array."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

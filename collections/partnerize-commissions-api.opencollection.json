@@ -1,0 +1,263 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Commissions API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Commissions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Commissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/commissions",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign to list the commissions for"
+              },
+              {
+                "name": "at",
+                "value": "2023-05-04T12:00:00+00:00",
+                "type": "query",
+                "description": "The date and time to show active commissions for. If not set defaults to now."
+              }
+            ]
+          },
+          "docs": "This endpoint lists all upcoming and currently active standard commissions\n"
+        },
+        {
+          "info": {
+            "name": "Create Commission",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/commissions",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign to list the commissions for"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint creates a new commission\n"
+        },
+        {
+          "info": {
+            "name": "Get Commission",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/commissions/:commissionId",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign the commission belongs to"
+              },
+              {
+                "name": "commissionId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the commission to retrieve"
+              },
+              {
+                "name": "include",
+                "value": "",
+                "type": "query",
+                "description": "The historical edits will be shown under the history.data attribute when set to 'history'.\nThe endpoint will also return v1 Commissions when set to 'v1'\"\n"
+              },
+              {
+                "name": "at",
+                "value": "2023-05-04T12:00:00+00:00",
+                "type": "query",
+                "description": "The date and time to show active commissions for. If not set defaults to now."
+              }
+            ]
+          },
+          "docs": "Get the given commission"
+        },
+        {
+          "info": {
+            "name": "Update Commission",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/commissions/:commissionId",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign the commission belongs to"
+              },
+              {
+                "name": "commissionId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the commission to retrieve"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update the given commission. If it is currently active it will be retired and a new commission will be set up\nwith the updated configuration.\n"
+        },
+        {
+          "info": {
+            "name": "Migrate Commission",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/commissions/:commissionId/migrate",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign the commission belongs to"
+              },
+              {
+                "name": "commissionId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the commission to migrate"
+              }
+            ]
+          },
+          "docs": "This endpoint migrates a given V1 Commission to a V2 Commission\n"
+        },
+        {
+          "info": {
+            "name": "Retire Commission",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/commissions/:commissionId/retire",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign the commission belongs to"
+              },
+              {
+                "name": "commissionId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the commission to retire"
+              }
+            ]
+          },
+          "docs": "This endpoint retires a given Commission.\n"
+        },
+        {
+          "info": {
+            "name": "Get Default Commissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/publishers/:publisherId/commissions/default",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign for which to get partner commission rates"
+              },
+              {
+                "name": "publisherId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of a Partner on a campaign"
+              }
+            ]
+          },
+          "docs": "Get Partner Default Commissions"
+        },
+        {
+          "info": {
+            "name": "List Partner Commissions For Specific Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/publishers/:publisherId/commissions/campaign",
+            "params": [
+              {
+                "name": "publisherId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Partner to list commissions for"
+              },
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign to list the Partner commissions for"
+              }
+            ]
+          },
+          "docs": "This endpoint lists partner commissions for the given partner and campaign.\n"
+        },
+        {
+          "info": {
+            "name": "List Active Partner Commissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/publishers/:publisherId/commissions/active",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign to list the commissions for"
+              },
+              {
+                "name": "publisherId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of a Partner on a campaign"
+              },
+              {
+                "name": "at",
+                "value": "",
+                "type": "query",
+                "description": "The date and time to show the active commissions for. If not set defaults to now."
+              }
+            ]
+          },
+          "docs": "This endpoint lists all active commissions including default, standard, voucher and promotional commissions for a partner a campaign\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

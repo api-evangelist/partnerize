@@ -1,0 +1,121 @@
+generated: '2026-08-13'
+method: searched
+source: https://api-docs.partnerize.com/brand/#section/API-Change-Management-Policy
+name: Partnerize API Lifecycle
+description: >-
+  Versioning, change management and deprecation posture for the Partnerize API, searched
+  from the published API Change Management Policy and Versioning sections of the API
+  reference, plus a probe of the hosts that would carry a status page. Partnerize
+  publishes a genuinely specific deprecation policy — three months' notice, named change
+  classes, an Obsolete marker in the documentation — and publishes no status page at all.
+versioning:
+  scheme: uri-path
+  current: v3
+  concurrent_versions: [v1, v2, v3]
+  docs: https://api-docs.partnerize.com/brand/#section/Versioning
+  detail: >-
+    Three global versions run concurrently on one host and are distinguished by the path.
+    v1 endpoints carry no version segment (https://api.partnerize.com/network); v2 and v3
+    carry /v2 and /v3. v3 additionally splits by audience context into /v3/brand and
+    /v3/partner. Conventions are partly global and partly version-specific — see
+    conventions/partnerize-conventions.yml.
+  spec_version: 1.4.99
+  spec_version_note: >-
+    Both published documents (Brands API and Partners API) declare info.version 1.4.99,
+    which tracks the documentation build rather than any of the three API versions above.
+    There is no way to correlate a spec version with an API version.
+change_management:
+  policy_url: https://api-docs.partnerize.com/brand/#section/API-Change-Management-Policy
+  breaking_change_notice: 3 months
+  deprecation_notice: 3 months
+  notification_channel: email to affected consumers
+  documentation_marker: 'resources are marked `Obsolete` in the API documentation, with the replacement functionality named'
+  change_classes:
+    - class: backwards-compatible
+      notice: none — shipped without advance notice, communicated by updating the documentation
+      examples:
+        - Introducing new resources
+        - Introducing new optional request parameters to existing API resources
+        - Introducing new properties in the responses of existing API resources
+        - Introducing new methods to existing API resources
+        - Introducing new headers to existing responses
+        - Changing the order of existing response properties
+      consumer_obligation: >-
+        Consumers must build clients that tolerate all six. Note that "changing the order
+        of existing response properties" is explicitly declared non-breaking, so any client
+        relying on property order is out of contract.
+    - class: breaking
+      notice: at least 3 months in advance
+      examples:
+        - Removing a resource
+        - Removing or renaming properties in existing responses
+        - Removing documented response headers
+        - Introducing new mandatory request parameters or headers
+        - Making an optional request parameter or header mandatory
+    - class: hotfix
+      notice: none — Partnerize reserves the right to waive the notice period
+      scope: changes required to address stability or security issues
+deprecation:
+  policy_url: https://api-docs.partnerize.com/brand/#section/API-Change-Management-Policy
+  policy_published: true
+  notice_period: 3 months
+  sunset_header: false
+  deprecation_header: false
+  rfc8594: false
+  machine_readable: false
+  detail: >-
+    The policy is real and specific but is delivered as prose plus an email. Partnerize
+    does not emit RFC 8594 Sunset or Deprecation response headers, and no operation in any
+    of the 104 OpenAPI documents carries `deprecated: true`. A client cannot detect an
+    approaching removal at runtime or from the spec — only by reading the docs or the
+    notification email.
+deprecated_operations: []
+deprecated_operations_note: >-
+  Zero of 327 operations are flagged deprecated in the specs. One deprecation is stated in
+  prose only: the v3 bulk conversions operation's description says it "Deprecates
+  POST /campaign/{campaignID}/conversion" — the superseded v1 operation itself carries no
+  deprecated flag and no sunset date.
+status_page:
+  published: false
+  probes:
+    - {url: 'https://status.partnerize.com', result: 'DNS CNAME to stats.pingdom.com; TLS certificate does not match the host, and over HTTP the Pingdom public report returns "404 - Status Page not Found"', status: 404}
+    - {url: 'https://partnerize.statuspage.io', result: 'Atlassian Statuspage responds "Partnerize Status - Page Inactive"', status: 200}
+  detail: >-
+    Partnerize once stood up both a Pingdom public report at status.partnerize.com and an
+    Atlassian Statuspage at partnerize.statuspage.io. Both DNS records and both vendor
+    tenancies still resolve; neither serves a live status page. No StatusPage pointer is
+    emitted in apis.yml — an abandoned status host is not operational transparency.
+sla:
+  published: false
+  note: >-
+    No public SLA or uptime target. Terms at https://partnerize.com/legal/terms provide the
+    platform "AS IS" and "AS AVAILABLE" and disclaim implied warranties of availability.
+incidents_api:
+  present: true
+  note: >-
+    Partnerize exposes an Incidents API (openapi/partnerize-incidents-api-openapi.yml) —
+    but that is fraud/brand-safety incident reporting inside a campaign, not platform
+    status. It is not a substitute for a status page.
+support_lifecycle:
+  end_of_life_published: false
+  v1_retirement_date: null
+  v2_retirement_date: null
+  note: >-
+    Three concurrent global versions and no published retirement date for the two older
+    ones. v1 remains the only home of several resources (Networks, Product Feeds, Deals),
+    so v1 is not merely legacy — it is load-bearing.
+sdk_lifecycle:
+  detail: packages/partnerize-packages.yml
+  platforms:
+  - platform: ios
+    current: 3.0.2
+    released: '2026-06-22'
+    deprecated_distribution: 'CocoaPods, deprecated from 3.0.0 onward per the provider docs; last pod 2.1.3 (2024-04-17)'
+  - platform: android
+    current: 3.0.2
+    released: '2026-06-15'
+    deprecated_distribution: 'com.partnerize.android:tracking, superseded by com.partnerize:mobile-tracking-sdk; last published 1.6 (2022-06-15)'
+cross_links:
+  conventions: conventions/partnerize-conventions.yml
+  errors: errors/partnerize-problem-types.yml
+  changelog: changelog/partnerize-changelog.yml

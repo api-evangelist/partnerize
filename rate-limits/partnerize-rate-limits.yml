@@ -1,42 +1,121 @@
+generated: '2026-08-13'
+method: searched
+source: https://api-docs.partnerize.com/brand/#section/Common-API-Conventions/Rate-Limits
 name: Partnerize API Rate Limits
-description: Partnerize enforces rate limiting across its REST APIs. When rate
-  limits are exceeded, the API returns an HTTP 429 Too Many Requests response.
-  Specific numerical thresholds are not publicly documented and may vary by
-  account tier.
-url: https://api-docs.partnerize.com/brand/
+description: >-
+  Partnerize rate limits every API endpoint on usage and returns HTTP 429 Too Many Requests
+  when a caller is over. The numeric thresholds are NOT published — they vary by account —
+  but Partnerize does publish the full runtime signal, which is the part an agent actually
+  needs: four X-RateLimit-* response headers including an explicit retry-after value, plus a
+  worked 429 body for each of the three live API versions.
+url: https://api-docs.partnerize.com/brand/#section/Common-API-Conventions/Rate-Limits
 specificationVersion: '0.1'
+limit_count: 0
 limits:
   - name: Request Rate Limit
-    description: A limit on the number of API requests per unit of time for a
-      given account. Specific thresholds are not publicly disclosed and are
-      determined per account.
+    description: >-
+      A token-bucket limit applied per API endpoint based on usage. Partnerize states that
+      endpoints "will rate limit based on usage" but publishes no numeric threshold, window
+      or burst allowance; the permitted token count is returned per response in
+      X-RateLimit-Limit rather than documented.
     type: RequestsPerPeriod
-    period: Unknown
-    limit: Contact Partnerize for account-specific limits
-  - name: Rate Limit Error Response
-    description: When the rate limit is exceeded, the API responds with HTTP
-      status 429 Too Many Requests. Callers should implement backoff and
-      retry logic when receiving this status code.
-    type: ErrorResponse
-    httpStatus: 429
-    message: Too Many Requests
+    scope: per-endpoint
+    window: unpublished
+    limit: null
+    burst: null
+    note: Contact support@partnerize.com for account-specific thresholds.
 headers:
-  - name: X-Application-Key
-    description: Account-level application key required on every API request.
-      Passed as an HTTP header or query parameter.
-    in: header
-    required: true
-  - name: X-User-Api-Key
-    description: User-level API key required on every API request. Passed as
-      an HTTP header or query parameter. Headers are preferred over query
-      parameters to avoid exposing credentials in logs.
-    in: header
-    required: true
+  response:
+    - name: X-RateLimit-Limit
+      type: integer
+      description: How many tokens are permitted.
+    - name: X-RateLimit-Remaining
+      type: integer
+      description: How many tokens are left in the specified time period.
+    - name: X-RateLimit-Reset
+      type: integer
+      description: How many seconds until the throttle resets itself.
+    - name: X-RateLimit-Retry-After
+      type: integer
+      description: How many seconds to wait before retrying.
+      note: >-
+        Partnerize uses the X-RateLimit-Retry-After name rather than the standard HTTP
+        Retry-After header. A client that only reads Retry-After will find nothing.
+  request:
+    - name: Authorization
+      description: 'Basic base64(application_key:user_api_key) — required on every request.'
+      in: header
+      required: true
+      detail: authentication/partnerize-authentication.yml
+exhaustion:
+  status: 429
+  reason: Too Many Requests
+  retry_signal: X-RateLimit-Retry-After
+  bodies:
+    - version: v1
+      body: |
+        {
+            "error": {
+                "message": "Too Many Requests",
+                "type": "429"
+            }
+        }
+    - version: v2
+      body: |
+        {
+          "error": {
+            "errors": [
+            ],
+            "code": "429",
+            "message": "Too Many Requests"
+          }
+        }
+    - version: v3
+      body: |
+        {
+          "error": {
+            "errors": [
+              {
+                "property": "",
+                "message": "You have made too many requests recently, please try again later.",
+                "code": "3b22ff00-96a5-4fa4-96cc-f36e68dbd2e2",
+                "type": "too_many_requests"
+              }
+            ],
+            "message": "Too Many Requests",
+            "code": "429"
+          }
+        }
+      note: >-
+        The v3 429 carries a stable constraint UUID (3b22ff00-96a5-4fa4-96cc-f36e68dbd2e2,
+        type too_many_requests) — a caller can branch on it exactly.
+related_volume_limits:
+  - name: Bulk conversion payload cap
+    limit: 100000
+    unit: items
+    scope: per request, per collection
+    detail: >-
+      POST /v3/brand/campaigns/{campaignID}/conversions/bulk accepts exactly one of
+      conversions, conversion_items or conversion_references, each capped at 100,000 items.
+  - name: Cursor pagination page size
+    limit: 300
+    unit: results
+    scope: granular conversion reporting endpoint
+  - name: Offset pagination page size
+    limit: null
+    unit: results
+    scope: standard collections
+    detail: 'The maximum limit is declared in the result set headers rather than documented.'
 notes:
-  - Specific per-minute or per-hour rate limit thresholds are not publicly
-    documented by Partnerize.
-  - Both authentication keys (X-Application-Key and X-User-Api-Key) must be
-    present on every request.
-  - Contact support@partnerize.com for account-specific rate limit information.
-  - The API supports three versioned endpoints (v1, v2, v3); rate limits
-    may apply across or per version.
+  - >-
+    Rate limiting is documented for all three API versions with a per-version 429 body, but
+    429 is declared on ZERO of the 327 operations across the 104 OpenAPI documents in
+    openapi/. A generated client models every error except the one a high-volume caller
+    will actually hit.
+  - >-
+    Thresholds are per account and unpublished, so the headers are the only reliable
+    signal. Read X-RateLimit-Remaining on every response rather than pacing against an
+    assumed number.
+  - >-
+    Both authentication keys (application_key and user_api_key) must be present on every
+    request; limits are applied against the authenticated user's usage.

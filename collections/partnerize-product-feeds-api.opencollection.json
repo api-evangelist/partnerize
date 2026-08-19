@@ -1,0 +1,83 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Product Feeds API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Product Feeds",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all Product Feeds for a Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/feed",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of the Campaign"
+              }
+            ]
+          },
+          "docs": "Return the details of all Product Feeds associated with a Campaign."
+        },
+        {
+          "info": {
+            "name": "Create a Product Feed",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/feed",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of the Campaign"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create one or more Product Feeds against the Campaign entity. Each Product Feed is sent as an array within a top level `feeds` array."
+        },
+        {
+          "info": {
+            "name": "Update a Product Feed for a Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/feed",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of the Campaign"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update one or more `feeds` against the Campaign entity. Each Product Feed is sent as an array within a top level `feeds` array and must contain its associated `feed_id` or `location`. As `location` is a unique identifier, it's not possible to change the location of a feed once created. To update the location, first update the feed and set `active: n`, then create a new feed with the new location."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

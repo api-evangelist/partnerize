@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Brand Discovery (v2) API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Brand Discovery (v2)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Brands & Campaigns",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/publishers/:publisherId/discovery/advertisers",
+            "params": [
+              {
+                "name": "publisherId",
+                "value": "",
+                "type": "path",
+                "description": "ID of the partner"
+              }
+            ]
+          },
+          "docs": "Returns all campaigns available for a partner to join, grouped by brand.\nEach campaign will include a `status:` for the partner:-\n* AVAILABLE\n* REQUESTED\n* INVITED\n* REJECTED\n"
+        },
+        {
+          "info": {
+            "name": "Retrieve a Brand",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/publishers/:publisherId/discovery/advertisers/:advertiserId",
+            "params": [
+              {
+                "name": "publisherId",
+                "value": "",
+                "type": "path",
+                "description": "ID of the partner"
+              },
+              {
+                "name": "advertiserId",
+                "value": "",
+                "type": "path",
+                "description": "ID of the brand"
+              }
+            ]
+          },
+          "docs": "Returns one advertiser with a list of campaigns availabe for a partner to join.\nEach campaign will include a `status:` for the partner:-\n* AVAILABLE\n* REQUESTED\n* INVITED\n* REJECTED\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

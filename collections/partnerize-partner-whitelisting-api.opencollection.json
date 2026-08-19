@@ -1,0 +1,79 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Partner Whitelisting API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Partner Whitelisting",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Whitelisted Partners",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaign_id/fraud/whitelisted-partners",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "",
+                "type": "path",
+                "description": "Campaign ID"
+              }
+            ]
+          },
+          "docs": "Retrieve all whitelisted partners"
+        },
+        {
+          "info": {
+            "name": "Whitelist Partner",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaign_id/fraud/whitelisted-partners",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "",
+                "type": "path",
+                "description": "Campaign ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Whitelist a trusted Partner."
+        },
+        {
+          "info": {
+            "name": "Remove Partner from Whitelist",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaign_id/fraud/whitelisted-partners",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "",
+                "type": "path",
+                "description": "Campaign ID"
+              }
+            ]
+          },
+          "docs": "Remove a partner from the whitelist"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

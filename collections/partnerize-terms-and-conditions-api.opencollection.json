@@ -1,0 +1,68 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Terms and Conditions API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Terms and Conditions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve Partner Custom Terms and Conditions (v1)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/user/publisher/:publisher_id/campaign/custom_terms/:custom_terms_id",
+            "params": [
+              {
+                "name": "publisher_id",
+                "value": "1111l123",
+                "type": "path",
+                "description": "ID of partner whose terms we want to read"
+              },
+              {
+                "name": "custom_terms_id",
+                "value": "1111l564",
+                "type": "path",
+                "description": "ID of custom terms"
+              }
+            ]
+          },
+          "docs": "Retrieve Custom Terms and Conditions for a given partner and terms and conditions id"
+        },
+        {
+          "info": {
+            "name": "List Terms and Conditions (v2)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/publishers/:publisherId/campaigns/terms?campaigns=:campaigns",
+            "params": [
+              {
+                "name": "publisherId",
+                "value": "",
+                "type": "path",
+                "description": "ID of the partner"
+              },
+              {
+                "name": "campaigns",
+                "value": "",
+                "type": "query",
+                "description": "comma seperated list of Campaign IDs"
+              }
+            ]
+          },
+          "docs": "View combined terms & conditions for the given Campaigns(s) and Network(s). If a partner has custom campaign terms, these will be shown in place of the standard campaign terms. Terms content for\nstandard campaign and network terms is return as HTML. For campaign custom partner terms, the content is returned as JSON which can be parsed and rendered to HTML using the [Slate](https://docs.slatejs.org) framework.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

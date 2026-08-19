@@ -1,0 +1,165 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Reporting on Meta data API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Reporting on Meta data",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all Meta Reports for a Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/reporting/meta/reports",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of the campaign"
+              }
+            ]
+          },
+          "docs": "List all Meta Reports for a Campaign"
+        },
+        {
+          "info": {
+            "name": "Create a Meta Report for a Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/reporting/meta/reports",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of the campaign"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a Meta Report for a Campaign"
+        },
+        {
+          "info": {
+            "name": "Retrieve a Meta Report for a Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/reporting/meta/reports/:report_id",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of the campaign"
+              },
+              {
+                "name": "report_id",
+                "value": "123",
+                "type": "path",
+                "description": "ID of the report"
+              }
+            ]
+          },
+          "docs": "Retrieve a Meta Report for a Campaign"
+        },
+        {
+          "info": {
+            "name": "Delete a Meta Report for a Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/reporting/meta/reports/:report_id",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of the campaign"
+              },
+              {
+                "name": "report_id",
+                "value": "123",
+                "type": "path",
+                "description": "ID of the report"
+              }
+            ]
+          },
+          "docs": "Delete a Meta Report for a Campaign"
+        },
+        {
+          "info": {
+            "name": "View the results of a Meta Report for a Campaign.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/reporting/meta/reports/:report_id/results",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of the campaign"
+              },
+              {
+                "name": "report_id",
+                "value": "123",
+                "type": "path",
+                "description": "ID of the report"
+              }
+            ]
+          },
+          "docs": "The endpoint allows you to retrieve the results of a specified Meta Report for a Campaign. The endpoint supports `.csv` format. Use `../campaign/{campaign_id}/reporting/meta/reports/{report_id}/results.csv` to export the results as a csv file."
+        },
+        {
+          "info": {
+            "name": "List all Meta Values for a Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/reporting/meta/values",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of the campaign"
+              }
+            ]
+          },
+          "docs": "List all Meta Values for a Campaign"
+        },
+        {
+          "info": {
+            "name": "List all Meta Whitelist Keys for a Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/reporting/meta/whitelist"
+          },
+          "docs": "List all Meta Whitelist Keys for a Campaign"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

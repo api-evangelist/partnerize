@@ -1,0 +1,225 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Campaign Transaction Queries API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Campaign Transaction Queries",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all Transaction Queries for a Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/tq",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of the Campaign"
+              },
+              {
+                "name": "transaction_query_id",
+                "value": "1l1000532",
+                "type": "query",
+                "description": "Filter by the ID of a transaction query"
+              },
+              {
+                "name": "transaction_query_type",
+                "value": "untracked",
+                "type": "query",
+                "description": "Filter by the type"
+              },
+              {
+                "name": "publisher_reference",
+                "value": "A200FG1",
+                "type": "query",
+                "description": "Filter by a partner reference"
+              },
+              {
+                "name": "conversion_reference",
+                "value": "AF222PO",
+                "type": "query",
+                "description": "Filter by a conversion reference"
+              },
+              {
+                "name": "conversion_date_time",
+                "value": "2017-01-01 00:00:00",
+                "type": "query",
+                "description": "Filter by a conversion date"
+              },
+              {
+                "name": "current_state",
+                "value": "pending",
+                "type": "query",
+                "description": "Filter by the current state"
+              },
+              {
+                "name": "date_range_column",
+                "value": "created_at",
+                "type": "query",
+                "description": "Field to filter the date range on"
+              },
+              {
+                "name": "date_range_start",
+                "value": "2017-01-01 00:00:00",
+                "type": "query",
+                "description": "Start of a date range"
+              },
+              {
+                "name": "date_range_end",
+                "value": "2017-12-30 00:00:00",
+                "type": "query",
+                "description": "End of a date range"
+              },
+              {
+                "name": "text_date",
+                "value": "last 10 days",
+                "type": "query",
+                "description": "Natural language representation of a date range"
+              },
+              {
+                "name": "sort_column",
+                "value": "created_at",
+                "type": "query",
+                "description": "Field to sort the results by"
+              },
+              {
+                "name": "order_by",
+                "value": "ASC",
+                "type": "query",
+                "description": "Direction to sort the results by"
+              },
+              {
+                "name": "tq_export",
+                "value": "true",
+                "type": "query",
+                "description": "Download the results as a CSV file"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Return the details of all Transaction Queries created on a campaign."
+        },
+        {
+          "info": {
+            "name": "Approve a Transaction Query",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/tq/:transaction_query_id/approve",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of a Campaign"
+              },
+              {
+                "name": "transaction_query_id",
+                "value": "1l1000532",
+                "type": "path",
+                "description": "ID of the Transaction Query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Approve a single Transaction Query. Only Transaction Queries with a status of pending can be approved."
+        },
+        {
+          "info": {
+            "name": "Pend a Transaction Query",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/tq/:transaction_query_id/pend",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of a Campaign"
+              },
+              {
+                "name": "transaction_query_id",
+                "value": "1l1000532",
+                "type": "path",
+                "description": "ID of the Transaction Query"
+              }
+            ]
+          },
+          "docs": "Pend a single Transaction Query. Only Transaction Queries with a status of rejected can be pended."
+        },
+        {
+          "info": {
+            "name": "Reject a Transaction Query",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/tq/:transaction_query_id/reject",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of a campaign"
+              },
+              {
+                "name": "transaction_query_id",
+                "value": "1l1000532",
+                "type": "path",
+                "description": "ID of the transaction query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Reject a single Transaction Query. Only Transaction Queries with a status of pending can be rejected."
+        },
+        {
+          "info": {
+            "name": "Bulk processing of Transaction Queries",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/tq/process",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of a Campaign"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Process multiple Transaction Queries in a single API call. The same rules as approving, rejecting and pending single Transaction Queries apply. The actions are processed asynchronously and the Job endpoint must be polled to find out when all have been completed."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,72 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Saved Reports API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Saved Reports",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve a Campaign Group Saved Report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/report/campaign_group/:campaign_group_id/filter_sets/:filter_set_id",
+            "params": [
+              {
+                "name": "campaign_group_id",
+                "value": "7",
+                "type": "path",
+                "description": "Id of the campaign group"
+              },
+              {
+                "name": "filter_set_id",
+                "value": "38",
+                "type": "path",
+                "description": "Id of the Saved Report"
+              }
+            ]
+          },
+          "docs": "Retrieve a Campaign Group Saved Report by id"
+        },
+        {
+          "info": {
+            "name": "Update a Campaign Group Saved Report",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.partnerize.com/report/campaign_group/:campaign_group_id/filter_sets/:filter_set_id",
+            "params": [
+              {
+                "name": "campaign_group_id",
+                "value": "7",
+                "type": "path",
+                "description": "Id of the campaign group"
+              },
+              {
+                "name": "filter_set_id",
+                "value": "38",
+                "type": "path",
+                "description": "Id of the Saved Report"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a Campaign Group Saved Report by id"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,196 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Creatives API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Creatives",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all Creatives for a Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/creative",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of the Campaign"
+              }
+            ]
+          },
+          "docs": "List and view all Creatives for the specified Campaign."
+        },
+        {
+          "info": {
+            "name": "Create Campaign Creatives",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/creative",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of the Campaign"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create one or more Creatives against the Campaign entity. Each Creative is sent as an array within a top level `creatives` array."
+        },
+        {
+          "info": {
+            "name": "Update Campaign Creatives",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/creative",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of the campaign"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update one or more Creatives against the Campaign entity. Each Creative is sent as an array within a top level `creatives` array and must contain its associated `creative_id`."
+        },
+        {
+          "info": {
+            "name": "List all Creative Tags for Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/creative/tags",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of the Campaign"
+              }
+            ]
+          },
+          "docs": "View all Creative Tags for the specified Campaign."
+        },
+        {
+          "info": {
+            "name": "Create Campaign Creative Tags",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/creative/tags",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of the campaign"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create one or more Creative Tags against the Campaign entity. Each Tag is sent as an array within a top level `tags` array."
+        },
+        {
+          "info": {
+            "name": "Update Campaign Creative Tags",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/creative/tags",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of the Campaign"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update one or more Creative Tags against the Campaign entity. Each Tag is sent as an array within a top level `tags` array and must contain its associated `creative_tag_id`."
+        },
+        {
+          "info": {
+            "name": "Delete Campaign Creative Tags",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/creative/tags",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of the Campaign"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete one or more Creative Tags against the Campaign entity. Each Tag is sent as an array within a top level `tags` array and must contain its associated `creative_tag_id`."
+        },
+        {
+          "info": {
+            "name": "List all Creatives for a Campaign by Tags",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/creative_tags/creative",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of the Campaign"
+              },
+              {
+                "name": "tags[]",
+                "value": "1011l56,1011l57",
+                "type": "query",
+                "description": "An array of tags IDs to filter the creatives by"
+              }
+            ]
+          },
+          "docs": "List and view all Creatives for the specified Campaign and filter by tags."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

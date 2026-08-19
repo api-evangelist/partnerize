@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Campaign Conversions API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Campaign Conversions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Bulk update of conversions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v3/brand/campaigns/:campaignID/conversions/bulk",
+            "params": [
+              {
+                "name": "campaignID",
+                "value": "",
+                "type": "path",
+                "description": "Id of the Campaign"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Allows for conversion update operations to be performed on conversions within a particular campaign. This can be achieved using the `conversion_id`, `conversion_item_id` or `conversion_reference` identifiers depending on what works best in the situation.\n\nAny changes to `status` at the `conversions` or `conversion_references` level will be applied to all items within that conversion, provided the individual item is allowed to be updated. Should you want to be more explicit with `status` (or any "
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

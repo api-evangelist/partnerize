@@ -1,0 +1,195 @@
+generated: '2026-08-13'
+method: searched
+source: https://api-docs.partnerize.com/brand/#section/Common-API-Conventions
+name: Partnerize API Conventions
+description: >-
+  Cross-cutting request and response semantics for the Partnerize API, captured from the
+  Common / Version 1 / Version 2 / Version 3 API Conventions sections of the published
+  reference. Partnerize runs three concurrent global API versions on one host and the
+  conventions differ materially between them — pagination style, response envelope and
+  error body all change from v1 to v2 to v3. An agent that learns one version's shape and
+  applies it to another will misparse the response.
+api_versions:
+  - version: v1
+    base_url: https://api.partnerize.com/
+    identification: no version segment in the path (e.g. /network)
+    envelope: bare resource collection keyed by resource name, plus count and execution_time
+    error_shape: '{"error": {"message": "...", "type": "..."}}'
+  - version: v2
+    base_url: https://api.partnerize.com/v2
+    identification: v2 path segment
+    envelope: >-
+      resource key at top level alongside execution_time, and count on collection
+      responses
+    error_shape: '{"error": {"errors": [{property, type, code, message}], "code": "...", "message": "..."}}'
+  - version: v3
+    base_url: https://api.partnerize.com/v3
+    identification: v3 path segment, then a brand or partner context segment
+    contexts:
+      - https://api.partnerize.com/v3/brand
+      - https://api.partnerize.com/v3/partner
+    envelope: 'data wrapper at top level, optional hypermedia wrapper with links'
+    error_shape: >-
+      same outer shape as v2, but each errors[] entry carries a UUID code from a fixed
+      validation-constraint registry rather than a human-readable slug
+authentication:
+  style: http-basic
+  header: Authorization
+  value: 'Basic base64(application_key:user_api_key)'
+  detail: authentication/partnerize-authentication.yml
+idempotency:
+  supported: false
+  idempotency_key_header: null
+  detail: >-
+    Partnerize publishes no idempotency-key contract. The documentation states only that
+    PUT is idempotent, which is HTTP method semantics (RFC 9110) rather than a
+    provider-supplied idempotency guarantee, and no Idempotency-Key header or parameter
+    appears anywhere in the 104 OpenAPI documents or in the reference prose. A client that
+    retries a POST — including the bulk conversion endpoints, which accept up to 100,000
+    items per request — has no supported way to make that retry safe. No Idempotency
+    pointer is emitted in apis.yml for this reason.
+  evidence: 'grep across openapi/ and the published info.description: 0 idempotency-key occurrences'
+pagination:
+  styles:
+    - name: offset
+      scope: most collection endpoints
+      request_params:
+        - {name: offset, type: integer, default: 0, description: Offset the results by a given amount}
+        - {name: limit, type: integer, description: 'Limit the number of results returned; maximum limit is declared in the result set headers'}
+      response_fields: [offset, limit, count]
+      truncation_signal: 'offset + limit < count means the result set was truncated'
+      note: >-
+        Reports are generated from live data, so inserts and updates can occur between
+        pages; Partnerize documents this drift explicitly rather than offering a snapshot.
+    - name: cursor
+      scope: the granular conversion reporting endpoint
+      request_params:
+        - {name: cursor_id, type: integer, description: Cursor value defining the client position in the result set}
+        - {name: limit, type: integer, max: 300, description: Limit the number of results returned}
+      response_fields: [cursor_id]
+      rationale: >-
+        Computing offset and a total count is too expensive at conversion-report scale, so
+        the high-volume endpoint returns a cursor_id instead and gives a consistent view
+        of the result set across pages.
+  hypermedia:
+    supported: true
+    field: hypermedia.pagination
+    offset_links: [first_page, last_page, next_page, previous_page]
+    offset_counts: [total_page_count, total_item_count]
+    cursor_links: [first_page, next_page]
+    description: >-
+      Every paginated result set carries a hypermedia node with absolute-path URIs that
+      pre-compute the next request, including the cursor_id on cursor-paginated endpoints.
+      This is the most agent-friendly convention Partnerize ships: a caller can follow
+      next_page without reimplementing the paging arithmetic.
+response_envelope:
+  v1:
+    top_level: [count, execution_time, '<resource-name-plural>']
+  v2:
+    top_level_always: [execution_time]
+    top_level_collection: [count, '<resource-name-plural>']
+    top_level_single: ['<resource-name-singular>']
+  v3:
+    top_level: [data]
+    optional: [hypermedia]
+    description: data wraps all payload; hypermedia carries links to related resources
+  execution_time:
+    present_in: [v1, v2]
+    format: 'string, e.g. "1.11761 seconds"'
+    note: Server-side processing time returned on the body rather than as a header.
+response_formats:
+  v1:
+    mechanism: file-extension suffix on the request URI
+    formats:
+      - {suffix: .json, content_type: application/json}
+      - {suffix: .xml, content_type: text/xml}
+      - {suffix: .csv, content_type: application/octet-stream, note: only available on specific endpoints}
+    default: json
+  v2: {formats: [application/json]}
+  v3: {formats: [application/json]}
+compression:
+  supported: true
+  request_header: 'Accept-Encoding: gzip'
+  response_header: 'Content-Encoding: gzip'
+  scope: documented under Version 1 API Conventions
+http_verbs:
+  applies_to: [v2, v3]
+  verbs:
+    - {verb: GET, semantics: read-only retrieval of one or more entities, success: 200}
+    - {verb: POST, semantics: 'create an entity, or submit a batch', success: '201 for create, 202 for asynchronous batch'}
+    - {verb: PUT, semantics: replace the resource at the URL, success: 200, idempotent: true}
+    - {verb: PATCH, semantics: partial update, success: 200}
+    - {verb: DELETE, semantics: remove an entity, success: '200 or 204'}
+  unsupported_verb: 405 Method Not Allowed
+async_jobs:
+  trigger: 'POST to a bulk endpoint returns 202 Accepted with a job id'
+  poll: 'GET /v3/jobs/{jobId} and /v3/jobs/{jobId}/tasks'
+  fields: [status, percentage_complete, created_at, started_at, completed_at, type]
+  hypermedia: 'the job response links to its tasks collection'
+  note: >-
+    Bulk conversion submission accepts a maximum of 100,000 items per collection
+    (conversions, conversion_items or conversion_references) and only one collection per
+    request.
+strictness:
+  applies_to: v3
+  unrecognized_headers: ignored
+  unrecognized_query_params: ignored
+  unrecognized_body_params: 400 Bad Request
+  note: >-
+    v3 is strict on the request body and lenient on the query string and headers. A client
+    that sends an extra body field it believes is harmless gets a hard failure.
+date_time:
+  v2:
+    standard: ISO-8601
+    examples: ['2019-03-01T12:01:00+00:00', '2019-03-01']
+  note: v1 endpoints accept space-separated date-times in query strings (e.g. '2018-03-01 00:00:00', URL-encoded).
+rate_limiting:
+  documented: true
+  status: 429
+  response_headers:
+    - {name: X-RateLimit-Limit, type: integer, description: How many tokens are permitted}
+    - {name: X-RateLimit-Remaining, type: integer, description: How many tokens are left in the specified time period}
+    - {name: X-RateLimit-Reset, type: integer, description: How many seconds until the throttle resets itself}
+    - {name: X-RateLimit-Retry-After, type: integer, description: How many seconds to wait before retrying}
+  thresholds_published: false
+  detail: rate-limits/partnerize-rate-limits.yml
+error_envelope:
+  detail: errors/partnerize-problem-types.yml
+  registry: errors/partnerize-error-codes.yml
+  rfc9457: false
+  note: >-
+    Partnerize uses a proprietary error envelope, not application/problem+json. No
+    operation in any of the 104 specs declares a problem+json media type.
+request_tracing:
+  request_id_header: null
+  note: >-
+    No correlation or request-id header is documented on requests or responses. A caller
+    debugging a failed call has no identifier to quote to support beyond the timestamp.
+field_expansion:
+  supported: false
+  note: No expand / include / fields sparse-fieldset convention is documented.
+metadata:
+  supported: true
+  mechanism: meta fields and meta attributes
+  endpoints: [/v2/meta-fields, /v2/meta-attributes, 'Reporting on Meta data']
+  note: >-
+    Partnerize models custom data as first-class Meta Fields and Meta Attributes resources
+    with their own reporting surface, rather than as a free-form metadata map on each
+    object.
+terminology:
+  pairs:
+  - {current: Brands, legacy: Advertisers}
+  - {current: Partners, legacy: Publishers}
+  note: >-
+    Older endpoints use the legacy terms; Partnerize states the terms are interchangeable
+    and that the API reference is the single source of truth. Both vocabularies appear in
+    live path segments (/publisher/, /brand/), so a client cannot normalise on one.
+versioning_and_change_policy:
+  detail: lifecycle/partnerize-lifecycle.yml
+cross_links:
+  authentication: authentication/partnerize-authentication.yml
+  errors: errors/partnerize-problem-types.yml
+  error_codes: errors/partnerize-error-codes.yml
+  lifecycle: lifecycle/partnerize-lifecycle.yml
+  rate_limits: rate-limits/partnerize-rate-limits.yml
+  data_model: data-model/partnerize-data-model.yml

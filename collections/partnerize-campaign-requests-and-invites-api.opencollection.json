@@ -1,0 +1,298 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Campaign Requests and Invites API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Campaign Requests and Invites",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Partner Campaign Requests and Invites",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/networks/:networkId/campaign-requests-invites",
+            "params": [
+              {
+                "name": "networkId",
+                "value": "",
+                "type": "path",
+                "description": "ID of the brand network"
+              },
+              {
+                "name": "vertical_id",
+                "value": "",
+                "type": "query",
+                "description": "ID of the vertical being filtered by"
+              },
+              {
+                "name": "promo_method_id",
+                "value": "",
+                "type": "query",
+                "description": "ID of the promo method being filtered by"
+              },
+              {
+                "name": "operating_country",
+                "value": "",
+                "type": "query",
+                "description": "The operating country code being filtered by"
+              },
+              {
+                "name": "promotional_country",
+                "value": "",
+                "type": "query",
+                "description": "The promotional country ISO code"
+              },
+              {
+                "name": "campaign_id",
+                "value": "",
+                "type": "query",
+                "description": "ID of the vertical being filtered by"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "The status of the interaction"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "Query string being search for which gets checked against the applicable fields."
+              }
+            ]
+          },
+          "docs": "Lists partners with campaign requests or invites"
+        },
+        {
+          "info": {
+            "name": "List Campaign Requests and Invites Filters.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/networks/:networkId/campaign-requests-invites/filters",
+            "params": [
+              {
+                "name": "networkId",
+                "value": "",
+                "type": "path",
+                "description": "ID of the brand network"
+              }
+            ]
+          },
+          "docs": "Lists filters which can be used in conjuction with the List Campaign Requests and Invites contains the values required for the campaign interaction page filters."
+        },
+        {
+          "info": {
+            "name": "Retrieve Partner Campaign Invites and Requests Details.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/networks/:networkId/campaign-requests-invites/partners/:publisherId",
+            "params": [
+              {
+                "name": "networkId",
+                "value": "",
+                "type": "path",
+                "description": "ID of the brand network"
+              },
+              {
+                "name": "publisherId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the partner"
+              }
+            ]
+          },
+          "docs": "Retrieve details for campaign invites and requests of a particular partner."
+        },
+        {
+          "info": {
+            "name": "Accept Campaign Requests",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v2/networks/:networkId/campaign-requests/accept",
+            "params": [
+              {
+                "name": "networkId",
+                "value": "",
+                "type": "path",
+                "description": "ID of the network"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpont is now `Obsolete`. Use [Approve and Invite Partners to Campaigns](#tag/Campaign-Requests-and-Invites/operation/post-v2-networks-network_id-invite-network-partners) instead<br/><br/>\nAn Advertiser may accept requests from Partners to join campaigns within their Network. This bulk endpoint allows a user to reject multiple requests in one call. The payload contains one or more campaign ID and partner ID pairs that uniquely identify each campaign request to accept.\n"
+        },
+        {
+          "info": {
+            "name": "Decline Campaign Requests",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v2/networks/:networkId/campaign-requests/decline",
+            "params": [
+              {
+                "name": "networkId",
+                "value": "",
+                "type": "path",
+                "description": "ID of the network"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "An Advertiser may decline requests from Partners to join campaigns within their Network. This bulk endpoint allows a user to decline multiple requests in one call. The payload contains one or more campaign ID and partner ID pairs that uniquely identify each campaign request to decline. Each partner and campaign pair must include a decline \"reason\". Use null if no reason is provided.\n"
+        },
+        {
+          "info": {
+            "name": "Display pending outcomes - invitations and approvals",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/networks/:network_id/invite/network-partners",
+            "params": [
+              {
+                "name": "network_id",
+                "value": "",
+                "type": "path",
+                "description": "The network id"
+              },
+              {
+                "name": "partner_collection_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "campaign_ids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List all potential invitations and approvals for given set of campaigns"
+        },
+        {
+          "info": {
+            "name": "Approve and Invite Partners to Campaigns",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v2/networks/:network_id/invite/network-partners",
+            "headers": [
+              {
+                "name": "X-Prefer",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "network_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "An Advertiser can invite one or more Network Partners to one or more Campaigns. The user must have manage participation permission over each campaign in the payload. The payload will be validated and invitations will be created only if all fields are valid. If a partner has already been invited or is approved on the campaign, the campaign will be skipped. If the partner has an existing request to join the campaign, the request will be resolved and the partner will be immediately approved on the "
+        },
+        {
+          "info": {
+            "name": "Export pending outcomes - invitations and approvals into CSV",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v2/networks/:network_id/invite/network-partners.csv",
+            "params": [
+              {
+                "name": "network_id",
+                "value": "",
+                "type": "path",
+                "description": "The network id"
+              },
+              {
+                "name": "partner_collection_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "campaign_ids",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "CSV all potential invitations and approvals for given set of campaigns"
+        },
+        {
+          "info": {
+            "name": "Reject partners from a campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v2/networks/:network_id/reject/network-partners",
+            "headers": [
+              {
+                "name": "X-Prefer",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "network_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "An Advertiser can reject one or more Partners from a campaign."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

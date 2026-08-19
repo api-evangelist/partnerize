@@ -1,0 +1,83 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Campaign Invitations (v2) API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Campaign Invitations (v2)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Invitations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/publishers/:publisher_id/invitations/advertisers/",
+            "params": [
+              {
+                "name": "publisher_id",
+                "value": "1l1007802",
+                "type": "path",
+                "description": "ID of the partner"
+              }
+            ]
+          },
+          "docs": "See all invites available to a partner grouped by brand"
+        },
+        {
+          "info": {
+            "name": "Accept Campaign Invitiations",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v2/publishers/:publisherId/invitations/accept",
+            "params": [
+              {
+                "name": "publisherId",
+                "value": "",
+                "type": "path",
+                "description": "ID of the partner"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Allows a partner to accept one of many of their invitations.\n"
+        },
+        {
+          "info": {
+            "name": "Decline Campaign Invitiations",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v2/publishers/:publisherId/invitations/decline",
+            "params": [
+              {
+                "name": "publisherId",
+                "value": "",
+                "type": "path",
+                "description": "ID of the partner"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Allows a partner to decline one of many of their invitations.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

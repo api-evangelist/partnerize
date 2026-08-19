@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Campaign Requests (v2) API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Campaign Requests (v2)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create Campaign Requests",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v2/publishers/:publisherId/campaign-requests",
+            "params": [
+              {
+                "name": "publisherId",
+                "value": "",
+                "type": "path",
+                "description": "ID of the partner"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Allows a partner to make requests to join campaigns.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

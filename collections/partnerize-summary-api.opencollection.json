@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Summary API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Summary",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Summarise value of partner's conversions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/user/publisher/:publisher_id/payment/summary",
+            "params": [
+              {
+                "name": "publisher_id",
+                "value": "1l1007802",
+                "type": "path",
+                "description": "ID of the partner"
+              }
+            ]
+          },
+          "docs": "Return the details of partner's pending (shows value of pending conversions), approved (shows value of approved conversions), confirmed (amount that will be available once brand's invoice is paid), available (amount of money available to withdraw in this moment), and paid (already withdrawn) funds."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

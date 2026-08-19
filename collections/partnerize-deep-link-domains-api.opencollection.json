@@ -1,0 +1,95 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Deep link domains API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Deep link domains",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Fetches allowed deeplink domains for the given brand.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v3/brand/:brand/deeplink-domains",
+            "params": [
+              {
+                "name": "brand",
+                "value": "",
+                "type": "path",
+                "description": "Brand ID to get allowed domains for"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Limits the number of results returned. Defaults to 20"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Offsets the results returned"
+              }
+            ]
+          },
+          "docs": "Fetches allowed deeplink domains for a given brand. Results are ordered by domain name in ascending order.\n"
+        },
+        {
+          "info": {
+            "name": "Adds allowed deeplink domains for the given brand.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.partnerize.com/v3/brand/:brand/deeplink-domains",
+            "params": [
+              {
+                "name": "brand",
+                "value": "",
+                "type": "path",
+                "description": "Brand ID to modify allowed domains for"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Adds a number of allowed deeplink domains for the given Brand. A maximum of 100 domains can be added at once.\n"
+        },
+        {
+          "info": {
+            "name": "Removes allowed deeplink domains for the given brand.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.partnerize.com/v3/brand/:brand/deeplink-domains",
+            "params": [
+              {
+                "name": "brand",
+                "value": "",
+                "type": "path",
+                "description": "Brand ID to remove allowed domains for"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Removes a number of allowed deeplink domains for the given Brand. A maximum of 100 domains can be removed at once.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,174 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Jobs API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Jobs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a list of jobs for the user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v3/jobs",
+            "params": [
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Job type to filter by"
+              },
+              {
+                "name": "reference",
+                "value": "",
+                "type": "query",
+                "description": "Job reference to filter by. Performs a partial match, eg \"partner\" would match a reference of \"partnerize\",\n\"dance-partner\" and \"partner\".\n"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Pagination offset"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Pagination limit"
+              }
+            ]
+          },
+          "docs": "Returns a list of jobs for the api user"
+        },
+        {
+          "info": {
+            "name": "Get a single job",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v3/jobs/:jobID",
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path",
+                "description": "Id of the job"
+              }
+            ]
+          },
+          "docs": "Returns information about a single v3 job by the given ID"
+        },
+        {
+          "info": {
+            "name": "Get tasks for a job",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v3/jobs/:jobID/tasks",
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path",
+                "description": "Id of the job"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Pagination offset"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Pagination limit"
+              }
+            ]
+          },
+          "docs": "Returns a list of tasks for a given job"
+        },
+        {
+          "info": {
+            "name": "Get detailed task information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v3/jobs/:jobID/tasks/:taskID",
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path",
+                "description": "Id of the job"
+              },
+              {
+                "name": "taskID",
+                "value": "",
+                "type": "path",
+                "description": "Id of the task"
+              }
+            ]
+          },
+          "docs": "Returns detailed information for a given task"
+        },
+        {
+          "info": {
+            "name": "Replay a job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v3/jobs/:jobID/replay",
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path",
+                "description": "Id of the job"
+              }
+            ]
+          },
+          "docs": "Resubmits a job in to the queue for re-processing. Only jobs of type `conversion_bulk_update` can be replayed."
+        },
+        {
+          "info": {
+            "name": "Replay a job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v3/jobs/:jobID/tasks/:taskID/replay",
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path",
+                "description": "Id of the job"
+              },
+              {
+                "name": "taskID",
+                "value": "",
+                "type": "path",
+                "description": "Id of the task"
+              }
+            ]
+          },
+          "docs": "Resubmits a task in to the queue for re-processing. Only tasks of type `conversion_bulk_update` can be replayed."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

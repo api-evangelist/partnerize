@@ -1,0 +1,60 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution In-Cart API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "In-Cart",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List In-Cart Settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/attribution/in-cart",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Campaign"
+              }
+            ]
+          },
+          "docs": "Get the In-Cart settings for the given Campaign"
+        },
+        {
+          "info": {
+            "name": "Update In-Cart Settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/attribution/in-cart",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Campaign"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update the In-Cart settings for the Given Campaign"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

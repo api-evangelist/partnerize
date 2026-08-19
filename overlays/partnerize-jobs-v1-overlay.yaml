@@ -1,0 +1,57 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Partnerize Brands Attribution Jobs (v1) API
+  version: 1.0.0
+x-apievangelist:
+  generated: '2026-08-13'
+  method: generated
+  source: openapi/partnerize-jobs-v1-api-openapi.yml
+  note: Non-destructive enhancements over the refined Partnerize specification. The two documents Partnerize
+    publishes (Brands API and Partners API, both OpenAPI 3.0.1, info.version 1.4.99) declare NO components.securitySchemes
+    and NO security[] requirement on any of their 327 operations, even though every request requires an
+    Authorization header. This overlay supplies the documented HTTP Basic scheme, the API-version context,
+    and links to the derived API Evangelist artifacts. The original specification is never mutated.
+extends: openapi/partnerize-jobs-v1-api-openapi.yml
+actions:
+- target: $.info
+  update:
+    x-apievangelist-provider: partnerize
+    x-apievangelist-product: Partnerize Brands Attribution Jobs (v1) API
+    x-apievangelist-docs: https://api-docs.partnerize.com/brand/
+    x-apievangelist-api-versions:
+    - v1
+    x-apievangelist-authentication: authentication/partnerize-authentication.yml
+    x-apievangelist-conventions: conventions/partnerize-conventions.yml
+    x-apievangelist-errors: errors/partnerize-problem-types.yml
+    x-apievangelist-error-codes: errors/partnerize-error-codes.yml
+    x-apievangelist-rate-limits: rate-limits/partnerize-rate-limits.yml
+    x-apievangelist-lifecycle: lifecycle/partnerize-lifecycle.yml
+    x-apievangelist-data-model: data-model/partnerize-data-model.yml
+    x-apievangelist-operations: 1
+- target: $.components
+  update:
+    securitySchemes:
+      BasicAuth:
+        type: http
+        scheme: basic
+        description: HTTP Basic Authentication. Username is the User Application Key (application_key,
+          identifying the Network); password is the User API Key (user_api_key, identifying the User).
+          Both are found in the Partnerize console under Settings > Account settings. Documented at https://api-docs.partnerize.com/brand/#section/Common-API-Conventions/Access-and-Authentication
+          but absent from the published specification.
+- target: $
+  update:
+    security:
+    - BasicAuth: []
+- target: $.info
+  update:
+    x-apievangelist-rate-limit-headers:
+    - X-RateLimit-Limit
+    - X-RateLimit-Remaining
+    - X-RateLimit-Reset
+    - X-RateLimit-Retry-After
+    x-apievangelist-rate-limit-status: 429
+    x-apievangelist-rate-limit-note: Partnerize documents a 429 response with these four headers for all
+      three API versions, but declares 429 on zero operations in the published specification.
+    x-apievangelist-idempotency: false
+    x-apievangelist-idempotency-note: No Idempotency-Key contract is published. Unsafe retries have no
+      supported deduplication path.

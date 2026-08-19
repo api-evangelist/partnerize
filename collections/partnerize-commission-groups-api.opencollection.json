@@ -1,0 +1,49 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Commission Groups API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Commission Groups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List commission groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v3/network/:networkId/commission-groups",
+            "params": [
+              {
+                "name": "network_id",
+                "value": "",
+                "type": "query",
+                "description": "Filter by a network"
+              },
+              {
+                "name": "active",
+                "value": "",
+                "type": "query",
+                "description": "Whether the commission groups are still ongoing"
+              },
+              {
+                "name": "has_participation",
+                "value": "",
+                "type": "query",
+                "description": "Only return commission groups that have partners participating"
+              }
+            ]
+          },
+          "docs": "Lists all network commission groups"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

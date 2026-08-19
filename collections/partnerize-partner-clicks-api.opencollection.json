@@ -1,0 +1,97 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Partner Clicks API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Partner Clicks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve a Partner Clicks Report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/reporting/report_publisher/publisher/:publisher_id/click.:format",
+            "params": [
+              {
+                "name": "publisher_id",
+                "value": "1l1007802",
+                "type": "path",
+                "description": "ID of the partner"
+              },
+              {
+                "name": "format",
+                "value": "json",
+                "type": "path",
+                "description": "Format for the response"
+              },
+              {
+                "name": "start_date",
+                "value": "2016-02-30T05:15:32Z",
+                "type": "query",
+                "description": "Start date for data to be included in the report"
+              },
+              {
+                "name": "end_date",
+                "value": "2016-03-10T19:02:35Z",
+                "type": "query",
+                "description": "End date for data to be included in the report"
+              },
+              {
+                "name": "text_date",
+                "value": "yesterday",
+                "type": "query",
+                "description": "Restricts the results to one of the following - this hour, last hour, today, yesterday, this week, last week, last X days, this month, last month, this year, last year."
+              },
+              {
+                "name": "timezone",
+                "value": "Europe/London",
+                "type": "query",
+                "description": "Enforce a specified Timezone."
+              },
+              {
+                "name": "currency[]",
+                "value": "USD",
+                "type": "query",
+                "description": "Filter the results by the specified currency"
+              },
+              {
+                "name": "date_type",
+                "value": "last_modified",
+                "type": "query",
+                "description": "This parameter to run the report for conversions that have been updated. When you specify `last_updated` or `approved_at` the response will only include conversions that were last modified or approved at in approved_at a date within the report date range."
+              },
+              {
+                "name": "multipivot[{pivot}][]",
+                "value": "value",
+                "type": "query",
+                "description": "Add a secondary pivot filter. You need to specify the pivot parameter name and the value to filter by. E.g. multipivot[campaign][]=111111l29. Supported values are: `campaign`, `publisher_reference`."
+              },
+              {
+                "name": "statuses[]",
+                "value": "approved",
+                "type": "query",
+                "description": "Filter by statuses. Available values - approved, pending, rejected"
+              },
+              {
+                "name": "offset",
+                "value": "0",
+                "type": "query",
+                "description": "Offset the results by a given amount. Defaults to 0."
+              }
+            ]
+          },
+          "docs": "Return a mix of aggregated and basket/item level click data for a partner."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

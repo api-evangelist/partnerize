@@ -1,0 +1,174 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Partnerize Tag Features API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Partnerize Tag Features",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Available Partnerize Tag Features",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v3/brand/partnerize-tags/features"
+          },
+          "docs": "Returns a list of available features ready for enablement in a Partnerize Tag."
+        },
+        {
+          "info": {
+            "name": "List Partnerize Tag Enabled Features",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v3/brand/partnerize-tags/:tagId/features",
+            "params": [
+              {
+                "name": "tagId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Partnerize Tag"
+              }
+            ]
+          },
+          "docs": "Return a list of features enabled for a specific Partnerize Tag."
+        },
+        {
+          "info": {
+            "name": "Enable Feature on Partnerize Tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v3/brand/partnerize-tags/:tagId/features",
+            "params": [
+              {
+                "name": "tagId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Partnerize Tag"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Enables a feature for a specific Partnerize Tag."
+        },
+        {
+          "info": {
+            "name": "Disable Feature on Partnerize Tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.partnerize.com/v3/brand/partnerize-tags/:tagId/features/:featureName",
+            "params": [
+              {
+                "name": "tagId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Partnerize Tag"
+              },
+              {
+                "name": "featureName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the feature to remove"
+              }
+            ]
+          },
+          "docs": "Disables a feature for a specific Partnerize Tag."
+        },
+        {
+          "info": {
+            "name": "List Available Partnerize Tag Features",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v3/partner/partnerize-tags/features"
+          },
+          "docs": "Returns a list of available features ready for enablement in a Partnerize Tag."
+        },
+        {
+          "info": {
+            "name": "List Partnerize Tag Enabled Features",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v3/partner/partnerize-tags/:tagId/features",
+            "params": [
+              {
+                "name": "tagId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Partnerize Tag"
+              }
+            ]
+          },
+          "docs": "Return a list of features enabled for a specific Partnerize Tag."
+        },
+        {
+          "info": {
+            "name": "Enable Feature on Partnerize Tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v3/partner/partnerize-tags/:tagId/features",
+            "params": [
+              {
+                "name": "tagId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Partnerize Tag"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Enables a feature for a specific Partnerize Tag."
+        },
+        {
+          "info": {
+            "name": "Disable Feature on Partnerize Tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.partnerize.com/v3/partner/partnerize-tags/:tagId/features/:featureName",
+            "params": [
+              {
+                "name": "tagId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Partnerize Tag"
+              },
+              {
+                "name": "featureName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the feature to remove"
+              }
+            ]
+          },
+          "docs": "Disables a feature for a specific Partnerize Tag."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Meta Fields API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Meta Fields",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Campaign Meta Fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/meta-fields",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign to list the commission tiers for"
+              }
+            ]
+          },
+          "docs": "Determine the meta fields available when filtering commissions. This endpoint returns either the default set of meta fields, or a custom set which replaces the default fields.\n"
+        },
+        {
+          "info": {
+            "name": "List Tier Meta Fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/commissions/tiers/meta-fields",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign to list the commission tiers for"
+              }
+            ]
+          },
+          "docs": "Returns the meta fields available when defining commission tiers. This endpoint returns campaign meta fields, plus meta fields that can be used to refine commission tiers, but not commission rates.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

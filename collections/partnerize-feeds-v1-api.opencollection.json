@@ -1,0 +1,49 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Feeds (v1) API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Feeds (v1)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all Available Feeds",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/user/publisher/:publisher_id/feed",
+            "params": [
+              {
+                "name": "publisher_id",
+                "value": "1l1007802",
+                "type": "path",
+                "description": "ID of the partner"
+              },
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "query",
+                "description": "ID of the campaign to restrict output to"
+              },
+              {
+                "name": "active",
+                "value": "y",
+                "type": "query",
+                "description": "Filter by active"
+              }
+            ]
+          },
+          "docs": "View all Feeds for the specified Partner."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

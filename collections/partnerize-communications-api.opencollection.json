@@ -1,0 +1,237 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Communications API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Communications",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List communications",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/communications",
+            "params": [
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "A comma separated list of statuses"
+              }
+            ]
+          },
+          "docs": "Lists all communications which the user has access to. Filtering by status is available via a query parameter."
+        },
+        {
+          "info": {
+            "name": "Creates a new draft communication",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v2/communications",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Draft communications belong to the user that created them (the owner).\nNote: this endpoint accepts publisher_ids or recipients, not both together\n"
+        },
+        {
+          "info": {
+            "name": "Retrieves a single communication",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/communications/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the communication"
+              }
+            ]
+          },
+          "docs": "Retrieves a communication for a given id"
+        },
+        {
+          "info": {
+            "name": "Updates a draft communication",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.partnerize.com/v2/communications/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the communication"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Only the owner of the draft can update it. The recipients of the communication can be defined by a list of emails or by a list of existing partner ids"
+        },
+        {
+          "info": {
+            "name": "Deletes an existing draft communication",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.partnerize.com/v2/communications/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the communication to be deleted"
+              }
+            ]
+          },
+          "docs": "Only the owner of the draft can delete it."
+        },
+        {
+          "info": {
+            "name": "Returns the content of a communication",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/communications/:id/content",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the communication"
+              }
+            ]
+          },
+          "docs": "Returns the HTML content of an existing communication."
+        },
+        {
+          "info": {
+            "name": "Updates the content of a communication",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.partnerize.com/v2/communications/:id/content",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the communication"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates the HTML content of an existing communication."
+        },
+        {
+          "info": {
+            "name": "Sends a communication preview",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v2/communications/send-preview",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send a preview of a communication"
+        },
+        {
+          "info": {
+            "name": "Sends or schedules a draft communication",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v2/communications/:id/send",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the communication"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send a Communication"
+        },
+        {
+          "info": {
+            "name": "Cancels a scheduled communication",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.partnerize.com/v2/communications/:id/cancel",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the communication to be cancelled"
+              }
+            ]
+          },
+          "docs": "Cancels the scheduling of a previously scheduled communication. This will change the communication status to draft.\n"
+        },
+        {
+          "info": {
+            "name": "Communications summary report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/communications/summary",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The number of records to retrieve"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Starting position"
+              }
+            ]
+          },
+          "docs": "Retrieves summary report for all sent communications."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

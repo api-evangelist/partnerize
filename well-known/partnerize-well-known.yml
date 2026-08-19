@@ -1,0 +1,101 @@
+generated: '2026-08-13'
+method: probed
+source: https://api.partnerize.com/.well-known/
+name: Partnerize Well-Known Discovery Probe
+description: >-
+  Probe of the RFC 8615 /.well-known/ discovery surface across every Partnerize host
+  named in apis.yml and in the published OpenAPI servers[] block. Every path on every
+  host returned 404. No well-known document is served, so no WellKnown or SecurityTxt
+  pointer is emitted in apis.yml — this file records a measured absence, not a presence.
+result: none
+documents_found: 0
+hosts:
+  - host: https://api.partnerize.com
+    role: api (OpenAPI servers[] production, apis.yml baseURL for all 104 API entries)
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: https://partnerize.com
+    role: website
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: https://api-docs.partnerize.com
+    role: documentation
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: https://console.partnerize.com
+    role: console (login)
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+notes:
+  - >-
+    api.partnerize.com and api-docs.partnerize.com return a bare nginx 404 page for every
+    /.well-known/ path. partnerize.com (WordPress) and console.partnerize.com (SPA) both
+    return their own styled 404 page with an HTTP 404 status, so there is no soft-200
+    catch-all masquerading as a document on any host.
+  - >-
+    No agent card was found at either the A2A 1.0.0 canonical /.well-known/agent-card.json
+    or the pre-0.3 legacy /.well-known/agent.json, so no a2a/ artifact was written.
+  - >-
+    No OAuth or OIDC discovery document exists because the Partnerize API does not use
+    OAuth — it authenticates with HTTP Basic over an application key and user API key.
+    See authentication/partnerize-authentication.yml.

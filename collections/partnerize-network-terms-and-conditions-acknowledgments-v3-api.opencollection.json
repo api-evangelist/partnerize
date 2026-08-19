@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Network Terms and Conditions Acknowledgments (v3) API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Network Terms and Conditions Acknowledgments (v3)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create network terms and conditions acknowledgment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v3/brand/network-terms-and-conditions-acknowledgments",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an acknowledgement for network terms and conditions"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

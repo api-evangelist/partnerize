@@ -1,0 +1,192 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Suppressed Code API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Suppressed Code",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List All Suppressed Codes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/attribution/suppressed-codes",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Campaign"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Used to limit the response to a number of results"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Used to offset the results we're returning"
+              },
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "Search for specific codes"
+              },
+              {
+                "name": "dates",
+                "value": "",
+                "type": "query",
+                "description": "Search for codes within a date-time range. Comma separated start and end date-times"
+              },
+              {
+                "name": "statuses",
+                "value": "",
+                "type": "query",
+                "description": "A comma separated list of statuses to return results for"
+              }
+            ]
+          },
+          "docs": "Show a list of all configured suppressed codes. May be filtered with several filters."
+        },
+        {
+          "info": {
+            "name": "Create a Suppressed Code",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/attribution/suppressed-codes",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Campaign"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a Suppressed Code configuration"
+        },
+        {
+          "info": {
+            "name": "Delete Suppressed Codes",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/attribution/suppressed-codes",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Campaign"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete Suppressed Codes. This is only possible if the Suppressed Codes are scheduled, otherwise an error will occur."
+        },
+        {
+          "info": {
+            "name": "Get a Suppressed Code",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/attribution/suppressed-codes/:id",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Campaign"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Suppressed Code"
+              }
+            ]
+          },
+          "docs": "Get a Suppressed Code instance"
+        },
+        {
+          "info": {
+            "name": "Update a Suppressed Code",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/attribution/suppressed-codes/:id",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Campaign"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Suppressed Code"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a Suppressed Code. All request body properties are optional but at least one must be specified for update."
+        },
+        {
+          "info": {
+            "name": "Delete a Suppressed Code",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/attribution/suppressed-codes/:id",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Campaign"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Suppressed Code"
+              }
+            ]
+          },
+          "docs": "Delete and Suppressed Code"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

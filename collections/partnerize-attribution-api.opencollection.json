@@ -1,0 +1,85 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Attribution",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Partner Attributions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/publishers/:publisherId/attribution",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign"
+              },
+              {
+                "name": "partner_id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the partner"
+              }
+            ]
+          },
+          "docs": "Get available ongoing and upcoming attribution opportunities for the given partner.\n\nAny of the keys within the response will be excluded if they are not applicable, such as not being enabled or configured for the partner."
+        },
+        {
+          "info": {
+            "name": "List Attribution Settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/attribution",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Campaign"
+              }
+            ]
+          },
+          "docs": "Get the status of each of the Attribution Settings"
+        },
+        {
+          "info": {
+            "name": "Update Attribution Settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/attribution",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Campaign"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update the Attribution Settings"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

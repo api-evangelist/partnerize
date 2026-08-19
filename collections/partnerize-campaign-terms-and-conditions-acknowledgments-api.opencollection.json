@@ -1,0 +1,89 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Campaign Terms and Conditions Acknowledgments API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Campaign Terms and Conditions Acknowledgments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List campaign terms and conditions acknowledgments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v3/partner/campaign-terms-and-conditions-acknowledgments",
+            "params": [
+              {
+                "name": "partner_id",
+                "value": "",
+                "type": "query",
+                "description": "Filter by partner."
+              },
+              {
+                "name": "campaign_terms_and_conditions_id",
+                "value": "",
+                "type": "query",
+                "description": "Filter by campaign terms and conditions."
+              },
+              {
+                "name": "created_at",
+                "value": "",
+                "type": "query",
+                "description": "Filter by created datetime."
+              },
+              {
+                "name": "created_by",
+                "value": "",
+                "type": "query",
+                "description": "Filter by created by user."
+              }
+            ]
+          },
+          "docs": "Lists all acknowledgements for campaign terms and conditions of the partners managed by the user."
+        },
+        {
+          "info": {
+            "name": "Create campaign terms and conditions acknowledgment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v3/partner/campaign-terms-and-conditions-acknowledgments",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an acknowledgement for campaign terms and conditions"
+        },
+        {
+          "info": {
+            "name": "Retrieve campaign terms and conditions acknowledgment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v3/partner/campaign-terms-and-conditions-acknowledgments/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the acknowledgment"
+              }
+            ]
+          },
+          "docs": "Retrieves a single acknowledgment of campaign terms and condition"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,108 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Websites API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Websites",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all Partner Websites",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/user/publisher/:publisher_id/website",
+            "params": [
+              {
+                "name": "publisher_id",
+                "value": "1l1007802",
+                "type": "path",
+                "description": "ID of the partner"
+              }
+            ]
+          },
+          "docs": "Return the details of all Websites attached to the Partner account."
+        },
+        {
+          "info": {
+            "name": "Create Partner Website",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/user/publisher/:publisher_id/website",
+            "params": [
+              {
+                "name": "publisher_id",
+                "value": "1l1007802",
+                "type": "path",
+                "description": "ID of the partner"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create one or more Websites against the Partner entity. Each Website is sent as an array within a top level `websites` array."
+        },
+        {
+          "info": {
+            "name": "Update Partner Websites",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.partnerize.com/user/publisher/:publisher_id/website",
+            "params": [
+              {
+                "name": "publisher_id",
+                "value": "1l1007802",
+                "type": "path",
+                "description": "ID of the partner"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update one or more Websites against the Partner entity. Each Website is sent as an array within a top level `websites` array and must contain its associated `website_id`."
+        },
+        {
+          "info": {
+            "name": "Retrieve a Partner Website",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/user/publisher/:publisher_id/website/:website_id",
+            "params": [
+              {
+                "name": "publisher_id",
+                "value": "1l1007802",
+                "type": "path",
+                "description": "ID of the partner"
+              },
+              {
+                "name": "website_id",
+                "value": "11l18694",
+                "type": "path",
+                "description": "ID of the partner website"
+              }
+            ]
+          },
+          "docs": "Retrieves the specified partner website."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

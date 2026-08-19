@@ -1,0 +1,303 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Exports API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Exports",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Export a Clicks Report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/reporting/export/export/click.csv",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "query",
+                "description": "ID of the campaign. You must provide either this parameter or `publisher_id`."
+              },
+              {
+                "name": "publisher_id",
+                "value": "1l1007802",
+                "type": "query",
+                "description": "ID of the partner. You must provide either this parameter or `campaign_id`"
+              },
+              {
+                "name": "start_date",
+                "value": "2016-02-30T05:15:32Z",
+                "type": "query",
+                "description": "Start date for data to be included in the report"
+              },
+              {
+                "name": "end_date",
+                "value": "2016-03-10T19:02:35Z",
+                "type": "query",
+                "description": "End date for data to be included in the report"
+              },
+              {
+                "name": "timezone",
+                "value": "Europe/London",
+                "type": "query",
+                "description": "Force a specified Timezone"
+              },
+              {
+                "name": "complete_email",
+                "value": "me@example.com",
+                "type": "query",
+                "description": "When used in conjunction with limit=0 send a link to the CSV when generation is complete"
+              },
+              {
+                "name": "limit",
+                "value": "0",
+                "type": "query",
+                "description": "When set to zero, attempt to download everything"
+              },
+              {
+                "name": "export_reference",
+                "value": "JanSales",
+                "type": "query",
+                "description": "Add a prefix to the report filename"
+              },
+              {
+                "name": "encoding",
+                "value": "UTF-8",
+                "type": "query",
+                "description": "+ `UTF-8` - Default encoding\n\n+ `UTF-16`"
+              },
+              {
+                "name": "delimiter",
+                "value": "comma",
+                "type": "query",
+                "description": "Choose the delimiter for separating values\n\n+ comma\n\n+ tab\n\n+ pipe"
+              }
+            ]
+          },
+          "docs": "Request a CSV for a granular Click report for the defined Campaign or Partner and within the requested time period."
+        },
+        {
+          "info": {
+            "name": "Export Conversions Report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/reporting/export/export/conversion.csv",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "query",
+                "description": "ID of the campaign. You must provide either this parameter or `publisher_id`."
+              },
+              {
+                "name": "publisher_id",
+                "value": "1l1007802",
+                "type": "query",
+                "description": "ID of the partner. You must provide either this parameter or `campaign_id`."
+              },
+              {
+                "name": "start_date",
+                "value": "2016-02-30T05:15:32Z",
+                "type": "query",
+                "description": "Start date for data to be included in the report"
+              },
+              {
+                "name": "end_date",
+                "value": "2016-03-10T19:02:35Z",
+                "type": "query",
+                "description": "End date for data to be included in the report"
+              },
+              {
+                "name": "date_type",
+                "value": "standard",
+                "type": "query",
+                "description": "Alter the context of what the dates ranges apply to\n\n+ standard - The default selection, range is based on conversion_time\n\n+ approved_at - Alternative date range, which is based on the approved time of conversion items"
+              },
+              {
+                "name": "currency[]",
+                "value": "GBP",
+                "type": "query",
+                "description": "Filter on a specific currency"
+              },
+              {
+                "name": "conversion_id",
+                "value": "1l28718278",
+                "type": "query",
+                "description": "Filter on a specific conversion_id"
+              },
+              {
+                "name": "conversion_reference",
+                "value": "ORDER872137",
+                "type": "query",
+                "description": "Filter on a specific conversion_reference value"
+              },
+              {
+                "name": "ref_conversion_metric_id",
+                "value": "2",
+                "type": "query",
+                "description": "Filter on a specific conversion metric, use an array for multiple"
+              },
+              {
+                "name": "timezone",
+                "value": "Europe/London",
+                "type": "query",
+                "description": "Force a specified Timezone"
+              },
+              {
+                "name": "complete_email",
+                "value": "me@example.com",
+                "type": "query",
+                "description": "When used in conjunction with limit=0 send a link to the CSV when generation is complete"
+              },
+              {
+                "name": "limit",
+                "value": "0",
+                "type": "query",
+                "description": "When set to zero, attempt to download everything"
+              },
+              {
+                "name": "export_reference",
+                "value": "JanSales",
+                "type": "query",
+                "description": "Add a prefix to the report filename"
+              },
+              {
+                "name": "encoding",
+                "value": "UTF-8",
+                "type": "query",
+                "description": "+ `UTF-8` - Default encoding\n\n+ `UTF-16`"
+              },
+              {
+                "name": "delimiter",
+                "value": "comma",
+                "type": "query",
+                "description": "Choose the delimiter for separating values\n\n+ comma\n\n+ tab\n\n+ pipe"
+              }
+            ]
+          },
+          "docs": "Request a CSV for a granular Conversion report for the defined Campaign or Partner and within the requested time period. This report will give you details of orders at the basket level"
+        },
+        {
+          "info": {
+            "name": "Export Conversion Items Report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/reporting/export/export/conversion_item.csv",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "query",
+                "description": "ID of the campaign. You must provide either this parameter or `publisher_id`."
+              },
+              {
+                "name": "publisher_id",
+                "value": "1l1007802",
+                "type": "query",
+                "description": "ID of the partner. You must provide either this parameter or `campaign_id`"
+              },
+              {
+                "name": "start_date",
+                "value": "2016-02-30T05:15:32Z",
+                "type": "query",
+                "description": "Start date for data to be included in the report"
+              },
+              {
+                "name": "end_date",
+                "value": "2016-03-10T19:02:35Z",
+                "type": "query",
+                "description": "End date for data to be included in the report"
+              },
+              {
+                "name": "date_type",
+                "value": "standard",
+                "type": "query",
+                "description": "Alter the context of what the dates ranges apply to\n\n+ standard - The default selection, range is based on conversion_time\n\n+ approved_at - Alternative date range, which is based on the approved time of conversion items"
+              },
+              {
+                "name": "currency[]",
+                "value": "GBP",
+                "type": "query",
+                "description": "Filter on a specific currency"
+              },
+              {
+                "name": "conversion_id",
+                "value": "1l28718278",
+                "type": "query",
+                "description": "Filter on a specific conversion_id"
+              },
+              {
+                "name": "conversion_reference",
+                "value": "ORDER872137",
+                "type": "query",
+                "description": "Filter on a specific conversion_reference value"
+              },
+              {
+                "name": "ref_conversion_metric_id",
+                "value": "2",
+                "type": "query",
+                "description": "Filter on a specific conversion metric, use an array for multiple"
+              },
+              {
+                "name": "timezone",
+                "value": "Europe/London",
+                "type": "query",
+                "description": "Force a specified Timezone"
+              },
+              {
+                "name": "include_payment_info",
+                "value": "true",
+                "type": "query",
+                "description": "Include payment information. Omit parameter or false to exclude, which is the default. Fields included are:\n+ payment_status\n+ invoice_create_date\n+ invoice_paid_date"
+              },
+              {
+                "name": "complete_email",
+                "value": "me@example.com",
+                "type": "query",
+                "description": "When used in conjunction with limit=0 send a link to the CSV when generation is complete"
+              },
+              {
+                "name": "limit",
+                "value": "0",
+                "type": "query",
+                "description": "When set to zero, attempt to download everything"
+              },
+              {
+                "name": "export_reference",
+                "value": "JanSales",
+                "type": "query",
+                "description": "Add a prefix to the report filename"
+              },
+              {
+                "name": "encoding",
+                "value": "UTF-8",
+                "type": "query",
+                "description": "+ `UTF-8` - Default encoding\n\n+ `UTF-16`"
+              },
+              {
+                "name": "delimiter",
+                "value": "comma",
+                "type": "query",
+                "description": "Choose the delimiter for separating values\n\n+ comma\n\n+ tab\n\n+ pipe"
+              }
+            ]
+          },
+          "docs": "Request a CSV for a granular Conversion report which includes all individual items for the defined Campaign or Partner and within the requested time period. In Conversion Item reports you will be able to see details of each item including individual item’s commission and value as each item will be listed on its own row within the report."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,502 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Publishers API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Publishers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get publishers list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/networks/:network_id/publishers",
+            "params": [
+              {
+                "name": "network_id",
+                "value": "",
+                "type": "path",
+                "description": "The publishers' network id"
+              },
+              {
+                "name": "account_created",
+                "value": "",
+                "type": "query",
+                "description": "Date range for when partners signed up"
+              },
+              {
+                "name": "campaign_ids",
+                "value": "",
+                "type": "query",
+                "description": "The publishers' campaign ids"
+              },
+              {
+                "name": "campaign_statuses",
+                "value": "",
+                "type": "query",
+                "description": "The publishers' campaign statuses"
+              },
+              {
+                "name": "commission_group_ids",
+                "value": "",
+                "type": "query",
+                "description": "The publishers' commission group ids"
+              },
+              {
+                "name": "company_name",
+                "value": "",
+                "type": "query",
+                "description": "The publishers' company name"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "CSV list of fields to be returned as part of the response"
+              },
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query",
+                "description": "Filter by partner IDs"
+              },
+              {
+                "name": "include_discovery",
+                "value": "",
+                "type": "query",
+                "description": "Whether to include partners with pending requests from brand discovery or invites from partner discovery"
+              },
+              {
+                "name": "website_verified",
+                "value": "",
+                "type": "query",
+                "description": "Whether to filter partners by their primary website domain verification status"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The number of records to retrieve"
+              },
+              {
+                "name": "locales",
+                "value": "",
+                "type": "query",
+                "description": "The publishers' contact locale (locale codes), see https://api.partnerize.com/reference/locale"
+              },
+              {
+                "name": "network_statuses",
+                "value": "",
+                "type": "query",
+                "description": "The publishers' network status. Choosing requested or invited will automatically enable the include_discovery option for convenience."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Starting position"
+              },
+              {
+                "name": "operating_countries",
+                "value": "",
+                "type": "query",
+                "description": "The publishers' operating countries (country isos), see https://api.partnerize.com/reference/country"
+              },
+              {
+                "name": "partner_collection_id",
+                "value": "",
+                "type": "query",
+                "description": "Filter by partner collection ID"
+              },
+              {
+                "name": "promotional_countries",
+                "value": "",
+                "type": "query",
+                "description": "The publishers' promotional countries (country isos), see https://api.partnerize.com/reference/country"
+              },
+              {
+                "name": "promotional_method_ids",
+                "value": "",
+                "type": "query",
+                "description": "The publishers' promotional methods , see https://api.partnerize.com/reference/promotional_method"
+              },
+              {
+                "name": "publisher_email",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "publisher_name",
+                "value": "",
+                "type": "query",
+                "description": "Search by the publishers' company name, falling back the publisher name"
+              },
+              {
+                "name": "publisher_tag_ids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "publisher_website",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reporting_identifier",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "Search for matching publishers"
+              },
+              {
+                "name": "sort",
+                "value": "name",
+                "type": "query",
+                "description": "Order results"
+              },
+              {
+                "name": "vertical_ids",
+                "value": "",
+                "type": "query",
+                "description": "The publishers' verticals, see https://api.partnerize.com/reference/vertical"
+              },
+              {
+                "name": "recipient_status",
+                "value": "",
+                "type": "query",
+                "description": "Accepts a communication ID. Adds a flag into the response whether publishers are on that communication's recipient list"
+              }
+            ]
+          },
+          "docs": "Get Publishers for Network"
+        },
+        {
+          "info": {
+            "name": "Export publishers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v2/networks/:network_id/publishers.csv",
+            "headers": [
+              {
+                "name": "Accept",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "network_id",
+                "value": "",
+                "type": "path",
+                "description": "The publishers' network id"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Export publishers for a network"
+        },
+        {
+          "info": {
+            "name": "Get publisher details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/networks/:network_id/publishers/:publisher_id",
+            "params": [
+              {
+                "name": "network_id",
+                "value": "",
+                "type": "path",
+                "description": "The publishers' network id"
+              },
+              {
+                "name": "publisher_id",
+                "value": "",
+                "type": "path",
+                "description": "The publisher id"
+              }
+            ]
+          },
+          "docs": "Get Publishers Details for Network"
+        },
+        {
+          "info": {
+            "name": "Get publishers ids list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/networks/:network_id/publishers/ids",
+            "params": [
+              {
+                "name": "network_id",
+                "value": "",
+                "type": "path",
+                "description": "The publishers' network id"
+              },
+              {
+                "name": "account_created",
+                "value": "",
+                "type": "query",
+                "description": "Date range for when partners signed up"
+              },
+              {
+                "name": "campaign_ids",
+                "value": "",
+                "type": "query",
+                "description": "The publishers' campaign ids"
+              },
+              {
+                "name": "campaign_statuses",
+                "value": "",
+                "type": "query",
+                "description": "The publishers' campaign statuses"
+              },
+              {
+                "name": "commission_group_ids",
+                "value": "",
+                "type": "query",
+                "description": "The publishers' commission group ids"
+              },
+              {
+                "name": "company_name",
+                "value": "",
+                "type": "query",
+                "description": "The publishers' company name"
+              },
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query",
+                "description": "Filter by partner IDs"
+              },
+              {
+                "name": "include_discovery",
+                "value": "",
+                "type": "query",
+                "description": "Whether to include partners with pending requests from brand discovery or invites from partner discovery"
+              },
+              {
+                "name": "website_verified",
+                "value": "",
+                "type": "query",
+                "description": "Whether to filter partners by their primary website domain verification status"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The number of records to retrieve"
+              },
+              {
+                "name": "locales",
+                "value": "",
+                "type": "query",
+                "description": "The publishers' contact locale (locale codes), see https://api.partnerize.com/reference/locale"
+              },
+              {
+                "name": "network_statuses",
+                "value": "",
+                "type": "query",
+                "description": "The publishers' network status. Choosing requested or invited will automatically enable the include_discovery option for convenience."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Starting position"
+              },
+              {
+                "name": "operating_countries",
+                "value": "",
+                "type": "query",
+                "description": "The publishers' operating countries (country isos), see https://api.partnerize.com/reference/country"
+              },
+              {
+                "name": "promotional_countries",
+                "value": "",
+                "type": "query",
+                "description": "The publishers' promotional countries (country isos), see https://api.partnerize.com/reference/country"
+              },
+              {
+                "name": "promotional_method_ids",
+                "value": "",
+                "type": "query",
+                "description": "The publishers' promotional methods , see https://api.partnerize.com/reference/promotional_method"
+              },
+              {
+                "name": "publisher_email",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "publisher_name",
+                "value": "",
+                "type": "query",
+                "description": "Search by the publishers' company name, falling back the publisher name"
+              },
+              {
+                "name": "publisher_tag_ids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "publisher_website",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reporting_identifier",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "Search for matching publishers"
+              },
+              {
+                "name": "sort",
+                "value": "name",
+                "type": "query",
+                "description": "Order results"
+              },
+              {
+                "name": "vertical_ids",
+                "value": "",
+                "type": "query",
+                "description": "The publishers' verticals, see https://api.partnerize.com/reference/vertical"
+              }
+            ]
+          },
+          "docs": "Get a list of publisher ids"
+        },
+        {
+          "info": {
+            "name": "Create publisher collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v2/networks/:network_id/partner-collections",
+            "params": [
+              {
+                "name": "network_id",
+                "value": "",
+                "type": "path",
+                "description": "The publishers' network id"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create publisher collection"
+        },
+        {
+          "info": {
+            "name": "Delete publisher collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.partnerize.com/v2/networks/:network_id/partner-collections/:collection-id",
+            "params": [
+              {
+                "name": "network_id",
+                "value": "",
+                "type": "path",
+                "description": "The publishers' network id"
+              },
+              {
+                "name": "collection-id",
+                "value": "",
+                "type": "path",
+                "description": "The collection id"
+              }
+            ]
+          },
+          "docs": "Delete publisher collection"
+        },
+        {
+          "info": {
+            "name": "Add publishers to a collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v2/networks/:network_id/partner-collections/:collection-id/partners",
+            "params": [
+              {
+                "name": "network_id",
+                "value": "",
+                "type": "path",
+                "description": "The publishers' network id"
+              },
+              {
+                "name": "collection-id",
+                "value": "",
+                "type": "path",
+                "description": "The collection id"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add publishers to a collection"
+        },
+        {
+          "info": {
+            "name": "Remove publishers from a collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.partnerize.com/v2/networks/:network_id/partner-collections/:collection-id/partners",
+            "params": [
+              {
+                "name": "network_id",
+                "value": "",
+                "type": "path",
+                "description": "The publishers' network id"
+              },
+              {
+                "name": "collection-id",
+                "value": "",
+                "type": "path",
+                "description": "The collection id"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Remove publishers from a collection"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

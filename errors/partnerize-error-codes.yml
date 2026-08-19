@@ -1,0 +1,337 @@
+generated: '2026-08-13'
+method: searched
+source: https://api-docs.partnerize.com/brand/#section/Version-3-API-Conventions/Errors
+name: Partnerize Error Code Registry
+description: >-
+  The published Partnerize error-code registry, captured verbatim from the Bad Request
+  (Code 400) tables in the Version 2 and Version 3 API Conventions. v2 uses readable
+  slugs; v3 replaced them with stable UUID constraint identifiers, so a v3 caller MUST
+  carry this lookup table to turn error.errors[].code into a cause. This is the
+  non-payments sibling of a decline-code catalog: Partnerize is not a card acquirer, so
+  there are no decline codes, but this registry is the equivalent operational surface.
+envelope_field: error.errors[].code
+envelope: errors/partnerize-problem-types.yml
+http_status: 400
+registries:
+  - version: v2
+    code_format: slug
+    docs: https://api-docs.partnerize.com/brand/#section/Version-2-API-Conventions/Errors
+    count: 9
+    codes:
+      - code: invalid_property_format
+        meaning: "Invalid date format."
+      - code: invalid_type
+        meaning: "Invalid parameter type. For example when an array is expected and the input was different type."
+      - code: invalid_value
+        meaning: "The value is out of bounds."
+      - code: required_property
+        meaning: "Missing parameter."
+      - code: invalid_lower_bound
+        meaning: "The value is too low."
+      - code: invalid_upper_bound
+        meaning: "The value is too hogh."
+      - code: invalid_enum_value
+        meaning: "The value must be one of a specified list of values."
+      - code: invalid_max_length
+        meaning: "Maximum number of characters reached."
+      - code: invalid_property
+        meaning: "The property is invalid."
+  - version: v3
+    code_format: uuid
+    docs: https://api-docs.partnerize.com/brand/#section/Version-3-API-Conventions/Errors
+    count: 136
+    note: >-
+      These are stable validation-constraint UUIDs. They are opaque without this table but
+      they are exact — the same constraint always reports the same UUID regardless of
+      property, message wording or locale, which makes them the most reliably
+      machine-branchable signal in the whole Partnerize error surface.
+    codes:
+      - code: 2572f7f9-e87e-4aa7-98cf-6f53c9ed5584
+        meaning: "A value is required for an attribute which has not been supplied."
+      - code: 901d8596-1b91-4e87-869f-ef66bd4ffc0c
+        meaning: "The value contains more items than expeceted."
+      - code: b9f3a79a-6767-4947-907e-5e0934b5a641
+        meaning: "The value contains more attributes than expected."
+      - code: 6771735c-3000-49d1-a978-74aeb33d15b9
+        meaning: "The value does not match the expected value."
+      - code: 9ba6d700-08f1-45c9-bde7-873926d4d393
+        meaning: "The value does not contain the expected value."
+      - code: aa903a6c-64ff-4f8b-830d-8967331c5ba3
+        meaning: "The value does not match one of the expected values."
+      - code: c535eb9f-a8fd-40ce-9e99-fcd6056b55de
+        meaning: "The value is not higher than or equal to the maximum value."
+      - code: ed574a9e-fa9d-4b3c-83ee-65ecc47fa2fb
+        meaning: "The value is not lower than or equal to the minimum value."
+      - code: 1945fae7-8937-4086-b06b-2a43da93b7e3
+        meaning: "The value does not match the expected format."
+      - code: 1098ac2a-42f4-4a46-a684-64d67b8c274c
+        meaning: "The value contains more items than permitted."
+      - code: 539b9fb0-b542-422d-992f-4428e26b39e1
+        meaning: "The value contains less items than permitted."
+      - code: 32452de9-0c46-4674-a87d-e02f469a003c
+        meaning: "The value contains more characters than required."
+      - code: 39c6adce-c253-4750-b2c1-7215713af74d
+        meaning: "The value contains less characters than required."
+      - code: 458f0977-09d2-40ee-bbe5-c21bc9ed6e48
+        meaning: "The value contains more attributes than expected."
+      - code: 4d7d63f2-28f1-45d3-b3b8-99a1bf816e53
+        meaning: "The value contains less attributes than expected."
+      - code: d0fd75d5-9246-4c22-b395-4f6d0279555e
+        meaning: "The value is higher than permitted."
+      - code: 7ed9630d-04c4-4559-ace5-5e44f45e14e9
+        meaning: "The value is lower than permitted."
+      - code: 3dff825b-ac80-41da-a991-2f257ab60a79
+        meaning: "The value is not a multiple of the defined value."
+      - code: 80d20241-7f19-4ee2-b46d-538f7179f7fb
+        meaning: "The value does not match the defined pattern."
+      - code: 9f6fab77-488f-449d-85d3-3345c40a2a45
+        meaning: "The attribute value name does not match the defined pattern."
+      - code: 976f4746-0e09-44a7-ba46-b53527a24f6a
+        meaning: "The attribute value name does not match one of the expected values."
+      - code: 6a6c32c0-de05-4301-89dd-4a72133c137f
+        meaning: "The value has been supplied as an invalid type."
+      - code: 25772442-e9f9-4cb1-9147-65c422026404
+        meaning: "The value contains a duplicate value."
+      - code: 0a53a999-8349-4326-9135-929f25745e08
+        meaning: "The interval value does not represent a date-time period between the dates."
+      - code: cff336e3-1245-49f4-87ec-8efe0d2e2dce
+        meaning: "The interval value does represent a valid date-time period."
+      - code: 66dad313-af0b-4214-8566-6c799be9789c
+        meaning: "The Business Identifier Code (BIC) value is an invalid length."
+      - code: f424c529-7add-4417-8f2d-4b656e4833e2
+        meaning: "The Business Identifier Code (BIC) value contains invalid characters."
+      - code: 00559357-6170-4f29-aebd-d19330aa19cf
+        meaning: "The Business Identifier Code (BIC) value does not contain a valid bank code."
+      - code: 1ce76f8d-3c1f-451c-9e62-fe9c3ed486ae
+        meaning: "The Business Identifier Code (BIC) value does not contain a valid country code."
+      - code: 11884038-3312-4ae5-9d04-699f782130c7
+        meaning: "The Business Identifier Code (BIC) value does not contain only contain uppercase characters."
+      - code: 29a2c3bb-587b-4996-b6f5-53081364cea5
+        meaning: "The Business Identifier Code (BIC) value does not contain a valid iban country code."
+      - code: 183ad2de-533d-4796-a439-6d3c3852b549
+        meaning: "The value is empty."
+      - code: f196f6bd-1914-4707-a32c-20536041558f
+        meaning: "Campaign is required."
+      - code: a2ad9231-e827-485f-8a1e-ef4d9a6d5c2e
+        meaning: "The Credit Card value contains non-numeric characters."
+      - code: a8faedbf-1c2f-4695-8d22-55783be8efed
+        meaning: "The Credit Card value is an invalid format."
+      - code: 8e179f1b-97aa-4560-a02f-2a8b42e49df7
+        meaning: "The value selected is not a valid choice."
+      - code: 11edd7eb-5872-4b6e-9f12-89923999fd0e
+        meaning: "The value contains too few choices."
+      - code: 9bd98e49-211c-433f-8630-fd1c2d0f08c3
+        meaning: "The value contains too many choices."
+      - code: 2fa2158c-2a7f-484b-98aa-975522539ff8
+        meaning: "The value has not been supplied."
+      - code: 7703c766-b5d5-4cef-ace7-ae0dd82304e9
+        meaning: "The value has been supplied for an unexpected attribute."
+      - code: bef8e338-6ae5-4caf-b8e2-50e7b0579e69
+        meaning: "The value contains too few items."
+      - code: 756b1212-697c-468d-a9ad-50dd783bb169
+        meaning: "The value contains too many items."
+      - code: 8f900c12-61bd-455d-9398-996cd040f7f0
+        meaning: "The country value is not a valid country."
+      - code: 69945ac1-2db4-405f-bec7-d2772f73df52
+        meaning: "The currency value is not a valid currency."
+      - code: 1a9da513-2640-4f84-9b6a-4d99dcddc628
+        meaning: "The date-time value is not a valid date-time."
+      - code: d52afa47-620d-4d99-9f08-f4d85b36e33c
+        meaning: "The date value is not a valid date."
+      - code: 5e797c9d-74f7-4098-baa3-94390c447b27
+        meaning: "The time value is not a valid time."
+      - code: 6d99d6c3-1464-4ccf-bdc7-14d083cf455c
+        meaning: "The value is not divisible by the defined value."
+      - code: bd79c0ab-ddba-46cc-a703-a7a4b08de310
+        meaning: "The email value is not a valid email address."
+      - code: 478618a7-95ba-473d-9101-cabd45e49115
+        meaning: "The value does not match the expected value."
+      - code: 6b3befbc-2f01-4ddf-be21-b57898905284
+        meaning: "The value does not match the expected expression."
+      - code: d2a3fb6e-7ddc-4210-8fbf-2ab345ce1998
+        meaning: "The file value contains a file which does not exist."
+      - code: c20c92a4-5bfa-4202-9477-28e800e0f6ff
+        meaning: "The file value contains a non-readable file."
+      - code: 5d743385-9775-4aa5-8ff5-495fb1e60137
+        meaning: "The file value contains an empty file."
+      - code: df8637af-d466-48c6-a59d-e7126250a654
+        meaning: "The file value contains a file which is too large."
+      - code: 744f00bc-4389-4c74-92de-9a43cde55534
+        meaning: "The file value contains a file which contains an invalid mime type."
+      - code: 778b7ae0-84d3-481a-9dec-35fdb64b1d78
+        meaning: "The value is less than the expected value."
+      - code: ea4e51d1-3342-48bd-87f1-9e672cd90cad
+        meaning: "The value is not greater than or equal to the expected value."
+      - code: de78ee2c-bd50-44e2-aec8-3d8228aeadb9
+        meaning: "The IBAN value does not contain a valid country code."
+      - code: 8d3d85e4-784f-4719-a5bc-d9e40d45a3a5
+        meaning: "The IBAN value contains invalid characters."
+      - code: b9401321-f9bf-4dcb-83c1-f31094440795
+        meaning: "The IBAN value checksum failed."
+      - code: c8d318f1-2ecc-41ba-b983-df70d225cf5a
+        meaning: "The IBAN value is not in the correct format."
+      - code: e2c259f3-4b46-48e6-b72e-891658158ec8
+        meaning: "The IBAN value contains an unsupported country code."
+      - code: 2a8cc50f-58a2-4536-875e-060a2ce69ed5
+        meaning: "The value is not identical to the defined value."
+      - code: 6d55c3f4-e58e-4fe3-91ee-74b492199956
+        meaning: "The Image value size could not be determined."
+      - code: 7f87163d-878f-47f5-99ba-a8eb723a1ab2
+        meaning: "The Image value is too wide."
+      - code: 9afbd561-4f90-4a27-be62-1780fc43604a
+        meaning: "The Image value is too narrow."
+      - code: 7efae81c-4877-47ba-aa65-d01ccb0d4645
+        meaning: "The Image value is too tall."
+      - code: aef0cb6a-c07f-4894-bc08-1781420d7b4c
+        meaning: "The Image value is too short."
+      - code: 1b06b97d-ae48-474e-978f-038a74854c43
+        meaning: "The Image value contains too few pixels."
+      - code: ee0804e8-44db-4eac-9775-be91aaf72ce1
+        meaning: "The Image value contains too many pixels."
+      - code: 70cafca6-168f-41c9-8c8c-4e47a52be643
+        meaning: "The Image value aspect radio is too big."
+      - code: 59b8c6ef-bcf2-4ceb-afff-4642ed92f12e
+        meaning: "The Image value aspect radio is too small."
+      - code: 5d41425b-facb-47f7-a55a-de9fbe45cb46
+        meaning: "The Image value cannot be square."
+      - code: 6f895685-7cf2-4d65-b3da-9029c5581d88
+        meaning: "The Image value cannot be landscape."
+      - code: 65608156-77da-4c79-a88c-02ef6d18c782
+        meaning: "The Image value cannot be portrait."
+      - code: 5d4163f3-648f-4e39-87fd-cc5ea7aad2d1
+        meaning: "The Image value is corrupted."
+      - code: b1b427ae-9f6f-41b0-aa9b-84511fbb3c5b
+        meaning: "The value does not match the format for a valid IP address."
+      - code: 949acbb0-8ef5-43ed-a0e9-032dfd08ae45
+        meaning: "The ISBN value contains too few characters."
+      - code: 3171387d-f80a-47b3-bd6e-60598545316a
+        meaning: "The ISBN value contains too many characters."
+      - code: 23d21cea-da99-453d-98b1-a7d916fbb339
+        meaning: "The ISBN value contains invalid characters."
+      - code: 2881c032-660f-46b6-8153-d352d9706640
+        meaning: "The ISBN value checksum failed."
+      - code: fa54a457-f042-441f-89c4-066ee5bdd3e1
+        meaning: "The ISBN value does not match the ISBN-10 or ISBN-13 formats."
+      - code: d53a91b0-def3-426a-83d7-269da7ab4200
+        meaning: "The value is not `false`."
+      - code: 60d2f30b-8cfa-4372-b155-9656634de120
+        meaning: "The value is not `null`."
+      - code: 6a20dd3d-f463-4460-8e7b-18a1b98abbfb
+        meaning: "The ISSN value contains too few characters."
+      - code: 37cef893-5871-464e-8b12-7fb79324833c
+        meaning: "The ISSN value contains too many characters."
+      - code: 2983286f-8134-4693-957a-1ec4ef887b15
+        meaning: "The ISSN value does not contain hyphens."
+      - code: a663d266-37c2-4ece-a914-ae891940c588
+        meaning: "The ISSN value contains invalid characters."
+      - code: 7b6dd393-7523-4a6c-b84d-72b91bba5e1a
+        meaning: "The ISSN value must contain uppercase characters."
+      - code: b0f92dbc-667c-48de-b526-ad9586d43e85
+        meaning: "The ISSN value checksum failed."
+      - code: 2beabf1c-54c0-4882-a928-05249b26e23b
+        meaning: "The value is not `true`."
+      - code: 0789c8ad-2d2b-49a4-8356-e2ce63998504
+        meaning: "The JSON value contains invalid JSON syntax."
+      - code: ee65fec4-9a20-4202-9f39-ca558cd7bdf7
+        meaning: "The Language value contains an invalid language."
+      - code: 9ff3fdc4-b214-49db-8718-39c315e33d45
+        meaning: "The value contains too few characters."
+      - code: d94b19cc-114f-4f44-9cc4-4138e80a87b9
+        meaning: "The value contains too many characters."
+      - code: 35e6a710-aa2e-4719-b58e-24b35749b767
+        meaning: "The value contains invalid characters for the defined character set."
+      - code: 079d7420-2d13-460c-8756-de810eeb37d2
+        meaning: "The value is greater than the expected value."
+      - code: 30fbb013-d015-4232-8b3b-8f3be97a7e14
+        meaning: "The value is not less than or equal to the expected value."
+      - code: a0af4293-1f1a-4a1c-a328-979cba6182a2
+        meaning: "The Locale value does not contain a valid locale."
+      - code: dfad6d23-1b74-4374-929b-5cbb56fc0d9e
+        meaning: "The Luhn value contains invalid characters."
+      - code: 4d760774-3f50-4cd5-a6d5-b10a3299d8d3
+        meaning: "The Luhn value checksum failed."
+      - code: c1051bb4-d103-4f74-8988-acbcafc7fdc3
+        meaning: "The value is blank."
+      - code: d9bcdbfe-a9d6-4bfa-a8ff-da5fd93e0f6d
+        meaning: "The Password value has been compromised. e.g. the Password value has been made public by a data breach."
+      - code: aa2e33da-25c8-4d76-8c6c-812f02ea89dd
+        meaning: "The value is not equal to the defined value."
+      - code: 4aaac518-0dda-4129-a6d9-e216b9b454a0
+        meaning: "The value is not identical to the defined value."
+      - code: ad32d13f-c3d4-423b-909a-857b961eb720
+        meaning: "The value is null."
+      - code: ad9a9798-7a99-4df7-8ce9-46e416a1e60b
+        meaning: "The numeric value does not exclusively contain numeric characters."
+      - code: 2d28afcb-e32e-45fb-a815-01c431a86a69
+        meaning: "The numeric value is too high and exists outside the defined range."
+      - code: 76454e69-502c-46c5-9643-f447d837c4d5
+        meaning: "The numeric value is too low and exists outside the defined range."
+      - code: de1e3db3-5ed4-4941-aae4-59f3667cc3a3
+        meaning: "The value does not match the defined regular expression."
+      - code: 9d27b2bb-f755-4fbf-b725-39b1edbdebdf
+        meaning: "The Time value does not match the time format."
+      - code: 8532f9e1-84b2-4d67-8989-0818bc38533b
+        meaning: "The Time value does not present a valid time value."
+      - code: 5ce113e6-5e64-4ea2-90fe-d2233956db13
+        meaning: "The Timezone value does not contain a valid value."
+      - code: b57767b1-36c0-40ac-a3d7-629420c775b8
+        meaning: "The Timezone value does not exist within the defined zone."
+      - code: c4a22222-dc92-4fc0-abb0-d95b268c7d0b
+        meaning: "The Timezone value does not exist within the defined country."
+      - code: 45863c26-88dc-41ba-bf53-c73bd1f7e90d
+        meaning: "The Timezone value is an invalid internationalization code."
+      - code: ba785a8c-82cb-4283-967c-3cf342181b40
+        meaning: "The value has not been supplied in the correct format. e.g. as a number `1` rather than a quoted value `\"1\"`."
+      - code: 7911c98d-b845-4da0-94b7-a8dac36bc55a
+        meaning: "The value does not contain unique elements."
+      - code: 57c2f299-1154-4870-89bb-ef3b1f5ad229
+        meaning: "The URL value does not contain a value URL."
+      - code: aa314679-dac9-4f54-bf97-b2049df8f2a3
+        meaning: "The UUID value contains too few characters."
+      - code: 494897dd-36f8-4d31-8923-71a8d5f3000d
+        meaning: "The UUID value contains too many characters."
+      - code: 51120b12-a2bc-41bf-aa53-cd73daf330d0
+        meaning: "The UUID value contains invalid characters."
+      - code: 98469c83-0309-4f5d-bf95-a496dcaa869c
+        meaning: "The UUID value contains hyphens in invalid positions."
+      - code: 21ba13b4-b185-4882-ac6f-d147355987eb
+        meaning: "The UUID value contains an invalid version number."
+      - code: 164ef693-2b9d-46de-ad7f-836201f0c2db
+        meaning: "The UUID value's first two characters do not sum to ten."
+      - code: f645b551-53ae-4e8b-8ce8-1c747e9df1e2
+        meaning: "This value is already used."
+      - code: 39b4b7c2-e5b9-41b1-83d4-db3b23b5ebfa
+        meaning: "The authentication credentials are missing or are an invalid `User application key` and `User API key` combination."
+      - code: 76fb121a-d769-4293-852d-3b9b6a3dcce8
+        meaning: "Access has not been permitted to a resource or to perform an action."
+      - code: 16bd7f4a-bf84-45c3-aa95-9b32aeb139b0
+        meaning: "Access has not been permitted to a resource or to perform an action."
+      - code: f0b71be3-c8be-4ff2-893e-2bc7f7a18156
+        meaning: "There are terms and conditions that need to be acknowledged before continuing."
+      - code: 0d528fb3-569c-45fa-b2b5-309b360bf9fa
+        meaning: "A route has not been found to match the supplied URL."
+      - code: 5fe5c44b-f299-4fa6-bda4-bf80fecf6093
+        meaning: "A route has been found which matches the supplied URL but cannot be accessed via the HTTP verb."
+      - code: a72717b1-0ecb-4d74-a77f-3e3702a2c8d5
+        meaning: "A non-specific error has occured."
+      - code: c2b63ca9-e15b-48ee-bcf0-0469a2f52047
+        meaning: "A connection to a remote service could not be established, this could be related to an outage or an invalid request."
+      - code: 03b1fdbe-ce8a-4de7-b850-b5e4bccf7f81
+        meaning: "A remote service encountered an error, this could be related to an outage or an invalid request."
+summary:
+  v2_codes: 9
+  v3_codes: 136
+  total: 145
+notes:
+  - >-
+    Meanings are reproduced as published, including Partnerize's own typographical errors
+    ("too hogh", "expeceted"), so this file stays a faithful capture of the provider's
+    registry rather than an edited paraphrase.
+  - >-
+    The registry covers validation failures on 400 only. Codes returned on 401, 403, 404
+    and 405 are the slugs unauthorized, entity_not_found and routing_error, documented in
+    errors/partnerize-problem-types.yml rather than in a table.
+  - >-
+    No operation in openapi/ references either registry, so the codes are unavailable to
+    any tool reading only the machine-readable specification.
+

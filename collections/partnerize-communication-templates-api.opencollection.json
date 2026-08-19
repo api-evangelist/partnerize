@@ -1,0 +1,150 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Communication Templates API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Communication Templates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a list of communication templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/communication-templates",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "Name of template to search by"
+              },
+              {
+                "name": "source",
+                "value": "",
+                "type": "query",
+                "description": "Source of the template to filter by"
+              }
+            ]
+          },
+          "docs": "Get a list of communication templates"
+        },
+        {
+          "info": {
+            "name": "Creates a new communication template",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v2/communication-templates",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new communication template"
+        },
+        {
+          "info": {
+            "name": "Get a single communication template",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/communication-templates/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the template to get"
+              },
+              {
+                "name": "source",
+                "value": "",
+                "type": "query",
+                "description": "Whether the template is from Partnerize or Unlayer"
+              }
+            ]
+          },
+          "docs": "Get a single communication template"
+        },
+        {
+          "info": {
+            "name": "Updates a communication template",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.partnerize.com/v2/communication-templates/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the template to patch"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a communication template"
+        },
+        {
+          "info": {
+            "name": "Delete a single communication template",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.partnerize.com/v2/communication-templates/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the Partnerize template to delete"
+              }
+            ]
+          },
+          "docs": "Delete a single communication template"
+        },
+        {
+          "info": {
+            "name": "Get a single communication template's thumbnail",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/communication-templates/:id/thumbnail",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the template to get"
+              },
+              {
+                "name": "source",
+                "value": "",
+                "type": "query",
+                "description": "Whether the thumbnail is for a Partnerize or Unlayer template"
+              }
+            ]
+          },
+          "docs": "Get a single communication template's thumbnail"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

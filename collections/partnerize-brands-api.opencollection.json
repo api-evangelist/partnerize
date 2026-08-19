@@ -1,0 +1,148 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Attribution Brands API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Brands",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all Brands",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/user/advertiser",
+            "params": [
+              {
+                "name": "limit",
+                "value": "100",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "0",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "One or more Brands can reside on a Network. This endpoint will output a listing of all Brands who reside on\nthe Network and the output is contextual based on the permissions of the User making the request to the endpoint.\nA limited Brand schema will be utilised for any Brand that the User does not have appropriate permissions to view."
+        },
+        {
+          "info": {
+            "name": "Create Brand",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/user/advertiser",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new Brand account attached to the authenticated User."
+        },
+        {
+          "info": {
+            "name": "Retrieve a Brand",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/user/advertiser/:advertiser_id",
+            "params": [
+              {
+                "name": "advertiser_id",
+                "value": "10l110",
+                "type": "path",
+                "description": "ID of the brand"
+              }
+            ]
+          },
+          "docs": "Outputs the specified brand."
+        },
+        {
+          "info": {
+            "name": "Update a Brand",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/user/advertiser/:advertiser_id",
+            "params": [
+              {
+                "name": "advertiser_id",
+                "value": "10l110",
+                "type": "path",
+                "description": "ID of the brand"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update the specified Brand."
+        },
+        {
+          "info": {
+            "name": "Get brands for a network",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v3/network/:networkId/brands",
+            "params": [
+              {
+                "name": "networkId",
+                "value": "",
+                "type": "path",
+                "description": "Network ID to get brands for"
+              },
+              {
+                "name": "with",
+                "value": "",
+                "type": "query",
+                "description": "Extra data to fetch as a comma seperated list. Currently only accepts \"deeplink-domains\""
+              }
+            ]
+          },
+          "docs": "Lists brands for a given network"
+        },
+        {
+          "info": {
+            "name": "Get brands for a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v3/brand",
+            "params": [
+              {
+                "name": "network_id",
+                "value": "",
+                "type": "query",
+                "description": "A way to filter brands by network"
+              },
+              {
+                "name": "with",
+                "value": "",
+                "type": "query",
+                "description": "Extra data to fetch as a comma seperated list. Currently only accepts \"deeplink-domains\""
+              }
+            ]
+          },
+          "docs": "Lists brands the user has access to"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Voucher Codes (v1) API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Voucher Codes (v1)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Campaign Voucher Codes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/user/publisher/:publisher_id/campaign/:campaign_id/voucher",
+            "params": [
+              {
+                "name": "publisher_id",
+                "value": "1l1007802",
+                "type": "path",
+                "description": "ID of the partner"
+              },
+              {
+                "name": "campaign_id",
+                "value": "111111l13",
+                "type": "path",
+                "description": "ID of the campaign"
+              }
+            ]
+          },
+          "docs": "View all Voucher codes for a campaign that the Partner is associated with"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

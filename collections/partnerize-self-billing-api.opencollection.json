@@ -1,0 +1,121 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Self-billing API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Self-billing",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all Selfbills",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/user/publisher/:publisher_id/selfbill",
+            "params": [
+              {
+                "name": "publisher_id",
+                "value": "1l1007802",
+                "type": "path",
+                "description": "ID of the partner"
+              },
+              {
+                "name": "start_date",
+                "value": "2020-02-19 14:29:33",
+                "type": "query",
+                "description": "Selfbill created from start date"
+              },
+              {
+                "name": "end_date",
+                "value": "2020-02-19 17:29:33",
+                "type": "query",
+                "description": "Selfbill created till end date"
+              },
+              {
+                "name": "currency",
+                "value": "GBP",
+                "type": "query",
+                "description": "Tracked currency"
+              },
+              {
+                "name": "status",
+                "value": "created",
+                "type": "query",
+                "description": "Payment status"
+              },
+              {
+                "name": "payment_start_date",
+                "value": "2020-02-19 14:29:33",
+                "type": "query",
+                "description": "Payment paid from start date"
+              },
+              {
+                "name": "payment_end_date",
+                "value": "2020-02-19 17:29:33",
+                "type": "query",
+                "description": "Payment paid till end date"
+              },
+              {
+                "name": "paid_currency",
+                "value": "GBP",
+                "type": "query",
+                "description": "Paid currency"
+              },
+              {
+                "name": "selfbill_currency",
+                "value": "GBP",
+                "type": "query",
+                "description": "Selfbill currency"
+              },
+              {
+                "name": "order",
+                "value": "paid_currency",
+                "type": "query",
+                "description": "Field to sort the results by"
+              },
+              {
+                "name": "order_dir",
+                "value": "ASC",
+                "type": "query",
+                "description": "Direction to sort the results by"
+              }
+            ]
+          },
+          "docs": "View all Self-billing invoices that have been created for the partner."
+        },
+        {
+          "info": {
+            "name": "Retrieve a Self-billing invoice.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/user/publisher/:publisher_id/selfbill/:publisher_self_bill_id",
+            "params": [
+              {
+                "name": "publisher_id",
+                "value": "1l1007802",
+                "type": "path",
+                "description": "ID of the partner"
+              },
+              {
+                "name": "publisher_self_bill_id",
+                "value": "1011l5403",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve an individual Self-billing invoice."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

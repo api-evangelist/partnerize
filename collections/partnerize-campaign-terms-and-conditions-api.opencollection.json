@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Campaign Terms and Conditions API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Campaign Terms and Conditions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve Campaign Terms and Conditions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/custom_terms/:terms_id?:download=true",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the campaign"
+              },
+              {
+                "name": "terms_id",
+                "value": "",
+                "type": "path",
+                "description": "ID of Campaign Terms and Conditions"
+              },
+              {
+                "name": "download",
+                "value": "",
+                "type": "path",
+                "description": "Use this query string parameter to indicate the terms and conditions should be downloaded as a file"
+              }
+            ]
+          },
+          "docs": "Retrieve the Campaign Terms and Conditions for a given Terms and Conditions id. You can download them by specifying the `download=true` query string parameter."
+        },
+        {
+          "info": {
+            "name": "List campaign terms and conditions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v3/partner/campaign-terms-and-conditions",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "",
+                "type": "query",
+                "description": "Filter by campaign."
+              },
+              {
+                "name": "created_at",
+                "value": "",
+                "type": "query",
+                "description": "Filter by created datetime."
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query",
+                "description": "Filter by locale."
+              },
+              {
+                "name": "content",
+                "value": "",
+                "type": "query",
+                "description": "Filter by content."
+              }
+            ]
+          },
+          "docs": "Lists all campaign terms and conditions of the campaigns managed by the user. Terms and conditions will be bound to your user's locale. If no terms for your locale exist, terms for `en` or `en_us` will be returned in it's place."
+        },
+        {
+          "info": {
+            "name": "Retrieve campaign terms and conditions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v3/partner/campaign-terms-and-conditions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign terms and conditions"
+              }
+            ]
+          },
+          "docs": "Retrieves a single campaign terms and conditions"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

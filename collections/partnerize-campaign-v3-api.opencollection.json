@@ -1,0 +1,85 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Campaign v3 API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Campaign v3",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List campaigns",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v3/brand/campaigns",
+            "params": [
+              {
+                "name": "brand_id",
+                "value": "",
+                "type": "query",
+                "description": "Brand ID to filter campaigns by"
+              }
+            ]
+          },
+          "docs": "Return a list of campaigns of the logged-in user's brand"
+        },
+        {
+          "info": {
+            "name": "Get campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v3/brand/campaigns/:campaignId",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Partnerize campaign to be returned"
+              },
+              {
+                "name": "extra_info",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of extra_info to fetch; defaults to none; supply `*` to fetch all; unknown values will be ignored"
+              }
+            ]
+          },
+          "docs": "Return information about a single campaign from the provided ID."
+        },
+        {
+          "info": {
+            "name": "Partial campaign update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.partnerize.com/v3/brand/campaigns/:campaignId",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Partnerize campaign to be returned"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update some information of a campaign."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

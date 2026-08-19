@@ -1,0 +1,85 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Paid Search Violations API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Paid Search Violations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List paid search violations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v3/brand/participations/:participationId/paid_search_violation",
+            "params": [
+              {
+                "name": "participationId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the participation that the paid search violation is associated with"
+              }
+            ]
+          },
+          "docs": "Get a timeline of paid search violations for a given participation"
+        },
+        {
+          "info": {
+            "name": "Create a paid search violation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v3/brand/participations/:participationId/paid_search_violation",
+            "params": [
+              {
+                "name": "participationId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the participation that the paid search violation will be applied to"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a paid search violation time frame for a given participation"
+        },
+        {
+          "info": {
+            "name": "Delete a paid search violation",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.partnerize.com/v3/brand/participations/:participationId/paid_search_violation/:paidSearchViolationId",
+            "params": [
+              {
+                "name": "participationId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the participation that the paid search violation is associated with"
+              },
+              {
+                "name": "paidSearchViolationId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the paid search violation that will be deleted"
+              }
+            ]
+          },
+          "docs": "Deletes or ends a paid search violation. If a paid search violation has been started but the end date has not elapsed, then the end date will be updated to the current datetime. If the paid search violation has not been started then the paid search violation will be completely deleted."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

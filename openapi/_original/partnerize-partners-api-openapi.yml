@@ -26,7 +26,7 @@ info:
     2. Go to Settings – the _User Application Key_ and User _API key_ can be found\
     \ under Account settings.\n\n*Step 2.* Generate an Authorization header\n\nAuthentication\
     \ is achieved by providing an Authorization header in the following format:\n\n\
-    `Authorization: Basic cDN0ZXcxNDV5M3RhZzQxbjowaHkzNGho`\n\nWhere `cDN0ZXcxNDV5M3RhZzQxbjowaHkzNGho`\
+    `Authorization: Basic REDACTED_CLIENT_ID_COLON_SECRET`\n\nWhere `cDN0ZXcxNDV5M3RhZzQxbjowaHkzNGho`\
     \ is the Base64 encoding of the _User Application Key_ and _User API key_ joined\
     \ by a colon &#39;:&#39;.\n\nRefer to the [_Access and Authentication_](#section/Common-API-Conventions/Access-and-Authentication)\
     \ section for more details.\n\n*Step 3.* Make your first Partnerize API request\n\
@@ -80,7 +80,7 @@ info:
     \ the request is made. The keys are sent as part of an _Authorization_ header\
     \ which value contains the word Basic followed by space and a base-64-encoded\
     \ string *username:password*, where:\n\n- username: *application\\_key*\n- password:\
-    \ *user\\_api\\_key*\n\n `Authorization: Basic cDN0ZXcxNDV5M3RhZzQxbjowaHkzNGho`\n\
+    \ *user\\_api\\_key*\n\n `Authorization: Basic REDACTED_CLIENT_ID_COLON_SECRET`\n\
     \nAccess to data and operations of certain endpoints is dependent on the access\
     \ rights of the user. \n\n## Requests\n\nAll API requests must be made over [HTTPS](https://en.wikipedia.org/wiki/HTTPS)\
     \ and contain a valid Authorization header value.\n\n## Standard Pagination\n\n\

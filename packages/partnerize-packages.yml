@@ -1,0 +1,139 @@
+generated: '2026-08-13'
+method: searched
+source: https://github.com/PerformanceHorizonGroup
+name: Partnerize Packages and SDKs
+description: >-
+  First-party Partnerize client libraries. Partnerize publishes no server-side REST SDK
+  for the Brands or Partners API in any general-purpose registry — npm, PyPI, RubyGems,
+  Packagist and crates.io were all probed for partnerize / partnerize-sdk / partnerize-api
+  and every lookup returned 404. What Partnerize does ship, and ships actively, is a pair
+  of mobile conversion-tracking SDKs (iOS and Android) plus a Salesforce Commerce Cloud
+  cartridge, all from the PerformanceHorizonGroup GitHub organisation.
+registries_probed:
+  - {registry: npm, queries: [partnerize, "@partnerize/sdk", partnerize-sdk, partnerize-api], found: 0}
+  - {registry: pypi, queries: [partnerize, partnerize-api], found: 0}
+  - {registry: rubygems, queries: [partnerize], found: 0}
+  - {registry: packagist, queries: ["partnerize/partnerize"], found: 0}
+  - {registry: maven-central, queries: ["g:com.partnerize"], found: 2}
+  - {registry: cocoapods, queries: [Partnerize, PartnerizeSDK], found: 1}
+packages:
+  - language: swift
+    registry: swiftpm
+    name: PartnerizeSDK
+    url: https://github.com/PerformanceHorizonGroup/partnerize-mobile-sdk-ios
+    install: 'Xcode → File → Add Package Dependencies… → https://github.com/PerformanceHorizonGroup/partnerize-mobile-sdk-ios'
+    official: true
+    version: 3.0.2
+    published: '2026-06-22'
+    note: >-
+      Partnerize iOS Mobile SDK, distributed as a Swift Package (and a downloadable
+      .xcframework) rather than through a package registry; version and date read from
+      the GitHub release. Captures in-app referrals, handles inbound click references,
+      posts conversions with conversion items, and supports web-to-app and app-to-app
+      deep linking. Documented at
+      https://performancehorizongroup.github.io/partnerize-mobile-sdk-ios/
+  - language: swift
+    registry: cocoapods
+    name: Partnerize
+    url: https://cocoapods.org/pods/Partnerize
+    install: "pod 'Partnerize'"
+    official: true
+    version: 2.1.3
+    published: '2024-04-17'
+    deprecated: true
+    note: >-
+      The CocoaPods distribution of the iOS SDK. Version and date read from
+      trunk.cocoapods.org/api/v1/pods/Partnerize (21 published versions, latest 2.1.3).
+      Partnerize's own iOS documentation states "CocoaPods is deprecated from 3.0.0
+      onward (2.0 remains available)", so this pod is two majors behind the Swift Package
+      distribution and last shipped over two years ago — a consumer still on the pod is
+      pinned to the 2.x SDK line.
+  - language: swift
+    registry: swiftpm
+    name: partnerize-mobile-sdk-ios-spm
+    url: https://github.com/PerformanceHorizonGroup/partnerize-mobile-sdk-ios-spm
+    install: 'Xcode → Add Package Dependencies… → https://github.com/PerformanceHorizonGroup/partnerize-mobile-sdk-ios-spm'
+    official: true
+    version: 2.1.4
+    published: '2024-08-09'
+    deprecated: true
+    note: >-
+      The original standalone Swift Package Manager mirror of the iOS SDK, superseded by
+      SPM support in the main partnerize-mobile-sdk-ios repository. Last tagged 2.1.4;
+      the repository was last pushed 2026-04-15 but no 3.x tag was ever cut here.
+  - language: kotlin
+    registry: maven
+    name: com.partnerize:mobile-tracking-sdk
+    url: https://repo1.maven.org/maven2/com/partnerize/mobile-tracking-sdk/
+    install: "implementation 'com.partnerize:mobile-tracking-sdk:3.0.2'"
+    official: true
+    version: 3.0.2
+    published: '2026-06-15'
+    note: >-
+      Partnerize Android Mobile SDK on Maven Central. Version and date read from
+      repo1.maven.org/maven2/com/partnerize/mobile-tracking-sdk/maven-metadata.xml
+      (latest 3.0.2, lastUpdated 20260615143915); only 3.0.1 and 3.0.2 are published
+      under this coordinate. Requires Android API 26+, Gradle 8.7, Java 17 / Kotlin 1.8.
+      Documented at https://performancehorizongroup.github.io/partnerize-mobile-sdk-android/
+  - language: java
+    registry: maven
+    name: com.partnerize.android:tracking
+    url: https://search.maven.org/artifact/com.partnerize.android/tracking
+    install: "implementation 'com.partnerize.android:tracking:1.6'"
+    official: true
+    version: '1.6'
+    published: '2022-06-15'
+    deprecated: true
+    note: >-
+      The legacy Android coordinate, superseded by com.partnerize:mobile-tracking-sdk.
+      Last published 2022-06-15 and no longer referenced by the current Android
+      installation guide; recorded here because integrations pinned to it are four years
+      stale and two majors behind.
+  - language: javascript
+    registry: github
+    name: pz-salesforce-commerce-cloud-cartridge
+    url: https://github.com/PerformanceHorizonGroup/pz-salesforce-commerce-cloud-cartridge
+    install: 'Clone and install the cartridge into an SFCC (Demandware) site'
+    official: true
+    version: null
+    published: '2023-09-19'
+    note: >-
+      Salesforce Commerce Cloud cartridge for Partnerize tracking. Distributed only as a
+      GitHub repository — there is no package registry and no tag, so version is null;
+      the date is the last push to the default branch. An SFCC integrator cannot pin a
+      release, which is the finding.
+  - language: php
+    registry: github
+    name: webhooks-php
+    url: https://github.com/PerformanceHorizonGroup/webhooks-php
+    install: 'Clone from GitHub'
+    official: true
+    version: null
+    published: '2014-06-27'
+    deprecated: true
+    note: >-
+      "A library for connecting to our webhooks system", published under the Performance
+      Horizon Group name and untouched since 2014. No registry entry, no tags. Recorded
+      for completeness and flagged deprecated — the current Partnerize API documentation
+      describes no webhook surface at all, so this library documents a system that is no
+      longer part of the published contract.
+summary:
+  official_packages: 7
+  active: 3
+  deprecated_or_stale: 4
+  server_side_rest_sdks: 0
+notes:
+  - >-
+    There is no first-party client library for the Partnerize Brands API or Partners API
+    in any language. Consumers of the 327 REST operations catalogued in openapi/ build
+    their own HTTP client against HTTP Basic authentication.
+  - >-
+    The mobile SDKs are current: iOS 3.0.2 (2026-06-22) and Android 3.0.2 (2026-06-15)
+    both shipped within two months of this pass, against an API documented at version
+    1.4.99. The decay signal in this repo is not the mobile line, it is the CocoaPods pod
+    (2.1.3, 2024) and the legacy com.partnerize.android:tracking coordinate (1.6, 2022),
+    both of which remain resolvable and will silently keep old integrations on 2.x.
+  - >-
+    PerformanceHorizonGroup also hosts an apidocs repository (API Blueprint, last pushed
+    2021-05-07) which predates the current Redoc-published OpenAPI at
+    api-docs.partnerize.com and is not a package.

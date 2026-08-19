@@ -1,0 +1,138 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Conversions API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Conversions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Count",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v3/brand/analytics/conversions/count",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns aggregated metrics derived from conversions.\n\nThis endpoint is ideal for creating dashboard widgets, or for creating a summary of tabulated data from the explode endpoint.\n"
+        },
+        {
+          "info": {
+            "name": "Explode",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v3/brand/analytics/conversions/explode",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns aggregated metrics derived from conversions, grouped by ID and name of one or many dimensions. This endpoint is ideal for\nfetching data to be shown in a table. You can combine it with the count endpoint to fetch data for a totals row.\n\nIf `order_by` is requested on a metric, the metric values will be added to the results, even if not requested.\n\nWhen grouping by `date`, the `interval` will define the length of each date group.\n"
+        },
+        {
+          "info": {
+            "name": "Filter",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v3/brand/analytics/conversions/filter",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint is ideal for fetching a list of available dimensions for a dropdown list.\n\nIf `order_by` is requested on a metric, the metric values will be added to the results.\n"
+        },
+        {
+          "info": {
+            "name": "Timeseries",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v3/brand/analytics/conversions/timeseries",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns aggregated metrics derived from conversions, grouped by time intervals.\n\nThis endpoint is ideal for creating charts where the x-axis is time.\n"
+        },
+        {
+          "info": {
+            "name": "Count",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v3/partner/analytics/conversions/count",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns aggregated metrics derived from conversions.\n\nThis endpoint is ideal for creating dashboard widgets, or for creating a summary of tabulated data from the explode endpoint.\n"
+        },
+        {
+          "info": {
+            "name": "Explode",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v3/partner/analytics/conversions/explode",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns aggregated metrics derived from conversions, grouped by ID and name of one or many dimensions. This endpoint is ideal for\nfetching data to be shown in a table. You can combine it with the count endpoint to fetch data for a totals row.\n\nIf `order_by` is requested on a metric, the metric values will be added to the results, even if not requested.\n\nWhen grouping by `date`, the `interval` will define the length of each date group.\n"
+        },
+        {
+          "info": {
+            "name": "Filter",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v3/partner/analytics/conversions/filter",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint is ideal for fetching a list of available dimensions for a dropdown list.\n\nIf `order_by` is requested on a metric, the metric values will be added to the results.\n"
+        },
+        {
+          "info": {
+            "name": "Timeseries",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v3/partner/analytics/conversions/timeseries",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns aggregated metrics derived from conversions, grouped by time intervals.\n\nThis endpoint is ideal for creating charts where the x-axis is time.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

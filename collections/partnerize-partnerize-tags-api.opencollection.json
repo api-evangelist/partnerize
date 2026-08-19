@@ -1,0 +1,220 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Partnerize Tags API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Partnerize Tags",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Partnerize Tags",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v3/brand/partnerize-tags",
+            "params": [
+              {
+                "name": "brand_id",
+                "value": "111111l3",
+                "type": "query",
+                "description": "ID of the brand to restrict scope of Partnerize Tags to"
+              },
+              {
+                "name": "with_features",
+                "value": "true",
+                "type": "query",
+                "description": "Optional flag to include features as part of the response"
+              }
+            ]
+          },
+          "docs": "Return a list of available Partnerize Tags."
+        },
+        {
+          "info": {
+            "name": "Create Partnerize Tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v3/brand/partnerize-tags",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Generates a new Partnerize Tag for the requested brand. Freshly generated tag will be empty, without any features enabled by default. <br><br> To allow for global propagation, tags will typically be available for use 15 minutes after their generation."
+        },
+        {
+          "info": {
+            "name": "Get Partnerize Tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v3/brand/partnerize-tags/:partnerizeTagId",
+            "params": [
+              {
+                "name": "partnerizeTagId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Partnerize Tag to be returned"
+              }
+            ]
+          },
+          "docs": "Return information about a single Partnerize Tag from the provided ID."
+        },
+        {
+          "info": {
+            "name": "Update Partnerize Tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.partnerize.com/v3/brand/partnerize-tags/:partnerizeTagId",
+            "params": [
+              {
+                "name": "partnerizeTagId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Partnerize Tag to be updated"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a specific Partnerize Tag."
+        },
+        {
+          "info": {
+            "name": "Delete Partnerize Tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.partnerize.com/v3/brand/partnerize-tags/:partnerizeTagId",
+            "params": [
+              {
+                "name": "partnerizeTagId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Partnerize Tag to be deleted"
+              }
+            ]
+          },
+          "docs": "Deletes a specific Partnerize Tag."
+        },
+        {
+          "info": {
+            "name": "List Partnerize Tags",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v3/partner/partnerize-tags",
+            "params": [
+              {
+                "name": "partner_id",
+                "value": "111111l8",
+                "type": "query",
+                "description": "ID of the partner to restrict scope of Partnerize Tags to"
+              },
+              {
+                "name": "with_features",
+                "value": "true",
+                "type": "query",
+                "description": "Optional flag to include features as part of the response"
+              }
+            ]
+          },
+          "docs": "Return a list of available Partnerize Tags."
+        },
+        {
+          "info": {
+            "name": "Create Partnerize Tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v3/partner/partnerize-tags",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Generates a new Partnerize Tag for the requested partner. Freshly generated tag will be empty, without any features enabled by default. <br><br> To allow for global propagation, tags will typically be available for use 15 minutes after their generation."
+        },
+        {
+          "info": {
+            "name": "Get Partnerize Tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v3/partner/partnerize-tags/:partnerizeTagId",
+            "params": [
+              {
+                "name": "partnerizeTagId",
+                "value": "111111l3",
+                "type": "path",
+                "description": "ID of the Partnerize Tag to fetch"
+              }
+            ]
+          },
+          "docs": "Return information about a single Partnerize Tag from the provided ID."
+        },
+        {
+          "info": {
+            "name": "Update Partnerize Tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.partnerize.com/v3/partner/partnerize-tags/:partnerizeTagId",
+            "params": [
+              {
+                "name": "partnerizeTagId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Partnerize Tag to be updated"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a specific Partnerize Tag."
+        },
+        {
+          "info": {
+            "name": "Delete Partnerize Tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.partnerize.com/v3/partner/partnerize-tags/:partnerizeTagId",
+            "params": [
+              {
+                "name": "partnerizeTagId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Partnerize Tag to be deleted"
+              }
+            ]
+          },
+          "docs": "Deletes a specific Partnerize Tag."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

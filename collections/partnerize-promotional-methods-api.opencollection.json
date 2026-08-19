@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Promotional Methods API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Promotional Methods",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all Promotional Method",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/reference/promotional_method"
+          },
+          "docs": "List all the types of payment methods."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

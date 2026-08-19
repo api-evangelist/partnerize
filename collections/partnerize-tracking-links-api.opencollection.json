@@ -1,0 +1,114 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Tracking Links API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tracking Links",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve Tracking Links",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/publishers/<publisher_id>/links",
+            "params": [
+              {
+                "name": "publisher_id",
+                "value": "1l1007802",
+                "type": "path",
+                "description": "ID of the partner"
+              }
+            ]
+          },
+          "docs": "Retrieve tracking links for a given partner. Note, these will only be short links."
+        },
+        {
+          "info": {
+            "name": "Create a Tracking Link",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v2/publishers/<publisher_id>/links",
+            "params": [
+              {
+                "name": "publisher_id",
+                "value": "1l1007802",
+                "type": "path",
+                "description": "ID of the partner"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create tracking links for a given partner and campaign."
+        },
+        {
+          "info": {
+            "name": "Retrieve a Tracking Link",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/publishers/<publisher_id>/links/<link_id>",
+            "params": [
+              {
+                "name": "publisher_id",
+                "value": "1l1007802",
+                "type": "path",
+                "description": "ID of the partner"
+              },
+              {
+                "name": "link_id",
+                "value": "1011l10",
+                "type": "path",
+                "description": "ID of the tracking link"
+              }
+            ]
+          },
+          "docs": "Retrieve a tracking link."
+        },
+        {
+          "info": {
+            "name": "Update a Tracking Link",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.partnerize.com/v2/publishers/<publisher_id>/links/<link_id>",
+            "params": [
+              {
+                "name": "publisher_id",
+                "value": "1l1007802",
+                "type": "path",
+                "description": "ID of the partner"
+              },
+              {
+                "name": "link_id",
+                "value": "1011l10",
+                "type": "path",
+                "description": "ID of the tracking link"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a tracking link."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

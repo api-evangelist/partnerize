@@ -1,0 +1,192 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Preferred Partner API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Preferred Partner",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List All Preferred Partners",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/attribution/preferred-partners",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Campaign"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Used to limit the response to a number of results. Defaults to 20"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Used to offset the results we're returning"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "Search for partner by name. Alphanumeric with dashes and underscores\n"
+              },
+              {
+                "name": "dates",
+                "value": "",
+                "type": "query",
+                "description": "Search for preferred partners within a date range. Comma separated start and end date"
+              },
+              {
+                "name": "statuses",
+                "value": "",
+                "type": "query",
+                "description": "A comma separated list of statuses to return results for"
+              }
+            ]
+          },
+          "docs": "Show a list of all configured preferred partners. May be filtered with several filters."
+        },
+        {
+          "info": {
+            "name": "Create Preferred Partner",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/attribution/preferred-partners",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Campaign"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a Preferred Partner configuration"
+        },
+        {
+          "info": {
+            "name": "Delete Preferred Partners",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/attribution/preferred-partners",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Campaign"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete Preferred Partners. This is only possible if the Preferred Partners are scheduled, otherwise an error will occur."
+        },
+        {
+          "info": {
+            "name": "Get a Preferred Partner",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/attribution/preferred-partners/:id",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Campaign"
+              },
+              {
+                "name": "id",
+                "value": "10110l2398476",
+                "type": "path",
+                "description": "The Preferred Partner ID"
+              }
+            ]
+          },
+          "docs": "Get a Preferred Partner by ID"
+        },
+        {
+          "info": {
+            "name": "Update a Preferred Partner",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/attribution/preferred-partners/:id",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Campaign"
+              },
+              {
+                "name": "id",
+                "value": "10110l2398476",
+                "type": "path",
+                "description": "The Preferred Partner ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Preferred Partner"
+        },
+        {
+          "info": {
+            "name": "Delete a Preferred Partner",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/attribution/preferred-partners/:id",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Campaign"
+              },
+              {
+                "name": "id",
+                "value": "10110l2398476",
+                "type": "path",
+                "description": "The Preferred Partner ID"
+              }
+            ]
+          },
+          "docs": "Delete a Preferred Partner. This is only possible if the Preferred Partner is scheduled, otherwise an error will occur."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

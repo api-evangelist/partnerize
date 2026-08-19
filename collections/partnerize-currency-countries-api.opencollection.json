@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Currency countries API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Currency countries",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Country Currency Combinations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/reference/currency/country"
+          },
+          "docs": "List all Country Currency Combinations"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

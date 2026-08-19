@@ -1,0 +1,139 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Deals API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Deals",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all Campaign Deals",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/deal",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of the Campaign"
+              }
+            ]
+          },
+          "docs": "Return the details of all Deals associated to the Campaign."
+        },
+        {
+          "info": {
+            "name": "Create a Campaign Deal",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/deal",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of the Campaign"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new Deal against the Campaign entity."
+        },
+        {
+          "info": {
+            "name": "Retrieve a Campaign Deal",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/deal/:deal_id",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of the Campaign"
+              },
+              {
+                "name": "deal_id",
+                "value": "111111l2",
+                "type": "path",
+                "description": "ID of the Deal"
+              }
+            ]
+          },
+          "docs": "Review the specified Deal."
+        },
+        {
+          "info": {
+            "name": "Update a Campaign Deal",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/deal/:deal_id",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of the Campaign"
+              },
+              {
+                "name": "deal_id",
+                "value": "111111l2",
+                "type": "path",
+                "description": "ID of the Deal"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update properties of the specified Deal."
+        },
+        {
+          "info": {
+            "name": "Delete a Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.partnerize.com/campaign/:campaign_id/deal/:deal_id",
+            "params": [
+              {
+                "name": "campaign_id",
+                "value": "10l176",
+                "type": "path",
+                "description": "ID of the Campaign"
+              },
+              {
+                "name": "deal_id",
+                "value": "111111l2",
+                "type": "path",
+                "description": "ID of the deal"
+              }
+            ]
+          },
+          "docs": "Delete a Deal, which is the same as updating the Deal by setting `active` to `n`."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

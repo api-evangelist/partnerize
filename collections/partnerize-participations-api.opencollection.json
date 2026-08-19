@@ -1,0 +1,61 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Participations API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Participations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Partner Participations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v3/partner/:partnerId/participations",
+            "params": [
+              {
+                "name": "partnerId",
+                "value": "111111l3",
+                "type": "path",
+                "description": "ID of the Partner"
+              },
+              {
+                "name": "status[]",
+                "value": "a",
+                "type": "query",
+                "description": "This filter is based on the status of a partner's relationship to campaigns. For example this can be used to find all campaigns that the partner is approved on to (`a`), or invited to (`t`). Default value `a`.\n* `r` = rejected\n* `a` = approved\n* `p` = pending (requested)\n* `t` = invited (pending terms and conditions)\n"
+              },
+              {
+                "name": "campaign_status[]",
+                "value": "a",
+                "type": "query",
+                "description": "This filter can be used to find campaigns that the partner is associated with, based on the campaign's status. Default value `a`\n* `a` = active (campaigns that are currently live in the Partnerize platform)\n* `r` = retired (campaigns that are no longer live in the Partnerize platform)\n"
+              },
+              {
+                "name": "network_status[]",
+                "value": "a",
+                "type": "query",
+                "description": "This filter can be used to find campaigns that the partner is associated with, based on the partner's status with the campaign's brand network. By default this filter will not be applied.\n* `a` = approved (will filter participations to those where the partner is approved onto the campaign's brand network)\n* `p` = pending (will filter participations to those where the partner is pending approval / rejection onto the campaign's brand network)\n* `r` = rejected (will filter participations to those where the partner is rejected from the campaign's brand network)\n"
+              },
+              {
+                "name": "fields[]",
+                "value": "promotional_countries",
+                "type": "query",
+                "description": "Specify what additional data properties should be returned in the response payload"
+              }
+            ]
+          },
+          "docs": "Returns a list of Partner participations with basic campaign details. <br>\n> ### Migrating From Previous Versions\n> #### Migrating From V1 endpoint\n> This endpoint supersedes the v1 endpoint\n> #### Migrating From V2 endpoint\n> The V2 endpoint returns campaigns of all statuses by default. This V3 endpoint only returns active campaigns by default, but this can be configured using the `campaign_status` URL query parameter to behave the same as the V2 endpoint by appending `?campaign_status[]=a&camp"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

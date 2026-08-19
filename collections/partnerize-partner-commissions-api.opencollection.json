@@ -1,0 +1,211 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Partner Commissions API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Partner Commissions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Partner Commissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/publishers/:publisherId/commissions",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign for which to get partner commission rates"
+              },
+              {
+                "name": "publisherId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of a partner on a campaign"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "Retrieve Commissions with a specifc Status"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Retrieve Commissions of a specific Commission Type"
+              }
+            ]
+          },
+          "docs": "Get Partner Commissions. Active and Scheduled Commissions will be returned"
+        },
+        {
+          "info": {
+            "name": "Get Partner Default Commissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/publishers/:publisherId/commissions/default",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign for which to get partner commission rates"
+              },
+              {
+                "name": "publisherId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of a Partner on a campaign"
+              }
+            ]
+          },
+          "docs": "Get Partner Default Commissions"
+        },
+        {
+          "info": {
+            "name": "List Partner Commissions For Specific Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/publishers/:publisherId/commissions/campaign",
+            "params": [
+              {
+                "name": "publisherId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Partner to list commissions for"
+              },
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign to list the Partner commissions for"
+              }
+            ]
+          },
+          "docs": "This endpoint lists partner commissions for the given partner and campaign.\n"
+        },
+        {
+          "info": {
+            "name": "List Partner Voucher Commissions For Specific Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/publishers/:publisherId/commissions/voucher",
+            "params": [
+              {
+                "name": "publisherId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the partner to list commissions for"
+              },
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign to list the partner commissions for"
+              }
+            ]
+          },
+          "docs": "This endpoint lists partner voucher commissions for the given partner and campaign.\n"
+        },
+        {
+          "info": {
+            "name": "List Partner Promotional Commissions For Specific Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/publishers/:publisherId/commissions/promotion",
+            "params": [
+              {
+                "name": "publisherId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Partner to list commissions for"
+              },
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign to list the Partner commissions for"
+              }
+            ]
+          },
+          "docs": "This endpoint lists partner promotional commissions for the given partner and campaign.\n"
+        },
+        {
+          "info": {
+            "name": "List Partner Tiered Commissions For Specific Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/publishers/:publisherId/commissions/tier",
+            "params": [
+              {
+                "name": "publisherId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Partner to list commissions for"
+              },
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign to list the Partner commissions for"
+              }
+            ]
+          },
+          "docs": "This endpoint lists partner tiered commissions for the given partner and campaign.\n"
+        },
+        {
+          "info": {
+            "name": "List Active Partner Commissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/publishers/:publisherId/commissions/active",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign to list the commissions for"
+              },
+              {
+                "name": "publisherId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of a Partner on a campaign"
+              },
+              {
+                "name": "at",
+                "value": "",
+                "type": "query",
+                "description": "The date and time to show the active commissions for. If not set defaults to now."
+              }
+            ]
+          },
+          "docs": "This endpoint lists all active commissions including default, standard, voucher and promotional commissions for a partner a campaign\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

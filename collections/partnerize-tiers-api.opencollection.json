@@ -1,0 +1,114 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Tiers API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tiers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Commission Tiers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/commissions/tiers",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign to list the commission tiers for"
+              }
+            ]
+          },
+          "docs": "This endpoint lists all upcoming and currently active commission tiers for the given campaign.\n"
+        },
+        {
+          "info": {
+            "name": "Create Commission Tier",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/commissions/tiers",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign to create the commission tier for"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This creates a new commission tier for the given campaign\n"
+        },
+        {
+          "info": {
+            "name": "Modify Commission Tier",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/commissions/tiers/:tierId",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign to update the commission tier for"
+              },
+              {
+                "name": "tierId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the tier to update"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modifies the commission tier for the given tier ID and campaign\n"
+        },
+        {
+          "info": {
+            "name": "Delete Commission Tier",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/commissions/tiers/:tierId",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign to list the commission tiers for"
+              },
+              {
+                "name": "tierId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the commission tier to delete"
+              }
+            ]
+          },
+          "docs": "This endpoint deletes a given Commission Tier\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

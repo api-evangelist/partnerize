@@ -1,0 +1,201 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Partnerize Brands Attribution Promotional Commissions API",
+    "version": "1.4.99"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Promotional Commissions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Promotional Commissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/commissions/promotions",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign to list the promotional commissions for"
+              },
+              {
+                "name": "at",
+                "value": "2021-07-02T12:00:00+01:00",
+                "type": "query",
+                "description": "Check the promotional commissions for a given moment"
+              }
+            ]
+          },
+          "docs": "This endpoint lists all active and scheduled promotional commissions for the given campaign.\n"
+        },
+        {
+          "info": {
+            "name": "Create Promotional Commission",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/commissions/promotions",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign to create the promotional commission for"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This creates a new promotional commission for the given campaign\n"
+        },
+        {
+          "info": {
+            "name": "Get Promotional Commission",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/commissions/promotions/:promotionalId",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign the promotional commission belongs to"
+              },
+              {
+                "name": "promotionalId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the promotional commission to retrieve"
+              },
+              {
+                "name": "include",
+                "value": "",
+                "type": "query",
+                "description": "The historical edits will be shown under the history.data attribute when set to 'history'."
+              }
+            ]
+          },
+          "docs": "This endpoint returns the promotional commission for the given campaign and promotional commission ID.\n"
+        },
+        {
+          "info": {
+            "name": "Modify Promotional Commission",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/commissions/promotions/:promotionalId",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign to update the promotional commission for"
+              },
+              {
+                "name": "promotionalId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the promotional commission to update"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modifies the promotional commission for the given commission ID and campaign\n"
+        },
+        {
+          "info": {
+            "name": "Delete Promotional Commission",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/commissions/promotions/:promotionalId",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign the promotional commission belongs to"
+              },
+              {
+                "name": "promotionalId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the promotional commission to delete"
+              }
+            ]
+          },
+          "docs": "This endpoint deletes a given Promotional Commission\n"
+        },
+        {
+          "info": {
+            "name": "Retire Promotional Commission",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/commissions/promotions/:promotionalId/retire",
+            "params": [
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign the promotional commission belongs to"
+              },
+              {
+                "name": "promotionalId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the promotional commission to retire"
+              }
+            ]
+          },
+          "docs": "This endpoint retires a given Promotional Commission\n"
+        },
+        {
+          "info": {
+            "name": "List Partner Promotional Commissions For Specific Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.partnerize.com/v2/campaigns/:campaignId/publishers/:publisherId/commissions/promotion",
+            "params": [
+              {
+                "name": "publisherId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Partner to list commissions for"
+              },
+              {
+                "name": "campaignId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the campaign to list the Partner commissions for"
+              }
+            ]
+          },
+          "docs": "This endpoint lists partner promotional commissions for the given partner and campaign.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

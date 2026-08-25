@@ -10,7 +10,7 @@
       "source": "https://partnerize.com/feed",
       "feed_url": "https://partnerize.com/feed",
       "title": "",
-      "saved": 2,
+      "saved": 0,
       "method": "feed"
     },
     {
@@ -18,8 +18,7 @@
       "feed_url": "https://www.linkedin.com/company/partnerize",
       "title": "",
       "saved": 0,
-      "method": "none",
-      "error": "parse_failed"
+      "method": "none"
     },
     {
       "source": "https://partnerize.com/resources/blog",
@@ -29,6 +28,6 @@
       "method": "discovered"
     }
   ],
-  "post_count": 18,
-  "fetched": "2026-08-15T12:11:08Z"
+  "post_count": 21,
+  "fetched": "2026-08-22T20:20:02Z"
 }

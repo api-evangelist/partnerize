@@ -9,6 +9,18 @@ description: Partnerize is a partnership-automation platform for affiliate, infl
   api.partnerize.com, authenticated with HTTP Basic over an application key and a user
   API key.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
@@ -1852,6 +1864,9 @@ apis:
   - type: JSONSchema
     url: json-schema/partnerize-partners-api-schema.json
 common:
+- type: CapabilityMap
+  url: capabilities/partnerize-capability-edges.yml
+  name: Partnerize Business Capability Map
 - type: AgenticAccess
   url: agentic-access/partnerize-agentic-access.yml
 - type: DomainSecurity

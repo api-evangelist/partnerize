@@ -923,7 +923,7 @@ apis:
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
-  - Jobs V1
+  - Jobs (v1)
   tags_raw:
   - Jobs (v1)
   properties:
@@ -1605,7 +1605,7 @@ apis:
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
-  - Terms And Conditions
+  - Terms and Conditions
   tags_raw:
   - Terms and Conditions
   properties:
@@ -1787,7 +1787,7 @@ apis:
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
-  - Voucher codes
+  - Voucher Codes
   tags_raw:
   - Voucher Codes
   properties:
@@ -1883,8 +1883,6 @@ common:
   url: https://partnerize.com/resources/blog
 - type: BlogRSS
   url: https://partnerize.com/feed
-- type: Blog
-  url: blogs/blogs.json
 - type: Vocabulary
   url: vocabulary/partnerize-vocabulary.yml
 - type: JSONLDContext

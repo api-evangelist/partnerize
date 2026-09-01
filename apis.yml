@@ -923,7 +923,7 @@ apis:
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
-  - Jobs (v1)
+  - Jobs V1
   tags_raw:
   - Jobs (v1)
   properties:
@@ -1605,7 +1605,7 @@ apis:
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
-  - Terms and Conditions
+  - Terms And Conditions
   tags_raw:
   - Terms and Conditions
   properties:
@@ -1787,7 +1787,7 @@ apis:
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
-  - Voucher Codes
+  - Voucher codes
   tags_raw:
   - Voucher Codes
   properties:

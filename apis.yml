@@ -1,13 +1,11 @@
 aid: partnerize
 name: Partnerize
-description: Partnerize is a partnership-automation platform for affiliate, influencer
-  and performance marketing, used by brands to discover and recruit partners, track
-  clicks and conversions, calculate and pay commissions, guard against fraud, and report
-  on channel performance. Its API is built API-first — the Partnerize console runs on top
-  of it — and is published as two OpenAPI documents, a Brands API and a Partners API,
-  covering 327 operations across three concurrent versions (v1, v2 and v3) on
-  api.partnerize.com, authenticated with HTTP Basic over an application key and a user
-  API key.
+description: Partnerize is a partnership-automation platform for affiliate, influencer and performance
+  marketing, used by brands to discover and recruit partners, track clicks and conversions, calculate
+  and pay commissions, guard against fraud, and report on channel performance. Its API is built API-first
+  — the Partnerize console runs on top of it — and is published as two OpenAPI documents, a Brands API
+  and a Partners API, covering 327 operations across three concurrent versions (v1, v2 and v3) on api.partnerize.com,
+  authenticated with HTTP Basic over an application key and a user API key.
 type: Index
 deliveryModel:
   model: saas
@@ -36,7 +34,7 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/partnerize.png
 url: https://raw.githubusercontent.com/api-evangelist/partnerize/refs/heads/main/apis.yml
 created: '2026-06-13'
-modified: '2026-08-13'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 tags:
 - Affiliate Marketing
@@ -49,9 +47,8 @@ tags:
 apis:
 - aid: partnerize:brands-api
   name: Partnerize Brands API
-  description: >-
-    REST API for brands to manage networks, campaigns, payments, commissions, attribution, and partner
-    relationships across the Partnerize platform.
+  description: REST API for brands to manage networks, campaigns, payments, commissions, attribution,
+    and partner relationships across the Partnerize platform.
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -77,12 +74,11 @@ apis:
     email: support@partnerize.com
 - aid: partnerize:partnerize-attribution-api
   name: Partnerize Attribution API
-  description: >-
-    Note: Attribution is a limited availability BETA feature.
+  description: 'Note: Attribution is a limited availability BETA feature.
 
     Attribution features allow you to control who the transaction is attributed to, based on the the configured
     rules. To process attribution rules we analyse clicks within the click trail going back the length
-    of the cookie period for the campaign.
+    of the cookie period for the campaign.'
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -178,8 +174,7 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-campaign-extra-fields-api
   name: Partnerize Campaign Extra Fields API
-  description: >-
-    The Campaign Extra Fields API from Partnerize — 1 operation(s) for campaign extra fields.
+  description: The Campaign Extra Fields API from Partnerize — 1 operation(s) for campaign extra fields.
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -211,8 +206,8 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-campaign-invitations-v2-api
   name: Partnerize Campaign Invitations (v2) API
-  description: >-
-    The Campaign Invitations (v2) API from Partnerize — 3 operation(s) for campaign invitations (v2).
+  description: The Campaign Invitations (v2) API from Partnerize — 3 operation(s) for campaign invitations
+    (v2).
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -228,8 +223,8 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-campaign-references-v1-api
   name: Partnerize Campaign References (v1) API
-  description: >-
-    The Campaign References (v1) API from Partnerize — 1 operation(s) for campaign references (v1).
+  description: The Campaign References (v1) API from Partnerize — 1 operation(s) for campaign references
+    (v1).
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -245,8 +240,8 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-campaign-requests-and-invites-api
   name: Partnerize Campaign Requests and Invites API
-  description: >-
-    The Campaign Requests and Invites API from Partnerize — 8 operation(s) for campaign requests and invites.
+  description: The Campaign Requests and Invites API from Partnerize — 8 operation(s) for campaign requests
+    and invites.
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -262,8 +257,7 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-campaign-requests-v2-api
   name: Partnerize Campaign Requests (v2) API
-  description: >-
-    The Campaign Requests (v2) API from Partnerize — 1 operation(s) for campaign requests (v2).
+  description: The Campaign Requests (v2) API from Partnerize — 1 operation(s) for campaign requests (v2).
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -279,10 +273,10 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-campaign-terms-and-conditions-acknowledgments-api
   name: Partnerize Campaign Terms and Conditions Acknowledgments API
-  description: >-
-    Endpoints for retrieving and management the confirmations of changes existing campaign terms and conditions.
-    <br><br> Each change to a set of campaign terms and conditions are recoreded, these changes can be
-    flag as been acknowledged by a user by creating a campaign terms and conditions acknowledgment instances.
+  description: Endpoints for retrieving and management the confirmations of changes existing campaign
+    terms and conditions. <br><br> Each change to a set of campaign terms and conditions are recoreded,
+    these changes can be flag as been acknowledged by a user by creating a campaign terms and conditions
+    acknowledgment instances.
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -298,8 +292,8 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-campaign-terms-and-conditions-api
   name: Partnerize Campaign Terms and Conditions API
-  description: >-
-    The Campaign Terms and Conditions API from Partnerize — 3 operation(s) for campaign terms and conditions.
+  description: The Campaign Terms and Conditions API from Partnerize — 3 operation(s) for campaign terms
+    and conditions.
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -315,8 +309,7 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-campaign-transaction-queries-api
   name: Partnerize Campaign Transaction Queries API
-  description: >-
-    Transaction Queries (TQs) allow Partners to raise disputes about conversions with a Brand.
+  description: 'Transaction Queries (TQs) allow Partners to raise disputes about conversions with a Brand.
 
     There are three types of Transaction Queries:
 
@@ -324,7 +317,7 @@ apis:
 
     - Incorrect Commission: A conversion does not have the correct Partner commission value.
 
-    - Declined: The Brand has rejected a conversion.
+    - Declined: The Brand has rejected a conversion.'
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -356,12 +349,12 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-campaigns-api
   name: Partnerize Campaigns API
-  description: >-
-    A Campaign is owned by a Brand and a Brand may have multiple Campaigns. A Campaign represents an entity
-    which the Brand uses to represent something that they wish to allow Partners the chance to promote.
-    A Campaign dictates what products/events/conversions can be promoted, and lets the Partners understand
-    what Commission they would earn for generating sales/events/conversions. The Brand has complete control
-    over their Campaigns and dictates which Partners they accept onto the Campaign to promote their services.
+  description: A Campaign is owned by a Brand and a Brand may have multiple Campaigns. A Campaign represents
+    an entity which the Brand uses to represent something that they wish to allow Partners the chance
+    to promote. A Campaign dictates what products/events/conversions can be promoted, and lets the Partners
+    understand what Commission they would earn for generating sales/events/conversions. The Brand has
+    complete control over their Campaigns and dictates which Partners they accept onto the Campaign to
+    promote their services.
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -425,8 +418,7 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-commission-groups-v1-api
   name: Partnerize Commission Groups (v1) API
-  description: >-
-    The Commission Groups (v1) API from Partnerize — 1 operation(s) for commission groups (v1).
+  description: The Commission Groups (v1) API from Partnerize — 1 operation(s) for commission groups (v1).
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -474,8 +466,7 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-communication-templates-api
   name: Partnerize Communication Templates API
-  description: >-
-    The Communication Templates API from Partnerize — 3 operation(s) for communication templates.
+  description: The Communication Templates API from Partnerize — 3 operation(s) for communication templates.
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -571,10 +562,10 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-creatives-api
   name: Partnerize Creatives API
-  description: >-
-    A Brand may wish to offer pre-generated _Creative_ so that the Partners can advertise the Brand easily.
-    It is possible to categorise Creative with tags and there are 3 distinct Creative formats: Image,
-    HTML and Text. Brands can organise their Creatives in a flexible structure by using _Creative Tags_.
+  description: 'A Brand may wish to offer pre-generated _Creative_ so that the Partners can advertise
+    the Brand easily. It is possible to categorise Creative with tags and there are 3 distinct Creative
+    formats: Image, HTML and Text. Brands can organise their Creatives in a flexible structure by using
+    _Creative Tags_.'
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -656,9 +647,8 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-custom-terms-and-conditions-api
   name: Partnerize Custom Terms and Conditions API
-  description: >-
-    Manage partner specific terms and conditions. You can use this group of endpoints to create custom
-    terms and conditions for certain partners.
+  description: Manage partner specific terms and conditions. You can use this group of endpoints to create
+    custom terms and conditions for certain partners.
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -690,10 +680,9 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-deals-api
   name: Partnerize Deals API
-  description: >-
-    A Brand may want to offer a specific Deal to Partners on a specific Campaign. These Deals represent
-    a timed promotion which can be programmatically ingested into the Partner's platform and offered dynamically
-    to their user base.
+  description: A Brand may want to offer a specific Deal to Partners on a specific Campaign. These Deals
+    represent a timed promotion which can be programmatically ingested into the Partner's platform and
+    offered dynamically to their user base.
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -757,9 +746,8 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-exclusive-code-api
   name: Partnerize Exclusive Code API
-  description: >-
-    Exclusive codes are assigned to a partner. If a partner’s exclusive code is redeemed, the partner
-    wins the sale - even if they don’t contribute any clicks.
+  description: Exclusive codes are assigned to a partner. If a partner’s exclusive code is redeemed, the
+    partner wins the sale - even if they don’t contribute any clicks.
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -775,14 +763,13 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-exports-api
   name: Partnerize Exports API
-  description: >-
-    Depending on the query parameters, an export request may need to be processed asynchronously. When
-    that happens a background job will be automatically created, and the API response will describe the
-    job rather than the export (see [Jobs v1](#operation/get_job_v1)).
+  description: 'Depending on the query parameters, an export request may need to be processed asynchronously.
+    When that happens a background job will be automatically created, and the API response will describe
+    the job rather than the export (see [Jobs v1](#operation/get_job_v1)).
 
 
     If the `complete_email` parameter has been set the export will be sent to the given address once the
-    background job is complete.
+    background job is complete.'
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -848,9 +835,8 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-in-cart-api
   name: Partnerize In-Cart API
-  description: >-
-    Define a period leading up to the time of purchase where clicks will be ignored and not attributed
-    with a commission. Helps prevent last-click poaching.
+  description: Define a period leading up to the time of purchase where clicks will be ignored and not
+    attributed with a commission. Helps prevent last-click poaching.
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -882,10 +868,9 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-invoices-api
   name: Partnerize Invoices API
-  description: >-
-    So that Brands can receive payment for all approved conversion events they have generated across a
-    Brand's Campaigns, the Brand must raise an Invoice and send payment to Partnerize. Once the payment
-    has cleared, all funds will be deposited into the relevant Partner accounts.
+  description: So that Brands can receive payment for all approved conversion events they have generated
+    across a Brand's Campaigns, the Brand must raise an Invoice and send payment to Partnerize. Once the
+    payment has cleared, all funds will be deposited into the relevant Partner accounts.
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -953,15 +938,14 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-meta-attributes-api
   name: Partnerize Meta Attributes API
-  description: >-
-    Based on all tracked events, a real-time cache of currencies and non standard conversion and conversion
-    item
+  description: 'Based on all tracked events, a real-time cache of currencies and non standard conversion
+    and conversion item
 
     attributes are kept for all Campaigns and Partners. This endpoint can be used to determine what non
     standard
 
     data might appear in reports/exports and is also useful when building an external app which will display
-    Conversion data.
+    Conversion data.'
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -1027,9 +1011,8 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-network-partners-api
   name: Partnerize Network Partners API
-  description: >-
-    A Brand can view all Partners who are created on their network. This endpoint is not specific to a
-    Campaign,
+  description: 'A Brand can view all Partners who are created on their network. This endpoint is not specific
+    to a Campaign,
 
     therefore it pools all available Partners who have been created or are able to access their Network.   ​
 
@@ -1037,7 +1020,7 @@ apis:
     Partners
 
     from the Network. If a Partners is rejected from the Network, they will be automatically rejected
-    from all participating Campaigns.
+    from all participating Campaigns.'
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -1053,9 +1036,8 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-network-terms-and-conditions-acknowledgments-v3-api
   name: Partnerize Network Terms and Conditions Acknowledgments (v3) API
-  description: >-
-    The Network Terms and Conditions Acknowledgments (v3) API from Partnerize — 1 operation(s) for network
-    terms and conditions acknowledgments (v3).
+  description: The Network Terms and Conditions Acknowledgments (v3) API from Partnerize — 1 operation(s)
+    for network terms and conditions acknowledgments (v3).
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -1071,9 +1053,8 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-network-terms-and-conditions-api
   name: Partnerize Network Terms and Conditions API
-  description: >-
-    Terms and conditions endpoint that returns terms and conditions that must be accepted by a partner
-    to join the network.
+  description: Terms and conditions endpoint that returns terms and conditions that must be accepted by
+    a partner to join the network.
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -1089,9 +1070,8 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-network-terms-and-conditions-v3-api
   name: Partnerize Network Terms and Conditions (v3) API
-  description: >-
-    The Network Terms and Conditions (v3) API from Partnerize — 1 operation(s) for network terms and conditions
-    (v3).
+  description: The Network Terms and Conditions (v3) API from Partnerize — 1 operation(s) for network
+    terms and conditions (v3).
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -1107,11 +1087,10 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-networks-api
   name: Partnerize Networks API
-  description: >-
-    All API calls are contextual to the User that is making the request, and all User accounts are associated
-    with the
+  description: 'All API calls are contextual to the User that is making the request, and all User accounts
+    are associated with the
 
-    Network that they are created on. Each network has a unique `application_user_key`.
+    Network that they are created on. Each network has a unique `application_user_key`.'
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -1127,8 +1106,7 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-paid-search-violations-api
   name: Partnerize Paid Search Violations API
-  description: >-
-    The Paid Search Violations API from Partnerize — 2 operation(s) for paid search violations.
+  description: The Paid Search Violations API from Partnerize — 2 operation(s) for paid search violations.
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -1144,9 +1122,8 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-participating-partners-api
   name: Partnerize Participating Partners API
-  description: >-
-    Before Partners can generate conversions for a Campaign, they must be approved to do so. A Partner
-    can apply to
+  description: 'Before Partners can generate conversions for a Campaign, they must be approved to do so.
+    A Partner can apply to
 
     be part of a Campaign, or the Brand can choose to add the Partner(s) of their choice to their own
     Campaign.
@@ -1154,7 +1131,7 @@ apis:
     Furthermore, if a Brand has stipulated their own unique set of Campaign Terms and Conditions, the
     Partner
 
-    must explicitly agree to these if they are to be fully approved on the Campaign.
+    must explicitly agree to these if they are to be fully approved on the Campaign.'
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -1250,9 +1227,8 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-partner-groups-api
   name: Partnerize Partner Groups API
-  description: >-
-    A Campaign owner can organise Partners into Partner Groups, also known as Commission Groups. These
-    Groups can be used for Reporting purposes, Commission offers and Voucher Code allocation.
+  description: A Campaign owner can organise Partners into Partner Groups, also known as Commission Groups.
+    These Groups can be used for Reporting purposes, Commission offers and Voucher Code allocation.
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -1299,10 +1275,9 @@ apis:
   - type: JSONSchema
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-partnerize-tag-features-api
-  name: Partnerize Partnerize Tag Features API
-  description: >-
-    Partnerize Tag features are what power the Partnerize Tag, delivering Partnerize functionality to
-    websites through the Partnerize Tag. <br><br> Partnerize Tag Features come in all shapes and sizes
+  name: Partnerize Tag Features API
+  description: Partnerize Tag features are what power the Partnerize Tag, delivering Partnerize functionality
+    to websites through the Partnerize Tag. <br><br> Partnerize Tag Features come in all shapes and sizes
     depending on the intended use case. <br><br> To find out more about Partnerize Tag Features and how
     they can be used, head over to the [Partnerize Help Hub](https://help.phgsupport.com/hc/en-us).
   humanURL: https://api-docs.partnerize.com/brand/
@@ -1319,11 +1294,10 @@ apis:
   - type: JSONSchema
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-partnerize-tags-api
-  name: Partnerize Partnerize Tags API
-  description: >-
-    Partnerize Tags allow the creation, management and automated serving of various Partnerize features
-    into websites. <br><br> All generated Partnerize Tags include a `url` of which can be embedded into
-    websites to serve back the enabled features of that tag in JavaScript content. <br><br> Partnerize
+  name: Partnerize Tags API
+  description: Partnerize Tags allow the creation, management and automated serving of various Partnerize
+    features into websites. <br><br> All generated Partnerize Tags include a `url` of which can be embedded
+    into websites to serve back the enabled features of that tag in JavaScript content. <br><br> Partnerize
     Tags only need to be integrated once, allowing features of the tag to be updated at any time using
     the Partnerize Tags APIs. <br><br> To view available features of the Partnerize Tag, use the [List
     Partnerize Tag Features](#operation/listPartnerizeTagFeatures) API.
@@ -1390,8 +1364,7 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-platform-communications-api
   name: Partnerize Platform Communications API
-  description: >-
-    The Platform Communications API from Partnerize — 5 operation(s) for platform communications.
+  description: The Platform Communications API from Partnerize — 5 operation(s) for platform communications.
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -1407,9 +1380,8 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-preferred-partner-api
   name: Partnerize Preferred Partner API
-  description: >-
-    Campaigns can have one preferred partner at any time. A sale will be attributed to a preferred partner
-    if they contribute any clicks to that sale.
+  description: Campaigns can have one preferred partner at any time. A sale will be attributed to a preferred
+    partner if they contribute any clicks to that sale.
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -1425,14 +1397,14 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-product-feeds-api
   name: Partnerize Product Feeds API
-  description: >-
-    A Brand may want to offer a selection of Product Feeds to their Partners on a specific Campaign.
+  description: 'A Brand may want to offer a selection of Product Feeds to their Partners on a specific
+    Campaign.
 
     When a Product Feed is created, it will be periodically downloaded and parsed for all Partners who
     participate on the Campaign to ensure their tracking links are inserted for all anchor links within
     the Product Feed.
 
-    Any text based file format is supported.
+    Any text based file format is supported.'
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -1496,8 +1468,8 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-reporting-on-meta-data-api
   name: Partnerize Reporting on Meta data API
-  description: >-
-    Reporting Meta is functionality that allows Brands to generate reports based on specific meta data.
+  description: Reporting Meta is functionality that allows Brands to generate reports based on specific
+    meta data.
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -1513,9 +1485,8 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-saved-reports-api
   name: Partnerize Saved Reports API
-  description: >-
-    Manage sets of filters for reporting. Those can be saved for either a single campaign or a campaign
-    group.
+  description: Manage sets of filters for reporting. Those can be saved for either a single campaign or
+    a campaign group.
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -1531,9 +1502,8 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-self-billing-api
   name: Partnerize Self-billing API
-  description: >-
-    Once funds have been received from the Brand, Partnerize will allocate all Commissions to the relevant
-    Partners.
+  description: Once funds have been received from the Brand, Partnerize will allocate all Commissions
+    to the relevant Partners.
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -1549,9 +1519,8 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-split-api
   name: Partnerize Split API
-  description: >-
-    Split all CPA commissions between the initiator (first click), contributors (supporting click) and
-    convertor (last click) in the click chain.
+  description: Split all CPA commissions between the initiator (first click), contributors (supporting
+    click) and convertor (last click) in the click chain.
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -1583,9 +1552,8 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-suppressed-code-api
   name: Partnerize Suppressed Code API
-  description: >-
-    Suppressed codes are assigned to a campaign. If a suppressed code is matched, the sale is no longer
-    rewarded - even if there are supporting clicks.
+  description: Suppressed codes are assigned to a campaign. If a suppressed code is matched, the sale
+    is no longer rewarded - even if there are supporting clicks.
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -1715,8 +1683,8 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-transaction-query-reasons-api
   name: Partnerize Transaction Query Reasons API
-  description: >-
-    The Transaction Query Reasons API from Partnerize — 2 operation(s) for transaction query reasons.
+  description: The Transaction Query Reasons API from Partnerize — 2 operation(s) for transaction query
+    reasons.
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -1780,10 +1748,9 @@ apis:
     url: json-schema/partnerize-partners-api-schema.json
 - aid: partnerize:partnerize-voucher-codes-api
   name: Partnerize Voucher Codes API
-  description: >-
-    A Voucher references a coupon code, or voucher code which the Brand offers to their customers to usually
-    perform a price discount at the end of the transaction. Specific rules can be set to defined Vouchers
-    ensuring that only valid codes can be used and can also be restricted to specific Partners.
+  description: A Voucher references a coupon code, or voucher code which the Brand offers to their customers
+    to usually perform a price discount at the end of the transaction. Specific rules can be set to defined
+    Vouchers ensuring that only valid codes can be used and can also be restricted to specific Partners.
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
@@ -1943,7 +1910,10 @@ common:
   url: data-model/partnerize-data-model.yml
 - type: X-MCPServerCandidate
   url: mcp/partnerize-mcp.yml
-  note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate — a tool list derived from the published API contracts, not an existing server. The scorer already read the manifest and reported mcp_server correctly; the MCPServer type was crediting the artifact-type surfaces with a server that does not exist.'
+  note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate
+    — a tool list derived from the published API contracts, not an existing server. The scorer already
+    read the manifest and reported mcp_server correctly; the MCPServer type was crediting the artifact-type
+    surfaces with a server that does not exist.'
 - type: AgentSkill
   url: skills/_index.yml
 maintainers:

@@ -534,6 +534,8 @@ apis:
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
+  - Conversion
+  tags_raw:
   - Conversions
   properties:
   - type: OpenAPI
@@ -569,6 +571,8 @@ apis:
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
+  - Creative
+  tags_raw:
   - Creatives
   properties:
   - type: OpenAPI
@@ -668,6 +672,8 @@ apis:
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
+  - Database
+  tags_raw:
   - Databases
   properties:
   - type: OpenAPI
@@ -1623,6 +1629,8 @@ apis:
   humanURL: https://api-docs.partnerize.com/brand/
   baseURL: https://api.partnerize.com
   tags:
+  - Timezone
+  tags_raw:
   - Timezones
   properties:
   - type: OpenAPI

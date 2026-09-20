@@ -1,0 +1,68 @@
+slug: partnerize
+provider: Partnerize
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 5
+edges:
+- tag: Campaign Requests and Invites
+  spec_file: partnerize-campaign-requests-and-invites-api-openapi.yml
+  capability_id: BC-410.60
+  capability_id_l1: BC-410
+  capability_name: Channel Sales Management
+  confidence: 0.8
+  evidence: '''Approve and Invite Partners to Campaigns''; ''Accept Campaign Requests''; ''Reject partners
+    from a campaign'''
+  reason: The operations are the network/brand side of recruiting, approving, inviting and rejecting affiliate
+    partners into campaigns — squarely indirect/channel partner recruitment and administration.
+- tag: Participating Partners
+  spec_file: partnerize-participating-partners-api-openapi.yml
+  capability_id: BC-410.60
+  capability_id_l1: BC-410
+  capability_name: Channel Sales Management
+  confidence: 0.78
+  evidence: POST /campaign/{campaign_id}/publisher  update-partner-participation  Update a Partner Participation
+    on a Campaign
+  reason: Operations list, retrieve and update publisher (affiliate partner) participation in brand campaigns,
+    with Publisher/Publisher_Website schemas. This is management of indirect/affiliate channel partners,
+    matching Channel Sales Management.
+- tag: Network Partners
+  spec_file: partnerize-network-partners-api-openapi.yml
+  capability_id: BC-410.60
+  capability_id_l1: BC-410
+  capability_name: Channel Sales Management
+  confidence: 0.72
+  evidence: POST /user/publisher  createNetworkPartners  Create network partner ... GET /network/{network_id}/publisher  listAllPartnersOnTheNetwork  List
+    all Partners on the Network
+  reason: Creates publishers/affiliate partners, lists network partners and updates their network status
+    (schemas Publisher, User_Publisher) — management of indirect/affiliate channel partners. Could arguably
+    be partner onboarding under marketing, hence 0.72.
+- tag: Partner Details
+  spec_file: partnerize-partner-details-api-openapi.yml
+  capability_id: BC-410.60
+  capability_id_l1: BC-410
+  capability_name: Channel Sales Management
+  confidence: 0.7
+  evidence: GET /user/publisher/{publisher_id}  getPartner  Retrieve Partner / POST ... updatePartner  Update
+    Partner
+  reason: Retrieve and update the affiliate partner (publisher) record including website, country, currency
+    and status — maintenance of indirect channel partner records. Could alternatively be read as partner
+    master-data management, hence 0.7.
+- tag: Voucher Codes
+  spec_file: partnerize-voucher-codes-api-openapi.yml
+  capability_id: BC-440.30
+  capability_id_l1: BC-440
+  capability_name: Discount & Promotion Management
+  confidence: 0.7
+  evidence: POST /campaign/{campaign_id}/voucher_code  Create Voucher Codes
+  reason: Full CRUD over campaign voucher/promo codes with linked Commission_Group, i.e. management of
+    promotional codes used in marketing campaigns — Discount & Promotion Management. Some ambiguity because
+    the codes also drive partner attribution.

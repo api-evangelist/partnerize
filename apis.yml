@@ -67,8 +67,6 @@ apis:
     url: overlays/partnerize-brands-overlay.yaml
   - type: JSONSchema
     url: json-schema/partnerize-brands-api-schema.json
-  - url: graphql/partnerize-graphql.md
-    type: GraphQL
   contact:
   - FN: Partnerize Support
     email: support@partnerize.com

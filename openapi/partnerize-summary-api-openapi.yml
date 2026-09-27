@@ -57,8 +57,10 @@ paths:
       tags:
       - Summary
       description: Return the details of partner's pending (shows value of pending conversions), approved (shows value of approved conversions), confirmed (amount that will be available once brand's invoice is paid), available (amount of money available to withdraw in this moment), and paid (already withdrawn) funds.
-      operationId: Partner payments summary
+      operationId: PartnerPaymentsSummary
       summary: Summarise value of partner's conversions
+      x-operation-id-source: normalized
+      x-operation-id-original: Partner payments summary
 components:
   schemas:
     Partner_Payment_Summary:

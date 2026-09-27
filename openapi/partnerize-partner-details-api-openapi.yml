@@ -256,39 +256,6 @@ paths:
                       week_start: monday
 components:
   schemas:
-    Partner_Database:
-      properties:
-        publisher_id:
-          description: ID of the partner the database belongs to
-          type: string
-        active:
-          $ref: '#/components/schemas/YesOrNo'
-        creation_method:
-          type: string
-        database_name:
-          type: string
-        female:
-          type: number
-        male:
-          type: number
-        max_age:
-          type: number
-        min_age:
-          type: number
-        size:
-          type: number
-      required:
-      - database_name
-      - creation_method
-      - size
-      type: object
-    Status:
-      type: string
-      enum:
-      - a
-      - p
-      - r
-      - n
     Partner_Website:
       properties:
         publisher_id:
@@ -315,12 +282,141 @@ components:
       required:
       - website_url
       type: object
-    Currency:
+    Partner:
+      properties:
+        abn:
+          type: string
+        account_name:
+          type: string
+        campaign_select:
+          type: string
+        company_name:
+          type: string
+        company_division:
+          type: string
+        company_logo:
+          type:
+          - string
+          - 'null'
+        contact_email:
+          type: string
+          format: email
+        contact_locale:
+          $ref: '#/components/schemas/Locale'
+        contact_name:
+          type: string
+        default_currency:
+          $ref: '#/components/schemas/Currency'
+        description:
+          type: string
+          description: Description of the publisher
+        foreign_identifier:
+          type: string
+        gst_registered:
+          type: string
+        im_provider:
+          type: string
+        im_username:
+          type: string
+        is_affiliate_user:
+          $ref: '#/components/schemas/YesOrNo'
+        is_foreign_network:
+          description: Reporting only flag. All conversions will be automatically approved but will not be invoiceable.
+          $ref: '#/components/schemas/YesOrNo'
+        is_lead_user:
+          $ref: '#/components/schemas/YesOrNo'
+        legal_entity:
+          $ref: '#/components/schemas/Country'
+        network_id:
+          type: string
+          description: ID of the network this publisher belongs to
+        network_notes:
+          type: string
+        network_status:
+          $ref: '#/components/schemas/Status'
+        operating_country:
+          $ref: '#/components/schemas/Country'
+        phone:
+          type: string
+          description: Primary contact telephone number
+        phone_area:
+          type: string
+          description: Phone prefix to declare country or region
+        promotional_method_name:
+          type: string
+        promotional_method:
+          type: integer
+        publisher_id:
+          type: string
+          description: ID of the publisher
+        reporting_identifier:
+          type: string
+        reporting_timezone:
+          type: string
+        signup_ip:
+          type: string
+          format: ipv4
+        uk_vat_registered:
+          $ref: '#/components/schemas/YesOrNo'
+        us_tax_state:
+          type: string
+        vat_number:
+          type: integer
+        vertical:
+          type: integer
+        vertical_name:
+          type: string
+        week_start:
+          type: string
+    Locale:
       enum:
-      - GBP
-      - USD
-      - EUR
-      - JPY
+      - bg
+      - cs
+      - da
+      - de
+      - de_at
+      - en
+      - en_au
+      - en_ca
+      - en_us
+      - es
+      - es_mx
+      - el
+      - et
+      - fi
+      - fl
+      - fr
+      - fr_ca
+      - hu
+      - id
+      - it
+      - jp
+      - ko
+      - ko_kr
+      - lt
+      - lv
+      - ms_my
+      - mt
+      - my
+      - nl
+      - 'no'
+      - pl
+      - po
+      - pt
+      - pt_br
+      - ro
+      - ru
+      - sg
+      - sk
+      - sl
+      - sv
+      - sv_se
+      - th
+      - tl
+      - tr
+      - vi
+      - zh_cn
+      - zh_hk
       type: string
     Country:
       enum:
@@ -575,146 +671,50 @@ components:
       - ZM
       - ZW
       type: string
-    Partner:
-      properties:
-        abn:
-          type: string
-        account_name:
-          type: string
-        campaign_select:
-          type: string
-        company_name:
-          type: string
-        company_division:
-          type: string
-        company_logo:
-          type:
-          - string
-          - 'null'
-        contact_email:
-          type: string
-          format: email
-        contact_locale:
-          $ref: '#/components/schemas/Locale'
-        contact_name:
-          type: string
-        default_currency:
-          $ref: '#/components/schemas/Currency'
-        description:
-          type: string
-          description: Description of the publisher
-        foreign_identifier:
-          type: string
-        gst_registered:
-          type: string
-        im_provider:
-          type: string
-        im_username:
-          type: string
-        is_affiliate_user:
-          $ref: '#/components/schemas/YesOrNo'
-        is_foreign_network:
-          description: Reporting only flag. All conversions will be automatically approved but will not be invoiceable.
-          $ref: '#/components/schemas/YesOrNo'
-        is_lead_user:
-          $ref: '#/components/schemas/YesOrNo'
-        legal_entity:
-          $ref: '#/components/schemas/Country'
-        network_id:
-          type: string
-          description: ID of the network this publisher belongs to
-        network_notes:
-          type: string
-        network_status:
-          $ref: '#/components/schemas/Status'
-        operating_country:
-          $ref: '#/components/schemas/Country'
-        phone:
-          type: string
-          description: Primary contact telephone number
-        phone_area:
-          type: string
-          description: Phone prefix to declare country or region
-        promotional_method_name:
-          type: string
-        promotional_method:
-          type: integer
-        publisher_id:
-          type: string
-          description: ID of the publisher
-        reporting_identifier:
-          type: string
-        reporting_timezone:
-          type: string
-        signup_ip:
-          type: string
-          format: ipv4
-        uk_vat_registered:
-          $ref: '#/components/schemas/YesOrNo'
-        us_tax_state:
-          type: string
-        vat_number:
-          type: integer
-        vertical:
-          type: integer
-        vertical_name:
-          type: string
-        week_start:
-          type: string
     YesOrNo:
       enum:
       - y
       - n
       type: string
-    Locale:
+    Status:
+      type: string
       enum:
-      - bg
-      - cs
-      - da
-      - de
-      - de_at
-      - en
-      - en_au
-      - en_ca
-      - en_us
-      - es
-      - es_mx
-      - el
-      - et
-      - fi
-      - fl
-      - fr
-      - fr_ca
-      - hu
-      - id
-      - it
-      - jp
-      - ko
-      - ko_kr
-      - lt
-      - lv
-      - ms_my
-      - mt
-      - my
-      - nl
-      - 'no'
-      - pl
-      - po
-      - pt
-      - pt_br
-      - ro
-      - ru
-      - sg
-      - sk
-      - sl
-      - sv
-      - sv_se
-      - th
-      - tl
-      - tr
-      - vi
-      - zh_cn
-      - zh_hk
+      - a
+      - p
+      - r
+      - n
+    Partner_Database:
+      properties:
+        publisher_id:
+          description: ID of the partner the database belongs to
+          type: string
+        active:
+          $ref: '#/components/schemas/YesOrNo'
+        creation_method:
+          type: string
+        database_name:
+          type: string
+        female:
+          type: number
+        male:
+          type: number
+        max_age:
+          type: number
+        min_age:
+          type: number
+        size:
+          type: number
+      required:
+      - database_name
+      - creation_method
+      - size
+      type: object
+    Currency:
+      enum:
+      - GBP
+      - USD
+      - EUR
+      - JPY
       type: string
 x-tagGroups:
 - name: Partner Management (v1)

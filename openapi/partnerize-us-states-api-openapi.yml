@@ -43,8 +43,10 @@ paths:
       tags:
       - US States
       description: List all US states.
-      operationId: List US States
+      operationId: ListUSStates
       summary: List US States
+      x-operation-id-source: normalized
+      x-operation-id-original: List US States
 components:
   schemas:
     US_State:

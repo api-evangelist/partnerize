@@ -46,8 +46,10 @@ paths:
       tags:
       - User Contexts
       description: List all User Context types.
-      operationId: List all User Contexts
+      operationId: ListAllUserContexts
       summary: List all User Contexts
+      x-operation-id-source: normalized
+      x-operation-id-original: List all User Contexts
 components:
   schemas:
     User_Context:

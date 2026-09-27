@@ -77,8 +77,10 @@ paths:
       tags:
       - Filter Sets
       description: ''
-      operationId: Delete Campaign Group Saved Report
+      operationId: DeleteCampaignGroupSavedReport
       summary: Delete a Campaign Group Saved Report
+      x-operation-id-source: normalized
+      x-operation-id-original: Delete Campaign Group Saved Report
 components:
   schemas:
     Brand_Filter_Set:

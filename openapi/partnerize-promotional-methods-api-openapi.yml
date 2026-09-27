@@ -44,8 +44,10 @@ paths:
       tags:
       - Promotional Methods
       description: List all the types of payment methods.
-      operationId: List all Promotional Method
+      operationId: ListAllPromotionalMethod
       summary: List all Promotional Method
+      x-operation-id-source: normalized
+      x-operation-id-original: List all Promotional Method
 components:
   schemas:
     Promotional_Method:

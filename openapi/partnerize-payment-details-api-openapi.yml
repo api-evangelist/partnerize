@@ -66,8 +66,10 @@ paths:
       tags:
       - Payment Details
       description: View all Payment Details for a partner.
-      operationId: List Payment Details
+      operationId: ListPaymentDetails
       summary: List Payment Details
+      x-operation-id-source: normalized
+      x-operation-id-original: List Payment Details
     post:
       parameters:
       - description: ID of the partner
@@ -116,7 +118,7 @@ paths:
       tags:
       - Payment Details
       description: Create Payment Details for a partner.
-      operationId: Create Payment Details
+      operationId: CreatePaymentDetails
       requestBody:
         content:
           application/json:
@@ -169,60 +171,10 @@ paths:
                   type: array
               type: object
       summary: Create Payment Details
+      x-operation-id-source: normalized
+      x-operation-id-original: Create Payment Details
 components:
   schemas:
-    Payment_Details:
-      properties:
-        1011l22:
-          description: Dynamic property name equal to the Payment details set Id. Example - 1011l22
-          properties:
-            publisher_payment_detail_set_id:
-              type: string
-            country:
-              $ref: '#/components/schemas/Country'
-            paid_currency:
-              $ref: '#/components/schemas/Currency'
-            tracked_currency:
-              items:
-                $ref: '#/components/schemas/Currency'
-              type: array
-            payment_type_code:
-              type: string
-            payment_type_name:
-              type: string
-            automatic_self_bill_creation_date:
-              type: string
-            automatic_self_bill_creation_threshold:
-              type: string
-            suspended:
-              $ref: '#/components/schemas/YesOrNo'
-            suspended_at:
-              type: string
-            suspended_by:
-              type: string
-            suspended_notes:
-              type: string
-            payment_detail_values:
-              properties:
-                bank_address:
-                  type: string
-                account_number:
-                  type: number
-                account_name:
-                  type: string
-                bank_name:
-                  type: string
-                routing_number:
-                  type: number
-              type: object
-          type: object
-    Currency:
-      enum:
-      - GBP
-      - USD
-      - EUR
-      - JPY
-      type: string
     Country:
       enum:
       - AD
@@ -480,6 +432,58 @@ components:
       enum:
       - y
       - n
+      type: string
+    Payment_Details:
+      properties:
+        1011l22:
+          description: Dynamic property name equal to the Payment details set Id. Example - 1011l22
+          properties:
+            publisher_payment_detail_set_id:
+              type: string
+            country:
+              $ref: '#/components/schemas/Country'
+            paid_currency:
+              $ref: '#/components/schemas/Currency'
+            tracked_currency:
+              items:
+                $ref: '#/components/schemas/Currency'
+              type: array
+            payment_type_code:
+              type: string
+            payment_type_name:
+              type: string
+            automatic_self_bill_creation_date:
+              type: string
+            automatic_self_bill_creation_threshold:
+              type: string
+            suspended:
+              $ref: '#/components/schemas/YesOrNo'
+            suspended_at:
+              type: string
+            suspended_by:
+              type: string
+            suspended_notes:
+              type: string
+            payment_detail_values:
+              properties:
+                bank_address:
+                  type: string
+                account_number:
+                  type: number
+                account_name:
+                  type: string
+                bank_name:
+                  type: string
+                routing_number:
+                  type: number
+              type: object
+          type: object
+    Currency:
+      enum:
+      - GBP
+      - USD
+      - EUR
+      - JPY
       type: string
 x-tagGroups:
 - name: Partner Management (v1)

@@ -55,8 +55,10 @@ paths:
       tags:
       - Campaign Group Campaigns
       description: Retrieve a List of Campaigns in a Campaign Group by id
-      operationId: Retrieve a List of Campaigns in a Campaign Group
+      operationId: RetrieveAListOfCampaignsInACampaignGroup
       summary: Retrieve a List of Campaigns in a Campaign Group
+      x-operation-id-source: normalized
+      x-operation-id-original: Retrieve a List of Campaigns in a Campaign Group
 x-tagGroups:
 - name: Networks and Brands Management (v1)
   tags:

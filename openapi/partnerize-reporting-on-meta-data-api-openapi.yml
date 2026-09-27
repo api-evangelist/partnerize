@@ -124,8 +124,10 @@ paths:
       tags:
       - Reporting on Meta data
       description: ''
-      operationId: List all Meta Reports for a Campaign
+      operationId: ListAllMetaReportsForACampaign
       summary: List all Meta Reports for a Campaign
+      x-operation-id-source: normalized
+      x-operation-id-original: List all Meta Reports for a Campaign
     post:
       parameters:
       - description: ID of the campaign
@@ -221,7 +223,7 @@ paths:
           description: Created
       tags:
       - Reporting on Meta data
-      operationId: Create Meta Report
+      operationId: CreateMetaReport
       requestBody:
         content:
           application/json:
@@ -277,6 +279,8 @@ paths:
               - filter_meta_item
               type: object
       summary: Create a Meta Report for a Campaign
+      x-operation-id-source: normalized
+      x-operation-id-original: Create Meta Report
   /campaign/{campaign_id}/reporting/meta/reports/{report_id}:
     delete:
       parameters:
@@ -318,8 +322,10 @@ paths:
           description: OK
       tags:
       - Reporting on Meta data
-      operationId: Delete Meta Report
+      operationId: DeleteMetaReport
       summary: Delete a Meta Report for a Campaign
+      x-operation-id-source: normalized
+      x-operation-id-original: Delete Meta Report
     get:
       parameters:
       - description: ID of the campaign
@@ -422,8 +428,10 @@ paths:
           description: OK
       tags:
       - Reporting on Meta data
-      operationId: Retrieve Meta Report
+      operationId: RetrieveMetaReport
       summary: Retrieve a Meta Report for a Campaign
+      x-operation-id-source: normalized
+      x-operation-id-original: Retrieve Meta Report
   /campaign/{campaign_id}/reporting/meta/reports/{report_id}/results:
     get:
       parameters:
@@ -485,8 +493,10 @@ paths:
       tags:
       - Reporting on Meta data
       description: The endpoint allows you to retrieve the results of a specified Meta Report for a Campaign. The endpoint supports `.csv` format. Use `../campaign/{campaign_id}/reporting/meta/reports/{report_id}/results.csv` to export the results as a csv file.
-      operationId: View Meta Report Results
+      operationId: ViewMetaReportResults
       summary: View the results of a Meta Report for a Campaign
+      x-operation-id-source: normalized
+      x-operation-id-original: View Meta Report Results
   /campaign/{campaign_id}/reporting/meta/values:
     get:
       parameters:
@@ -540,8 +550,10 @@ paths:
           description: OK
       tags:
       - Reporting on Meta data
-      operationId: List Meta Values
+      operationId: ListMetaValues
       summary: List all Meta Values for a Campaign
+      x-operation-id-source: normalized
+      x-operation-id-original: List Meta Values
   /campaign/{campaign_id}/reporting/meta/whitelist:
     get:
       responses:
@@ -577,8 +589,10 @@ paths:
           description: OK
       tags:
       - Reporting on Meta data
-      operationId: List Meta Whitelist Keys
+      operationId: ListMetaWhitelistKeys
       summary: List all Meta Whitelist Keys for a Campaign
+      x-operation-id-source: normalized
+      x-operation-id-original: List Meta Whitelist Keys
 components:
   schemas:
     Currency:

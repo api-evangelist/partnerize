@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Partnerize Brands Attribution … Network Terms and…
+  title: Partnerize Brands Attribution … Network Terms and… Network…
   version: 1.4.99
   description: '# Introduction
 
@@ -73,16 +73,11 @@ paths:
       summary: List all terms and conditions for a network
 components:
   schemas:
-    Legal_Entities:
-      enum:
-      - '1'
-      - '2'
-      - '3'
-      - '4'
-      - '5'
-      - '6'
-      - '7'
-      type: string
+    Term_Wrapper:
+      properties:
+        database:
+          $ref: '#/components/schemas/Term'
+      type: object
     Term:
       properties:
         locale:
@@ -103,11 +98,56 @@ components:
           - network
           type: string
       type: object
-    Term_Wrapper:
-      properties:
-        database:
-          $ref: '#/components/schemas/Term'
-      type: object
+    Locale:
+      enum:
+      - bg
+      - cs
+      - da
+      - de
+      - de_at
+      - en
+      - en_au
+      - en_ca
+      - en_us
+      - es
+      - es_mx
+      - el
+      - et
+      - fi
+      - fl
+      - fr
+      - fr_ca
+      - hu
+      - id
+      - it
+      - jp
+      - ko
+      - ko_kr
+      - lt
+      - lv
+      - ms_my
+      - mt
+      - my
+      - nl
+      - 'no'
+      - pl
+      - po
+      - pt
+      - pt_br
+      - ro
+      - ru
+      - sg
+      - sk
+      - sl
+      - sv
+      - sv_se
+      - th
+      - tl
+      - tr
+      - vi
+      - zh_cn
+      - zh_hk
+      type: string
     Country:
       enum:
       - AD
@@ -361,55 +401,15 @@ components:
       - ZM
       - ZW
       type: string
-    Locale:
+    Legal_Entities:
       enum:
-      - bg
-      - cs
-      - da
-      - de
-      - de_at
-      - en
-      - en_au
-      - en_ca
-      - en_us
-      - es
-      - es_mx
-      - el
-      - et
-      - fi
-      - fl
-      - fr
-      - fr_ca
-      - hu
-      - id
-      - it
-      - jp
-      - ko
-      - ko_kr
-      - lt
-      - lv
-      - ms_my
-      - mt
-      - my
-      - nl
-      - 'no'
-      - pl
-      - po
-      - pt
-      - pt_br
-      - ro
-      - ru
-      - sg
-      - sk
-      - sl
-      - sv
-      - sv_se
-      - th
-      - tl
-      - tr
-      - vi
-      - zh_cn
-      - zh_hk
+      - '1'
+      - '2'
+      - '3'
+      - '4'
+      - '5'
+      - '6'
+      - '7'
       type: string
 x-tagGroups:
 - name: Networks and Brands Management (v1)

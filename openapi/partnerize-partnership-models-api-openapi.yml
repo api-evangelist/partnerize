@@ -45,8 +45,10 @@ paths:
       tags:
       - Partnership Models
       description: List all available partnership models.
-      operationId: List Partnership Models
+      operationId: ListPartnershipModels
       summary: List Partnership Models
+      x-operation-id-source: normalized
+      x-operation-id-original: List Partnership Models
 components:
   schemas:
     Partnership_Model:

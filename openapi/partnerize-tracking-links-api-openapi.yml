@@ -80,8 +80,10 @@ paths:
       tags:
       - Tracking Links
       description: Retrieve tracking links for a given partner. Note, these will only be short links.
-      operationId: Retrieve Tracking Links
+      operationId: RetrieveTrackingLinks
       summary: Retrieve Tracking Links
+      x-operation-id-source: normalized
+      x-operation-id-original: Retrieve Tracking Links
     post:
       parameters:
       - description: ID of the partner
@@ -118,7 +120,7 @@ paths:
       tags:
       - Tracking Links
       description: Create tracking links for a given partner and campaign.
-      operationId: Create Tracking Links
+      operationId: CreateTrackingLinks
       requestBody:
         content:
           application/json:
@@ -147,6 +149,8 @@ paths:
               - campaign_id
               type: object
       summary: Create a Tracking Link
+      x-operation-id-source: normalized
+      x-operation-id-original: Create Tracking Links
   /v2/publishers/<publisher_id>/links/<link_id>:
     get:
       parameters:
@@ -192,8 +196,10 @@ paths:
       tags:
       - Tracking Links
       description: Retrieve a tracking link.
-      operationId: Retrieve a Tracking Link
+      operationId: RetrieveATrackingLink
       summary: Retrieve a Tracking Link
+      x-operation-id-source: normalized
+      x-operation-id-original: Retrieve a Tracking Link
     patch:
       parameters:
       - description: ID of the partner
@@ -238,7 +244,7 @@ paths:
       tags:
       - Tracking Links
       description: Update a tracking link.
-      operationId: Update a Tracking Link
+      operationId: UpdateATrackingLink
       requestBody:
         content:
           application/json:
@@ -265,6 +271,8 @@ paths:
                   type: boolean
               type: object
       summary: Update a Tracking Link
+      x-operation-id-source: normalized
+      x-operation-id-original: Update a Tracking Link
 components:
   schemas:
     Link:

@@ -143,8 +143,10 @@ paths:
       tags:
       - Self-billing
       description: View all Self-billing invoices that have been created for the partner.
-      operationId: List all Selfbills
+      operationId: ListAllSelfbills
       summary: List all Selfbills
+      x-operation-id-source: normalized
+      x-operation-id-original: List all Selfbills
   /user/publisher/{publisher_id}/selfbill/{publisher_self_bill_id}:
     get:
       parameters:
@@ -201,17 +203,12 @@ paths:
       tags:
       - Self-billing
       description: Retrieve an individual Self-billing invoice.
-      operationId: Retrieve a Selfbill
+      operationId: RetrieveASelfbill
       summary: Retrieve a Self-billing invoice
+      x-operation-id-source: normalized
+      x-operation-id-original: Retrieve a Selfbill
 components:
   schemas:
-    Currency:
-      enum:
-      - GBP
-      - USD
-      - EUR
-      - JPY
-      type: string
     Country:
       enum:
       - AD
@@ -538,6 +535,13 @@ components:
               type: number
           type: object
       type: object
+    Currency:
+      enum:
+      - GBP
+      - USD
+      - EUR
+      - JPY
+      type: string
 x-tagGroups:
 - name: Partner Management (v1)
   tags:

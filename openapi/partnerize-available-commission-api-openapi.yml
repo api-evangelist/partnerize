@@ -73,8 +73,10 @@ paths:
       tags:
       - Available Commission
       description: Retrieve the available commission for a given partner.
-      operationId: Retrieve Available Commission
+      operationId: RetrieveAvailableCommission
       summary: Retrieve Available Commission
+      x-operation-id-source: normalized
+      x-operation-id-original: Retrieve Available Commission
 components:
   schemas:
     Currency:

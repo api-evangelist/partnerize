@@ -45,8 +45,10 @@ paths:
       tags:
       - Conversion Metrics
       description: List all available Conversion Metrics.
-      operationId: List Conversion Metrics
+      operationId: ListConversionMetrics
       summary: List Conversion Metrics
+      x-operation-id-source: normalized
+      x-operation-id-original: List Conversion Metrics
 components:
   schemas:
     Conversion_Metric:

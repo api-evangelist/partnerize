@@ -114,8 +114,10 @@ paths:
       tags:
       - Exports
       description: Request a CSV for a granular Click report for the Partner and within the requested time period.
-      operationId: Export Clicks
+      operationId: ExportClicks
       summary: Export a Clicks Report
+      x-operation-id-source: normalized
+      x-operation-id-original: Export Clicks
   /reporting/export/export/conversion.csv:
     get:
       parameters:
@@ -250,8 +252,10 @@ paths:
       tags:
       - Exports
       description: Request a CSV for a granular Conversion report for the Partner and within the requested time period. This report will give you details of orders at the basket level
-      operationId: Export Conversions
+      operationId: ExportConversions
       summary: Export Conversions Report
+      x-operation-id-source: normalized
+      x-operation-id-original: Export Conversions
   /reporting/export/export/conversion_item.csv:
     get:
       parameters:
@@ -399,8 +403,10 @@ paths:
       tags:
       - Exports
       description: Request a CSV for a granular Conversion report which includes all individual items for the Partner and within the requested time period. In Conversion Item reports you will be able to see details of each item including individual item’s commission and value as each item will be listed on its own row within the report.
-      operationId: Export Conversion Items
+      operationId: ExportConversionItems
       summary: Export Conversion Items Report
+      x-operation-id-source: normalized
+      x-operation-id-original: Export Conversion Items
 x-tagGroups:
 - name: Partner Management (v1)
   tags:

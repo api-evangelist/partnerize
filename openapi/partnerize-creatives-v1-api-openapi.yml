@@ -55,8 +55,10 @@ paths:
       tags:
       - Creatives (v1)
       description: View a summary of all Creatives available on each participating Campaign.
-      operationId: List all Creatives on each participating Campaign
+      operationId: ListAllCreativesOnEachParticipatingCampaign
       summary: List all Creatives on each participating Campaign
+      x-operation-id-source: normalized
+      x-operation-id-original: List all Creatives on each participating Campaign
   /user/publisher/{publisher_id}/campaign/{campaign_id}/creative:
     get:
       parameters:
@@ -158,86 +160,12 @@ paths:
       tags:
       - Creatives (v1)
       description: View all Creatives for the specified Campaign.
-      operationId: List Creatives on a Campaign
+      operationId: ListCreativesOnACampaign
       summary: List Creatives on a Campaign
+      x-operation-id-source: normalized
+      x-operation-id-original: List Creatives on a Campaign
 components:
   schemas:
-    Creative_Wrapper:
-      properties:
-        creative:
-          $ref: '#/components/schemas/Creative'
-      type: object
-    Creative_Item:
-      properties:
-        content_type:
-          type: string
-        creative_item_id:
-          description: ID of the creative item
-          type: string
-        description:
-          type: string
-        filename:
-          type: string
-        img_url:
-          type: string
-        preview:
-          type: string
-        specific_destination:
-          type: string
-        created_by:
-          type: string
-        created_at:
-          type: string
-        tags:
-          type: string
-        active:
-          $ref: '#/components/schemas/YesOrNo'
-        campaign_id:
-          description: ID of the campaign
-          type: string
-        creative_type_id:
-          type: number
-        custom_append_url_parameters:
-          type: string
-        custom_prepend_url_parameters:
-          type: string
-      required:
-      - creative_type_id
-      type: object
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
-    Partner_Campaign_Creative:
-      properties:
-        campaign_creative:
-          properties:
-            campaign_id:
-              description: Id of the campaign
-              type: string
-            creatives:
-              properties:
-                Banner:
-                  description: number of Banner creatives
-                  type: number
-                Email:
-                  description: number of Emails
-                  type: number
-                Feed:
-                  description: number of Feeds
-                  type: number
-                HTML:
-                  description: number of HTML creatives
-                  type: number
-                HTML Form:
-                  description: number of HTML Forms
-                  type: number
-                Text Link:
-                  description: number of Text links
-                  type: number
-              type: object
-          type: object
     Creative:
       properties:
         creative_id:
@@ -291,6 +219,82 @@ components:
         created_by:
           type: string
         created_at:
+          type: string
+      required:
+      - creative_type_id
+      type: object
+    Creative_Wrapper:
+      properties:
+        creative:
+          $ref: '#/components/schemas/Creative'
+      type: object
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
+    Partner_Campaign_Creative:
+      properties:
+        campaign_creative:
+          properties:
+            campaign_id:
+              description: Id of the campaign
+              type: string
+            creatives:
+              properties:
+                Banner:
+                  description: number of Banner creatives
+                  type: number
+                Email:
+                  description: number of Emails
+                  type: number
+                Feed:
+                  description: number of Feeds
+                  type: number
+                HTML:
+                  description: number of HTML creatives
+                  type: number
+                HTML Form:
+                  description: number of HTML Forms
+                  type: number
+                Text Link:
+                  description: number of Text links
+                  type: number
+              type: object
+          type: object
+    Creative_Item:
+      properties:
+        content_type:
+          type: string
+        creative_item_id:
+          description: ID of the creative item
+          type: string
+        description:
+          type: string
+        filename:
+          type: string
+        img_url:
+          type: string
+        preview:
+          type: string
+        specific_destination:
+          type: string
+        created_by:
+          type: string
+        created_at:
+          type: string
+        tags:
+          type: string
+        active:
+          $ref: '#/components/schemas/YesOrNo'
+        campaign_id:
+          description: ID of the campaign
+          type: string
+        creative_type_id:
+          type: number
+        custom_append_url_parameters:
+          type: string
+        custom_prepend_url_parameters:
           type: string
       required:
       - creative_type_id

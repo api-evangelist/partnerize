@@ -44,8 +44,10 @@ paths:
       tags:
       - Website Types
       description: List all the website types.
-      operationId: List Website Types
+      operationId: ListWebsiteTypes
       summary: List Website Types
+      x-operation-id-source: normalized
+      x-operation-id-original: List Website Types
 components:
   schemas:
     Website_Type:

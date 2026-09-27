@@ -107,6 +107,11 @@ components:
       - zh_cn
       - zh_hk
       type: string
+    Network_Wrapper:
+      properties:
+        network:
+          $ref: '#/components/schemas/Network'
+      type: object
     Network:
       properties:
         auto_approve_publishers:
@@ -133,11 +138,6 @@ components:
         network_notes:
           description: Any additional notes for the network
           type: string
-      type: object
-    Network_Wrapper:
-      properties:
-        network:
-          $ref: '#/components/schemas/Network'
       type: object
     YesOrNo:
       enum:

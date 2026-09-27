@@ -63,8 +63,10 @@ paths:
       tags:
       - Product Feeds
       description: Return the details of all Product Feeds associated with a Campaign.
-      operationId: List all Product Feeds
+      operationId: ListAllProductFeeds
       summary: List all Product Feeds for a Campaign
+      x-operation-id-source: normalized
+      x-operation-id-original: List all Product Feeds
     post:
       parameters:
       - description: ID of the Campaign
@@ -103,7 +105,7 @@ paths:
       tags:
       - Product Feeds
       description: Create one or more Product Feeds against the Campaign entity. Each Product Feed is sent as an array within a top level `feeds` array.
-      operationId: Create a Product Feed for a Campaign
+      operationId: CreateAProductFeedForACampaign
       requestBody:
         content:
           application/json:
@@ -124,6 +126,8 @@ paths:
               - feeds
               type: object
       summary: Create a Product Feed
+      x-operation-id-source: normalized
+      x-operation-id-original: Create a Product Feed for a Campaign
     put:
       parameters:
       - description: ID of the Campaign
@@ -163,7 +167,7 @@ paths:
       tags:
       - Product Feeds
       description: 'Update one or more `feeds` against the Campaign entity. Each Product Feed is sent as an array within a top level `feeds` array and must contain its associated `feed_id` or `location`. As `location` is a unique identifier, it''s not possible to change the location of a feed once created. To update the location, first update the feed and set `active: n`, then create a new feed with the new location.'
-      operationId: Update a Campaign Feed
+      operationId: UpdateACampaignFeed
       requestBody:
         content:
           application/json:
@@ -201,13 +205,10 @@ paths:
               - feeds
               type: object
       summary: Update a Product Feed for a Campaign
+      x-operation-id-source: normalized
+      x-operation-id-original: Update a Campaign Feed
 components:
   schemas:
-    Feed_Wrapper:
-      properties:
-        feed:
-          $ref: '#/components/schemas/Feed'
-      type: object
     Feed:
       properties:
         active:
@@ -237,6 +238,11 @@ components:
       - y
       - n
       type: string
+    Feed_Wrapper:
+      properties:
+        feed:
+          $ref: '#/components/schemas/Feed'
+      type: object
 x-tagGroups:
 - name: Networks and Brands Management (v1)
   tags:

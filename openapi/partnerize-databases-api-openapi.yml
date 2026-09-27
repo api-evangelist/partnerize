@@ -57,8 +57,10 @@ paths:
       tags:
       - Databases
       description: Return the details of all Databases attached to the Partner account.
-      operationId: List Partner Databases
+      operationId: ListPartnerDatabases
       summary: List Partner Databases
+      x-operation-id-source: normalized
+      x-operation-id-original: List Partner Databases
     post:
       parameters:
       - description: ID of the partner
@@ -98,7 +100,7 @@ paths:
       tags:
       - Databases
       description: Create one or more Databases against the partner entity. Each Database is sent as an array within a top level `databases` array.
-      operationId: Create Partner Database
+      operationId: CreatePartnerDatabase
       requestBody:
         content:
           application/json:
@@ -132,6 +134,8 @@ paths:
                     type: array
                 type: object
       summary: Create Partner Database
+      x-operation-id-source: normalized
+      x-operation-id-original: Create Partner Database
     put:
       parameters:
       - description: ID of the partner
@@ -171,7 +175,7 @@ paths:
       tags:
       - Databases
       description: Update one or more Databases against the Partner entity. Each Database is sent as an array within a top level `databases` array and must contain its associated `database_id`.
-      operationId: Update Partner Databases
+      operationId: UpdatePartnerDatabases
       requestBody:
         content:
           application/json:
@@ -194,6 +198,8 @@ paths:
                   type: array
               type: object
       summary: Update Partner Databases
+      x-operation-id-source: normalized
+      x-operation-id-original: Update Partner Databases
   /user/publisher/{publisher_id}/database/{database_id}:
     get:
       parameters:
@@ -235,10 +241,28 @@ paths:
       tags:
       - Databases
       description: Retrieves the specified Partner Database.
-      operationId: Retrieve a Partner Database
+      operationId: RetrieveAPartnerDatabase
       summary: Retrieve a Partner Database
+      x-operation-id-source: normalized
+      x-operation-id-original: Retrieve a Partner Database
 components:
   schemas:
+    Partner_Database_Wrapper:
+      properties:
+        database:
+          allOf:
+          - type: object
+            properties:
+              database_id:
+                description: ID of the partner database
+                type: string
+          - $ref: '#/components/schemas/Partner_Database'
+      type: object
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
     Partner_Database:
       properties:
         publisher_id:
@@ -265,22 +289,6 @@ components:
       - creation_method
       - size
       type: object
-    Partner_Database_Wrapper:
-      properties:
-        database:
-          allOf:
-          - type: object
-            properties:
-              database_id:
-                description: ID of the partner database
-                type: string
-          - $ref: '#/components/schemas/Partner_Database'
-      type: object
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
 x-tagGroups:
 - name: Partner Management (v1)
   tags:

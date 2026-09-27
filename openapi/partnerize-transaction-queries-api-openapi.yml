@@ -212,8 +212,10 @@ paths:
       tags:
       - Transaction Queries
       description: Return the details of all Transaction Queries created by the Partner account.
-      operationId: List Transaction Queries
+      operationId: ListTransactionQueries
       summary: List all Transaction Queries
+      x-operation-id-source: normalized
+      x-operation-id-original: List Transaction Queries
   /user/publisher/{publisher_id}/tq/create:
     post:
       responses:
@@ -338,7 +340,7 @@ paths:
       tags:
       - Transaction Queries
       description: 'Create one or more Transaction Queries. The fields required depends on the type of TQ being created: - Untracked: conversion_reference, camref, conversion_value, expected_commission, conversion_date_time - Incorrect commission: conversion_reference, camref, expected_commission - Declined: conversion_reference, camref'
-      operationId: Create Transaction Queries
+      operationId: CreateTransactionQueries
       requestBody:
         content:
           application/json:
@@ -359,6 +361,8 @@ paths:
                   type: array
               type: object
       summary: Create Transaction Queries
+      x-operation-id-source: normalized
+      x-operation-id-original: Create Transaction Queries
   /user/publisher/{publisher_id}/tq/{transaction_query_id}/delete:
     post:
       parameters:
@@ -453,10 +457,23 @@ paths:
       tags:
       - Transaction Queries
       description: Delete a single Transaction Query. Once a Transaction Query has been approved or rejected it cannot be deleted.
-      operationId: Delete a Transaction Query
+      operationId: DeleteATransactionQuery
       summary: Delete a Transaction Query
+      x-operation-id-source: normalized
+      x-operation-id-original: Delete a Transaction Query
 components:
   schemas:
+    Transaction_Query_Wrapper:
+      properties:
+        transaction_query:
+          $ref: '#/components/schemas/Transaction_Query'
+      type: object
+    Transaction_Query_State:
+      enum:
+      - pending
+      - approved
+      - rejected
+      type: string
     Transaction_Query_State_History:
       properties:
         conversion_expected_commission:
@@ -476,18 +493,12 @@ components:
         user_id:
           type: string
       type: object
-    Transaction_Query_Wrapper:
-      properties:
-        transaction_query:
-          $ref: '#/components/schemas/Transaction_Query'
-      type: object
-    Status:
-      type: string
+    Transaction_Query_Type:
       enum:
-      - a
-      - p
-      - r
-      - n
+      - untracked
+      - incorrect_commission
+      - declined
+      type: string
     Timezones:
       enum:
       - Australia/Sydney
@@ -496,19 +507,18 @@ components:
       - CET
       - GMT
       type: string
-    Transaction_Query_Type:
+    YesOrNo:
       enum:
-      - untracked
-      - incorrect_commission
-      - declined
+      - y
+      - n
       type: string
-    Currency:
+    Status:
+      type: string
       enum:
-      - GBP
-      - USD
-      - EUR
-      - JPY
-      type: string
+      - a
+      - p
+      - r
+      - n
     Transaction_Query:
       properties:
         campaign:
@@ -604,16 +614,12 @@ components:
         updated_at:
           type: string
       type: object
-    YesOrNo:
+    Currency:
       enum:
-      - y
-      - n
-      type: string
-    Transaction_Query_State:
-      enum:
-      - pending
-      - approved
-      - rejected
+      - GBP
+      - USD
+      - EUR
+      - JPY
       type: string
 x-tagGroups:
 - name: Partner Management (v1)

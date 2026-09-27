@@ -45,15 +45,12 @@ paths:
       tags:
       - Conversion Types
       description: List all the conversion types.
-      operationId: List Conversion Type
+      operationId: ListConversionType
       summary: List Conversion Type
+      x-operation-id-source: normalized
+      x-operation-id-original: List Conversion Type
 components:
   schemas:
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
     Conversion_Type:
       properties:
         conversion_type:
@@ -74,6 +71,11 @@ components:
               $ref: '#/components/schemas/YesOrNo'
           type: object
       type: object
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
 x-tagGroups:
 - name: Partner Management (v1)
   tags:

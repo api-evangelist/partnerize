@@ -119,8 +119,10 @@ paths:
       tags:
       - Participating Partners
       description: View all Partners Participating on the Campaign.
-      operationId: List all Participating Partners
+      operationId: ListAllParticipatingPartners
       summary: List all Participating Partners
+      x-operation-id-source: normalized
+      x-operation-id-original: List all Participating Partners
     post:
       parameters:
       - description: ID of the campaign
@@ -337,10 +339,41 @@ paths:
       tags:
       - Participating Partners
       description: View a specific Participating Partner.
-      operationId: Retrieve a Participating Partner
+      operationId: RetrieveAParticipatingPartner
       summary: Retrieve a Participating Partner
+      x-operation-id-source: normalized
+      x-operation-id-original: Retrieve a Participating Partner
 components:
   schemas:
+    Publisher_Website:
+      properties:
+        publisher_id:
+          description: ID of the partner the website belongs to
+          type: string
+        website_id:
+          description: ID of the partner website
+          type: string
+        active:
+          $ref: '#/components/schemas/YesOrNo'
+        primary:
+          $ref: '#/components/schemas/YesOrNo'
+        website_country:
+          $ref: '#/components/schemas/Country'
+        website_name:
+          type: string
+        website_type:
+          type: number
+        website_type_name:
+          type: string
+        website_url:
+          type: string
+        website_vertical:
+          type: number
+        website_vertical_name:
+          type: string
+      required:
+      - website_url
+      type: object
     Publisher_Database:
       properties:
         database_id:
@@ -370,18 +403,13 @@ components:
       - creation_method
       - size
       type: object
-    Status:
-      type: string
+    Currency:
       enum:
-      - a
-      - p
-      - r
-      - n
-    Publisher_Website_Wrapper:
-      properties:
-        website:
-          $ref: '#/components/schemas/Publisher_Website'
-      type: object
+      - GBP
+      - USD
+      - EUR
+      - JPY
+      type: string
     Publisher:
       type: object
       properties:
@@ -468,6 +496,60 @@ components:
           type: number
         vertical_name:
           type: string
+    Locale:
+      enum:
+      - bg
+      - cs
+      - da
+      - de
+      - de_at
+      - en
+      - en_au
+      - en_ca
+      - en_us
+      - es
+      - es_mx
+      - el
+      - et
+      - fi
+      - fl
+      - fr
+      - fr_ca
+      - hu
+      - id
+      - it
+      - jp
+      - ko
+      - ko_kr
+      - lt
+      - lv
+      - ms_my
+      - mt
+      - my
+      - nl
+      - 'no'
+      - pl
+      - po
+      - pt
+      - pt_br
+      - ro
+      - ru
+      - sg
+      - sk
+      - sl
+      - sv
+      - sv_se
+      - th
+      - tl
+      - tr
+      - vi
+      - zh_cn
+      - zh_hk
+      type: string
+    Publisher_Wrapper:
+      properties:
+        publisher:
+          $ref: '#/components/schemas/Publisher'
     Country:
       enum:
       - AD
@@ -721,105 +803,27 @@ components:
       - ZM
       - ZW
       type: string
-    Currency:
-      enum:
-      - GBP
-      - USD
-      - EUR
-      - JPY
-      type: string
     YesOrNo:
       enum:
       - y
       - n
-      type: string
-    Locale:
-      enum:
-      - bg
-      - cs
-      - da
-      - de
-      - de_at
-      - en
-      - en_au
-      - en_ca
-      - en_us
-      - es
-      - es_mx
-      - el
-      - et
-      - fi
-      - fl
-      - fr
-      - fr_ca
-      - hu
-      - id
-      - it
-      - jp
-      - ko
-      - ko_kr
-      - lt
-      - lv
-      - ms_my
-      - mt
-      - my
-      - nl
-      - 'no'
-      - pl
-      - po
-      - pt
-      - pt_br
-      - ro
-      - ru
-      - sg
-      - sk
-      - sl
-      - sv
-      - sv_se
-      - th
-      - tl
-      - tr
-      - vi
-      - zh_cn
-      - zh_hk
       type: string
     Publisher_Database_Wrapper:
       properties:
         database:
           $ref: '#/components/schemas/Publisher_Database'
       type: object
-    Publisher_Wrapper:
+    Status:
+      type: string
+      enum:
+      - a
+      - p
+      - r
+      - n
+    Publisher_Website_Wrapper:
       properties:
-        publisher:
-          $ref: '#/components/schemas/Publisher'
-    Publisher_Website:
-      properties:
-        publisher_id:
-          description: ID of the partner the website belongs to
-          type: string
-        website_id:
-          description: ID of the partner website
-          type: string
-        active:
-          $ref: '#/components/schemas/YesOrNo'
-        primary:
-          $ref: '#/components/schemas/YesOrNo'
-        website_country:
-          $ref: '#/components/schemas/Country'
-        website_name:
-          type: string
-        website_type:
-          type: number
-        website_type_name:
-          type: string
-        website_url:
-          type: string
-        website_vertical:
-          type: number
-        website_vertical_name:
-          type: string
-      required:
-      - website_url
+        website:
+          $ref: '#/components/schemas/Publisher_Website'
       type: object
 x-tagGroups:
 - name: Networks and Brands Management (v1)

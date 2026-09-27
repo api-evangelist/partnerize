@@ -195,7 +195,7 @@ paths:
       url: http://api.partnerize.tech
     get:
       summary: List Available Partnerize Tag Features
-      operationId: listPartnerizeTagFeatures
+      operationId: getV3BrandPartnerizeTagsFeatures
       description: Returns a list of available features ready for enablement in a Partnerize Tag.
       tags:
       - Partnerize Tag Features
@@ -226,6 +226,8 @@ paths:
                         'name:': tracking-link-generation
                         'description:': Tracking link generation from standard brand URLs
                         config_schema: []
+      x-operation-id-source: normalized
+      x-operation-id-original: listPartnerizeTagFeatures
   /v3/brand/partnerize-tags/{tagId}/features:
     servers:
     - description: Production
@@ -234,7 +236,7 @@ paths:
       url: http://api.partnerize.tech
     get:
       summary: List Partnerize Tag Enabled Features
-      operationId: listPartnerizeTagEnabledFeatures
+      operationId: getV3BrandPartnerizeTagsByTagIdFeatures
       description: Return a list of features enabled for a specific Partnerize Tag.
       tags:
       - Partnerize Tag Features
@@ -277,9 +279,11 @@ paths:
                   - 'name:': first-party-tracking
                     'description:': Cookie-less conversion pixel integration
                     config: null
+      x-operation-id-source: normalized
+      x-operation-id-original: listPartnerizeTagEnabledFeatures
     post:
       summary: Enable Feature on Partnerize Tag
-      operationId: enablePartnerizeTagFeature
+      operationId: postV3BrandPartnerizeTagsByTagIdFeatures
       description: Enables a feature for a specific Partnerize Tag.
       tags:
       - Partnerize Tag Features
@@ -366,6 +370,8 @@ paths:
                         type: object
                         description: Feature configuration
           description: OK
+      x-operation-id-source: normalized
+      x-operation-id-original: enablePartnerizeTagFeature
   /v3/brand/partnerize-tags/{tagId}/features/{featureName}:
     servers:
     - description: Production
@@ -374,7 +380,7 @@ paths:
       url: http://api.partnerize.tech
     delete:
       summary: Disable Feature on Partnerize Tag
-      operationId: disablePartnerizeTagFeature
+      operationId: deleteV3BrandPartnerizeTagsByTagIdFeaturesByFeatureName
       description: Disables a feature for a specific Partnerize Tag.
       tags:
       - Partnerize Tag Features
@@ -394,6 +400,8 @@ paths:
       responses:
         '204':
           description: The Partnerize Tag Feature was removed successfully.
+      x-operation-id-source: normalized
+      x-operation-id-original: disablePartnerizeTagFeature
 x-refined-from:
 - partnerize-partners-api-openapi.yml
 - partnerize-partnerize-tag-features-api-openapi.yml

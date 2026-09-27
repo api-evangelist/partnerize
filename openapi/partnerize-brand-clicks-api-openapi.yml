@@ -201,13 +201,6 @@ components:
           items:
             $ref: '#/components/schemas/Brand_Click'
       type: object
-    Currency:
-      enum:
-      - GBP
-      - USD
-      - EUR
-      - JPY
-      type: string
     Brand_Click:
       properties:
         click_id:
@@ -257,6 +250,13 @@ components:
         publisher_name:
           type: string
       type: object
+    Currency:
+      enum:
+      - GBP
+      - USD
+      - EUR
+      - JPY
+      type: string
 x-tagGroups:
 - name: Networks and Brands Management (v1)
   tags:

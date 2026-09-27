@@ -44,8 +44,10 @@ paths:
       tags:
       - Verticals
       description: Reference data endpoint which lists all the verticals.
-      operationId: List all Verticals
+      operationId: ListAllVerticals
       summary: List all Verticals
+      x-operation-id-source: normalized
+      x-operation-id-original: List all Verticals
 components:
   schemas:
     Vertical:

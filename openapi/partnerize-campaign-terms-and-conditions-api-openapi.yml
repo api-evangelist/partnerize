@@ -150,24 +150,6 @@ paths:
                   active: y
 components:
   schemas:
-    Campaign_Terms_And_Condition:
-      type: object
-      properties:
-        id:
-          type: string
-          example: 111111l10
-        created_at:
-          type: string
-          example: 2020-01-01T00:00:00+0000
-        locale:
-          type: string
-          example: en_us
-        content:
-          type: string
-          example: <p>Lorem Ipsum</p>
-        campaign_id:
-          type: string
-          example: 111111l5
     Locale:
       enum:
       - bg
@@ -218,6 +200,24 @@ components:
       - zh_cn
       - zh_hk
       type: string
+    Campaign_Terms_And_Condition:
+      type: object
+      properties:
+        id:
+          type: string
+          example: 111111l10
+        created_at:
+          type: string
+          example: 2020-01-01T00:00:00+0000
+        locale:
+          type: string
+          example: en_us
+        content:
+          type: string
+          example: <p>Lorem Ipsum</p>
+        campaign_id:
+          type: string
+          example: 111111l5
 x-refined-from:
 - partnerize-partners-api-openapi.yml
 - partnerize-campaign-terms-and-conditions-api-openapi.yml

@@ -73,8 +73,10 @@ paths:
       tags:
       - Saved Reports
       description: Retrieve a Campaign Group Saved Report by id
-      operationId: Retrieve Campaign Group Saved Report
+      operationId: RetrieveCampaignGroupSavedReport
       summary: Retrieve a Campaign Group Saved Report
+      x-operation-id-source: normalized
+      x-operation-id-original: Retrieve Campaign Group Saved Report
     put:
       parameters:
       - description: Id of the campaign group
@@ -128,7 +130,7 @@ paths:
       tags:
       - Saved Reports
       description: Update a Campaign Group Saved Report by id
-      operationId: Update Campaign Group Saved Report
+      operationId: UpdateCampaignGroupSavedReport
       requestBody:
         content:
           application/json:
@@ -146,6 +148,8 @@ paths:
                   type: string
               type: object
       summary: Update a Campaign Group Saved Report
+      x-operation-id-source: normalized
+      x-operation-id-original: Update Campaign Group Saved Report
 components:
   schemas:
     Brand_Filter_Set:

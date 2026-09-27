@@ -48,8 +48,10 @@ paths:
       tags:
       - Currency countries
       description: List all Country Currency Combinations
-      operationId: List Country Currency Combinations
+      operationId: ListCountryCurrencyCombinations
       summary: List Country Currency Combinations
+      x-operation-id-source: normalized
+      x-operation-id-original: List Country Currency Combinations
 components:
   schemas:
     Reference_Currency_Country:

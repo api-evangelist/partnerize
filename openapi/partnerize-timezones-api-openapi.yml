@@ -44,8 +44,10 @@ paths:
       tags:
       - Timezones
       description: List all the timezones.
-      operationId: List all Timezones
+      operationId: ListAllTimezones
       summary: List all Timezones
+      x-operation-id-source: normalized
+      x-operation-id-original: List all Timezones
 components:
   schemas:
     Timezone:

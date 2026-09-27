@@ -475,7 +475,7 @@ paths:
                     type: object
                     $ref: '#/paths/~1campaign~1%7BcampaignId%7D~1optimisation~1voucher~1commission/get/responses/200/content/application~1json/schema/properties/voucher_commissions/items'
     put:
-      operationId: get-voucher-commissions
+      operationId: putCampaignByCampaignIdOptimisationVoucherCommissionByCommissionId
       tags:
       - Voucher Commissions
       summary: Edit Voucher Commissions
@@ -590,6 +590,8 @@ paths:
                   voucher_commission:
                     type: object
                     $ref: '#/paths/~1campaign~1%7BcampaignId%7D~1optimisation~1voucher~1commission/get/responses/200/content/application~1json/schema/properties/voucher_commissions/items'
+      x-operation-id-source: normalized
+      x-operation-id-original: get-voucher-commissions
     delete:
       operationId: delete-voucher-commission
       tags:

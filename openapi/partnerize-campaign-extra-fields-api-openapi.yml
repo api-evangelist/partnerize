@@ -45,8 +45,10 @@ paths:
       tags:
       - Campaign Extra Fields
       description: List all the types of campaign extra fields.
-      operationId: List all Campaign Extra Fields
+      operationId: ListAllCampaignExtraFields
       summary: List all Campaign Extra Fields
+      x-operation-id-source: normalized
+      x-operation-id-original: List all Campaign Extra Fields
 components:
   schemas:
     Campaign_Extra_Field:

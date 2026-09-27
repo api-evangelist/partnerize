@@ -77,8 +77,10 @@ paths:
       tags:
       - Terms And Conditions
       description: Retrieve Custom Terms and Conditions for a given partner and terms and conditions id
-      operationId: Retrieve Partner Custom Terms and Conditions
+      operationId: RetrievePartnerCustomTermsAndConditions
       summary: Retrieve Partner Custom Terms and Conditions (v1)
+      x-operation-id-source: normalized
+      x-operation-id-original: Retrieve Partner Custom Terms and Conditions
   /v2/publishers/{publisherId}/campaigns/terms?campaigns={campaigns}:
     get:
       parameters:

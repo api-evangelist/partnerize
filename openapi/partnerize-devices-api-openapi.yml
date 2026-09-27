@@ -46,8 +46,10 @@ paths:
       tags:
       - Devices
       description: List all device types.
-      operationId: List all Devices
+      operationId: ListAllDevices
       summary: List all Devices
+      x-operation-id-source: normalized
+      x-operation-id-original: List all Devices
 components:
   schemas:
     Device:

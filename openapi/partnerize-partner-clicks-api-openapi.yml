@@ -218,13 +218,6 @@ components:
         clickref:
           type: string
       type: object
-    Currency:
-      enum:
-      - GBP
-      - USD
-      - EUR
-      - JPY
-      type: string
     Partner_Clicks:
       properties:
         unique_click_count:
@@ -262,6 +255,13 @@ components:
                         description: A key value pair.
                         type: string
       type: object
+    Currency:
+      enum:
+      - GBP
+      - USD
+      - EUR
+      - JPY
+      type: string
 x-tagGroups:
 - name: Partner Management (v1)
   tags:

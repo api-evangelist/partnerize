@@ -60,8 +60,10 @@ paths:
       tags:
       - Voucher Codes
       description: View all Voucher Codes associated with the Campaign.
-      operationId: List all Voucher Codes
+      operationId: ListAllVoucherCodes
       summary: List all Campaign Voucher Codes
+      x-operation-id-source: normalized
+      x-operation-id-original: List all Voucher Codes
     post:
       parameters:
       - description: ID of the Campaign
@@ -104,7 +106,7 @@ paths:
         the actual code must be passed with each object, and to allocate the Voucher to specific Groups, pass the Group ids
 
         in a `commission_groups` array.'
-      operationId: Create Voucher Codes
+      operationId: CreateVoucherCodes
       requestBody:
         content:
           application/json:
@@ -137,6 +139,8 @@ paths:
                   type: array
               type: object
       summary: Create Voucher Codes
+      x-operation-id-source: normalized
+      x-operation-id-original: Create Voucher Codes
     put:
       parameters:
       - description: ID of the Campaign
@@ -175,7 +179,7 @@ paths:
       tags:
       - Voucher Codes
       description: Update Vouchers by referencing the `voucher_code_id` in each Group object within the `voucher_codes` array.
-      operationId: Update Voucher Codes
+      operationId: UpdateVoucherCodes
       requestBody:
         content:
           application/json:
@@ -211,6 +215,8 @@ paths:
                   type: array
               type: object
       summary: Update Voucher Codes
+      x-operation-id-source: normalized
+      x-operation-id-original: Update Voucher Codes
   /campaign/{campaign_id}/voucher_code/{voucher_code_id}:
     get:
       parameters:
@@ -252,45 +258,12 @@ paths:
       tags:
       - Voucher Codes
       description: Outputs the specified Voucher Code.
-      operationId: Retrieve a Voucher Code
+      operationId: RetrieveAVoucherCode
       summary: Retrieve a Voucher Code
+      x-operation-id-source: normalized
+      x-operation-id-original: Retrieve a Voucher Code
 components:
   schemas:
-    Commission_Group:
-      properties:
-        campaign_id:
-          description: ID of the campaign
-          type: string
-        description:
-          type: string
-        name:
-          type: string
-        publishers:
-          description: IDs of the partners to be associated with the group
-          items:
-            type: string
-          type: array
-        active:
-          $ref: '#/components/schemas/YesOrNo'
-        commission_group_id:
-          description: ID of the commission group
-          type: string
-        last_modified:
-          type: string
-      required:
-      - name
-      - campaign_id
-      type: object
-    Commission_Group_Wrapper:
-      properties:
-        commission_group:
-          $ref: '#/components/schemas/Commission_Group'
-      type: object
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
     Voucher_Code:
       properties:
         commission_groups:
@@ -319,10 +292,45 @@ components:
         end_date_time:
           type: string
       type: object
+    Commission_Group:
+      properties:
+        campaign_id:
+          description: ID of the campaign
+          type: string
+        description:
+          type: string
+        name:
+          type: string
+        publishers:
+          description: IDs of the partners to be associated with the group
+          items:
+            type: string
+          type: array
+        active:
+          $ref: '#/components/schemas/YesOrNo'
+        commission_group_id:
+          description: ID of the commission group
+          type: string
+        last_modified:
+          type: string
+      required:
+      - name
+      - campaign_id
+      type: object
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
     Voucher_Code_Wrapper:
       properties:
         voucher_code:
           $ref: '#/components/schemas/Voucher_Code'
+      type: object
+    Commission_Group_Wrapper:
+      properties:
+        commission_group:
+          $ref: '#/components/schemas/Commission_Group'
       type: object
 x-tagGroups:
 - name: Networks and Brands Management (v1)

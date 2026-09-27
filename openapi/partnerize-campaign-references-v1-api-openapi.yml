@@ -38,8 +38,10 @@ paths:
       tags:
       - Campaign References (v1)
       description: Lists campaign references
-      operationId: List Campaign References
+      operationId: ListCampaignReferences
       summary: Lists Campaign References
+      x-operation-id-source: normalized
+      x-operation-id-original: List Campaign References
 x-tagGroups:
 - name: Partner Management (v1)
   tags:

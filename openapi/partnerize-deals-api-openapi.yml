@@ -63,8 +63,10 @@ paths:
       tags:
       - Deals
       description: Return the details of all Deals associated to the Campaign.
-      operationId: List all Campaign Deals
+      operationId: ListAllCampaignDeals
       summary: List all Campaign Deals
+      x-operation-id-source: normalized
+      x-operation-id-original: List all Campaign Deals
     post:
       parameters:
       - description: ID of the Campaign
@@ -104,13 +106,15 @@ paths:
       tags:
       - Deals
       description: Create a new Deal against the Campaign entity.
-      operationId: Create a Campaign Deal
+      operationId: CreateACampaignDeal
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/Deal'
       summary: Create a Campaign Deal
+      x-operation-id-source: normalized
+      x-operation-id-original: Create a Campaign Deal
   /campaign/{campaign_id}/deal/{deal_id}:
     get:
       parameters:
@@ -158,8 +162,10 @@ paths:
       tags:
       - Deals
       description: Review the specified Deal.
-      operationId: Retrieve a Campaign Deal
+      operationId: RetrieveACampaignDeal
       summary: Retrieve a Campaign Deal
+      x-operation-id-source: normalized
+      x-operation-id-original: Retrieve a Campaign Deal
     patch:
       parameters:
       - description: ID of the Campaign
@@ -206,7 +212,7 @@ paths:
       tags:
       - Deals
       description: Update properties of the specified Deal.
-      operationId: Update a Campaign Deal
+      operationId: UpdateACampaignDeal
       requestBody:
         content:
           application/json:
@@ -227,6 +233,8 @@ paths:
                 title: 40% off everything
               $ref: '#/components/schemas/Deal'
       summary: Update a Campaign Deal
+      x-operation-id-source: normalized
+      x-operation-id-original: Update a Campaign Deal
     delete:
       parameters:
       - description: ID of the Campaign
@@ -249,15 +257,12 @@ paths:
       tags:
       - Deals
       description: Delete a Deal, which is the same as updating the Deal by setting `active` to `n`.
-      operationId: Delete a Campaign
+      operationId: DeleteACampaign
       summary: Delete a Campaign
+      x-operation-id-source: normalized
+      x-operation-id-original: Delete a Campaign
 components:
   schemas:
-    Deal_Wrapper:
-      properties:
-        campaign_deal:
-          $ref: '#/components/schemas/Deal'
-      type: object
     Deal:
       properties:
         active:
@@ -562,6 +567,11 @@ components:
       - y
       - n
       type: string
+    Deal_Wrapper:
+      properties:
+        campaign_deal:
+          $ref: '#/components/schemas/Deal'
+      type: object
 x-tagGroups:
 - name: Networks and Brands Management (v1)
   tags:

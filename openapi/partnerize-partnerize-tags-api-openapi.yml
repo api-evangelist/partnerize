@@ -319,7 +319,7 @@ paths:
       url: http://api.partnerize.tech
     get:
       summary: List Partnerize Tags
-      operationId: listPartnerizeTags
+      operationId: getV3BrandPartnerizeTags
       description: Return a list of available Partnerize Tags.
       tags:
       - Partnerize Tags
@@ -404,9 +404,11 @@ paths:
                     last_modified_at: '2020-08-08T12:23:58.000Z'
                     last_modified_by: 111111l1
                     url: https://pzapi-kg.com/b/1100l12/1011l1.js
+      x-operation-id-source: normalized
+      x-operation-id-original: listPartnerizeTags
     post:
       summary: Create Partnerize Tag
-      operationId: createPartnerizeTag
+      operationId: postV3BrandPartnerizeTags
       description: 'Generates a new Partnerize Tag for the requested brand. Freshly generated tag will be empty, without any features enabled by default.
 
 
@@ -463,6 +465,8 @@ paths:
                     type: object
                     $ref: '#/paths/~1v3~1brand~1partnerize-tags/get/responses/200/content/application~1json/schema/properties/data/items'
           description: OK
+      x-operation-id-source: normalized
+      x-operation-id-original: createPartnerizeTag
   /v3/brand/partnerize-tags/{partnerizeTagId}:
     servers:
     - description: Production
@@ -471,7 +475,7 @@ paths:
       url: http://api.partnerize.tech
     get:
       summary: Get Partnerize Tag
-      operationId: getPartnerizeTag
+      operationId: getV3BrandPartnerizeTagsByPartnerizeTagId
       description: Return information about a single Partnerize Tag from the provided ID.
       tags:
       - Partnerize Tags
@@ -507,9 +511,11 @@ paths:
                     last_modified_at: '2020-07-22T12:23:58.000Z'
                     last_modified_by: 111111l1
                     url: https://pzapi-kg.com/b/1100l12/1011l1.js
+      x-operation-id-source: normalized
+      x-operation-id-original: getPartnerizeTag
     patch:
       summary: Update Partnerize Tag
-      operationId: updatePartnerizeTag
+      operationId: patchV3BrandPartnerizeTagsByPartnerizeTagId
       description: Updates a specific Partnerize Tag.
       tags:
       - Partnerize Tags
@@ -564,9 +570,11 @@ paths:
                     type: object
                     $ref: '#/paths/~1v3~1brand~1partnerize-tags/get/responses/200/content/application~1json/schema/properties/data/items'
           description: OK
+      x-operation-id-source: normalized
+      x-operation-id-original: updatePartnerizeTag
     delete:
       summary: Delete Partnerize Tag
-      operationId: deletePartnerizeTag
+      operationId: deleteV3BrandPartnerizeTagsByPartnerizeTagId
       description: Deletes a specific Partnerize Tag.
       tags:
       - Partnerize Tags
@@ -580,6 +588,8 @@ paths:
       responses:
         '204':
           description: The Partnerize Tag was deleted successfully.
+      x-operation-id-source: normalized
+      x-operation-id-original: deletePartnerizeTag
 x-refined-from:
 - partnerize-partners-api-openapi.yml
 - partnerize-partnerize-tags-api-openapi.yml

@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Partnerize Brands Attribution … Custom Terms and Conditions…
+  title: Partnerize Brands Attribution … … Custom Terms and…
   version: 1.4.99
   description: '# Introduction
 
@@ -31,7 +31,7 @@ paths:
       schema:
         type: string
     post:
-      operationId: Create Custom Terms and Conditions
+      operationId: CreateCustomTermsAndConditions
       tags:
       - Custom Terms and Conditions
       summary: Create Custom Terms and Conditions
@@ -145,8 +145,10 @@ paths:
                   type: Validation Fail
                   fields:
                   - locale
+      x-operation-id-source: normalized
+      x-operation-id-original: Create Custom Terms and Conditions
     get:
-      operationId: List Terms and Conditions for a given Campaign
+      operationId: ListTermsAndConditionsForAGivenCampaign
       tags:
       - Custom Terms and Conditions
       summary: List All Custom Terms and Conditions for given campaign
@@ -199,6 +201,8 @@ paths:
                   locale: pl
                   active: y
                   publishers: []
+      x-operation-id-source: normalized
+      x-operation-id-original: List Terms and Conditions for a given Campaign
   /campaign/{campaign_id}/custom_terms/publisher/{publisher_id}:
     parameters:
     - name: campaign_id

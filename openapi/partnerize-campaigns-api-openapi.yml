@@ -528,8 +528,10 @@ paths:
       tags:
       - Campaigns
       description: Outputs the specified Campaign.
-      operationId: Retrieve a Campaign
+      operationId: RetrieveACampaign
       summary: Retrieve a Campaign
+      x-operation-id-source: normalized
+      x-operation-id-original: Retrieve a Campaign
     post:
       parameters:
       - description: ID of the campaign
@@ -655,7 +657,7 @@ paths:
 
 
         3. `''retire_reason'' => ''some excuse''`.'
-      operationId: Delete a Campaign
+      operationId: DeleteACampaign
       requestBody:
         content:
           application/json:
@@ -678,6 +680,8 @@ paths:
               - retire_reason
               type: object
       summary: Delete a Campaign
+      x-operation-id-source: normalized
+      x-operation-id-original: Delete a Campaign
     put:
       parameters:
       - description: ID of the campaign
@@ -776,7 +780,7 @@ paths:
       tags:
       - Campaigns
       description: Update the specified Campaign.
-      operationId: Update a Campaign
+      operationId: UpdateACampaign
       requestBody:
         content:
           application/json:
@@ -983,6 +987,8 @@ paths:
               - campaign_id
               type: object
       summary: Update a Campaign
+      x-operation-id-source: normalized
+      x-operation-id-original: Update a Campaign
   /user/advertiser/{advertiser_id}/campaign:
     get:
       parameters:
@@ -1095,8 +1101,10 @@ paths:
       description: 'This endpoint will output a listing of all Campaigns that reside under the provided Brand on the Network and the output is contextual based on the permissions of the User making the request to the endpoint.
 
         A limited Campaign schema will be utilised for any Campaign that the User does not have appropriate permissions to view.'
-      operationId: List all Brand Campaigns
+      operationId: ListAllBrandCampaigns
       summary: List all Brand Campaigns
+      x-operation-id-source: normalized
+      x-operation-id-original: List all Brand Campaigns
 components:
   schemas:
     Campaign:
@@ -1387,6 +1395,16 @@ components:
       - title
       - destination_url
       type: object
+    Campaign_Wrapper:
+      properties:
+        campaign:
+          $ref: '#/components/schemas/Campaign'
+      type: object
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
     Status:
       type: string
       enum:
@@ -1401,16 +1419,6 @@ components:
       - EUR
       - JPY
       type: string
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
-    Campaign_Wrapper:
-      properties:
-        campaign:
-          $ref: '#/components/schemas/Campaign'
-      type: object
 x-tagGroups:
 - name: Networks and Brands Management (v1)
   tags:

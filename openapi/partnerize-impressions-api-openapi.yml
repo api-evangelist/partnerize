@@ -458,7 +458,7 @@ paths:
 
 
         This endpoint is ideal for creating dashboard widgets, or for creating a summary of tabulated data from the explode endpoint.'
-      operationId: postImpressionsCount
+      operationId: postV3BrandAnalyticsImpressionsCount
       tags:
       - Impressions
       requestBody:
@@ -557,6 +557,8 @@ paths:
                     type: object
                     example:
                       total_impressions: 57126
+      x-operation-id-source: normalized
+      x-operation-id-original: postImpressionsCount
   /v3/brand/analytics/impressions/explode:
     servers:
     - description: Production
@@ -574,7 +576,7 @@ paths:
 
 
         When grouping by `date`, the `interval` will define the length of each date group.'
-      operationId: postImpressionsExplode
+      operationId: postV3BrandAnalyticsImpressionsExplode
       tags:
       - Impressions
       requestBody:
@@ -667,6 +669,8 @@ paths:
           headers:
             X-Total-Row-Count:
               $ref: '#/paths/~1v3~1brand~1analytics~1clicks~1filter/post/responses/200/headers/X-Total-Row-Count'
+      x-operation-id-source: normalized
+      x-operation-id-original: postImpressionsExplode
   /v3/brand/analytics/impressions/filter:
     servers:
     - description: Production
@@ -679,7 +683,7 @@ paths:
 
 
         If `order_by` is requested on a metric, the metric values will be added to the results.'
-      operationId: postImpressionsFilter
+      operationId: postV3BrandAnalyticsImpressionsFilter
       tags:
       - Impressions
       requestBody:
@@ -806,6 +810,8 @@ paths:
           headers:
             X-Total-Row-Count:
               $ref: '#/paths/~1v3~1brand~1analytics~1clicks~1filter/post/responses/200/headers/X-Total-Row-Count'
+      x-operation-id-source: normalized
+      x-operation-id-original: postImpressionsFilter
   /v3/brand/analytics/impressions/timeseries:
     servers:
     - description: Production
@@ -818,7 +824,7 @@ paths:
 
 
         This endpoint is ideal for creating charts where the x-axis is time.'
-      operationId: postImpressionsTimeseries
+      operationId: postV3BrandAnalyticsImpressionsTimeseries
       tags:
       - Impressions
       requestBody:
@@ -886,6 +892,8 @@ paths:
                         start: '2019-10-02T00:00:00+00:00'
                         end: '2019-10-03T00:00:00+00:00'
                       total_impressions: 2894
+      x-operation-id-source: normalized
+      x-operation-id-original: postImpressionsTimeseries
 x-refined-from:
 - partnerize-partners-api-openapi.yml
 - partnerize-impressions-api-openapi.yml

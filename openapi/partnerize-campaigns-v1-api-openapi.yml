@@ -140,8 +140,10 @@ paths:
       tags:
       - Campaigns (v1)
       description: View all Campaigns that the Partner is associated with, along with the status of any Participation.
-      operationId: List Campaigns
+      operationId: ListCampaigns
       summary: List Campaigns
+      x-operation-id-source: normalized
+      x-operation-id-original: List Campaigns
     post:
       parameters:
       - description: ID of the partner
@@ -267,7 +269,7 @@ paths:
 
 
         Request access to one or more Campaigns. If a Campaign has any custom Terms and Conditions then the Partner must agree to these terms when requesting access. This is achieved by passing the latest `terms_id` from the relevant Campaign object. On certain Campaigns, you may find that a Partner will be auto-approved. However, some Brands will stipulate that they wish to review all Participations. Therefore, once access is requested the Partner will be shown as pending until this decision is made. Create new Participations by passing each `campaign_id` along with the relevant `terms_id` (if applicable) in an object within a `campaigns` array.'
-      operationId: Request Access to Campaigns
+      operationId: RequestAccessToCampaigns
       requestBody:
         content:
           application/json:
@@ -281,6 +283,8 @@ paths:
                   type: array
               type: object
       summary: Request Access to Campaigns (Obsolete)
+      x-operation-id-source: normalized
+      x-operation-id-original: Request Access to Campaigns
 components:
   schemas:
     Campaign:
@@ -529,6 +533,11 @@ components:
       - title
       - destination_url
       type: object
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
     Status:
       type: string
       enum:
@@ -536,18 +545,6 @@ components:
       - p
       - r
       - n
-    Currency:
-      enum:
-      - GBP
-      - USD
-      - EUR
-      - JPY
-      type: string
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
     Partner_Campaign_Wrapper:
       properties:
         campaign:
@@ -562,6 +559,13 @@ components:
                 $ref: '#/components/schemas/Status'
             type: object
       type: object
+    Currency:
+      enum:
+      - GBP
+      - USD
+      - EUR
+      - JPY
+      type: string
 x-tagGroups:
 - name: Partner Management (v1)
   tags:

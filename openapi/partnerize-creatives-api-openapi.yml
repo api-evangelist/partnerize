@@ -89,8 +89,10 @@ paths:
       tags:
       - Creatives
       description: List and view all Creatives for the specified Campaign.
-      operationId: List all Creatives for a Campaign
+      operationId: ListAllCreativesForACampaign
       summary: List all Creatives for a Campaign
+      x-operation-id-source: normalized
+      x-operation-id-original: List all Creatives for a Campaign
     post:
       parameters:
       - description: ID of the Campaign
@@ -159,7 +161,7 @@ paths:
       tags:
       - Creatives
       description: Create one or more Creatives against the Campaign entity. Each Creative is sent as an array within a top level `creatives` array.
-      operationId: Create Campaign Creatives
+      operationId: CreateCampaignCreatives
       requestBody:
         content:
           application/json:
@@ -209,6 +211,8 @@ paths:
                   type: array
               type: object
       summary: Create Campaign Creatives
+      x-operation-id-source: normalized
+      x-operation-id-original: Create Campaign Creatives
     put:
       parameters:
       - description: ID of the campaign
@@ -277,7 +281,7 @@ paths:
       tags:
       - Creatives
       description: Update one or more Creatives against the Campaign entity. Each Creative is sent as an array within a top level `creatives` array and must contain its associated `creative_id`.
-      operationId: Update Campaign Creatives
+      operationId: UpdateCampaignCreatives
       requestBody:
         content:
           application/json:
@@ -328,6 +332,8 @@ paths:
                   type: array
               type: object
       summary: Update Campaign Creatives
+      x-operation-id-source: normalized
+      x-operation-id-original: Update Campaign Creatives
   /campaign/{campaign_id}/creative/tags:
     get:
       parameters:
@@ -366,8 +372,10 @@ paths:
       tags:
       - Creatives
       description: View all Creative Tags for the specified Campaign.
-      operationId: List all Creative Tags for Campaign
+      operationId: ListAllCreativeTagsForCampaign
       summary: List all Creative Tags for Campaign
+      x-operation-id-source: normalized
+      x-operation-id-original: List all Creative Tags for Campaign
     post:
       parameters:
       - description: ID of the campaign
@@ -405,7 +413,7 @@ paths:
       tags:
       - Creatives
       description: Create one or more Creative Tags against the Campaign entity. Each Tag is sent as an array within a top level `tags` array.
-      operationId: Create Campaign Creative Tags
+      operationId: CreateCampaignCreativeTags
       requestBody:
         content:
           application/json:
@@ -420,6 +428,8 @@ paths:
                   type: array
               type: object
       summary: Create Campaign Creative Tags
+      x-operation-id-source: normalized
+      x-operation-id-original: Create Campaign Creative Tags
     put:
       parameters:
       - description: ID of the Campaign
@@ -457,7 +467,7 @@ paths:
       tags:
       - Creatives
       description: Update one or more Creative Tags against the Campaign entity. Each Tag is sent as an array within a top level `tags` array and must contain its associated `creative_tag_id`.
-      operationId: Update Campaign Creative Tags
+      operationId: UpdateCampaignCreativeTags
       requestBody:
         content:
           application/json:
@@ -473,6 +483,8 @@ paths:
                   type: array
               type: object
       summary: Update Campaign Creative Tags
+      x-operation-id-source: normalized
+      x-operation-id-original: Update Campaign Creative Tags
     delete:
       parameters:
       - description: ID of the Campaign
@@ -510,7 +522,7 @@ paths:
       tags:
       - Creatives
       description: Delete one or more Creative Tags against the Campaign entity. Each Tag is sent as an array within a top level `tags` array and must contain its associated `creative_tag_id`.
-      operationId: Delete Campaign Creative Tags
+      operationId: DeleteCampaignCreativeTags
       requestBody:
         content:
           application/json:
@@ -525,6 +537,8 @@ paths:
                   type: array
               type: object
       summary: Delete Campaign Creative Tags
+      x-operation-id-source: normalized
+      x-operation-id-original: Delete Campaign Creative Tags
   /campaign/{campaign_id}/creative_tags/creative:
     get:
       parameters:
@@ -606,57 +620,17 @@ paths:
       tags:
       - Creatives
       description: List and view all Creatives for the specified Campaign and filter by tags.
-      operationId: List all Creatives for a Campaign by Tags
+      operationId: ListAllCreativesForACampaignByTags
       summary: List all Creatives for a Campaign by Tags
+      x-operation-id-source: normalized
+      x-operation-id-original: List all Creatives for a Campaign by Tags
 components:
   schemas:
-    Creative_Wrapper:
+    Creative_Tag_Wrapper:
       properties:
-        creative:
-          $ref: '#/components/schemas/Creative'
+        creative_tag:
+          $ref: '#/components/schemas/Creative_Tag'
       type: object
-    Creative_Item:
-      properties:
-        content_type:
-          type: string
-        creative_item_id:
-          description: ID of the creative item
-          type: string
-        description:
-          type: string
-        filename:
-          type: string
-        img_url:
-          type: string
-        preview:
-          type: string
-        specific_destination:
-          type: string
-        created_by:
-          type: string
-        created_at:
-          type: string
-        tags:
-          type: string
-        active:
-          $ref: '#/components/schemas/YesOrNo'
-        campaign_id:
-          description: ID of the campaign
-          type: string
-        creative_type_id:
-          type: number
-        custom_append_url_parameters:
-          type: string
-        custom_prepend_url_parameters:
-          type: string
-      required:
-      - creative_type_id
-      type: object
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
     Creative:
       properties:
         creative_id:
@@ -714,10 +688,10 @@ components:
       required:
       - creative_type_id
       type: object
-    Creative_Tag_Wrapper:
+    Creative_Wrapper:
       properties:
-        creative_tag:
-          $ref: '#/components/schemas/Creative_Tag'
+        creative:
+          $ref: '#/components/schemas/Creative'
       type: object
     Creative_Tag:
       properties:
@@ -745,6 +719,48 @@ components:
           type: string
       required:
       - name
+      type: object
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
+    Creative_Item:
+      properties:
+        content_type:
+          type: string
+        creative_item_id:
+          description: ID of the creative item
+          type: string
+        description:
+          type: string
+        filename:
+          type: string
+        img_url:
+          type: string
+        preview:
+          type: string
+        specific_destination:
+          type: string
+        created_by:
+          type: string
+        created_at:
+          type: string
+        tags:
+          type: string
+        active:
+          $ref: '#/components/schemas/YesOrNo'
+        campaign_id:
+          description: ID of the campaign
+          type: string
+        creative_type_id:
+          type: number
+        custom_append_url_parameters:
+          type: string
+        custom_prepend_url_parameters:
+          type: string
+      required:
+      - creative_type_id
       type: object
 x-tagGroups:
 - name: Networks and Brands Management (v1)

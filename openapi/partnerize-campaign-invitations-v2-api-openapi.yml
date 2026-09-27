@@ -144,8 +144,10 @@ paths:
       tags:
       - Campaign Invitations (v2)
       description: See all invites available to a partner grouped by brand
-      operationId: List Invitations
+      operationId: ListInvitations
       summary: List Invitations
+      x-operation-id-source: normalized
+      x-operation-id-original: List Invitations
   /v2/publishers/{publisherId}/invitations/accept:
     post:
       parameters:

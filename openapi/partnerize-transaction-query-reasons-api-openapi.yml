@@ -59,8 +59,10 @@ paths:
       tags:
       - Transaction Query Reasons
       description: Return the details of all saved Transaction Query Reasons.
-      operationId: List Transaction Query Reasons
+      operationId: ListTransactionQueryReasons
       summary: List Transaction Query Reasons for a Campaign
+      x-operation-id-source: normalized
+      x-operation-id-original: List Transaction Query Reasons
     post:
       parameters:
       - description: ID of a Campaign
@@ -113,7 +115,7 @@ paths:
       tags:
       - Transaction Query Reasons
       description: Create a new saved Transaction Query reason.
-      operationId: Create a Transaction Query Reason
+      operationId: CreateATransactionQueryReason
       requestBody:
         content:
           application/json:
@@ -128,6 +130,8 @@ paths:
               - reason
               type: object
       summary: Create a Transaction Query Reason for a Campaign
+      x-operation-id-source: normalized
+      x-operation-id-original: Create a Transaction Query Reason
   /campaign/{campaign_id}/tq_reasons/{transaction_query_reason_id}/delete:
     post:
       parameters:
@@ -189,8 +193,10 @@ paths:
       tags:
       - Transaction Query Reasons
       description: Delete a saved Transaction Query Reason for a Campaign.
-      operationId: Delete a Transaction Query Reason
+      operationId: DeleteATransactionQueryReason
       summary: Delete a Transaction Query Reason for a Campaign
+      x-operation-id-source: normalized
+      x-operation-id-original: Delete a Transaction Query Reason
 components:
   schemas:
     Transaction_Query_Reason:

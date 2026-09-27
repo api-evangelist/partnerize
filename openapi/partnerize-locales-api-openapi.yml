@@ -43,8 +43,10 @@ paths:
       tags:
       - Locales
       description: List all active locales.
-      operationId: List all Locales
+      operationId: ListAllLocales
       summary: List all Locales
+      x-operation-id-source: normalized
+      x-operation-id-original: List all Locales
 components:
   schemas:
     Reference_Locale:

@@ -45,8 +45,10 @@ paths:
       tags:
       - Traffic Sources
       description: List all available Traffic Source types.
-      operationId: List Traffic Sources
+      operationId: ListTrafficSources
       summary: List Traffic Sources
+      x-operation-id-source: normalized
+      x-operation-id-original: List Traffic Sources
 components:
   schemas:
     Traffic_Source:

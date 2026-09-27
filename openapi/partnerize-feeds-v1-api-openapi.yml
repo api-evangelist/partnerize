@@ -93,8 +93,10 @@ paths:
       tags:
       - Feeds (v1)
       description: View all Feeds for the specified Partner.
-      operationId: List all Available Feeds
+      operationId: ListAllAvailableFeeds
       summary: List all Available Feeds
+      x-operation-id-source: normalized
+      x-operation-id-original: List all Available Feeds
 components:
   schemas:
     Feed:

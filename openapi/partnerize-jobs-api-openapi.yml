@@ -467,7 +467,7 @@ paths:
                 $ref: '#/paths/~1v3~1jobs~1%7BjobID%7D/get/responses/200/content/application~1json/schema'
   /v3/jobs/{jobID}/tasks/{taskID}/replay:
     post:
-      operationId: replay_job
+      operationId: postV3JobsByJobIDTasksByTaskIDReplay
       summary: Replay a job
       description: Resubmits a task in to the queue for re-processing. Only tasks of type `conversion_bulk_update` can be replayed.
       tags:
@@ -492,6 +492,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/paths/~1v3~1jobs~1%7BjobID%7D~1tasks~1%7BtaskID%7D/get/responses/200/content/application~1json/schema'
+      x-operation-id-source: normalized
+      x-operation-id-original: replay_job
 x-tagGroups:
 - name: Networks and Brands Management (v1)
   tags:

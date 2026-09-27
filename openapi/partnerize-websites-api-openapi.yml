@@ -59,8 +59,10 @@ paths:
       tags:
       - Websites
       description: Return the details of all Websites attached to the Partner account.
-      operationId: List all Partner Websites
+      operationId: ListAllPartnerWebsites
       summary: List all Partner Websites
+      x-operation-id-source: normalized
+      x-operation-id-original: List all Partner Websites
     post:
       parameters:
       - description: ID of the partner
@@ -102,7 +104,7 @@ paths:
       tags:
       - Websites
       description: Create one or more Websites against the Partner entity. Each Website is sent as an array within a top level `websites` array.
-      operationId: Create Partner Website
+      operationId: CreatePartnerWebsite
       requestBody:
         content:
           application/json:
@@ -140,6 +142,8 @@ paths:
                     type: array
                 type: object
       summary: Create Partner Website
+      x-operation-id-source: normalized
+      x-operation-id-original: Create Partner Website
     put:
       parameters:
       - description: ID of the partner
@@ -181,7 +185,7 @@ paths:
       tags:
       - Websites
       description: Update one or more Websites against the Partner entity. Each Website is sent as an array within a top level `websites` array and must contain its associated `website_id`.
-      operationId: Update Partner Websites
+      operationId: UpdatePartnerWebsites
       requestBody:
         content:
           application/json:
@@ -206,6 +210,8 @@ paths:
                   type: array
               type: object
       summary: Update Partner Websites
+      x-operation-id-source: normalized
+      x-operation-id-original: Update Partner Websites
   /user/publisher/{publisher_id}/website/{website_id}:
     get:
       parameters:
@@ -250,21 +256,12 @@ paths:
       tags:
       - Websites
       description: Retrieves the specified partner website.
-      operationId: Retrieve a Partner Website
+      operationId: RetrieveAPartnerWebsite
       summary: Retrieve a Partner Website
+      x-operation-id-source: normalized
+      x-operation-id-original: Retrieve a Partner Website
 components:
   schemas:
-    Partner_Website_Wrapper:
-      properties:
-        website:
-          allOf:
-          - type: object
-            properties:
-              website_id:
-                description: ID of the partner website
-                type: string
-          - $ref: '#/components/schemas/Partner_Website'
-      type: object
     Partner_Website:
       properties:
         publisher_id:
@@ -290,6 +287,17 @@ components:
           type: string
       required:
       - website_url
+      type: object
+    Partner_Website_Wrapper:
+      properties:
+        website:
+          allOf:
+          - type: object
+            properties:
+              website_id:
+                description: ID of the partner website
+                type: string
+          - $ref: '#/components/schemas/Partner_Website'
       type: object
     Country:
       enum:

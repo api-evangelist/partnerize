@@ -58,8 +58,10 @@ paths:
       tags:
       - Countries
       description: List all active countries.
-      operationId: List all Countries
+      operationId: ListAllCountries
       summary: List all Countries
+      x-operation-id-source: normalized
+      x-operation-id-original: List all Countries
 components:
   schemas:
     Reference_Country:

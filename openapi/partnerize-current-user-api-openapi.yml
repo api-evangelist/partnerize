@@ -80,7 +80,7 @@ paths:
       url: http://api.partnerize.tech
     patch:
       summary: Update Current user
-      operationId: updateCurrentUser
+      operationId: patchV3BrandUser
       description: Updates a current User data
       tags:
       - Current User
@@ -129,6 +129,8 @@ paths:
                         format: email
                         description: Email address identifier of a Current User
           description: OK
+      x-operation-id-source: normalized
+      x-operation-id-original: updateCurrentUser
 x-refined-from:
 - partnerize-partners-api-openapi.yml
 - partnerize-current-user-api-openapi.yml

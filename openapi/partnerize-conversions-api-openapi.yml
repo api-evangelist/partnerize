@@ -584,7 +584,7 @@ paths:
 
 
         This endpoint is ideal for creating dashboard widgets, or for creating a summary of tabulated data from the explode endpoint.'
-      operationId: postConversionsCount
+      operationId: postV3BrandAnalyticsConversionsCount
       tags:
       - Conversions
       requestBody:
@@ -754,6 +754,8 @@ paths:
                 Present if conditions for approximation are met, and at least one metric on the context is an approximate.
 
                 '
+      x-operation-id-source: normalized
+      x-operation-id-original: postConversionsCount
   /v3/brand/analytics/conversions/explode:
     servers:
     - description: Production
@@ -771,7 +773,7 @@ paths:
 
 
         When grouping by `date`, the `interval` will define the length of each date group.'
-      operationId: postConversionsExplode
+      operationId: postV3BrandAnalyticsConversionsExplode
       tags:
       - Conversions
       requestBody:
@@ -877,6 +879,8 @@ paths:
               $ref: '#/paths/~1v3~1brand~1analytics~1clicks~1filter/post/responses/200/headers/X-Total-Row-Count'
             X-Approximate-Metrics:
               $ref: '#/paths/~1v3~1brand~1analytics~1conversions~1count/post/responses/200/headers/X-Approximate-Metrics'
+      x-operation-id-source: normalized
+      x-operation-id-original: postConversionsExplode
   /v3/brand/analytics/conversions/filter:
     servers:
     - description: Production
@@ -889,7 +893,7 @@ paths:
 
 
         If `order_by` is requested on a metric, the metric values will be added to the results.'
-      operationId: postConversionsFilter
+      operationId: postV3BrandAnalyticsConversionsFilter
       tags:
       - Conversions
       requestBody:
@@ -1066,6 +1070,8 @@ paths:
               $ref: '#/paths/~1v3~1brand~1analytics~1clicks~1filter/post/responses/200/headers/X-Total-Row-Count'
             X-Approximate-Metrics:
               $ref: '#/paths/~1v3~1brand~1analytics~1conversions~1count/post/responses/200/headers/X-Approximate-Metrics'
+      x-operation-id-source: normalized
+      x-operation-id-original: postConversionsFilter
   /v3/brand/analytics/conversions/timeseries:
     servers:
     - description: Production
@@ -1078,7 +1084,7 @@ paths:
 
 
         This endpoint is ideal for creating charts where the x-axis is time.'
-      operationId: postConversionsTimeseries
+      operationId: postV3BrandAnalyticsConversionsTimeseries
       tags:
       - Conversions
       requestBody:
@@ -1156,6 +1162,8 @@ paths:
           headers:
             X-Approximate-Metrics:
               $ref: '#/paths/~1v3~1brand~1analytics~1conversions~1count/post/responses/200/headers/X-Approximate-Metrics'
+      x-operation-id-source: normalized
+      x-operation-id-original: postConversionsTimeseries
 x-refined-from:
 - partnerize-partners-api-openapi.yml
 - partnerize-conversions-api-openapi.yml

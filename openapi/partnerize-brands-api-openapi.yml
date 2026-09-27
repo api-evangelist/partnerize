@@ -99,8 +99,10 @@ paths:
         the Network and the output is contextual based on the permissions of the User making the request to the endpoint.
 
         A limited Brand schema will be utilised for any Brand that the User does not have appropriate permissions to view.'
-      operationId: List all Brands
+      operationId: ListAllBrands
       summary: List all Brands
+      x-operation-id-source: normalized
+      x-operation-id-original: List all Brands
     post:
       responses:
         '200':
@@ -138,7 +140,7 @@ paths:
       tags:
       - Brands
       description: Create a new Brand account attached to the authenticated User.
-      operationId: Create Brand Account
+      operationId: CreateBrandAccount
       requestBody:
         content:
           application/json:
@@ -158,6 +160,8 @@ paths:
                 signup_ip: 178.23.129.160
               $ref: '#/components/schemas/Brand_Account'
       summary: Create Brand
+      x-operation-id-source: normalized
+      x-operation-id-original: Create Brand Account
   /user/advertiser/{advertiser_id}:
     get:
       parameters:
@@ -204,8 +208,10 @@ paths:
       tags:
       - Brands
       description: Outputs the specified brand.
-      operationId: Retrieve a Brand
+      operationId: RetrieveABrand
       summary: Retrieve a Brand
+      x-operation-id-source: normalized
+      x-operation-id-original: Retrieve a Brand
     post:
       parameters:
       - description: ID of the brand
@@ -252,7 +258,7 @@ paths:
       tags:
       - Brands
       description: Update the specified Brand.
-      operationId: Update a Brand
+      operationId: UpdateABrand
       requestBody:
         content:
           application/json:
@@ -333,6 +339,8 @@ paths:
               - signup_ip
               type: object
       summary: Update a Brand
+      x-operation-id-source: normalized
+      x-operation-id-original: Update a Brand
   /v3/network/{networkId}/brands:
     get:
       summary: Get brands for a network
@@ -411,25 +419,100 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Brand_Account:
+      properties:
+        account_name:
+          description: Unique brand account name
+          type: string
+        address1:
+          description: 1st line of the address
+          type: string
+        address2:
+          description: 2nd line of the address
+          type:
+          - string
+          - 'null'
+        address3:
+          description: 3rd line of the address
+          type:
+          - string
+          - 'null'
+        address4:
+          description: 4th line of the address
+          type:
+          - string
+          - 'null'
+        advertiser_icon:
+          description: Url path to image
+          type:
+          - string
+          - 'null'
+        advertiser_id:
+          description: ID of the brand
+          type: string
+        budget_summary_interval:
+          type:
+          - string
+          - 'null'
+        budget_summary_start_time:
+          type:
+          - string
+          - 'null'
+        company_name:
+          type: string
+        contact_email:
+          type: string
+        country:
+          description: Country of the address
+          $ref: '#/components/schemas/Country'
+        current_balance:
+          type:
+          - string
+          - 'null'
+        default_currency:
+          $ref: '#/components/schemas/Currency'
+        display_name:
+          description: Name shown to publishers under brand campaign management
+          type: string
+        payment_currency:
+          $ref: '#/components/schemas/Currency'
+        phone:
+          description: Primary contact telephone number
+          type: string
+        phone_area:
+          description: Phone prefix to declare country or region
+          type:
+          - string
+          - 'null'
+        postcode:
+          description: Postcode/Zipcode attached to the address
+          type: string
+        pre_payment:
+          type:
+          - string
+          - 'null'
+        signup_ip:
+          type: string
+        status:
+          $ref: '#/components/schemas/Status'
+        vat_number:
+          type:
+          - string
+          - 'null'
+      required:
+      - account_name
+      - company_name
+      - address1
+      - country
+      - postcode
+      - phone
+      - signup_ip
+      type: object
     Brand_Account_Wrapper:
       properties:
         advertiser:
           $ref: '#/components/schemas/Brand_Account'
       type: object
-    Status:
-      type: string
-      enum:
-      - a
-      - p
-      - r
-      - n
-    Currency:
-      enum:
-      - GBP
-      - USD
-      - EUR
-      - JPY
-      type: string
     Country:
       enum:
       - AD
@@ -683,95 +766,20 @@ components:
       - ZM
       - ZW
       type: string
-    Brand_Account:
-      properties:
-        account_name:
-          description: Unique brand account name
-          type: string
-        address1:
-          description: 1st line of the address
-          type: string
-        address2:
-          description: 2nd line of the address
-          type:
-          - string
-          - 'null'
-        address3:
-          description: 3rd line of the address
-          type:
-          - string
-          - 'null'
-        address4:
-          description: 4th line of the address
-          type:
-          - string
-          - 'null'
-        advertiser_icon:
-          description: Url path to image
-          type:
-          - string
-          - 'null'
-        advertiser_id:
-          description: ID of the brand
-          type: string
-        budget_summary_interval:
-          type:
-          - string
-          - 'null'
-        budget_summary_start_time:
-          type:
-          - string
-          - 'null'
-        company_name:
-          type: string
-        contact_email:
-          type: string
-        country:
-          description: Country of the address
-          $ref: '#/components/schemas/Country'
-        current_balance:
-          type:
-          - string
-          - 'null'
-        default_currency:
-          $ref: '#/components/schemas/Currency'
-        display_name:
-          description: Name shown to publishers under brand campaign management
-          type: string
-        payment_currency:
-          $ref: '#/components/schemas/Currency'
-        phone:
-          description: Primary contact telephone number
-          type: string
-        phone_area:
-          description: Phone prefix to declare country or region
-          type:
-          - string
-          - 'null'
-        postcode:
-          description: Postcode/Zipcode attached to the address
-          type: string
-        pre_payment:
-          type:
-          - string
-          - 'null'
-        signup_ip:
-          type: string
-        status:
-          $ref: '#/components/schemas/Status'
-        vat_number:
-          type:
-          - string
-          - 'null'
-      required:
-      - account_name
-      - company_name
-      - address1
-      - country
-      - postcode
-      - phone
-      - signup_ip
-      type: object
+    Status:
+      type: string
+      enum:
+      - a
+      - p
+      - r
+      - n
+    Currency:
+      enum:
+      - GBP
+      - USD
+      - EUR
+      - JPY
+      type: string
 x-tagGroups:
 - name: Networks and Brands Management (v1)
   tags:

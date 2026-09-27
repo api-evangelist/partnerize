@@ -231,42 +231,12 @@ paths:
       summary: Retrieve a Partner Conversions Report
 components:
   schemas:
-    Conversion_Item:
-      properties:
-        conversion_item_id:
-          type: string
-        sku:
-          type: number
-        category:
-          type: string
-        item_value:
-          type: number
-        item_publisher_commission:
-          type: number
-        item_status:
-          type: string
-        last_update:
-          type: string
-        publisher_self_bill_id:
-          type: number
-        approved_at:
-          type: string
-        item_status_id:
-          type: number
-        reject_reason:
-          type: string
-        voucher_codes: []
-        meta_data:
-          type: array
-          description: Key value pairs of meta data
-          items:
-            properties:
-              key:
-                description: A key value pair.
-                type: string
-        payable:
-          type: boolean
-      type: object
+    Conversion_Status:
+      enum:
+      - pending
+      - approved
+      - rejected
+      type: string
     Country:
       enum:
       - AD
@@ -520,13 +490,6 @@ components:
       - ZM
       - ZW
       type: string
-    Currency:
-      enum:
-      - GBP
-      - USD
-      - EUR
-      - JPY
-      type: string
     Conversion_Data:
       type: object
       properties:
@@ -628,45 +591,31 @@ components:
           type: number
         clickref:
           type: string
-    Conversion_Status:
-      enum:
-      - pending
-      - approved
-      - rejected
-      type: string
-    Partner_Conversions:
+    Conversion_Item:
       properties:
-        total_conversion_count:
-          description: 'conversion count for each currency. E.g. "USD": 25, "EUR": 37'
-          type: object
-          properties:
-            currency_iso:
-              description: 'key value pairs where the currency iso is the key. E.g. EUR: 37'
-              type: number
-        total_publisher_commission:
-          description: 'total commission for each currency. E.g. "USD": 250.5, "EUR": 180.9'
-          type: object
-          properties:
-            currency_iso:
-              description: 'key value pairs where the currency iso is the key. E.g. EUR: 37'
-              type: number
-        total_value:
-          description: 'total order value. E.g. "USD": 435.5, "EUR": 267.9'
-          type: object
-          properties:
-            currency_iso:
-              description: 'key value pairs where the currency iso is the key. E.g. EUR: 37'
-              type: number
-        start_date_time_utc:
+        conversion_item_id:
           type: string
-        end_date_time_utc:
-          type: string
-        start_date_time:
-          type: string
-        end_date_time:
-          type: string
-        limit:
+        sku:
           type: number
+        category:
+          type: string
+        item_value:
+          type: number
+        item_publisher_commission:
+          type: number
+        item_status:
+          type: string
+        last_update:
+          type: string
+        publisher_self_bill_id:
+          type: number
+        approved_at:
+          type: string
+        item_status_id:
+          type: number
+        reject_reason:
+          type: string
+        voucher_codes: []
         meta_data:
           type: array
           description: Key value pairs of meta data
@@ -675,14 +624,8 @@ components:
               key:
                 description: A key value pair.
                 type: string
-        count:
-          type: number
-        execution_time:
-          type: string
-        conversions:
-          type: array
-          items:
-            $ref: '#/components/schemas/Conversion_Data'
+        payable:
+          type: boolean
       type: object
     Click:
       properties:
@@ -735,6 +678,63 @@ components:
         clickref:
           type: string
       type: object
+    Partner_Conversions:
+      properties:
+        total_conversion_count:
+          description: 'conversion count for each currency. E.g. "USD": 25, "EUR": 37'
+          type: object
+          properties:
+            currency_iso:
+              description: 'key value pairs where the currency iso is the key. E.g. EUR: 37'
+              type: number
+        total_publisher_commission:
+          description: 'total commission for each currency. E.g. "USD": 250.5, "EUR": 180.9'
+          type: object
+          properties:
+            currency_iso:
+              description: 'key value pairs where the currency iso is the key. E.g. EUR: 37'
+              type: number
+        total_value:
+          description: 'total order value. E.g. "USD": 435.5, "EUR": 267.9'
+          type: object
+          properties:
+            currency_iso:
+              description: 'key value pairs where the currency iso is the key. E.g. EUR: 37'
+              type: number
+        start_date_time_utc:
+          type: string
+        end_date_time_utc:
+          type: string
+        start_date_time:
+          type: string
+        end_date_time:
+          type: string
+        limit:
+          type: number
+        meta_data:
+          type: array
+          description: Key value pairs of meta data
+          items:
+            properties:
+              key:
+                description: A key value pair.
+                type: string
+        count:
+          type: number
+        execution_time:
+          type: string
+        conversions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Conversion_Data'
+      type: object
+    Currency:
+      enum:
+      - GBP
+      - USD
+      - EUR
+      - JPY
+      type: string
 x-tagGroups:
 - name: Partner Management (v1)
   tags:

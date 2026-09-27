@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Partnerize Brands Attribution … Campaign Transaction…
+  title: Partnerize Brands Attribution … Campaign Transaction……
   version: 1.4.99
   description: '# Introduction
 
@@ -238,7 +238,7 @@ paths:
       tags:
       - Campaign Transaction Queries
       description: Return the details of all Transaction Queries created on a campaign.
-      operationId: List all Transaction Queries
+      operationId: ListAllTransactionQueries
       requestBody:
         content:
           application/json:
@@ -246,6 +246,8 @@ paths:
               type: string
         description: Generate a CSV file in a job and send the result to this email address, helpful when processing takes too long for a normal download
       summary: List all Transaction Queries for a Campaign
+      x-operation-id-source: normalized
+      x-operation-id-original: List all Transaction Queries
   /campaign/{campaign_id}/tq/{transaction_query_id}/approve:
     post:
       parameters:
@@ -372,7 +374,7 @@ paths:
       tags:
       - Campaign Transaction Queries
       description: Approve a single Transaction Query. Only Transaction Queries with a status of pending can be approved.
-      operationId: Approve a Transaction Query
+      operationId: ApproveATransactionQuery
       requestBody:
         content:
           application/json:
@@ -385,6 +387,8 @@ paths:
                   type: number
               type: object
       summary: Approve a Transaction Query
+      x-operation-id-source: normalized
+      x-operation-id-original: Approve a Transaction Query
   /campaign/{campaign_id}/tq/{transaction_query_id}/pend:
     post:
       parameters:
@@ -513,8 +517,10 @@ paths:
       tags:
       - Campaign Transaction Queries
       description: Pend a single Transaction Query. Only Transaction Queries with a status of rejected can be pended.
-      operationId: Pend a Transaction Query
+      operationId: PendATransactionQuery
       summary: Pend a Transaction Query
+      x-operation-id-source: normalized
+      x-operation-id-original: Pend a Transaction Query
   /campaign/{campaign_id}/tq/{transaction_query_id}/reject:
     post:
       parameters:
@@ -642,7 +648,7 @@ paths:
       tags:
       - Campaign Transaction Queries
       description: Reject a single Transaction Query. Only Transaction Queries with a status of pending can be rejected.
-      operationId: Reject a Transaction Query
+      operationId: RejectATransactionQuery
       requestBody:
         content:
           application/json:
@@ -655,6 +661,8 @@ paths:
                   type: string
               type: object
       summary: Reject a Transaction Query
+      x-operation-id-source: normalized
+      x-operation-id-original: Reject a Transaction Query
   /campaign/{campaign_id}/tq/process:
     post:
       parameters:
@@ -763,7 +771,7 @@ paths:
       tags:
       - Campaign Transaction Queries
       description: Process multiple Transaction Queries in a single API call. The same rules as approving, rejecting and pending single Transaction Queries apply. The actions are processed asynchronously and the Job endpoint must be polled to find out when all have been completed.
-      operationId: Bulk process Transaction Queries
+      operationId: BulkProcessTransactionQueries
       requestBody:
         content:
           application/json:
@@ -792,8 +800,21 @@ paths:
                   type: array
               type: object
       summary: Bulk processing of Transaction Queries
+      x-operation-id-source: normalized
+      x-operation-id-original: Bulk process Transaction Queries
 components:
   schemas:
+    Transaction_Query_Wrapper:
+      properties:
+        transaction_query:
+          $ref: '#/components/schemas/Transaction_Query'
+      type: object
+    Transaction_Query_State:
+      enum:
+      - pending
+      - approved
+      - rejected
+      type: string
     Transaction_Query_State_History:
       properties:
         conversion_expected_commission:
@@ -813,18 +834,12 @@ components:
         user_id:
           type: string
       type: object
-    Transaction_Query_Wrapper:
-      properties:
-        transaction_query:
-          $ref: '#/components/schemas/Transaction_Query'
-      type: object
-    Status:
-      type: string
+    Transaction_Query_Type:
       enum:
-      - a
-      - p
-      - r
-      - n
+      - untracked
+      - incorrect_commission
+      - declined
+      type: string
     Timezones:
       enum:
       - Australia/Sydney
@@ -833,19 +848,18 @@ components:
       - CET
       - GMT
       type: string
-    Transaction_Query_Type:
+    YesOrNo:
       enum:
-      - untracked
-      - incorrect_commission
-      - declined
+      - y
+      - n
       type: string
-    Currency:
+    Status:
+      type: string
       enum:
-      - GBP
-      - USD
-      - EUR
-      - JPY
-      type: string
+      - a
+      - p
+      - r
+      - n
     Transaction_Query:
       properties:
         campaign:
@@ -941,16 +955,12 @@ components:
         updated_at:
           type: string
       type: object
-    YesOrNo:
+    Currency:
       enum:
-      - y
-      - n
-      type: string
-    Transaction_Query_State:
-      enum:
-      - pending
-      - approved
-      - rejected
+      - GBP
+      - USD
+      - EUR
+      - JPY
       type: string
 x-tagGroups:
 - name: Networks and Brands Management (v1)

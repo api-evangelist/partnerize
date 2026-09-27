@@ -43,8 +43,10 @@ paths:
       tags:
       - Currencies
       description: List all the types of currency.
-      operationId: List all Currencies
+      operationId: ListAllCurrencies
       summary: List all Currencies
+      x-operation-id-source: normalized
+      x-operation-id-original: List all Currencies
 components:
   schemas:
     Reference_Currency:

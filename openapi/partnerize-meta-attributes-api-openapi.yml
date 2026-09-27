@@ -74,8 +74,10 @@ paths:
       tags:
       - Meta Attributes
       description: View all unique Meta attributes for the Campaign.
-      operationId: List all Meta attributes for Campaign
+      operationId: ListAllMetaAttributesForCampaign
       summary: List all Meta attributes for Campaign
+      x-operation-id-source: normalized
+      x-operation-id-original: List all Meta attributes for Campaign
 components:
   schemas:
     Currency:

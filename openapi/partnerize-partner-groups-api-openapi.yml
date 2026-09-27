@@ -61,8 +61,10 @@ paths:
       tags:
       - Partner Groups
       description: View all Partner (Commission) Groups for a campaign with all associated partners.
-      operationId: List Partner Groups
+      operationId: ListPartnerGroups
       summary: List all Partner (Commission) Groups for a given campaign
+      x-operation-id-source: normalized
+      x-operation-id-original: List Partner Groups
   /campaign/{campaign_id}/commission_group/{commission_group_id}:
     get:
       parameters:
@@ -136,8 +138,10 @@ paths:
       tags:
       - Partner Groups
       description: Retrieves the specified Partner (Commission) Group.
-      operationId: Retrieve a Partner Group
+      operationId: RetrieveAPartnerGroup
       summary: Retrieve a Partner (Commission) Group
+      x-operation-id-source: normalized
+      x-operation-id-original: Retrieve a Partner Group
   /commission_group:
     post:
       responses:
@@ -199,7 +203,7 @@ paths:
       tags:
       - Partner Groups
       description: Create new Partner (Commission) Groups. To add Partners into the Partner (Commission) Group pass them in a `publishers` array.
-      operationId: Create Partner Groups
+      operationId: CreatePartnerGroups
       requestBody:
         content:
           application/json:
@@ -219,6 +223,8 @@ paths:
                   type: array
               type: object
       summary: Create Partner (Commission) Groups
+      x-operation-id-source: normalized
+      x-operation-id-original: Create Partner Groups
     put:
       responses:
         '200':
@@ -279,7 +285,7 @@ paths:
       tags:
       - Partner Groups
       description: Update Partner (Commission) Groups by referencing the `commission_group_id` in each Group object within the `commission_groups` array.
-      operationId: Update Partner (Commission) Groups
+      operationId: UpdatePartner(Commission)Groups
       requestBody:
         content:
           application/json:
@@ -300,13 +306,10 @@ paths:
                   type: array
               type: object
       summary: Update Partner (Commission) Groups
+      x-operation-id-source: normalized
+      x-operation-id-original: Update Partner (Commission) Groups
 components:
   schemas:
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
     Commission_Group:
       properties:
         campaign_id:
@@ -337,6 +340,11 @@ components:
         commission_group:
           $ref: '#/components/schemas/Commission_Group'
       type: object
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
 x-tagGroups:
 - name: Networks and Brands Management (v1)
   tags:

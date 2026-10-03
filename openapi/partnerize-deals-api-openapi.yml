@@ -263,52 +263,6 @@ paths:
       x-operation-id-original: Delete a Campaign
 components:
   schemas:
-    Deal:
-      properties:
-        active:
-          $ref: '#/components/schemas/YesOrNo'
-        advertiser_reference:
-          type: string
-        category:
-          type: string
-        country_iso:
-          description: Whether it applies to a specific country
-          $ref: '#/components/schemas/Country'
-        coupon_code:
-          description: A specific coupon or voucher code associated with the deal
-          type: string
-        description:
-          type: string
-        destination:
-          description: A deeplink to the specific deal location
-          type: string
-        end_date_time:
-          description: Timezone specific timestamp to indicate the deal expiry time
-          type: string
-        offer_type:
-          description: The type of offer
-          enum:
-          - coupon
-          - offer
-          - sale
-          type: string
-        offer_value:
-          description: The unit to attribute to the `offer_type`
-          type: string
-        start_date_time:
-          description: Timezone specific timestamp to indicate the start of the deal
-          type: string
-        terms:
-          description: Specific terms for the deal
-          type: string
-        title:
-          type: string
-      required:
-      - title
-      - description
-      - offer_type
-      - offer_value
-      type: object
     Country:
       enum:
       - AD
@@ -562,15 +516,61 @@ components:
       - ZM
       - ZW
       type: string
+    Deal_Wrapper:
+      properties:
+        campaign_deal:
+          $ref: '#/components/schemas/Deal'
+      type: object
     YesOrNo:
       enum:
       - y
       - n
       type: string
-    Deal_Wrapper:
+    Deal:
       properties:
-        campaign_deal:
-          $ref: '#/components/schemas/Deal'
+        active:
+          $ref: '#/components/schemas/YesOrNo'
+        advertiser_reference:
+          type: string
+        category:
+          type: string
+        country_iso:
+          description: Whether it applies to a specific country
+          $ref: '#/components/schemas/Country'
+        coupon_code:
+          description: A specific coupon or voucher code associated with the deal
+          type: string
+        description:
+          type: string
+        destination:
+          description: A deeplink to the specific deal location
+          type: string
+        end_date_time:
+          description: Timezone specific timestamp to indicate the deal expiry time
+          type: string
+        offer_type:
+          description: The type of offer
+          enum:
+          - coupon
+          - offer
+          - sale
+          type: string
+        offer_value:
+          description: The unit to attribute to the `offer_type`
+          type: string
+        start_date_time:
+          description: Timezone specific timestamp to indicate the start of the deal
+          type: string
+        terms:
+          description: Specific terms for the deal
+          type: string
+        title:
+          type: string
+      required:
+      - title
+      - description
+      - offer_type
+      - offer_value
       type: object
 x-tagGroups:
 - name: Networks and Brands Management (v1)

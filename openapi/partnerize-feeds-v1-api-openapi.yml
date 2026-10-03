@@ -99,6 +99,11 @@ paths:
       x-operation-id-original: List all Available Feeds
 components:
   schemas:
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
     Feed:
       properties:
         feed:
@@ -133,11 +138,6 @@ components:
               type: number
           type: object
       type: object
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
 x-tagGroups:
 - name: Partner Management (v1)
   tags:

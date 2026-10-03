@@ -256,6 +256,11 @@ paths:
                       week_start: monday
 components:
   schemas:
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
     Partner_Website:
       properties:
         publisher_id:
@@ -281,6 +286,82 @@ components:
           type: string
       required:
       - website_url
+      type: object
+    Locale:
+      enum:
+      - bg
+      - cs
+      - da
+      - de
+      - de_at
+      - en
+      - en_au
+      - en_ca
+      - en_us
+      - es
+      - es_mx
+      - el
+      - et
+      - fi
+      - fl
+      - fr
+      - fr_ca
+      - hu
+      - id
+      - it
+      - jp
+      - ko
+      - ko_kr
+      - lt
+      - lv
+      - ms_my
+      - mt
+      - my
+      - nl
+      - 'no'
+      - pl
+      - po
+      - pt
+      - pt_br
+      - ro
+      - ru
+      - sg
+      - sk
+      - sl
+      - sv
+      - sv_se
+      - th
+      - tl
+      - tr
+      - vi
+      - zh_cn
+      - zh_hk
+      type: string
+    Partner_Database:
+      properties:
+        publisher_id:
+          description: ID of the partner the database belongs to
+          type: string
+        active:
+          $ref: '#/components/schemas/YesOrNo'
+        creation_method:
+          type: string
+        database_name:
+          type: string
+        female:
+          type: number
+        male:
+          type: number
+        max_age:
+          type: number
+        min_age:
+          type: number
+        size:
+          type: number
+      required:
+      - database_name
+      - creation_method
+      - size
       type: object
     Partner:
       properties:
@@ -368,56 +449,6 @@ components:
           type: string
         week_start:
           type: string
-    Locale:
-      enum:
-      - bg
-      - cs
-      - da
-      - de
-      - de_at
-      - en
-      - en_au
-      - en_ca
-      - en_us
-      - es
-      - es_mx
-      - el
-      - et
-      - fi
-      - fl
-      - fr
-      - fr_ca
-      - hu
-      - id
-      - it
-      - jp
-      - ko
-      - ko_kr
-      - lt
-      - lv
-      - ms_my
-      - mt
-      - my
-      - nl
-      - 'no'
-      - pl
-      - po
-      - pt
-      - pt_br
-      - ro
-      - ru
-      - sg
-      - sk
-      - sl
-      - sv
-      - sv_se
-      - th
-      - tl
-      - tr
-      - vi
-      - zh_cn
-      - zh_hk
-      type: string
     Country:
       enum:
       - AD
@@ -671,11 +702,6 @@ components:
       - ZM
       - ZW
       type: string
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
     Status:
       type: string
       enum:
@@ -683,32 +709,6 @@ components:
       - p
       - r
       - n
-    Partner_Database:
-      properties:
-        publisher_id:
-          description: ID of the partner the database belongs to
-          type: string
-        active:
-          $ref: '#/components/schemas/YesOrNo'
-        creation_method:
-          type: string
-        database_name:
-          type: string
-        female:
-          type: number
-        male:
-          type: number
-        max_age:
-          type: number
-        min_age:
-          type: number
-        size:
-          type: number
-      required:
-      - database_name
-      - creation_method
-      - size
-      type: object
     Currency:
       enum:
       - GBP

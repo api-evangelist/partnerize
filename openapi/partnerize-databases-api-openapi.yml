@@ -258,11 +258,6 @@ components:
                 type: string
           - $ref: '#/components/schemas/Partner_Database'
       type: object
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
     Partner_Database:
       properties:
         publisher_id:
@@ -289,6 +284,11 @@ components:
       - creation_method
       - size
       type: object
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
 x-tagGroups:
 - name: Partner Management (v1)
   tags:

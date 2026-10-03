@@ -463,42 +463,24 @@ paths:
       x-operation-id-original: Delete a Transaction Query
 components:
   schemas:
-    Transaction_Query_Wrapper:
-      properties:
-        transaction_query:
-          $ref: '#/components/schemas/Transaction_Query'
-      type: object
+    Currency:
+      enum:
+      - GBP
+      - USD
+      - EUR
+      - JPY
+      type: string
     Transaction_Query_State:
       enum:
       - pending
       - approved
       - rejected
       type: string
-    Transaction_Query_State_History:
+    Transaction_Query_Wrapper:
       properties:
-        conversion_expected_commission:
-          type: number
-        conversion_item_id:
-          type: string
-        created_at:
-          type: string
-        notes:
-          type: string
-        state:
-          $ref: '#/components/schemas/Transaction_Query_State'
-        transaction_query_id:
-          type: string
-        transaction_query_state_id:
-          type: string
-        user_id:
-          type: string
+        transaction_query:
+          $ref: '#/components/schemas/Transaction_Query'
       type: object
-    Transaction_Query_Type:
-      enum:
-      - untracked
-      - incorrect_commission
-      - declined
-      type: string
     Timezones:
       enum:
       - Australia/Sydney
@@ -507,18 +489,6 @@ components:
       - CET
       - GMT
       type: string
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
-    Status:
-      type: string
-      enum:
-      - a
-      - p
-      - r
-      - n
     Transaction_Query:
       properties:
         campaign:
@@ -614,12 +584,42 @@ components:
         updated_at:
           type: string
       type: object
-    Currency:
+    Transaction_Query_State_History:
+      properties:
+        conversion_expected_commission:
+          type: number
+        conversion_item_id:
+          type: string
+        created_at:
+          type: string
+        notes:
+          type: string
+        state:
+          $ref: '#/components/schemas/Transaction_Query_State'
+        transaction_query_id:
+          type: string
+        transaction_query_state_id:
+          type: string
+        user_id:
+          type: string
+      type: object
+    Status:
+      type: string
       enum:
-      - GBP
-      - USD
-      - EUR
-      - JPY
+      - a
+      - p
+      - r
+      - n
+    Transaction_Query_Type:
+      enum:
+      - untracked
+      - incorrect_commission
+      - declined
+      type: string
+    YesOrNo:
+      enum:
+      - y
+      - n
       type: string
 x-tagGroups:
 - name: Partner Management (v1)

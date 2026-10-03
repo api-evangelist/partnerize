@@ -236,6 +236,100 @@ paths:
       summary: Retrieve a Brand Conversions Report
 components:
   schemas:
+    Click:
+      properties:
+        click_id:
+          type: string
+        cookie_id:
+          type: string
+        campaign_id:
+          description: Id of the campaign
+          example: 111111l29
+          type: string
+        publisher_id:
+          description: Id of the partner
+          example: 111111l92
+          type: string
+        type:
+          type: string
+        status:
+          type: string
+        set_time:
+          type: string
+        set_ip:
+          type: string
+        last_used:
+          type: number
+        last_ip:
+          type: string
+        advertiser_reference:
+          type: string
+        referer:
+          type: string
+        creative_id:
+          type: number
+        creative_type:
+          type: number
+        specific_creative_id:
+          type: number
+        ref_device_id:
+          type: number
+        ref_traffic_source_id:
+          type: number
+        ref_partnership_model_id:
+          type: number
+        ref_user_context_id:
+          type: number
+        ref_device:
+          type: string
+        ref_traffic_source:
+          type: string
+        ref_partnership_model:
+          type: string
+        ref_user_context:
+          type: string
+        clickref:
+          type: string
+      type: object
+    Conversion_Item:
+      properties:
+        conversion_item_id:
+          type: string
+        sku:
+          type: number
+        category:
+          type: string
+        item_value:
+          type: number
+        item_publisher_commission:
+          type: number
+        item_status:
+          type: string
+        invoice_id:
+          type: string
+        last_update:
+          type: string
+        display_to_publisher:
+          enum:
+          - 0
+          - 1
+          type: number
+        approved_at:
+          type: string
+        item_status_id:
+          type: number
+        reject_reason:
+          type: string
+        voucher_codes: []
+        meta_data:
+          type: array
+          description: Key value pairs of meta data
+          items:
+            properties:
+              key:
+                description: A key value pair.
+                type: string
+      type: object
     Brand_Conversions:
       properties:
         total_conversion_count:
@@ -656,100 +750,6 @@ components:
           type: string
         conversion_lag:
           type: number
-        clickref:
-          type: string
-      type: object
-    Conversion_Item:
-      properties:
-        conversion_item_id:
-          type: string
-        sku:
-          type: number
-        category:
-          type: string
-        item_value:
-          type: number
-        item_publisher_commission:
-          type: number
-        item_status:
-          type: string
-        invoice_id:
-          type: string
-        last_update:
-          type: string
-        display_to_publisher:
-          enum:
-          - 0
-          - 1
-          type: number
-        approved_at:
-          type: string
-        item_status_id:
-          type: number
-        reject_reason:
-          type: string
-        voucher_codes: []
-        meta_data:
-          type: array
-          description: Key value pairs of meta data
-          items:
-            properties:
-              key:
-                description: A key value pair.
-                type: string
-      type: object
-    Click:
-      properties:
-        click_id:
-          type: string
-        cookie_id:
-          type: string
-        campaign_id:
-          description: Id of the campaign
-          example: 111111l29
-          type: string
-        publisher_id:
-          description: Id of the partner
-          example: 111111l92
-          type: string
-        type:
-          type: string
-        status:
-          type: string
-        set_time:
-          type: string
-        set_ip:
-          type: string
-        last_used:
-          type: number
-        last_ip:
-          type: string
-        advertiser_reference:
-          type: string
-        referer:
-          type: string
-        creative_id:
-          type: number
-        creative_type:
-          type: number
-        specific_creative_id:
-          type: number
-        ref_device_id:
-          type: number
-        ref_traffic_source_id:
-          type: number
-        ref_partnership_model_id:
-          type: number
-        ref_user_context_id:
-          type: number
-        ref_device:
-          type: string
-        ref_traffic_source:
-          type: string
-        ref_partnership_model:
-          type: string
-        ref_user_context:
-          type: string
         clickref:
           type: string
       type: object

@@ -167,6 +167,13 @@ paths:
       summary: Retrieve a Partner Clicks Report
 components:
   schemas:
+    Currency:
+      enum:
+      - GBP
+      - USD
+      - EUR
+      - JPY
+      type: string
     Click:
       properties:
         campaign_id:
@@ -255,13 +262,6 @@ components:
                         description: A key value pair.
                         type: string
       type: object
-    Currency:
-      enum:
-      - GBP
-      - USD
-      - EUR
-      - JPY
-      type: string
 x-tagGroups:
 - name: Partner Management (v1)
   tags:

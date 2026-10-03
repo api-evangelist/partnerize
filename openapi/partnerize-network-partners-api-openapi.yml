@@ -457,6 +457,11 @@ paths:
       summary: Update Partner's Network status
 components:
   schemas:
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
     Publisher_Website:
       properties:
         publisher_id:
@@ -486,40 +491,61 @@ components:
       required:
       - website_url
       type: object
-    Publisher_Database:
-      properties:
-        database_id:
-          description: ID of the partner database
-          type: string
-        publisher_id:
-          description: ID of the partner the database belongs to
-          type: string
-        active:
-          $ref: '#/components/schemas/YesOrNo'
-        creation_method:
-          type: string
-        database_name:
-          type: string
-        female:
-          type: number
-        male:
-          type: number
-        max_age:
-          type: number
-        min_age:
-          type: number
-        size:
-          type: number
-      required:
-      - database_name
-      - creation_method
-      - size
-      type: object
     User_Publisher_Wrapper:
       properties:
         user:
           $ref: '#/components/schemas/User_Publisher'
       type: object
+    Locale:
+      enum:
+      - bg
+      - cs
+      - da
+      - de
+      - de_at
+      - en
+      - en_au
+      - en_ca
+      - en_us
+      - es
+      - es_mx
+      - el
+      - et
+      - fi
+      - fl
+      - fr
+      - fr_ca
+      - hu
+      - id
+      - it
+      - jp
+      - ko
+      - ko_kr
+      - lt
+      - lv
+      - ms_my
+      - mt
+      - my
+      - nl
+      - 'no'
+      - pl
+      - po
+      - pt
+      - pt_br
+      - ro
+      - ru
+      - sg
+      - sk
+      - sl
+      - sv
+      - sv_se
+      - th
+      - tl
+      - tr
+      - vi
+      - zh_cn
+      - zh_hk
+      type: string
     Publisher:
       type: object
       properties:
@@ -606,60 +632,126 @@ components:
           type: number
         vertical_name:
           type: string
-    Locale:
-      enum:
-      - bg
-      - cs
-      - da
-      - de
-      - de_at
-      - en
-      - en_au
-      - en_ca
-      - en_us
-      - es
-      - es_mx
-      - el
-      - et
-      - fi
-      - fl
-      - fr
-      - fr_ca
-      - hu
-      - id
-      - it
-      - jp
-      - ko
-      - ko_kr
-      - lt
-      - lv
-      - ms_my
-      - mt
-      - my
-      - nl
-      - 'no'
-      - pl
-      - po
-      - pt
-      - pt_br
-      - ro
-      - ru
-      - sg
-      - sk
-      - sl
-      - sv
-      - sv_se
-      - th
-      - tl
-      - tr
-      - vi
-      - zh_cn
-      - zh_hk
-      type: string
     Publisher_Wrapper:
       properties:
         publisher:
           $ref: '#/components/schemas/Publisher'
+    User_Publisher:
+      type: object
+      properties:
+        user_name:
+          type: string
+          description: Username of the user
+        email_address:
+          type: string
+          description: Email address of the user
+        password:
+          type: string
+          description: Password of the user
+        address1:
+          type: string
+          description: Address Line 1 of the user
+        postcode:
+          type: string
+          description: Postcode of the user
+        country:
+          type: string
+          description: ISO-2 country code of the user
+        phone:
+          type: string
+          description: Phone number of the user
+        signup_ip:
+          type: string
+          description: The signup IP address of the user
+        firstname:
+          type: string
+          description: The first name of the user
+        lastname:
+          type: string
+          description: The last name of the user
+        address2:
+          type: string
+          description: Address Line 2 of the user
+        address3:
+          type: string
+          description: Address Line 3 of the user
+        address4:
+          type: string
+          description: Address Line 4 of the user
+        locale:
+          type: string
+          description: Locale of the user
+        user_id:
+          type: string
+          description: The ID of the user
+        created:
+          type: string
+          description: Datetime stamp of when the user account was created
+        network_id:
+          type: string
+          description: The network ID of which the user belongs to
+        network_name:
+          type: string
+          description: The network name of which the user belongs to
+        user_api_key:
+          type: string
+          description: The API key of the user account
+        publisher:
+          type: object
+          properties:
+            account_name:
+              type: string
+              description: Name of the partner
+            vertical:
+              type: string
+              description: The vertical ID of the partner
+            promotional_method:
+              type: string
+              description: The promotional method ID of the partner
+            signup_ip:
+              type: string
+              description: The signup IP address of the partner
+            entity_terms_id:
+              type: string
+              description: The agreed terms and conditions ID. The ID must be retrieved by retrieving the terms and conditions from the [network terms and conditions API.](#tag/Network-Terms-and-Conditions)
+            network_terms_id:
+              type: string
+              description: The agreed network terms and conditions ID
+            vat_number:
+              type: string
+              description: The VAT number of the partner
+            description:
+              type: string
+              description: Description of the partner
+            company_name:
+              type: string
+              description: Company name associated to the partner
+            operating_country:
+              type: string
+              description: Country of operation for the partner
+            reporting_timezone:
+              type: string
+              description: Reporting timezone of the partner.
+            default_currency:
+              type: string
+              description: Default currency of the partner.
+            phone:
+              type: string
+              description: Phone number of the partner.
+            contact_name:
+              type: string
+              description: The contact name of the partner.
+            contact_email:
+              type: string
+              description: The contact email of the partner.
+            contact_locale:
+              type: string
+              description: The contact ISO locale for the partner.
+    Publisher_Database_Wrapper:
+      properties:
+        database:
+          $ref: '#/components/schemas/Publisher_Database'
+      type: object
     Country:
       enum:
       - AD
@@ -913,127 +1005,6 @@ components:
       - ZM
       - ZW
       type: string
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
-    Publisher_Database_Wrapper:
-      properties:
-        database:
-          $ref: '#/components/schemas/Publisher_Database'
-      type: object
-    User_Publisher:
-      type: object
-      properties:
-        user_name:
-          type: string
-          description: Username of the user
-        email_address:
-          type: string
-          description: Email address of the user
-        password:
-          type: string
-          description: Password of the user
-        address1:
-          type: string
-          description: Address Line 1 of the user
-        postcode:
-          type: string
-          description: Postcode of the user
-        country:
-          type: string
-          description: ISO-2 country code of the user
-        phone:
-          type: string
-          description: Phone number of the user
-        signup_ip:
-          type: string
-          description: The signup IP address of the user
-        firstname:
-          type: string
-          description: The first name of the user
-        lastname:
-          type: string
-          description: The last name of the user
-        address2:
-          type: string
-          description: Address Line 2 of the user
-        address3:
-          type: string
-          description: Address Line 3 of the user
-        address4:
-          type: string
-          description: Address Line 4 of the user
-        locale:
-          type: string
-          description: Locale of the user
-        user_id:
-          type: string
-          description: The ID of the user
-        created:
-          type: string
-          description: Datetime stamp of when the user account was created
-        network_id:
-          type: string
-          description: The network ID of which the user belongs to
-        network_name:
-          type: string
-          description: The network name of which the user belongs to
-        user_api_key:
-          type: string
-          description: The API key of the user account
-        publisher:
-          type: object
-          properties:
-            account_name:
-              type: string
-              description: Name of the partner
-            vertical:
-              type: string
-              description: The vertical ID of the partner
-            promotional_method:
-              type: string
-              description: The promotional method ID of the partner
-            signup_ip:
-              type: string
-              description: The signup IP address of the partner
-            entity_terms_id:
-              type: string
-              description: The agreed terms and conditions ID. The ID must be retrieved by retrieving the terms and conditions from the [network terms and conditions API.](#tag/Network-Terms-and-Conditions)
-            network_terms_id:
-              type: string
-              description: The agreed network terms and conditions ID
-            vat_number:
-              type: string
-              description: The VAT number of the partner
-            description:
-              type: string
-              description: Description of the partner
-            company_name:
-              type: string
-              description: Company name associated to the partner
-            operating_country:
-              type: string
-              description: Country of operation for the partner
-            reporting_timezone:
-              type: string
-              description: Reporting timezone of the partner.
-            default_currency:
-              type: string
-              description: Default currency of the partner.
-            phone:
-              type: string
-              description: Phone number of the partner.
-            contact_name:
-              type: string
-              description: The contact name of the partner.
-            contact_email:
-              type: string
-              description: The contact email of the partner.
-            contact_locale:
-              type: string
-              description: The contact ISO locale for the partner.
     Status:
       type: string
       enum:
@@ -1045,6 +1016,35 @@ components:
       properties:
         website:
           $ref: '#/components/schemas/Publisher_Website'
+      type: object
+    Publisher_Database:
+      properties:
+        database_id:
+          description: ID of the partner database
+          type: string
+        publisher_id:
+          description: ID of the partner the database belongs to
+          type: string
+        active:
+          $ref: '#/components/schemas/YesOrNo'
+        creation_method:
+          type: string
+        database_name:
+          type: string
+        female:
+          type: number
+        male:
+          type: number
+        max_age:
+          type: number
+        min_age:
+          type: number
+        size:
+          type: number
+      required:
+      - database_name
+      - creation_method
+      - size
       type: object
     Currency:
       enum:

@@ -288,17 +288,6 @@ components:
       required:
       - website_url
       type: object
-    Partner_Website_Wrapper:
-      properties:
-        website:
-          allOf:
-          - type: object
-            properties:
-              website_id:
-                description: ID of the partner website
-                type: string
-          - $ref: '#/components/schemas/Partner_Website'
-      type: object
     Country:
       enum:
       - AD
@@ -557,6 +546,17 @@ components:
       - y
       - n
       type: string
+    Partner_Website_Wrapper:
+      properties:
+        website:
+          allOf:
+          - type: object
+            properties:
+              website_id:
+                description: ID of the partner website
+                type: string
+          - $ref: '#/components/schemas/Partner_Website'
+      type: object
 x-tagGroups:
 - name: Partner Management (v1)
   tags:

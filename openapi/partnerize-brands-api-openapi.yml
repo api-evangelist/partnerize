@@ -419,100 +419,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Brand_Account:
-      properties:
-        account_name:
-          description: Unique brand account name
-          type: string
-        address1:
-          description: 1st line of the address
-          type: string
-        address2:
-          description: 2nd line of the address
-          type:
-          - string
-          - 'null'
-        address3:
-          description: 3rd line of the address
-          type:
-          - string
-          - 'null'
-        address4:
-          description: 4th line of the address
-          type:
-          - string
-          - 'null'
-        advertiser_icon:
-          description: Url path to image
-          type:
-          - string
-          - 'null'
-        advertiser_id:
-          description: ID of the brand
-          type: string
-        budget_summary_interval:
-          type:
-          - string
-          - 'null'
-        budget_summary_start_time:
-          type:
-          - string
-          - 'null'
-        company_name:
-          type: string
-        contact_email:
-          type: string
-        country:
-          description: Country of the address
-          $ref: '#/components/schemas/Country'
-        current_balance:
-          type:
-          - string
-          - 'null'
-        default_currency:
-          $ref: '#/components/schemas/Currency'
-        display_name:
-          description: Name shown to publishers under brand campaign management
-          type: string
-        payment_currency:
-          $ref: '#/components/schemas/Currency'
-        phone:
-          description: Primary contact telephone number
-          type: string
-        phone_area:
-          description: Phone prefix to declare country or region
-          type:
-          - string
-          - 'null'
-        postcode:
-          description: Postcode/Zipcode attached to the address
-          type: string
-        pre_payment:
-          type:
-          - string
-          - 'null'
-        signup_ip:
-          type: string
-        status:
-          $ref: '#/components/schemas/Status'
-        vat_number:
-          type:
-          - string
-          - 'null'
-      required:
-      - account_name
-      - company_name
-      - address1
-      - country
-      - postcode
-      - phone
-      - signup_ip
-      type: object
-    Brand_Account_Wrapper:
-      properties:
-        advertiser:
-          $ref: '#/components/schemas/Brand_Account'
-      type: object
     Country:
       enum:
       - AD
@@ -773,6 +679,100 @@ components:
       - p
       - r
       - n
+    Brand_Account:
+      properties:
+        account_name:
+          description: Unique brand account name
+          type: string
+        address1:
+          description: 1st line of the address
+          type: string
+        address2:
+          description: 2nd line of the address
+          type:
+          - string
+          - 'null'
+        address3:
+          description: 3rd line of the address
+          type:
+          - string
+          - 'null'
+        address4:
+          description: 4th line of the address
+          type:
+          - string
+          - 'null'
+        advertiser_icon:
+          description: Url path to image
+          type:
+          - string
+          - 'null'
+        advertiser_id:
+          description: ID of the brand
+          type: string
+        budget_summary_interval:
+          type:
+          - string
+          - 'null'
+        budget_summary_start_time:
+          type:
+          - string
+          - 'null'
+        company_name:
+          type: string
+        contact_email:
+          type: string
+        country:
+          description: Country of the address
+          $ref: '#/components/schemas/Country'
+        current_balance:
+          type:
+          - string
+          - 'null'
+        default_currency:
+          $ref: '#/components/schemas/Currency'
+        display_name:
+          description: Name shown to publishers under brand campaign management
+          type: string
+        payment_currency:
+          $ref: '#/components/schemas/Currency'
+        phone:
+          description: Primary contact telephone number
+          type: string
+        phone_area:
+          description: Phone prefix to declare country or region
+          type:
+          - string
+          - 'null'
+        postcode:
+          description: Postcode/Zipcode attached to the address
+          type: string
+        pre_payment:
+          type:
+          - string
+          - 'null'
+        signup_ip:
+          type: string
+        status:
+          $ref: '#/components/schemas/Status'
+        vat_number:
+          type:
+          - string
+          - 'null'
+      required:
+      - account_name
+      - company_name
+      - address1
+      - country
+      - postcode
+      - phone
+      - signup_ip
+      type: object
+    Brand_Account_Wrapper:
+      properties:
+        advertiser:
+          $ref: '#/components/schemas/Brand_Account'
+      type: object
     Currency:
       enum:
       - GBP

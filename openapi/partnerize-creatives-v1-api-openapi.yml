@@ -166,6 +166,43 @@ paths:
       x-operation-id-original: List Creatives on a Campaign
 components:
   schemas:
+    Creative_Item:
+      properties:
+        content_type:
+          type: string
+        creative_item_id:
+          description: ID of the creative item
+          type: string
+        description:
+          type: string
+        filename:
+          type: string
+        img_url:
+          type: string
+        preview:
+          type: string
+        specific_destination:
+          type: string
+        created_by:
+          type: string
+        created_at:
+          type: string
+        tags:
+          type: string
+        active:
+          $ref: '#/components/schemas/YesOrNo'
+        campaign_id:
+          description: ID of the campaign
+          type: string
+        creative_type_id:
+          type: number
+        custom_append_url_parameters:
+          type: string
+        custom_prepend_url_parameters:
+          type: string
+      required:
+      - creative_type_id
+      type: object
     Creative:
       properties:
         creative_id:
@@ -223,16 +260,6 @@ components:
       required:
       - creative_type_id
       type: object
-    Creative_Wrapper:
-      properties:
-        creative:
-          $ref: '#/components/schemas/Creative'
-      type: object
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
     Partner_Campaign_Creative:
       properties:
         campaign_creative:
@@ -262,42 +289,15 @@ components:
                   type: number
               type: object
           type: object
-    Creative_Item:
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
+    Creative_Wrapper:
       properties:
-        content_type:
-          type: string
-        creative_item_id:
-          description: ID of the creative item
-          type: string
-        description:
-          type: string
-        filename:
-          type: string
-        img_url:
-          type: string
-        preview:
-          type: string
-        specific_destination:
-          type: string
-        created_by:
-          type: string
-        created_at:
-          type: string
-        tags:
-          type: string
-        active:
-          $ref: '#/components/schemas/YesOrNo'
-        campaign_id:
-          description: ID of the campaign
-          type: string
-        creative_type_id:
-          type: number
-        custom_append_url_parameters:
-          type: string
-        custom_prepend_url_parameters:
-          type: string
-      required:
-      - creative_type_id
+        creative:
+          $ref: '#/components/schemas/Creative'
       type: object
 x-tagGroups:
 - name: Partner Management (v1)

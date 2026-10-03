@@ -1204,16 +1204,76 @@ components:
                 value:
                   type: number
                   description: The actual value of this metric
-    Fraud_Incident_Type_IP_Address:
+    Fraud_Incident_Metric_Conversion_Value:
       allOf:
-      - $ref: '#/components/schemas/Fraud_Incident_Base'
+      - oneOf:
+        - $ref: '#/components/schemas/Fraud_Incident_Type_IP_Address'
+        - $ref: '#/components/schemas/Fraud_Incident_Type_Partner'
       - type: object
-        properties:
-          ip_address:
-            type: string
-            description: A hashed identifier for an IP address
-        required:
-        - ip_address
+        description: Properties for Conversion value
+        allOf:
+        - type: object
+          required:
+          - metric
+          properties:
+            metric:
+              type: string
+              description: The metric name
+              enum:
+              - conversion_value
+        - allOf:
+          - $ref: '#/components/schemas/Fraud_Incident_Metric_Ttc/allOf/1/allOf/1'
+          - type: object
+            required:
+            - data
+            properties:
+              data:
+                type: object
+                required:
+                - currency
+                properties:
+                  currency:
+                    type: string
+                    description: The campaigns default currency
+          - $ref: '#/components/schemas/Fraud_Incident_Metric_Ttc/allOf/1/allOf/2'
+    Fraud_Incident_Base:
+      properties:
+        id:
+          description: A unique ID for the incident
+          type: string
+        type:
+          description: Which type of entity triggered this incident
+          type: string
+          enum:
+          - ip_address
+          - conversion
+          - partner
+        date:
+          description: The date of the incident
+          type: string
+        time_window:
+          description: Over how many days did we calculate the metric
+          type: string
+        status:
+          description: Status of the record
+          type: string
+          enum:
+          - active
+          - deleted
+        created_at:
+          description: Timestamp of the record creation
+          type: string
+        deleted_at:
+          description: Timestamp of the record deletion
+          type: string
+      required:
+      - id
+      - type
+      - date
+      - time_window
+      - status
+      - created_at
+      - deleted_at
     Fraud_Incident_Metric_Basic:
       allOf:
       - oneOf:
@@ -1304,76 +1364,16 @@ components:
                         type: string
                         description: The conversion reference
         - $ref: '#/components/schemas/Fraud_Incident_Metric_Ttc/allOf/1/allOf/2'
-    Fraud_Incident_Metric_Conversion_Value:
+    Fraud_Incident_Type_IP_Address:
       allOf:
-      - oneOf:
-        - $ref: '#/components/schemas/Fraud_Incident_Type_IP_Address'
-        - $ref: '#/components/schemas/Fraud_Incident_Type_Partner'
+      - $ref: '#/components/schemas/Fraud_Incident_Base'
       - type: object
-        description: Properties for Conversion value
-        allOf:
-        - type: object
-          required:
-          - metric
-          properties:
-            metric:
-              type: string
-              description: The metric name
-              enum:
-              - conversion_value
-        - allOf:
-          - $ref: '#/components/schemas/Fraud_Incident_Metric_Ttc/allOf/1/allOf/1'
-          - type: object
-            required:
-            - data
-            properties:
-              data:
-                type: object
-                required:
-                - currency
-                properties:
-                  currency:
-                    type: string
-                    description: The campaigns default currency
-          - $ref: '#/components/schemas/Fraud_Incident_Metric_Ttc/allOf/1/allOf/2'
-    Fraud_Incident_Base:
-      properties:
-        id:
-          description: A unique ID for the incident
-          type: string
-        type:
-          description: Which type of entity triggered this incident
-          type: string
-          enum:
-          - ip_address
-          - conversion
-          - partner
-        date:
-          description: The date of the incident
-          type: string
-        time_window:
-          description: Over how many days did we calculate the metric
-          type: string
-        status:
-          description: Status of the record
-          type: string
-          enum:
-          - active
-          - deleted
-        created_at:
-          description: Timestamp of the record creation
-          type: string
-        deleted_at:
-          description: Timestamp of the record deletion
-          type: string
-      required:
-      - id
-      - type
-      - date
-      - time_window
-      - status
-      - created_at
-      - deleted_at
+        properties:
+          ip_address:
+            type: string
+            description: A hashed identifier for an IP address
+        required:
+        - ip_address
     Fraud_Incident_Type_Partner:
       allOf:
       - $ref: '#/components/schemas/Fraud_Incident_Base'

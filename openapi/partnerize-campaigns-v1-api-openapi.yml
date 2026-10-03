@@ -287,6 +287,13 @@ paths:
       x-operation-id-original: Request Access to Campaigns
 components:
   schemas:
+    Currency:
+      enum:
+      - GBP
+      - USD
+      - EUR
+      - JPY
+      type: string
     Campaign:
       oneOf:
       - properties:
@@ -533,18 +540,6 @@ components:
       - title
       - destination_url
       type: object
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
-    Status:
-      type: string
-      enum:
-      - a
-      - p
-      - r
-      - n
     Partner_Campaign_Wrapper:
       properties:
         campaign:
@@ -559,12 +554,17 @@ components:
                 $ref: '#/components/schemas/Status'
             type: object
       type: object
-    Currency:
+    Status:
+      type: string
       enum:
-      - GBP
-      - USD
-      - EUR
-      - JPY
+      - a
+      - p
+      - r
+      - n
+    YesOrNo:
+      enum:
+      - y
+      - n
       type: string
 x-tagGroups:
 - name: Partner Management (v1)

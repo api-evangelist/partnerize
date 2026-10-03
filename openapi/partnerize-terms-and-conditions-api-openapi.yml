@@ -169,6 +169,11 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
     Locale:
       enum:
       - bg
@@ -218,11 +223,6 @@ components:
       - vi
       - zh_cn
       - zh_hk
-      type: string
-    YesOrNo:
-      enum:
-      - y
-      - n
       type: string
 x-tagGroups:
 - name: Partner Management (v1)

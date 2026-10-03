@@ -1107,6 +1107,11 @@ paths:
       x-operation-id-original: List all Brand Campaigns
 components:
   schemas:
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
     Campaign:
       oneOf:
       - properties:
@@ -1395,16 +1400,6 @@ components:
       - title
       - destination_url
       type: object
-    Campaign_Wrapper:
-      properties:
-        campaign:
-          $ref: '#/components/schemas/Campaign'
-      type: object
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
     Status:
       type: string
       enum:
@@ -1412,6 +1407,11 @@ components:
       - p
       - r
       - n
+    Campaign_Wrapper:
+      properties:
+        campaign:
+          $ref: '#/components/schemas/Campaign'
+      type: object
     Currency:
       enum:
       - GBP

@@ -626,6 +626,70 @@ paths:
       x-operation-id-original: List all Creatives for a Campaign by Tags
 components:
   schemas:
+    Creative_Item:
+      properties:
+        content_type:
+          type: string
+        creative_item_id:
+          description: ID of the creative item
+          type: string
+        description:
+          type: string
+        filename:
+          type: string
+        img_url:
+          type: string
+        preview:
+          type: string
+        specific_destination:
+          type: string
+        created_by:
+          type: string
+        created_at:
+          type: string
+        tags:
+          type: string
+        active:
+          $ref: '#/components/schemas/YesOrNo'
+        campaign_id:
+          description: ID of the campaign
+          type: string
+        creative_type_id:
+          type: number
+        custom_append_url_parameters:
+          type: string
+        custom_prepend_url_parameters:
+          type: string
+      required:
+      - creative_type_id
+      type: object
+    Creative_Tag:
+      properties:
+        campaign_id:
+          description: ID of the Campaign
+          type: string
+        creative_tag_id:
+          description: ID of the Creative Tag
+          type: string
+        creatives:
+          items:
+            properties:
+              creative_id:
+                description: ID of the Creative
+                type: string
+              creative_item_id:
+                description: ID of the Creative Item
+                type: string
+          type: array
+        name:
+          type: string
+        created_by:
+          type: string
+        created_at:
+          type: string
+      required:
+      - name
+      type: object
     Creative_Tag_Wrapper:
       properties:
         creative_tag:
@@ -688,79 +752,15 @@ components:
       required:
       - creative_type_id
       type: object
-    Creative_Wrapper:
-      properties:
-        creative:
-          $ref: '#/components/schemas/Creative'
-      type: object
-    Creative_Tag:
-      properties:
-        campaign_id:
-          description: ID of the Campaign
-          type: string
-        creative_tag_id:
-          description: ID of the Creative Tag
-          type: string
-        creatives:
-          items:
-            properties:
-              creative_id:
-                description: ID of the Creative
-                type: string
-              creative_item_id:
-                description: ID of the Creative Item
-                type: string
-          type: array
-        name:
-          type: string
-        created_by:
-          type: string
-        created_at:
-          type: string
-      required:
-      - name
-      type: object
     YesOrNo:
       enum:
       - y
       - n
       type: string
-    Creative_Item:
+    Creative_Wrapper:
       properties:
-        content_type:
-          type: string
-        creative_item_id:
-          description: ID of the creative item
-          type: string
-        description:
-          type: string
-        filename:
-          type: string
-        img_url:
-          type: string
-        preview:
-          type: string
-        specific_destination:
-          type: string
-        created_by:
-          type: string
-        created_at:
-          type: string
-        tags:
-          type: string
-        active:
-          $ref: '#/components/schemas/YesOrNo'
-        campaign_id:
-          description: ID of the campaign
-          type: string
-        creative_type_id:
-          type: number
-        custom_append_url_parameters:
-          type: string
-        custom_prepend_url_parameters:
-          type: string
-      required:
-      - creative_type_id
+        creative:
+          $ref: '#/components/schemas/Creative'
       type: object
 x-tagGroups:
 - name: Networks and Brands Management (v1)

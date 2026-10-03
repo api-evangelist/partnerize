@@ -310,6 +310,11 @@ paths:
       x-operation-id-original: Update Partner (Commission) Groups
 components:
   schemas:
+    Commission_Group_Wrapper:
+      properties:
+        commission_group:
+          $ref: '#/components/schemas/Commission_Group'
+      type: object
     Commission_Group:
       properties:
         campaign_id:
@@ -334,11 +339,6 @@ components:
       required:
       - name
       - campaign_id
-      type: object
-    Commission_Group_Wrapper:
-      properties:
-        commission_group:
-          $ref: '#/components/schemas/Commission_Group'
       type: object
     YesOrNo:
       enum:

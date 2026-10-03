@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Partnerize Brands Attribution … Network Terms and… Network…
+  title: Partnerize Brands Attribution … Network Terms and… Network……
   version: 1.4.99
   description: '# Introduction
 
@@ -73,31 +73,6 @@ paths:
       summary: List all terms and conditions for a network
 components:
   schemas:
-    Term_Wrapper:
-      properties:
-        database:
-          $ref: '#/components/schemas/Term'
-      type: object
-    Term:
-      properties:
-        locale:
-          $ref: '#/components/schemas/Locale'
-          description: Locale of the terms
-        ref_legal_entity_id:
-          $ref: '#/components/schemas/Legal_Entities'
-          description: Legal entity of the terms
-        ref_terms_and_conditions_locale_id:
-          description: Terms and conditions ID, used for partner signup
-          type: string
-        terms_and_conditions:
-          description: Terms and condition content
-          type: string
-        tnc_type:
-          enum:
-          - entity
-          - network
-          type: string
-      type: object
     Locale:
       enum:
       - bg
@@ -148,6 +123,11 @@ components:
       - zh_cn
       - zh_hk
       type: string
+    Term_Wrapper:
+      properties:
+        database:
+          $ref: '#/components/schemas/Term'
+      type: object
     Country:
       enum:
       - AD
@@ -401,6 +381,26 @@ components:
       - ZM
       - ZW
       type: string
+    Term:
+      properties:
+        locale:
+          $ref: '#/components/schemas/Locale'
+          description: Locale of the terms
+        ref_legal_entity_id:
+          $ref: '#/components/schemas/Legal_Entities'
+          description: Legal entity of the terms
+        ref_terms_and_conditions_locale_id:
+          description: Terms and conditions ID, used for partner signup
+          type: string
+        terms_and_conditions:
+          description: Terms and condition content
+          type: string
+        tnc_type:
+          enum:
+          - entity
+          - network
+          type: string
+      type: object
     Legal_Entities:
       enum:
       - '1'

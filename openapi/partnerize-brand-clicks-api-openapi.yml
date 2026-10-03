@@ -175,32 +175,6 @@ paths:
       summary: Retrieve a Brand Clicks Report
 components:
   schemas:
-    Brand_Clicks:
-      properties:
-        unique_click_count:
-          description: total count of unique clicks
-          type: number
-        start_date_time_utc:
-          type: string
-        end_date_time_utc:
-          type: string
-        start_date_time:
-          type: string
-        end_date_time:
-          type: string
-        limit:
-          type: number
-        offset:
-          type: number
-        count:
-          type: number
-        execution_time:
-          type: string
-        clicks:
-          type: array
-          items:
-            $ref: '#/components/schemas/Brand_Click'
-      type: object
     Brand_Click:
       properties:
         click_id:
@@ -249,6 +223,32 @@ components:
           type: string
         publisher_name:
           type: string
+      type: object
+    Brand_Clicks:
+      properties:
+        unique_click_count:
+          description: total count of unique clicks
+          type: number
+        start_date_time_utc:
+          type: string
+        end_date_time_utc:
+          type: string
+        start_date_time:
+          type: string
+        end_date_time:
+          type: string
+        limit:
+          type: number
+        offset:
+          type: number
+        count:
+          type: number
+        execution_time:
+          type: string
+        clicks:
+          type: array
+          items:
+            $ref: '#/components/schemas/Brand_Click'
       type: object
     Currency:
       enum:

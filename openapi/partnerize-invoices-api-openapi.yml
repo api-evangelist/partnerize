@@ -200,11 +200,6 @@ components:
         vat_rate:
           type: number
       type: object
-    Invoice_Wrapper:
-      properties:
-        invoice:
-          $ref: '#/components/schemas/Invoice'
-      type: object
     Timezones:
       enum:
       - Australia/Sydney
@@ -220,6 +215,11 @@ components:
       - EUR
       - JPY
       type: string
+    Invoice_Wrapper:
+      properties:
+        invoice:
+          $ref: '#/components/schemas/Invoice'
+      type: object
 x-tagGroups:
 - name: Networks and Brands Management (v1)
   tags:

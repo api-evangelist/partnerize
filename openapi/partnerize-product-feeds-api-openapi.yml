@@ -209,6 +209,16 @@ paths:
       x-operation-id-original: Update a Campaign Feed
 components:
   schemas:
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
+    Feed_Wrapper:
+      properties:
+        feed:
+          $ref: '#/components/schemas/Feed'
+      type: object
     Feed:
       properties:
         active:
@@ -232,16 +242,6 @@ components:
         updated:
           description: UNIX timestamp
           type: number
-      type: object
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
-    Feed_Wrapper:
-      properties:
-        feed:
-          $ref: '#/components/schemas/Feed'
       type: object
 x-tagGroups:
 - name: Networks and Brands Management (v1)

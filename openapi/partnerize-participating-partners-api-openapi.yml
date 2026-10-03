@@ -345,6 +345,11 @@ paths:
       x-operation-id-original: Retrieve a Participating Partner
 components:
   schemas:
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
     Publisher_Website:
       properties:
         publisher_id:
@@ -374,41 +379,55 @@ components:
       required:
       - website_url
       type: object
-    Publisher_Database:
-      properties:
-        database_id:
-          description: ID of the partner database
-          type: string
-        publisher_id:
-          description: ID of the partner the database belongs to
-          type: string
-        active:
-          $ref: '#/components/schemas/YesOrNo'
-        creation_method:
-          type: string
-        database_name:
-          type: string
-        female:
-          type: number
-        male:
-          type: number
-        max_age:
-          type: number
-        min_age:
-          type: number
-        size:
-          type: number
-      required:
-      - database_name
-      - creation_method
-      - size
-      type: object
-    Currency:
+    Locale:
       enum:
-      - GBP
-      - USD
-      - EUR
-      - JPY
+      - bg
+      - cs
+      - da
+      - de
+      - de_at
+      - en
+      - en_au
+      - en_ca
+      - en_us
+      - es
+      - es_mx
+      - el
+      - et
+      - fi
+      - fl
+      - fr
+      - fr_ca
+      - hu
+      - id
+      - it
+      - jp
+      - ko
+      - ko_kr
+      - lt
+      - lv
+      - ms_my
+      - mt
+      - my
+      - nl
+      - 'no'
+      - pl
+      - po
+      - pt
+      - pt_br
+      - ro
+      - ru
+      - sg
+      - sk
+      - sl
+      - sv
+      - sv_se
+      - th
+      - tl
+      - tr
+      - vi
+      - zh_cn
+      - zh_hk
       type: string
     Publisher:
       type: object
@@ -496,60 +515,15 @@ components:
           type: number
         vertical_name:
           type: string
-    Locale:
-      enum:
-      - bg
-      - cs
-      - da
-      - de
-      - de_at
-      - en
-      - en_au
-      - en_ca
-      - en_us
-      - es
-      - es_mx
-      - el
-      - et
-      - fi
-      - fl
-      - fr
-      - fr_ca
-      - hu
-      - id
-      - it
-      - jp
-      - ko
-      - ko_kr
-      - lt
-      - lv
-      - ms_my
-      - mt
-      - my
-      - nl
-      - 'no'
-      - pl
-      - po
-      - pt
-      - pt_br
-      - ro
-      - ru
-      - sg
-      - sk
-      - sl
-      - sv
-      - sv_se
-      - th
-      - tl
-      - tr
-      - vi
-      - zh_cn
-      - zh_hk
-      type: string
     Publisher_Wrapper:
       properties:
         publisher:
           $ref: '#/components/schemas/Publisher'
+    Publisher_Database_Wrapper:
+      properties:
+        database:
+          $ref: '#/components/schemas/Publisher_Database'
+      type: object
     Country:
       enum:
       - AD
@@ -803,16 +777,6 @@ components:
       - ZM
       - ZW
       type: string
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
-    Publisher_Database_Wrapper:
-      properties:
-        database:
-          $ref: '#/components/schemas/Publisher_Database'
-      type: object
     Status:
       type: string
       enum:
@@ -825,6 +789,42 @@ components:
         website:
           $ref: '#/components/schemas/Publisher_Website'
       type: object
+    Publisher_Database:
+      properties:
+        database_id:
+          description: ID of the partner database
+          type: string
+        publisher_id:
+          description: ID of the partner the database belongs to
+          type: string
+        active:
+          $ref: '#/components/schemas/YesOrNo'
+        creation_method:
+          type: string
+        database_name:
+          type: string
+        female:
+          type: number
+        male:
+          type: number
+        max_age:
+          type: number
+        min_age:
+          type: number
+        size:
+          type: number
+      required:
+      - database_name
+      - creation_method
+      - size
+      type: object
+    Currency:
+      enum:
+      - GBP
+      - USD
+      - EUR
+      - JPY
+      type: string
 x-tagGroups:
 - name: Networks and Brands Management (v1)
   tags:

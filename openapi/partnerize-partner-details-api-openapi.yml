@@ -256,37 +256,6 @@ paths:
                       week_start: monday
 components:
   schemas:
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
-    Partner_Website:
-      properties:
-        publisher_id:
-          description: ID of the partner the website belongs to
-          type: string
-        active:
-          $ref: '#/components/schemas/YesOrNo'
-        primary:
-          $ref: '#/components/schemas/YesOrNo'
-        website_country:
-          $ref: '#/components/schemas/Country'
-        website_name:
-          type: string
-        website_type:
-          type: number
-        website_type_name:
-          type: string
-        website_url:
-          type: string
-        website_vertical:
-          type: number
-        website_vertical_name:
-          type: string
-      required:
-      - website_url
-      type: object
     Locale:
       enum:
       - bg
@@ -337,32 +306,11 @@ components:
       - zh_cn
       - zh_hk
       type: string
-    Partner_Database:
-      properties:
-        publisher_id:
-          description: ID of the partner the database belongs to
-          type: string
-        active:
-          $ref: '#/components/schemas/YesOrNo'
-        creation_method:
-          type: string
-        database_name:
-          type: string
-        female:
-          type: number
-        male:
-          type: number
-        max_age:
-          type: number
-        min_age:
-          type: number
-        size:
-          type: number
-      required:
-      - database_name
-      - creation_method
-      - size
-      type: object
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
     Partner:
       properties:
         abn:
@@ -449,6 +397,72 @@ components:
           type: string
         week_start:
           type: string
+    Currency:
+      enum:
+      - GBP
+      - USD
+      - EUR
+      - JPY
+      type: string
+    Status:
+      type: string
+      enum:
+      - a
+      - p
+      - r
+      - n
+    Partner_Database:
+      properties:
+        publisher_id:
+          description: ID of the partner the database belongs to
+          type: string
+        active:
+          $ref: '#/components/schemas/YesOrNo'
+        creation_method:
+          type: string
+        database_name:
+          type: string
+        female:
+          type: number
+        male:
+          type: number
+        max_age:
+          type: number
+        min_age:
+          type: number
+        size:
+          type: number
+      required:
+      - database_name
+      - creation_method
+      - size
+      type: object
+    Partner_Website:
+      properties:
+        publisher_id:
+          description: ID of the partner the website belongs to
+          type: string
+        active:
+          $ref: '#/components/schemas/YesOrNo'
+        primary:
+          $ref: '#/components/schemas/YesOrNo'
+        website_country:
+          $ref: '#/components/schemas/Country'
+        website_name:
+          type: string
+        website_type:
+          type: number
+        website_type_name:
+          type: string
+        website_url:
+          type: string
+        website_vertical:
+          type: number
+        website_vertical_name:
+          type: string
+      required:
+      - website_url
+      type: object
     Country:
       enum:
       - AD
@@ -701,20 +715,6 @@ components:
       - ZA
       - ZM
       - ZW
-      type: string
-    Status:
-      type: string
-      enum:
-      - a
-      - p
-      - r
-      - n
-    Currency:
-      enum:
-      - GBP
-      - USD
-      - EUR
-      - JPY
       type: string
 x-tagGroups:
 - name: Partner Management (v1)

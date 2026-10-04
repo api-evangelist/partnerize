@@ -315,6 +315,11 @@ components:
         commission_group:
           $ref: '#/components/schemas/Commission_Group'
       type: object
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
     Commission_Group:
       properties:
         campaign_id:
@@ -340,11 +345,6 @@ components:
       - name
       - campaign_id
       type: object
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
 x-tagGroups:
 - name: Networks and Brands Management (v1)
   tags:

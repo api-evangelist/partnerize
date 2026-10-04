@@ -175,13 +175,6 @@ paths:
       x-operation-id-original: Create Payment Details
 components:
   schemas:
-    Currency:
-      enum:
-      - GBP
-      - USD
-      - EUR
-      - JPY
-      type: string
     Country:
       enum:
       - AD
@@ -435,6 +428,18 @@ components:
       - ZM
       - ZW
       type: string
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
+    Currency:
+      enum:
+      - GBP
+      - USD
+      - EUR
+      - JPY
+      type: string
     Payment_Details:
       properties:
         1011l22:
@@ -480,11 +485,6 @@ components:
                   type: number
               type: object
           type: object
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
 x-tagGroups:
 - name: Partner Management (v1)
   tags:

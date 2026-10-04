@@ -264,11 +264,11 @@ paths:
       x-operation-id-original: Retrieve a Voucher Code
 components:
   schemas:
-    Commission_Group_Wrapper:
-      properties:
-        commission_group:
-          $ref: '#/components/schemas/Commission_Group'
-      type: object
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
     Voucher_Code:
       properties:
         commission_groups:
@@ -327,11 +327,11 @@ components:
         voucher_code:
           $ref: '#/components/schemas/Voucher_Code'
       type: object
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
+    Commission_Group_Wrapper:
+      properties:
+        commission_group:
+          $ref: '#/components/schemas/Commission_Group'
+      type: object
 x-tagGroups:
 - name: Networks and Brands Management (v1)
   tags:

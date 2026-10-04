@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Partnerize Brands Attribution … Campaign Transaction………
+  title: Partnerize Brands Attribution … Campaign Transaction…………
   version: 1.4.99
   description: '# Introduction
 
@@ -804,12 +804,29 @@ paths:
       x-operation-id-original: Bulk process Transaction Queries
 components:
   schemas:
-    Currency:
+    Transaction_Query_State_History:
+      properties:
+        conversion_expected_commission:
+          type: number
+        conversion_item_id:
+          type: string
+        created_at:
+          type: string
+        notes:
+          type: string
+        state:
+          $ref: '#/components/schemas/Transaction_Query_State'
+        transaction_query_id:
+          type: string
+        transaction_query_state_id:
+          type: string
+        user_id:
+          type: string
+      type: object
+    YesOrNo:
       enum:
-      - GBP
-      - USD
-      - EUR
-      - JPY
+      - y
+      - n
       type: string
     Transaction_Query_State:
       enum:
@@ -817,19 +834,18 @@ components:
       - approved
       - rejected
       type: string
+    Status:
+      type: string
+      enum:
+      - a
+      - p
+      - r
+      - n
     Transaction_Query_Wrapper:
       properties:
         transaction_query:
           $ref: '#/components/schemas/Transaction_Query'
       type: object
-    Timezones:
-      enum:
-      - Australia/Sydney
-      - UTC
-      - Europe/London
-      - CET
-      - GMT
-      type: string
     Transaction_Query:
       properties:
         campaign:
@@ -925,42 +941,26 @@ components:
         updated_at:
           type: string
       type: object
-    Transaction_Query_State_History:
-      properties:
-        conversion_expected_commission:
-          type: number
-        conversion_item_id:
-          type: string
-        created_at:
-          type: string
-        notes:
-          type: string
-        state:
-          $ref: '#/components/schemas/Transaction_Query_State'
-        transaction_query_id:
-          type: string
-        transaction_query_state_id:
-          type: string
-        user_id:
-          type: string
-      type: object
-    Status:
-      type: string
+    Timezones:
       enum:
-      - a
-      - p
-      - r
-      - n
+      - Australia/Sydney
+      - UTC
+      - Europe/London
+      - CET
+      - GMT
+      type: string
     Transaction_Query_Type:
       enum:
       - untracked
       - incorrect_commission
       - declined
       type: string
-    YesOrNo:
+    Currency:
       enum:
-      - y
-      - n
+      - GBP
+      - USD
+      - EUR
+      - JPY
       type: string
 x-tagGroups:
 - name: Networks and Brands Management (v1)

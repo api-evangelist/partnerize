@@ -51,6 +51,11 @@ paths:
       x-operation-id-original: List Conversion Type
 components:
   schemas:
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
     Conversion_Type:
       properties:
         conversion_type:
@@ -71,11 +76,6 @@ components:
               $ref: '#/components/schemas/YesOrNo'
           type: object
       type: object
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
 x-tagGroups:
 - name: Partner Management (v1)
   tags:

@@ -1112,6 +1112,11 @@ components:
       - y
       - n
       type: string
+    Campaign_Wrapper:
+      properties:
+        campaign:
+          $ref: '#/components/schemas/Campaign'
+      type: object
     Campaign:
       oneOf:
       - properties:
@@ -1407,11 +1412,6 @@ components:
       - p
       - r
       - n
-    Campaign_Wrapper:
-      properties:
-        campaign:
-          $ref: '#/components/schemas/Campaign'
-      type: object
     Currency:
       enum:
       - GBP

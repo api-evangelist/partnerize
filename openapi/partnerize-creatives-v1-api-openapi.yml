@@ -166,6 +166,11 @@ paths:
       x-operation-id-original: List Creatives on a Campaign
 components:
   schemas:
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
     Creative_Item:
       properties:
         content_type:
@@ -203,6 +208,35 @@ components:
       required:
       - creative_type_id
       type: object
+    Partner_Campaign_Creative:
+      properties:
+        campaign_creative:
+          properties:
+            campaign_id:
+              description: Id of the campaign
+              type: string
+            creatives:
+              properties:
+                Banner:
+                  description: number of Banner creatives
+                  type: number
+                Email:
+                  description: number of Emails
+                  type: number
+                Feed:
+                  description: number of Feeds
+                  type: number
+                HTML:
+                  description: number of HTML creatives
+                  type: number
+                HTML Form:
+                  description: number of HTML Forms
+                  type: number
+                Text Link:
+                  description: number of Text links
+                  type: number
+              type: object
+          type: object
     Creative:
       properties:
         creative_id:
@@ -260,40 +294,6 @@ components:
       required:
       - creative_type_id
       type: object
-    Partner_Campaign_Creative:
-      properties:
-        campaign_creative:
-          properties:
-            campaign_id:
-              description: Id of the campaign
-              type: string
-            creatives:
-              properties:
-                Banner:
-                  description: number of Banner creatives
-                  type: number
-                Email:
-                  description: number of Emails
-                  type: number
-                Feed:
-                  description: number of Feeds
-                  type: number
-                HTML:
-                  description: number of HTML creatives
-                  type: number
-                HTML Form:
-                  description: number of HTML Forms
-                  type: number
-                Text Link:
-                  description: number of Text links
-                  type: number
-              type: object
-          type: object
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
     Creative_Wrapper:
       properties:
         creative:

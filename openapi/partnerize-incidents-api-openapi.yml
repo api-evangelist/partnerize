@@ -1134,6 +1134,35 @@ paths:
       operationId: get-incident-partners
 components:
   schemas:
+    Fraud_Incident_Type_IP_Address:
+      allOf:
+      - $ref: '#/components/schemas/Fraud_Incident_Base'
+      - type: object
+        properties:
+          ip_address:
+            type: string
+            description: A hashed identifier for an IP address
+        required:
+        - ip_address
+    Fraud_Incident_Type_Partner:
+      allOf:
+      - $ref: '#/components/schemas/Fraud_Incident_Base'
+      - type: object
+        properties:
+          partner:
+            type: object
+            properties:
+              id:
+                description: ID of the partner
+                type: string
+              name:
+                description: The name of the partner
+                type: string
+            required:
+            - id
+            - name
+        required:
+        - partner
     Fraud_Incident_Metric_Ttc:
       allOf:
       - oneOf:
@@ -1236,6 +1265,26 @@ components:
                     type: string
                     description: The campaigns default currency
           - $ref: '#/components/schemas/Fraud_Incident_Metric_Ttc/allOf/1/allOf/2'
+    Fraud_Incident_Metric_Basic:
+      allOf:
+      - oneOf:
+        - $ref: '#/components/schemas/Fraud_Incident_Type_IP_Address'
+        - $ref: '#/components/schemas/Fraud_Incident_Type_Partner'
+      - type: object
+        description: Properties that all indicent types share
+        required:
+        - metric
+        allOf:
+        - type: object
+          properties:
+            metric:
+              type: string
+              description: The metric name
+              enum:
+              - volume_clicks
+              - volume_conversions
+              - conversion_ratio
+        - $ref: '#/components/schemas/Fraud_Incident_Metric_Ttc/allOf/1/allOf/2'
     Fraud_Incident_Base:
       properties:
         id:
@@ -1274,26 +1323,6 @@ components:
       - status
       - created_at
       - deleted_at
-    Fraud_Incident_Metric_Basic:
-      allOf:
-      - oneOf:
-        - $ref: '#/components/schemas/Fraud_Incident_Type_IP_Address'
-        - $ref: '#/components/schemas/Fraud_Incident_Type_Partner'
-      - type: object
-        description: Properties that all indicent types share
-        required:
-        - metric
-        allOf:
-        - type: object
-          properties:
-            metric:
-              type: string
-              description: The metric name
-              enum:
-              - volume_clicks
-              - volume_conversions
-              - conversion_ratio
-        - $ref: '#/components/schemas/Fraud_Incident_Metric_Ttc/allOf/1/allOf/2'
     Fraud_Incident_Metric_Basket:
       allOf:
       - oneOf:
@@ -1364,35 +1393,6 @@ components:
                         type: string
                         description: The conversion reference
         - $ref: '#/components/schemas/Fraud_Incident_Metric_Ttc/allOf/1/allOf/2'
-    Fraud_Incident_Type_IP_Address:
-      allOf:
-      - $ref: '#/components/schemas/Fraud_Incident_Base'
-      - type: object
-        properties:
-          ip_address:
-            type: string
-            description: A hashed identifier for an IP address
-        required:
-        - ip_address
-    Fraud_Incident_Type_Partner:
-      allOf:
-      - $ref: '#/components/schemas/Fraud_Incident_Base'
-      - type: object
-        properties:
-          partner:
-            type: object
-            properties:
-              id:
-                description: ID of the partner
-                type: string
-              name:
-                description: The name of the partner
-                type: string
-            required:
-            - id
-            - name
-        required:
-        - partner
 x-tagGroups:
 - name: Networks and Brands Management (v1)
   tags:

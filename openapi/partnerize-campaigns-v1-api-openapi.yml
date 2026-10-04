@@ -287,12 +287,10 @@ paths:
       x-operation-id-original: Request Access to Campaigns
 components:
   schemas:
-    Currency:
+    YesOrNo:
       enum:
-      - GBP
-      - USD
-      - EUR
-      - JPY
+      - y
+      - n
       type: string
     Campaign:
       oneOf:
@@ -561,10 +559,12 @@ components:
       - p
       - r
       - n
-    YesOrNo:
+    Currency:
       enum:
-      - y
-      - n
+      - GBP
+      - USD
+      - EUR
+      - JPY
       type: string
 x-tagGroups:
 - name: Partner Management (v1)

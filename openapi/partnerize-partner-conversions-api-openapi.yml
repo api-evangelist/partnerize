@@ -231,6 +231,164 @@ paths:
       summary: Retrieve a Partner Conversions Report
 components:
   schemas:
+    Conversion_Data:
+      type: object
+      properties:
+        conversion_id:
+          description: Id of the conversion
+          example: 111111l314
+          type: string
+        campaign_id:
+          description: Id of the campaign
+          example: 111111l29
+          type: string
+        publisher_id:
+          description: Id of the partner
+          example: 111111l92
+          type: string
+        conversion_time:
+          type: string
+        creative_type:
+          type: number
+        creative_id:
+          type: number
+        specific_creative_id:
+          type: number
+        currency:
+          $ref: '#/components/schemas/Currency'
+        publisher_reference:
+          type: string
+        advertiser_reference:
+          type: string
+        conversion_reference:
+          type: string
+        customer_type:
+          enum:
+          - new
+          - existing
+          type: string
+        referer_ip:
+          type: string
+        source_referer:
+          type: string
+        last_modified:
+          type: string
+        conversion_type:
+          description: the conversion type id
+          type: number
+        country:
+          $ref: '#/components/schemas/Country'
+        customer_reference:
+          type: string
+        ref_device_id:
+          type: number
+        ref_partnership_model_id:
+          type: number
+        ref_traffic_source_id:
+          type: number
+        ref_conversion_metric_id:
+          type: number
+        ref_user_context_id:
+          type: number
+        campaign_title:
+          type: string
+        publisher_name:
+          type: string
+        click:
+          $ref: '#/components/schemas/Click'
+        ref_conversion_metric:
+          type: string
+        ref_device:
+          type: string
+        ref_partnership_model:
+          type: string
+        ref_traffic_source:
+          type: string
+        ref_user_context:
+          type: string
+        conversion_value:
+          properties:
+            conversion_status:
+              $ref: '#/components/schemas/Conversion_Status'
+            value:
+              type: number
+          publisher_commission:
+            type: number
+        meta_data:
+          type: array
+          description: Key value pairs of meta data
+          items:
+            properties:
+              key:
+                description: A key value pair.
+                type: string
+        conversion_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Conversion_Item'
+        was_disputed:
+          type: boolean
+        conversion_lag:
+          type: number
+        clickref:
+          type: string
+    Partner_Conversions:
+      properties:
+        total_conversion_count:
+          description: 'conversion count for each currency. E.g. "USD": 25, "EUR": 37'
+          type: object
+          properties:
+            currency_iso:
+              description: 'key value pairs where the currency iso is the key. E.g. EUR: 37'
+              type: number
+        total_publisher_commission:
+          description: 'total commission for each currency. E.g. "USD": 250.5, "EUR": 180.9'
+          type: object
+          properties:
+            currency_iso:
+              description: 'key value pairs where the currency iso is the key. E.g. EUR: 37'
+              type: number
+        total_value:
+          description: 'total order value. E.g. "USD": 435.5, "EUR": 267.9'
+          type: object
+          properties:
+            currency_iso:
+              description: 'key value pairs where the currency iso is the key. E.g. EUR: 37'
+              type: number
+        start_date_time_utc:
+          type: string
+        end_date_time_utc:
+          type: string
+        start_date_time:
+          type: string
+        end_date_time:
+          type: string
+        limit:
+          type: number
+        meta_data:
+          type: array
+          description: Key value pairs of meta data
+          items:
+            properties:
+              key:
+                description: A key value pair.
+                type: string
+        count:
+          type: number
+        execution_time:
+          type: string
+        conversions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Conversion_Data'
+      type: object
+    Currency:
+      enum:
+      - GBP
+      - USD
+      - EUR
+      - JPY
+      type: string
     Click:
       properties:
         campaign_id:
@@ -281,56 +439,6 @@ components:
           type: string
         clickref:
           type: string
-      type: object
-    Partner_Conversions:
-      properties:
-        total_conversion_count:
-          description: 'conversion count for each currency. E.g. "USD": 25, "EUR": 37'
-          type: object
-          properties:
-            currency_iso:
-              description: 'key value pairs where the currency iso is the key. E.g. EUR: 37'
-              type: number
-        total_publisher_commission:
-          description: 'total commission for each currency. E.g. "USD": 250.5, "EUR": 180.9'
-          type: object
-          properties:
-            currency_iso:
-              description: 'key value pairs where the currency iso is the key. E.g. EUR: 37'
-              type: number
-        total_value:
-          description: 'total order value. E.g. "USD": 435.5, "EUR": 267.9'
-          type: object
-          properties:
-            currency_iso:
-              description: 'key value pairs where the currency iso is the key. E.g. EUR: 37'
-              type: number
-        start_date_time_utc:
-          type: string
-        end_date_time_utc:
-          type: string
-        start_date_time:
-          type: string
-        end_date_time:
-          type: string
-        limit:
-          type: number
-        meta_data:
-          type: array
-          description: Key value pairs of meta data
-          items:
-            properties:
-              key:
-                description: A key value pair.
-                type: string
-        count:
-          type: number
-        execution_time:
-          type: string
-        conversions:
-          type: array
-          items:
-            $ref: '#/components/schemas/Conversion_Data'
       type: object
     Conversion_Item:
       properties:
@@ -626,114 +734,6 @@ components:
       - ZA
       - ZM
       - ZW
-      type: string
-    Conversion_Data:
-      type: object
-      properties:
-        conversion_id:
-          description: Id of the conversion
-          example: 111111l314
-          type: string
-        campaign_id:
-          description: Id of the campaign
-          example: 111111l29
-          type: string
-        publisher_id:
-          description: Id of the partner
-          example: 111111l92
-          type: string
-        conversion_time:
-          type: string
-        creative_type:
-          type: number
-        creative_id:
-          type: number
-        specific_creative_id:
-          type: number
-        currency:
-          $ref: '#/components/schemas/Currency'
-        publisher_reference:
-          type: string
-        advertiser_reference:
-          type: string
-        conversion_reference:
-          type: string
-        customer_type:
-          enum:
-          - new
-          - existing
-          type: string
-        referer_ip:
-          type: string
-        source_referer:
-          type: string
-        last_modified:
-          type: string
-        conversion_type:
-          description: the conversion type id
-          type: number
-        country:
-          $ref: '#/components/schemas/Country'
-        customer_reference:
-          type: string
-        ref_device_id:
-          type: number
-        ref_partnership_model_id:
-          type: number
-        ref_traffic_source_id:
-          type: number
-        ref_conversion_metric_id:
-          type: number
-        ref_user_context_id:
-          type: number
-        campaign_title:
-          type: string
-        publisher_name:
-          type: string
-        click:
-          $ref: '#/components/schemas/Click'
-        ref_conversion_metric:
-          type: string
-        ref_device:
-          type: string
-        ref_partnership_model:
-          type: string
-        ref_traffic_source:
-          type: string
-        ref_user_context:
-          type: string
-        conversion_value:
-          properties:
-            conversion_status:
-              $ref: '#/components/schemas/Conversion_Status'
-            value:
-              type: number
-          publisher_commission:
-            type: number
-        meta_data:
-          type: array
-          description: Key value pairs of meta data
-          items:
-            properties:
-              key:
-                description: A key value pair.
-                type: string
-        conversion_items:
-          type: array
-          items:
-            $ref: '#/components/schemas/Conversion_Item'
-        was_disputed:
-          type: boolean
-        conversion_lag:
-          type: number
-        clickref:
-          type: string
-    Currency:
-      enum:
-      - GBP
-      - USD
-      - EUR
-      - JPY
       type: string
 x-tagGroups:
 - name: Partner Management (v1)

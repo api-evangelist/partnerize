@@ -262,32 +262,11 @@ paths:
       x-operation-id-original: Retrieve a Partner Website
 components:
   schemas:
-    Partner_Website:
-      properties:
-        publisher_id:
-          description: ID of the partner the website belongs to
-          type: string
-        active:
-          $ref: '#/components/schemas/YesOrNo'
-        primary:
-          $ref: '#/components/schemas/YesOrNo'
-        website_country:
-          $ref: '#/components/schemas/Country'
-        website_name:
-          type: string
-        website_type:
-          type: number
-        website_type_name:
-          type: string
-        website_url:
-          type: string
-        website_vertical:
-          type: number
-        website_vertical_name:
-          type: string
-      required:
-      - website_url
-      type: object
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
     Country:
       enum:
       - AD
@@ -541,11 +520,6 @@ components:
       - ZM
       - ZW
       type: string
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
     Partner_Website_Wrapper:
       properties:
         website:
@@ -556,6 +530,32 @@ components:
                 description: ID of the partner website
                 type: string
           - $ref: '#/components/schemas/Partner_Website'
+      type: object
+    Partner_Website:
+      properties:
+        publisher_id:
+          description: ID of the partner the website belongs to
+          type: string
+        active:
+          $ref: '#/components/schemas/YesOrNo'
+        primary:
+          $ref: '#/components/schemas/YesOrNo'
+        website_country:
+          $ref: '#/components/schemas/Country'
+        website_name:
+          type: string
+        website_type:
+          type: number
+        website_type_name:
+          type: string
+        website_url:
+          type: string
+        website_vertical:
+          type: number
+        website_vertical_name:
+          type: string
+      required:
+      - website_url
       type: object
 x-tagGroups:
 - name: Partner Management (v1)

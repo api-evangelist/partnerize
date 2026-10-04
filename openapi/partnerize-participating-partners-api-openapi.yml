@@ -345,185 +345,6 @@ paths:
       x-operation-id-original: Retrieve a Participating Partner
 components:
   schemas:
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
-    Publisher_Website:
-      properties:
-        publisher_id:
-          description: ID of the partner the website belongs to
-          type: string
-        website_id:
-          description: ID of the partner website
-          type: string
-        active:
-          $ref: '#/components/schemas/YesOrNo'
-        primary:
-          $ref: '#/components/schemas/YesOrNo'
-        website_country:
-          $ref: '#/components/schemas/Country'
-        website_name:
-          type: string
-        website_type:
-          type: number
-        website_type_name:
-          type: string
-        website_url:
-          type: string
-        website_vertical:
-          type: number
-        website_vertical_name:
-          type: string
-      required:
-      - website_url
-      type: object
-    Locale:
-      enum:
-      - bg
-      - cs
-      - da
-      - de
-      - de_at
-      - en
-      - en_au
-      - en_ca
-      - en_us
-      - es
-      - es_mx
-      - el
-      - et
-      - fi
-      - fl
-      - fr
-      - fr_ca
-      - hu
-      - id
-      - it
-      - jp
-      - ko
-      - ko_kr
-      - lt
-      - lv
-      - ms_my
-      - mt
-      - my
-      - nl
-      - 'no'
-      - pl
-      - po
-      - pt
-      - pt_br
-      - ro
-      - ru
-      - sg
-      - sk
-      - sl
-      - sv
-      - sv_se
-      - th
-      - tl
-      - tr
-      - vi
-      - zh_cn
-      - zh_hk
-      type: string
-    Publisher:
-      type: object
-      properties:
-        websites:
-          items:
-            $ref: '#/components/schemas/Publisher_Website_Wrapper'
-          type: array
-        us_tax_state:
-          type: string
-        reporting_identifier:
-          type: string
-        publisher_id:
-          description: ID of the partner
-          type: string
-        network_status:
-          $ref: '#/components/schemas/Status'
-        network_notes:
-          type: string
-        network_id:
-          description: ID of the network this partner belongs to
-          type: string
-        legal_entity:
-          $ref: '#/components/schemas/Country'
-        is_affiliate_user:
-          $ref: '#/components/schemas/YesOrNo'
-        gst_registered:
-          type: string
-        foreign_identifier:
-          type: string
-        databases:
-          items:
-            $ref: '#/components/schemas/Publisher_Database_Wrapper'
-          type: array
-        campaign_select:
-          type: string
-        abn:
-          type: string
-        account_name:
-          type: string
-        company_division:
-          type: string
-        company_name:
-          type: string
-        contact_email:
-          type: string
-        contact_locale:
-          $ref: '#/components/schemas/Locale'
-        contact_name:
-          type: string
-        default_currency:
-          $ref: '#/components/schemas/Currency'
-        description:
-          description: Description of the partner
-          type: string
-        im_provider:
-          type: string
-        im_username:
-          type: string
-        is_foreign_network:
-          $ref: '#/components/schemas/YesOrNo'
-          description: Reporting only flag. All conversions will be automatically approved but will not be invoiceable.
-        is_lead_user:
-          $ref: '#/components/schemas/YesOrNo'
-        operating_country:
-          $ref: '#/components/schemas/Country'
-        promotional_method:
-          type: number
-        promotional_method_name:
-          type: string
-        promotional_countries:
-          type: array
-          items:
-            type: object
-            properties:
-              iso:
-                type: string
-              name:
-                type: string
-        uk_vat_registered:
-          $ref: '#/components/schemas/YesOrNo'
-        vat_number:
-          type: number
-        vertical:
-          type: number
-        vertical_name:
-          type: string
-    Publisher_Wrapper:
-      properties:
-        publisher:
-          $ref: '#/components/schemas/Publisher'
-    Publisher_Database_Wrapper:
-      properties:
-        database:
-          $ref: '#/components/schemas/Publisher_Database'
-      type: object
     Country:
       enum:
       - AD
@@ -777,18 +598,11 @@ components:
       - ZM
       - ZW
       type: string
-    Status:
-      type: string
+    YesOrNo:
       enum:
-      - a
-      - p
-      - r
+      - y
       - n
-    Publisher_Website_Wrapper:
-      properties:
-        website:
-          $ref: '#/components/schemas/Publisher_Website'
-      type: object
+      type: string
     Publisher_Database:
       properties:
         database_id:
@@ -817,6 +631,192 @@ components:
       - database_name
       - creation_method
       - size
+      type: object
+    Locale:
+      enum:
+      - bg
+      - cs
+      - da
+      - de
+      - de_at
+      - en
+      - en_au
+      - en_ca
+      - en_us
+      - es
+      - es_mx
+      - el
+      - et
+      - fi
+      - fl
+      - fr
+      - fr_ca
+      - hu
+      - id
+      - it
+      - jp
+      - ko
+      - ko_kr
+      - lt
+      - lv
+      - ms_my
+      - mt
+      - my
+      - nl
+      - 'no'
+      - pl
+      - po
+      - pt
+      - pt_br
+      - ro
+      - ru
+      - sg
+      - sk
+      - sl
+      - sv
+      - sv_se
+      - th
+      - tl
+      - tr
+      - vi
+      - zh_cn
+      - zh_hk
+      type: string
+    Publisher_Wrapper:
+      properties:
+        publisher:
+          $ref: '#/components/schemas/Publisher'
+    Publisher_Database_Wrapper:
+      properties:
+        database:
+          $ref: '#/components/schemas/Publisher_Database'
+      type: object
+    Publisher_Website:
+      properties:
+        publisher_id:
+          description: ID of the partner the website belongs to
+          type: string
+        website_id:
+          description: ID of the partner website
+          type: string
+        active:
+          $ref: '#/components/schemas/YesOrNo'
+        primary:
+          $ref: '#/components/schemas/YesOrNo'
+        website_country:
+          $ref: '#/components/schemas/Country'
+        website_name:
+          type: string
+        website_type:
+          type: number
+        website_type_name:
+          type: string
+        website_url:
+          type: string
+        website_vertical:
+          type: number
+        website_vertical_name:
+          type: string
+      required:
+      - website_url
+      type: object
+    Status:
+      type: string
+      enum:
+      - a
+      - p
+      - r
+      - n
+    Publisher:
+      type: object
+      properties:
+        websites:
+          items:
+            $ref: '#/components/schemas/Publisher_Website_Wrapper'
+          type: array
+        us_tax_state:
+          type: string
+        reporting_identifier:
+          type: string
+        publisher_id:
+          description: ID of the partner
+          type: string
+        network_status:
+          $ref: '#/components/schemas/Status'
+        network_notes:
+          type: string
+        network_id:
+          description: ID of the network this partner belongs to
+          type: string
+        legal_entity:
+          $ref: '#/components/schemas/Country'
+        is_affiliate_user:
+          $ref: '#/components/schemas/YesOrNo'
+        gst_registered:
+          type: string
+        foreign_identifier:
+          type: string
+        databases:
+          items:
+            $ref: '#/components/schemas/Publisher_Database_Wrapper'
+          type: array
+        campaign_select:
+          type: string
+        abn:
+          type: string
+        account_name:
+          type: string
+        company_division:
+          type: string
+        company_name:
+          type: string
+        contact_email:
+          type: string
+        contact_locale:
+          $ref: '#/components/schemas/Locale'
+        contact_name:
+          type: string
+        default_currency:
+          $ref: '#/components/schemas/Currency'
+        description:
+          description: Description of the partner
+          type: string
+        im_provider:
+          type: string
+        im_username:
+          type: string
+        is_foreign_network:
+          $ref: '#/components/schemas/YesOrNo'
+          description: Reporting only flag. All conversions will be automatically approved but will not be invoiceable.
+        is_lead_user:
+          $ref: '#/components/schemas/YesOrNo'
+        operating_country:
+          $ref: '#/components/schemas/Country'
+        promotional_method:
+          type: number
+        promotional_method_name:
+          type: string
+        promotional_countries:
+          type: array
+          items:
+            type: object
+            properties:
+              iso:
+                type: string
+              name:
+                type: string
+        uk_vat_registered:
+          $ref: '#/components/schemas/YesOrNo'
+        vat_number:
+          type: number
+        vertical:
+          type: number
+        vertical_name:
+          type: string
+    Publisher_Website_Wrapper:
+      properties:
+        website:
+          $ref: '#/components/schemas/Publisher_Website'
       type: object
     Currency:
       enum:

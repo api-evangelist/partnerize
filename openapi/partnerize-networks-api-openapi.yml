@@ -57,11 +57,6 @@ paths:
       summary: List Networks
 components:
   schemas:
-    Network_Wrapper:
-      properties:
-        network:
-          $ref: '#/components/schemas/Network'
-      type: object
     Network:
       properties:
         auto_approve_publishers:
@@ -89,11 +84,6 @@ components:
           description: Any additional notes for the network
           type: string
       type: object
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
     Locale:
       enum:
       - bg
@@ -144,6 +134,16 @@ components:
       - zh_cn
       - zh_hk
       type: string
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
+    Network_Wrapper:
+      properties:
+        network:
+          $ref: '#/components/schemas/Network'
+      type: object
 x-tagGroups:
 - name: Networks and Brands Management (v1)
   tags:

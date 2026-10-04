@@ -263,6 +263,11 @@ paths:
       x-operation-id-original: Delete a Campaign
 components:
   schemas:
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
     Country:
       enum:
       - AD
@@ -516,16 +521,6 @@ components:
       - ZM
       - ZW
       type: string
-    Deal_Wrapper:
-      properties:
-        campaign_deal:
-          $ref: '#/components/schemas/Deal'
-      type: object
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
     Deal:
       properties:
         active:
@@ -571,6 +566,11 @@ components:
       - description
       - offer_type
       - offer_value
+      type: object
+    Deal_Wrapper:
+      properties:
+        campaign_deal:
+          $ref: '#/components/schemas/Deal'
       type: object
 x-tagGroups:
 - name: Networks and Brands Management (v1)

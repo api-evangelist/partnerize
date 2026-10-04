@@ -90,31 +90,11 @@ components:
         commission_group:
           $ref: '#/components/schemas/Commission_Group'
       type: object
-    Commission_Group:
-      properties:
-        campaign_id:
-          description: ID of the campaign
-          type: string
-        description:
-          type: string
-        name:
-          type: string
-        publishers:
-          description: IDs of the publishers to be associated with the group
-          items:
-            type: string
-          type: array
-        active:
-          $ref: '#/components/schemas/YesOrNo'
-        commission_group_id:
-          description: ID of the commission group
-          type: string
-        last_modified:
-          type: string
-      required:
-      - name
-      - campaign_id
-      type: object
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
     Voucher_Code:
       properties:
         commission_groups:
@@ -143,11 +123,31 @@ components:
         end_date_time:
           type: string
       type: object
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
+    Commission_Group:
+      properties:
+        campaign_id:
+          description: ID of the campaign
+          type: string
+        description:
+          type: string
+        name:
+          type: string
+        publishers:
+          description: IDs of the publishers to be associated with the group
+          items:
+            type: string
+          type: array
+        active:
+          $ref: '#/components/schemas/YesOrNo'
+        commission_group_id:
+          description: ID of the commission group
+          type: string
+        last_modified:
+          type: string
+      required:
+      - name
+      - campaign_id
+      type: object
 x-tagGroups:
 - name: Partner Management (v1)
   tags:

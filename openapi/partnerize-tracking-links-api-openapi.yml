@@ -275,6 +275,13 @@ paths:
       x-operation-id-original: Update a Tracking Link
 components:
   schemas:
+    Key_Value_Pair:
+      properties:
+        key:
+          type: string
+        value:
+          type: string
+      type: object
     Link:
       properties:
         id:
@@ -294,13 +301,6 @@ components:
             $ref: '#/components/schemas/Key_Value_Pair'
         active:
           type: boolean
-      type: object
-    Key_Value_Pair:
-      properties:
-        key:
-          type: string
-        value:
-          type: string
       type: object
 x-tagGroups:
 - name: Partner Management (v1)

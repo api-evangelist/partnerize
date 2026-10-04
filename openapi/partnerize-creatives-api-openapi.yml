@@ -663,6 +663,16 @@ components:
       required:
       - creative_type_id
       type: object
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
+    Creative_Tag_Wrapper:
+      properties:
+        creative_tag:
+          $ref: '#/components/schemas/Creative_Tag'
+      type: object
     Creative_Tag:
       properties:
         campaign_id:
@@ -689,11 +699,6 @@ components:
           type: string
       required:
       - name
-      type: object
-    Creative_Tag_Wrapper:
-      properties:
-        creative_tag:
-          $ref: '#/components/schemas/Creative_Tag'
       type: object
     Creative:
       properties:
@@ -752,11 +757,6 @@ components:
       required:
       - creative_type_id
       type: object
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
     Creative_Wrapper:
       properties:
         creative:

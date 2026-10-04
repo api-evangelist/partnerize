@@ -208,6 +208,11 @@ components:
       - CET
       - GMT
       type: string
+    Invoice_Wrapper:
+      properties:
+        invoice:
+          $ref: '#/components/schemas/Invoice'
+      type: object
     Currency:
       enum:
       - GBP
@@ -215,11 +220,6 @@ components:
       - EUR
       - JPY
       type: string
-    Invoice_Wrapper:
-      properties:
-        invoice:
-          $ref: '#/components/schemas/Invoice'
-      type: object
 x-tagGroups:
 - name: Networks and Brands Management (v1)
   tags:

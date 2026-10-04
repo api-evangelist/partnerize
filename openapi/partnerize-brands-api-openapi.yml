@@ -672,6 +672,11 @@ components:
       - ZM
       - ZW
       type: string
+    Brand_Account_Wrapper:
+      properties:
+        advertiser:
+          $ref: '#/components/schemas/Brand_Account'
+      type: object
     Status:
       type: string
       enum:
@@ -767,11 +772,6 @@ components:
       - postcode
       - phone
       - signup_ip
-      type: object
-    Brand_Account_Wrapper:
-      properties:
-        advertiser:
-          $ref: '#/components/schemas/Brand_Account'
       type: object
     Currency:
       enum:

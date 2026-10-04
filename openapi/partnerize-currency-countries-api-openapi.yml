@@ -54,6 +54,24 @@ paths:
       x-operation-id-original: List Country Currency Combinations
 components:
   schemas:
+    Reference_Currency_Country:
+      properties:
+        currency_country:
+          properties:
+            currency_iso:
+              properties:
+                AED:
+                  description: The ISO value for the currency
+                  properties:
+                    country_iso:
+                      description: An array of ISO values for the compatible currencies
+                      items:
+                        $ref: '#/components/schemas/Country'
+                      type: array
+                  type: object
+              type: object
+          type: object
+      type: object
     Country:
       enum:
       - AD
@@ -307,24 +325,6 @@ components:
       - ZM
       - ZW
       type: string
-    Reference_Currency_Country:
-      properties:
-        currency_country:
-          properties:
-            currency_iso:
-              properties:
-                AED:
-                  description: The ISO value for the currency
-                  properties:
-                    country_iso:
-                      description: An array of ISO values for the compatible currencies
-                      items:
-                        $ref: '#/components/schemas/Country'
-                      type: array
-                  type: object
-              type: object
-          type: object
-      type: object
 x-tagGroups:
 - name: Networks and Brands Management (v1)
   tags:

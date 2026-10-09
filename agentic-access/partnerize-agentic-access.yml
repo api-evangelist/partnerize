@@ -1,24 +1,74 @@
-generated: '2026-07-15'
+generated: '2026-09-23'
 method: generated
-source: openapi/partnerize-brands-api-openapi.yml, openapi/partnerize-partners-api-openapi.yml
+source: openapi/partnerize-attribution-api-openapi.yml, openapi/partnerize-available-commission-api-openapi.yml,
+  openapi/partnerize-brand-clicks-api-openapi.yml, openapi/partnerize-brand-conversions-api-openapi.yml,
+  openapi/partnerize-brand-discovery-v2-api-openapi.yml, openapi/partnerize-brands-api-openapi.yml,
+  openapi/partnerize-campaign-conversions-api-openapi.yml, openapi/partnerize-campaign-extra-fields-api-openapi.yml,
+  openapi/partnerize-campaign-group-campaigns-api-openapi.yml, openapi/partnerize-campaign-invitations-v2-api-openapi.yml,
+  openapi/partnerize-campaign-references-v1-api-openapi.yml, openapi/partnerize-campaign-requests-and-invites-api-openapi.yml,
+  openapi/partnerize-campaign-requests-v2-api-openapi.yml, openapi/partnerize-campaign-terms-and-conditions-acknowledgments-api-openapi.yml,
+  openapi/partnerize-campaign-terms-and-conditions-api-openapi.yml, openapi/partnerize-campaign-transaction-queries-api-openapi.yml,
+  openapi/partnerize-campaign-v3-api-openapi.yml, openapi/partnerize-campaigns-api-openapi.yml,
+  openapi/partnerize-campaigns-v1-api-openapi.yml, openapi/partnerize-clicks-api-openapi.yml,
+  openapi/partnerize-commission-groups-api-openapi.yml, openapi/partnerize-commission-groups-v1-api-openapi.yml,
+  openapi/partnerize-commissions-api-openapi.yml, openapi/partnerize-commissions-csv-download-api-openapi.yml,
+  openapi/partnerize-communication-templates-api-openapi.yml, openapi/partnerize-communications-api-openapi.yml,
+  openapi/partnerize-conversion-metrics-api-openapi.yml, openapi/partnerize-conversion-types-api-openapi.yml,
+  openapi/partnerize-conversions-api-openapi.yml, openapi/partnerize-countries-api-openapi.yml,
+  openapi/partnerize-creatives-api-openapi.yml, openapi/partnerize-creatives-v1-api-openapi.yml,
+  openapi/partnerize-currencies-api-openapi.yml, openapi/partnerize-currency-countries-api-openapi.yml,
+  openapi/partnerize-current-user-api-openapi.yml, openapi/partnerize-custom-terms-and-conditions-api-openapi.yml,
+  openapi/partnerize-databases-api-openapi.yml, openapi/partnerize-deals-api-openapi.yml, openapi/partnerize-deep-link-domains-api-openapi.yml,
+  openapi/partnerize-devices-api-openapi.yml, openapi/partnerize-discovery-settings-api-openapi.yml,
+  openapi/partnerize-exclusive-code-api-openapi.yml, openapi/partnerize-exports-api-openapi.yml,
+  openapi/partnerize-feeds-v1-api-openapi.yml, openapi/partnerize-filter-sets-api-openapi.yml,
+  openapi/partnerize-impressions-api-openapi.yml, openapi/partnerize-in-cart-api-openapi.yml,
+  openapi/partnerize-incidents-api-openapi.yml, openapi/partnerize-invoices-api-openapi.yml,
+  openapi/partnerize-jobs-api-openapi.yml, openapi/partnerize-jobs-v1-api-openapi.yml, openapi/partnerize-locales-api-openapi.yml,
+  openapi/partnerize-meta-attributes-api-openapi.yml, openapi/partnerize-meta-fields-api-openapi.yml,
+  openapi/partnerize-metrics-api-openapi.yml, openapi/partnerize-my-brands-api-openapi.yml,
+  openapi/partnerize-network-partners-api-openapi.yml, openapi/partnerize-network-terms-and-conditions-acknowledgments-v3-api-openapi.yml,
+  openapi/partnerize-network-terms-and-conditions-api-openapi.yml, openapi/partnerize-network-terms-and-conditions-v3-api-openapi.yml,
+  openapi/partnerize-networks-api-openapi.yml, openapi/partnerize-paid-search-violations-api-openapi.yml,
+  openapi/partnerize-participating-partners-api-openapi.yml, openapi/partnerize-participations-api-openapi.yml,
+  openapi/partnerize-partner-clicks-api-openapi.yml, openapi/partnerize-partner-commissions-api-openapi.yml,
+  openapi/partnerize-partner-conversions-api-openapi.yml, openapi/partnerize-partner-details-api-openapi.yml,
+  openapi/partnerize-partner-groups-api-openapi.yml, openapi/partnerize-partner-payable-api-openapi.yml,
+  openapi/partnerize-partner-whitelisting-api-openapi.yml, openapi/partnerize-partnerize-tag-features-api-openapi.yml,
+  openapi/partnerize-partnerize-tags-api-openapi.yml, openapi/partnerize-partnership-models-api-openapi.yml,
+  openapi/partnerize-payment-details-api-openapi.yml, openapi/partnerize-placeholders-api-openapi.yml,
+  openapi/partnerize-platform-communications-api-openapi.yml, openapi/partnerize-preferred-partner-api-openapi.yml,
+  openapi/partnerize-product-feeds-api-openapi.yml, openapi/partnerize-promotional-commissions-api-openapi.yml,
+  openapi/partnerize-promotional-methods-api-openapi.yml, openapi/partnerize-publishers-api-openapi.yml,
+  openapi/partnerize-reporting-on-meta-data-api-openapi.yml, openapi/partnerize-saved-reports-api-openapi.yml,
+  openapi/partnerize-self-billing-api-openapi.yml, openapi/partnerize-split-api-openapi.yml,
+  openapi/partnerize-summary-api-openapi.yml, openapi/partnerize-suppressed-code-api-openapi.yml,
+  openapi/partnerize-terms-and-conditions-api-openapi.yml, openapi/partnerize-tiered-commissions-api-openapi.yml,
+  openapi/partnerize-tiers-api-openapi.yml, openapi/partnerize-timezones-api-openapi.yml, openapi/partnerize-tracking-links-api-openapi.yml,
+  openapi/partnerize-traffic-sources-api-openapi.yml, openapi/partnerize-transaction-queries-api-openapi.yml,
+  openapi/partnerize-transaction-query-reasons-api-openapi.yml, openapi/partnerize-us-states-api-openapi.yml,
+  openapi/partnerize-user-contexts-api-openapi.yml, openapi/partnerize-verticals-api-openapi.yml,
+  openapi/partnerize-voucher-codes-api-openapi.yml, openapi/partnerize-voucher-codes-v1-api-openapi.yml,
+  openapi/partnerize-voucher-commissions-api-openapi.yml, openapi/partnerize-website-types-api-openapi.yml,
+  openapi/partnerize-websites-api-openapi.yml
 description: Recommended x-agentic-access execution contracts, classified heuristically from
   the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
   audience per deployment. See research/curity/agentic-governance/.
 summary:
-  operations: 341
+  operations: 321
   by_action_class:
-    connected: 183
-    acting: 158
+    connected: 169
+    acting: 152
   by_consequence:
-    read: 183
-    write: 153
+    read: 169
+    write: 147
     physical: 3
     safety-critical: 2
   human_in_the_loop_required: 2
 operations:
-- path: /network
+- path: /v2/campaigns/{campaignId}/publishers/{publisherId}/attribution
   method: get
-  operationId: listNetworks
+  operationId: get-partners-attribution
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -26,9 +76,19 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /user/publisher
-  method: post
-  operationId: createNetworkPartners
+- path: /v2/campaigns/{campaignId}/attribution
+  method: get
+  operationId: get-v2-attribution
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/campaigns/{campaignId}/attribution
+  method: patch
+  operationId: post-v2-attribution
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -42,25 +102,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /user
-  method: post
-  operationId: createNetworkUserPartners
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /network/{network_id}/publisher
+- path: /user/publisher/{publisher_id}/available_commission
   method: get
-  operationId: listAllPartnersOnTheNetwork
+  operationId: Retrieve Available Commission
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -68,25 +112,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /network/{network_id}/publisher
-  method: post
-  operationId: updatePartnersNetworkStatus
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /reference/terms/{locale}/{country}/{network_id}
+- path: /reporting/report_advertiser/campaign/{campaign_id}/click.{format}
   method: get
-  operationId: List-network-terms-and-conditions
+  operationId: brand-clicks
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -94,9 +122,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /campaign
+- path: /reporting/report_advertiser/campaign/{campaign_id}/conversion.{format}
   method: get
-  operationId: listAllCampaigns
+  operationId: brand-conversions
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -104,25 +132,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /campaign
-  method: post
-  operationId: createACampaign
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /campaign/{campaign_id}
+- path: /v2/publishers/{publisherId}/discovery/advertisers
   method: get
-  operationId: Retrieve a Campaign
+  operationId: getBrands
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -130,77 +142,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /campaign/{campaign_id}
-  method: post
-  operationId: Delete a Campaign
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /campaign/{campaign_id}
-  method: put
-  operationId: Update a Campaign
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /campaign/{campaign_id}/publisher
+- path: /v2/publishers/{publisherId}/discovery/advertisers/{advertiserId}
   method: get
-  operationId: List all Participating Partners
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /campaign/{campaign_id}/publisher
-  method: post
-  operationId: update-partner-participation
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /campaign/{campaign_id}/publisher/{publisher_id}
-  method: get
-  operationId: Retrieve a Participating Partner
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /user/advertiser/{advertiser_id}/campaign
-  method: get
-  operationId: List all Brand Campaigns
+  operationId: getBrand
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -260,9 +204,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /campaign/{campaign_id}/voucher_code
+- path: /v3/network/{networkId}/brands
   method: get
-  operationId: List all Voucher Codes
+  operationId: getV3NetworkByNetworkIdBrands
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -270,9 +214,19 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /campaign/{campaign_id}/voucher_code
+- path: /v3/brand
+  method: get
+  operationId: getV3Brand
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/brand/campaigns/{campaignID}/conversions/bulk
   method: post
-  operationId: Create Voucher Codes
+  operationId: v3-conversion-bulk-update
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -286,25 +240,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /campaign/{campaign_id}/voucher_code
-  method: put
-  operationId: Update Voucher Codes
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /campaign/{campaign_id}/voucher_code/{voucher_code_id}
+- path: /reference/campaign_extra_field
   method: get
-  operationId: Retrieve a Voucher Code
+  operationId: List all Campaign Extra Fields
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -312,9 +250,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /campaign/{campaign_id}/creative
+- path: /v3/brand/campaign-groups/{campaign_group_id}/campaigns
   method: get
-  operationId: List all Creatives for a Campaign
+  operationId: Retrieve a List of Campaigns in a Campaign Group
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -322,9 +260,19 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /campaign/{campaign_id}/creative
+- path: /v2/publishers/{publisher_id}/invitations/advertisers/
+  method: get
+  operationId: List Invitations
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/publishers/{publisherId}/invitations/accept
   method: post
-  operationId: Create Campaign Creatives
+  operationId: acceptInvitations
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -338,35 +286,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /campaign/{campaign_id}/creative
-  method: put
-  operationId: Update Campaign Creatives
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /campaign/{campaign_id}/creative/tags
-  method: get
-  operationId: List all Creative Tags for Campaign
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /campaign/{campaign_id}/creative/tags
+- path: /v2/publishers/{publisherId}/invitations/decline
   method: post
-  operationId: Create Campaign Creative Tags
+  operationId: declineInvitations
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -380,1239 +302,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /campaign/{campaign_id}/creative/tags
-  method: put
-  operationId: Update Campaign Creative Tags
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /campaign/{campaign_id}/creative/tags
-  method: delete
-  operationId: Delete Campaign Creative Tags
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /campaign/{campaign_id}/creative_tags/creative
+- path: /reference/publisher/camref/{publisher_id}
   method: get
-  operationId: List all Creatives for a Campaign by Tags
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /campaign/{campaign_id}/feed
-  method: get
-  operationId: List all Product Feeds
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /campaign/{campaign_id}/feed
-  method: post
-  operationId: Create a Product Feed for a Campaign
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /campaign/{campaign_id}/feed
-  method: put
-  operationId: Update a Campaign Feed
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /campaign/{campaign_id}/deal
-  method: get
-  operationId: List all Campaign Deals
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /campaign/{campaign_id}/deal
-  method: post
-  operationId: Create a Campaign Deal
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /campaign/{campaign_id}/deal/{deal_id}
-  method: get
-  operationId: Retrieve a Campaign Deal
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /campaign/{campaign_id}/deal/{deal_id}
-  method: patch
-  operationId: Update a Campaign Deal
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /campaign/{campaign_id}/deal/{deal_id}
-  method: delete
-  operationId: Delete a Campaign
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /campaign/{campaign_id}/meta
-  method: get
-  operationId: List all Meta attributes for Campaign
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /campaign/{campaign_id}/tq
-  method: get
-  operationId: List all Transaction Queries
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /campaign/{campaign_id}/tq/{transaction_query_id}/approve
-  method: post
-  operationId: Approve a Transaction Query
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /campaign/{campaign_id}/tq/{transaction_query_id}/pend
-  method: post
-  operationId: Pend a Transaction Query
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /campaign/{campaign_id}/tq/{transaction_query_id}/reject
-  method: post
-  operationId: Reject a Transaction Query
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /campaign/{campaign_id}/tq/process
-  method: post
-  operationId: Bulk process Transaction Queries
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /campaign/{campaign_id}/tq_reasons
-  method: get
-  operationId: List Transaction Query Reasons
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /campaign/{campaign_id}/tq_reasons
-  method: post
-  operationId: Create a Transaction Query Reason
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /campaign/{campaign_id}/tq_reasons/{transaction_query_reason_id}/delete
-  method: post
-  operationId: Delete a Transaction Query Reason
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /user/advertiser/{advertiser_id}/invoice
-  method: get
-  operationId: List all Invoices
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /user/advertiser/{advertiser_id}/invoice/{invoice_id}
-  method: get
-  operationId: Retrieve an Invoice
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /campaign/{campaign_id}/custom_terms/
-  method: post
-  operationId: Create Custom Terms and Conditions
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /campaign/{campaign_id}/custom_terms/
-  method: get
-  operationId: List Terms and Conditions for a given Campaign
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /campaign/{campaign_id}/custom_terms/{terms_id}?{download=true}
-  method: get
-  operationId: readCustomTerms
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /campaign/{campaign_id}/custom_terms/publisher/{publisher_id}
-  method: get
-  operationId: readPartnerCampaignCustomTerms
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /campaign/{campaign_id}/custom_terms/{custom_terms_id}
-  method: delete
-  operationId: deleteCampaignCustomTerms
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /campaign/{campaign_id}/custom_terms/custom_terms_id/association
-  method: post
-  operationId: createAssocCampaignCustomTerms
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /campaign/{campaign_id}/custom_terms/custom_terms_id/association
-  method: delete
-  operationId: deleteAssocCampaignCustomTerms
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaignId}/commissions
-  method: get
-  operationId: get-commissions
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaignId}/commissions
-  method: post
-  operationId: create-commission
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaignId}/commissions/{commissionId}
-  method: get
-  operationId: get-commission
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaignId}/commissions/{commissionId}
-  method: patch
-  operationId: update-commission
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaignId}/commissions/{commissionId}/migrate
-  method: post
-  operationId: migrate-commission
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaignId}/commissions/{commissionId}/retire
-  method: post
-  operationId: retire-commission
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaignId}/commissions/all.csv
-  method: get
-  operationId: get-commission-csv-download
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaignId}/commissions/promotions
-  method: get
-  operationId: get-promotional-commissions
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaignId}/commissions/promotions
-  method: post
-  operationId: create-promotional-commission
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /campaign/{campaignId}/optimisation/voucher/commission
-  method: get
-  operationId: get-voucher-commissions
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /campaign/{campaignId}/optimisation/voucher/commission
-  method: post
-  operationId: post-voucher-commission
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /campaign/{campaignId}/optimisation/voucher/commission/{commissionId}
-  method: get
-  operationId: get-voucher-commission
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /campaign/{campaignId}/optimisation/voucher/commission/{commissionId}
-  method: put
-  operationId: get-voucher-commissions
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /campaign/{campaignId}/optimisation/voucher/commission/{commissionId}
-  method: delete
-  operationId: delete-voucher-commission
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /campaign/{campaignId}/optimisation/voucher/commission/{commissionId}/retire
-  method: post
-  operationId: retire-voucher-commission
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaignId}/commissions/promotions/{promotionalId}
-  method: get
-  operationId: get-promotional-commission
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaignId}/commissions/promotions/{promotionalId}
-  method: delete
-  operationId: delete-promotional-commission
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaignId}/commissions/promotions/{promotionalId}
-  method: patch
-  operationId: update-promotional-commission
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaignId}/commissions/promotions/{promotionalId}/retire
-  method: post
-  operationId: retire-promotional-commission
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaignId}/commissions/tiers
-  method: get
-  operationId: get-commission-tiers
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaignId}/commissions/tiers
-  method: post
-  operationId: create-commission-tier
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaignId}/commissions/tiers/{tierId}
-  method: delete
-  operationId: delete-commission-tier
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaignId}/commissions/tiers/{tierId}
-  method: patch
-  operationId: update-commission-tier
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaignId}/publishers/{publisherId}/commissions
-  method: get
-  operationId: get-publisher-commissions
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaignId}/publishers/{publisherId}/commissions/default
-  method: get
-  operationId: get-publisher-commissions-default
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaignId}/publishers/{publisherId}/commissions/campaign
-  method: get
-  operationId: get-publisher-commissions-campaign
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaignId}/publishers/{publisherId}/commissions/voucher
-  method: get
-  operationId: get-publisher-commissions-voucher
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaignId}/publishers/{publisherId}/commissions/promotion
-  method: get
-  operationId: get-publisher-commissions-promotion
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaignId}/publishers/{publisherId}/commissions/tier
-  method: get
-  operationId: get-publisher-commissions-tier
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaignId}/publishers/{publisherId}/commissions/active
-  method: get
-  operationId: get-active-publisher-commissions
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaignId}/meta-fields
-  method: get
-  operationId: get-meta-fields
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaignId}/commissions/tiers/meta-fields
-  method: get
-  operationId: get-tier-meta-fields
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /campaign/{campaign_id}/commission_group
-  method: get
-  operationId: List Partner Groups
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /campaign/{campaign_id}/commission_group/{commission_group_id}
-  method: get
-  operationId: Retrieve a Partner Group
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /commission_group
-  method: post
-  operationId: Create Partner Groups
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /commission_group
-  method: put
-  operationId: Update Partner (Commission) Groups
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaignId}/publishers/{publisherId}/attribution
-  method: get
-  operationId: get-partners-attribution
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaignId}/attribution
-  method: get
-  operationId: get-v2-attribution
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaignId}/attribution
-  method: patch
-  operationId: post-v2-attribution
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaignId}/attribution/suppressed-codes
-  method: get
-  operationId: get-v2-attribution-suppressed-codes
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaignId}/attribution/suppressed-codes
-  method: post
-  operationId: post-v2-campaigns-campaignId-attribution-suppressed-codes
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaignId}/attribution/suppressed-codes
-  method: delete
-  operationId: bulk-delete-v2-campaigns-campaignId-attribution-suppressed-codes
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaignId}/attribution/suppressed-codes/{id}
-  method: get
-  operationId: get-campaigns-campaignId-attribution-suppressed-codes-id
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaignId}/attribution/suppressed-codes/{id}
-  method: patch
-  operationId: patch-v2-campaigns-campaignId-attribution-suppressed-codes-id
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaignId}/attribution/suppressed-codes/{id}
-  method: delete
-  operationId: delete-campaigns-campaignId-attribution-suppressed-codes-id
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaignId}/attribution/preferred-partners
-  method: get
-  operationId: get-v2-attribution-preferred-partner
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaignId}/attribution/preferred-partners
-  method: post
-  operationId: post-v2-campaigns-campaignId-attribution-preferred-partners
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaignId}/attribution/preferred-partners
-  method: delete
-  operationId: bulk-delete-v2-campaigns-campaignId-attribution-preferred-partners
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaignId}/attribution/preferred-partners/{id}
-  method: delete
-  operationId: delete-v2-campaigns-campaignId-attribution-preferred-partners-id
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaignId}/attribution/preferred-partners/{id}
-  method: get
-  operationId: get-v2-campaigns-campaignId-attribution-preferred-partners-id
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaignId}/attribution/preferred-partners/{id}
-  method: patch
-  operationId: patch-v2-campaigns-campaignId-attribution-preferred-partners-id
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaignId}/attribution/exclusive-codes
-  method: get
-  operationId: get-v2-attribution-exclusive-codes
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaignId}/attribution/exclusive-codes
-  method: post
-  operationId: post-v2-campaigns-campaignId-attribution-exclusive-codes
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaignId}/attribution/exclusive-codes
-  method: delete
-  operationId: bulk-delete-v2-campaigns-campaignId-attribution-exclusive-codes
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaignId}/attribution/exclusive-codes/{id}
-  method: get
-  operationId: get-campaigns-campaignId-attribution-exclusive-codes-id
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaignId}/attribution/exclusive-codes/{id}
-  method: patch
-  operationId: patch-v2-campaigns-campaignId-attribution-exclusive-codes-id
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaignId}/attribution/exclusive-codes/{id}
-  method: delete
-  operationId: delete-campaigns-campaignId-attribution-exclusive-codes-id
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaignId}/attribution/in-cart
-  method: get
-  operationId: get-v2-attribution-in-cart
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaignId}/attribution/in-cart
-  method: patch
-  operationId: post-v2-attribution-in-cart
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaignId}/attribution/split
-  method: get
-  operationId: get-v2-campaigns-campaignId-attribution-split
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaignId}/attribution/split
-  method: patch
-  operationId: patch-v2-campaigns-campaignId-attribution-split
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/networks/{network_id}/publishers
-  method: get
-  operationId: get-publishers
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/networks/{network_id}/publishers.csv
-  method: post
-  operationId: export-publishers
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/networks/{network_id}/publishers/{publisher_id}
-  method: get
-  operationId: get-publisher-details
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/networks/{network_id}/publishers/ids
-  method: get
-  operationId: get-publishers-ids
+  operationId: List Campaign References
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -1740,9 +432,25 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /v2/networks/{networkId}/marketplace/settings/advertisers
+- path: /v2/publishers/{publisherId}/campaign-requests
+  method: post
+  operationId: createCampaignRequests
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/partner/campaign-terms-and-conditions-acknowledgments
   method: get
-  operationId: getMarketplaceBrands
+  operationId: listCampaignTermAcknowledgments
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -1750,9 +458,227 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /v2/networks/{networkId}/marketplace/settings/advertisers
+- path: /v3/partner/campaign-terms-and-conditions-acknowledgments
+  method: post
+  operationId: createCampaignTermAcknowledgment
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/partner/campaign-terms-and-conditions-acknowledgments/{id}
+  method: get
+  operationId: retrieveCampaignTermAcknowledgment
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/partner/campaign-terms-and-conditions
+  method: get
+  operationId: listCampaignTerms
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/partner/campaign-terms-and-conditions/{id}
+  method: get
+  operationId: retrieveCampaignTerms
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /campaign/{campaign_id}/custom_terms/{terms_id}?{download=true}
+  method: get
+  operationId: readCustomTerms
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /campaign/{campaign_id}/tq
+  method: get
+  operationId: List all Transaction Queries
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /campaign/{campaign_id}/tq/{transaction_query_id}/approve
+  method: post
+  operationId: Approve a Transaction Query
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /campaign/{campaign_id}/tq/{transaction_query_id}/pend
+  method: post
+  operationId: Pend a Transaction Query
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /campaign/{campaign_id}/tq/{transaction_query_id}/reject
+  method: post
+  operationId: Reject a Transaction Query
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /campaign/{campaign_id}/tq/process
+  method: post
+  operationId: Bulk process Transaction Queries
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/brand/campaigns
+  method: get
+  operationId: listCampaigns
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/brand/campaigns/{campaignId}
+  method: get
+  operationId: getCampaign
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/brand/campaigns/{campaignId}
+  method: patch
+  operationId: partialUpdateCampaign
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /campaign
+  method: get
+  operationId: listAllCampaigns
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /campaign
+  method: post
+  operationId: createACampaign
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /campaign/{campaign_id}
+  method: get
+  operationId: Retrieve a Campaign
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /campaign/{campaign_id}
+  method: post
+  operationId: Delete a Campaign
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /campaign/{campaign_id}
   method: put
-  operationId: updateMarketplaceBrands
+  operationId: Update a Campaign
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -1766,9 +692,29 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /v2/networks/{network_id}/partner-collections
+- path: /user/advertiser/{advertiser_id}/campaign
+  method: get
+  operationId: List all Brand Campaigns
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /user/publisher/{publisher_id}/campaign/{status}
+  method: get
+  operationId: List Campaigns
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /user/publisher/{publisher_id}/campaign/{status}
   method: post
-  operationId: post-publisher-collection
+  operationId: Request Access to Campaigns
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -1782,24 +728,19 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /v2/networks/{network_id}/partner-collections/{collection-id}
-  method: delete
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/networks/{network_id}/partner-collections/{collection-id}/partners
+- path: /v3/partner/analytics/clicks/count
   method: post
-  operationId: post-publisher-collection-partners
+  operationId: postClicksCount
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/partner/analytics/clicks/explode
+  method: post
+  operationId: postClicksExplode
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -1813,9 +754,295 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /v2/networks/{network_id}/partner-collections/{collection-id}/partners
+- path: /v3/partner/analytics/clicks/filter
+  method: post
+  operationId: postClicksFilter
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/partner/analytics/clicks/timeseries
+  method: post
+  operationId: postClicksTimeseries
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/brand/analytics/clicks/count
+  method: post
+  operationId: postClicksCount
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/brand/analytics/clicks/explode
+  method: post
+  operationId: postClicksExplode
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/brand/analytics/clicks/filter
+  method: post
+  operationId: postClicksFilter
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/brand/analytics/clicks/timeseries
+  method: post
+  operationId: postClicksTimeseries
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/network/{networkId}/commission-groups
+  method: get
+  operationId: getV3NetworkByNetworkIdCommissionGroups
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /user/publisher/{publisherId}/commission_group
+  method: get
+  operationId: get-partner-commission-groups
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/campaigns/{campaignId}/publishers/{publisherId}/commissions/default
+  method: get
+  operationId: get-publisher-commissions-default
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/campaigns/{campaignId}/publishers/{publisherId}/commissions/campaign
+  method: get
+  operationId: get-publisher-commissions-campaign
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/campaigns/{campaignId}/publishers/{publisherId}/commissions/active
+  method: get
+  operationId: get-active-publisher-commissions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/campaigns/{campaignId}/commissions
+  method: get
+  operationId: get-commissions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/campaigns/{campaignId}/commissions
+  method: post
+  operationId: create-commission
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/campaigns/{campaignId}/commissions/{commissionId}
+  method: get
+  operationId: get-commission
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/campaigns/{campaignId}/commissions/{commissionId}
+  method: patch
+  operationId: update-commission
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/campaigns/{campaignId}/commissions/{commissionId}/migrate
+  method: post
+  operationId: migrate-commission
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/campaigns/{campaignId}/commissions/{commissionId}/retire
+  method: post
+  operationId: retire-commission
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/campaigns/{campaignId}/commissions/all.csv
+  method: get
+  operationId: get-commission-csv-download
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/communication-templates
+  method: get
+  operationId: list-communication-template
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/communication-templates
+  method: post
+  operationId: create-communication-template
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/communication-templates/{id}
+  method: get
+  operationId: read-communication-template
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/communication-templates/{id}
+  method: patch
+  operationId: patch-communication-template
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/communication-templates/{id}
   method: delete
-  operationId: delete-publisher-collection-partners
+  operationId: delete-communication-template
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -1829,6 +1056,16 @@ operations:
       - abnormal
       - high-value
     audit: required
+- path: /v2/communication-templates/{id}/thumbnail
+  method: get
+  operationId: fetch-communication-template-thumbnail
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
 - path: /v2/communications
   method: get
   operationId: get-communications
@@ -1985,6 +1222,1804 @@ operations:
     token:
       max-ttl: 3600
     audit: none
+- path: /reference/conversion_metric
+  method: get
+  operationId: List Conversion Metrics
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /reference/conversion_type
+  method: get
+  operationId: List Conversion Type
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/partner/analytics/conversions/count
+  method: post
+  operationId: postConversionsCount
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/partner/analytics/conversions/explode
+  method: post
+  operationId: postConversionsExplode
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/partner/analytics/conversions/filter
+  method: post
+  operationId: postConversionsFilter
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/partner/analytics/conversions/timeseries
+  method: post
+  operationId: postConversionsTimeseries
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/brand/analytics/conversions/count
+  method: post
+  operationId: postConversionsCount
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/brand/analytics/conversions/explode
+  method: post
+  operationId: postConversionsExplode
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/brand/analytics/conversions/filter
+  method: post
+  operationId: postConversionsFilter
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/brand/analytics/conversions/timeseries
+  method: post
+  operationId: postConversionsTimeseries
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /reference/country
+  method: get
+  operationId: List all Countries
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /campaign/{campaign_id}/creative
+  method: get
+  operationId: List all Creatives for a Campaign
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /campaign/{campaign_id}/creative
+  method: post
+  operationId: Create Campaign Creatives
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /campaign/{campaign_id}/creative
+  method: put
+  operationId: Update Campaign Creatives
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /campaign/{campaign_id}/creative/tags
+  method: get
+  operationId: List all Creative Tags for Campaign
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /campaign/{campaign_id}/creative/tags
+  method: post
+  operationId: Create Campaign Creative Tags
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /campaign/{campaign_id}/creative/tags
+  method: put
+  operationId: Update Campaign Creative Tags
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /campaign/{campaign_id}/creative/tags
+  method: delete
+  operationId: Delete Campaign Creative Tags
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /campaign/{campaign_id}/creative_tags/creative
+  method: get
+  operationId: List all Creatives for a Campaign by Tags
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /user/publisher/{publisher_id}/creative
+  method: get
+  operationId: List all Creatives on each participating Campaign
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /user/publisher/{publisher_id}/campaign/{campaign_id}/creative
+  method: get
+  operationId: List Creatives on a Campaign
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /reference/currency
+  method: get
+  operationId: List all Currencies
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /reference/currency/country
+  method: get
+  operationId: List Country Currency Combinations
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/partner/user
+  method: patch
+  operationId: updateCurrentUser
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/brand/user
+  method: patch
+  operationId: updateCurrentUser
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /campaign/{campaign_id}/custom_terms/
+  method: post
+  operationId: Create Custom Terms and Conditions
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /campaign/{campaign_id}/custom_terms/
+  method: get
+  operationId: List Terms and Conditions for a given Campaign
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /campaign/{campaign_id}/custom_terms/publisher/{publisher_id}
+  method: get
+  operationId: readPartnerCampaignCustomTerms
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /campaign/{campaign_id}/custom_terms/{custom_terms_id}
+  method: delete
+  operationId: deleteCampaignCustomTerms
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /campaign/{campaign_id}/custom_terms/custom_terms_id/association
+  method: post
+  operationId: createAssocCampaignCustomTerms
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /campaign/{campaign_id}/custom_terms/custom_terms_id/association
+  method: delete
+  operationId: deleteAssocCampaignCustomTerms
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /user/publisher/{publisher_id}/database
+  method: get
+  operationId: List Partner Databases
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /user/publisher/{publisher_id}/database
+  method: post
+  operationId: Create Partner Database
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /user/publisher/{publisher_id}/database
+  method: put
+  operationId: Update Partner Databases
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /user/publisher/{publisher_id}/database/{database_id}
+  method: get
+  operationId: Retrieve a Partner Database
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /campaign/{campaign_id}/deal
+  method: get
+  operationId: List all Campaign Deals
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /campaign/{campaign_id}/deal
+  method: post
+  operationId: Create a Campaign Deal
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /campaign/{campaign_id}/deal/{deal_id}
+  method: get
+  operationId: Retrieve a Campaign Deal
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /campaign/{campaign_id}/deal/{deal_id}
+  method: patch
+  operationId: Update a Campaign Deal
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /campaign/{campaign_id}/deal/{deal_id}
+  method: delete
+  operationId: Delete a Campaign
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/brand/{brand}/deeplink-domains
+  method: get
+  operationId: get_deeplink_domains
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/brand/{brand}/deeplink-domains
+  method: patch
+  operationId: add_deeplink_domains
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/brand/{brand}/deeplink-domains
+  method: delete
+  operationId: delete_deeplink_domains
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /reference/device
+  method: get
+  operationId: List all Devices
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/networks/{networkId}/marketplace/settings/advertisers
+  method: get
+  operationId: getMarketplaceBrands
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/networks/{networkId}/marketplace/settings/advertisers
+  method: put
+  operationId: updateMarketplaceBrands
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/campaigns/{campaignId}/attribution/exclusive-codes
+  method: get
+  operationId: get-v2-attribution-exclusive-codes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/campaigns/{campaignId}/attribution/exclusive-codes
+  method: post
+  operationId: post-v2-campaigns-campaignId-attribution-exclusive-codes
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/campaigns/{campaignId}/attribution/exclusive-codes
+  method: delete
+  operationId: bulk-delete-v2-campaigns-campaignId-attribution-exclusive-codes
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/campaigns/{campaignId}/attribution/exclusive-codes/{id}
+  method: get
+  operationId: get-campaigns-campaignId-attribution-exclusive-codes-id
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/campaigns/{campaignId}/attribution/exclusive-codes/{id}
+  method: patch
+  operationId: patch-v2-campaigns-campaignId-attribution-exclusive-codes-id
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/campaigns/{campaignId}/attribution/exclusive-codes/{id}
+  method: delete
+  operationId: delete-campaigns-campaignId-attribution-exclusive-codes-id
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /reporting/export/export/click.csv
+  method: get
+  operationId: Export Clicks
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /reporting/export/export/conversion.csv
+  method: get
+  operationId: Export Conversions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /reporting/export/export/conversion_item.csv
+  method: get
+  operationId: Export Conversion Items
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /user/publisher/{publisher_id}/feed
+  method: get
+  operationId: List all Available Feeds
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /report/campaign_group/{campaign_group_id}/filter_sets/{filter_set_id}
+  method: delete
+  operationId: Delete Campaign Group Saved Report
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/partner/analytics/impressions/count
+  method: post
+  operationId: postImpressionsCount
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/partner/analytics/impressions/explode
+  method: post
+  operationId: postImpressionsExplode
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/partner/analytics/impressions/filter
+  method: post
+  operationId: postImpressionsFilter
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/partner/analytics/impressions/timeseries
+  method: post
+  operationId: postImpressionsTimeseries
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/brand/analytics/impressions/count
+  method: post
+  operationId: postImpressionsCount
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/brand/analytics/impressions/explode
+  method: post
+  operationId: postImpressionsExplode
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/brand/analytics/impressions/filter
+  method: post
+  operationId: postImpressionsFilter
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/brand/analytics/impressions/timeseries
+  method: post
+  operationId: postImpressionsTimeseries
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/campaigns/{campaignId}/attribution/in-cart
+  method: get
+  operationId: get-v2-attribution-in-cart
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/campaigns/{campaignId}/attribution/in-cart
+  method: patch
+  operationId: post-v2-attribution-in-cart
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/campaigns/{campaign_id}/fraud/incidents
+  method: get
+  operationId: get-incidents
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/campaigns/{campaign_id}/fraud/incidents/{incident_id}
+  method: get
+  operationId: get-incident
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/campaigns/{campaign_id}/fraud/incidents/{incident_id}
+  method: delete
+  operationId: delete-incident
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/campaigns/{campaign_id}/fraud/incidents-aggregation
+  method: get
+  operationId: get-incidents-aggregation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/campaigns/{campaign_id}/fraud/incidents/{incident_id}/reject-partner
+  method: post
+  operationId: fraud-reject-partner
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/campaigns/{campaign_id}/fraud/incidents/{incident_id}/reject-conversions
+  method: post
+  operationId: fraud-reject-conversions
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/campaigns/{campaign_id}/fraud/incidents/{incident_id}/pend-conversions
+  method: post
+  operationId: fraud-pend-conversions
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/campaigns/{campaign_id}/fraud/incident-partners
+  method: get
+  operationId: get-incident-partners
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /user/advertiser/{advertiser_id}/invoice
+  method: get
+  operationId: List all Invoices
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /user/advertiser/{advertiser_id}/invoice/{invoice_id}
+  method: get
+  operationId: Retrieve an Invoice
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/jobs
+  method: get
+  operationId: get_jobs
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/jobs/{jobID}
+  method: get
+  operationId: get_job
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/jobs/{jobID}/tasks
+  method: get
+  operationId: get_job_tasks
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/jobs/{jobID}/tasks/{taskID}
+  method: get
+  operationId: get_task
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/jobs/{jobID}/replay
+  method: post
+  operationId: replay_job
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/jobs/{jobID}/tasks/{taskID}/replay
+  method: post
+  operationId: replay_job
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /job/{jobID}
+  method: get
+  operationId: get_job_v1
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /reference/locale
+  method: get
+  operationId: List all Locales
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /campaign/{campaign_id}/meta
+  method: get
+  operationId: List all Meta attributes for Campaign
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/campaigns/{campaignId}/meta-fields
+  method: get
+  operationId: get-meta-fields
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/campaigns/{campaignId}/commissions/tiers/meta-fields
+  method: get
+  operationId: get-tier-meta-fields
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/campaigns/{campaign_id}/fraud/metrics
+  method: get
+  operationId: get-fraud-metrics
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/partner/my-brands
+  method: get
+  operationId: listMyBrands
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /user/publisher
+  method: post
+  operationId: createNetworkPartners
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /user
+  method: post
+  operationId: createNetworkUserPartners
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /network/{network_id}/publisher
+  method: get
+  operationId: listAllPartnersOnTheNetwork
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /network/{network_id}/publisher
+  method: post
+  operationId: updatePartnersNetworkStatus
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/brand/network-terms-and-conditions-acknowledgments
+  method: post
+  operationId: postV3BrandNetworkTermsAndConditionsAcknowledgments
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /reference/terms/{locale}/{country}/{network_id}
+  method: get
+  operationId: List-network-terms-and-conditions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/brand/network-terms-and-conditions
+  method: get
+  operationId: getV3BrandNetworkTermsAndConditions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /network
+  method: get
+  operationId: listNetworks
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/brand/participations/{participationId}/paid_search_violation
+  method: post
+  operationId: postV3BrandParticipationsByParticipationIdPaidSearchViolation
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/brand/participations/{participationId}/paid_search_violation
+  method: get
+  operationId: getV3BrandParticipationsByParticipationIdPaidSearchViolation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/brand/participations/{participationId}/paid_search_violation/{paidSearchViolationId}
+  method: delete
+  operationId: deleteV3BrandParticipationsByParticipationIdPaidSearchViolationByPaidSearchViolationId
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /campaign/{campaign_id}/publisher
+  method: get
+  operationId: List all Participating Partners
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /campaign/{campaign_id}/publisher
+  method: post
+  operationId: update-partner-participation
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /campaign/{campaign_id}/publisher/{publisher_id}
+  method: get
+  operationId: Retrieve a Participating Partner
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/partner/{partnerId}/participations
+  method: get
+  operationId: listPartnerParticipations
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /reporting/report_publisher/publisher/{publisher_id}/click.{format}
+  method: get
+  operationId: partner-clicks
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/campaigns/{campaignId}/publishers/{publisherId}/commissions
+  method: get
+  operationId: get-publisher-commissions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /reporting/report_publisher/publisher/{publisher_id}/conversion.{format}
+  method: get
+  operationId: partner-conversions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /user/publisher/{publisher_id}
+  method: get
+  operationId: getPartner
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /user/publisher/{publisher_id}
+  method: post
+  operationId: updatePartner
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /campaign/{campaign_id}/commission_group
+  method: get
+  operationId: List Partner Groups
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /campaign/{campaign_id}/commission_group/{commission_group_id}
+  method: get
+  operationId: Retrieve a Partner Group
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /commission_group
+  method: post
+  operationId: Create Partner Groups
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /commission_group
+  method: put
+  operationId: Update Partner (Commission) Groups
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /reporting/report_publisher/publisher/{publisher_id}/payable
+  method: get
+  operationId: partner-payable
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/campaigns/{campaign_id}/fraud/whitelisted-partners
+  method: get
+  operationId: get-whitelisted-partners
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/campaigns/{campaign_id}/fraud/whitelisted-partners
+  method: post
+  operationId: fraud-whitelist-partner
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/campaigns/{campaign_id}/fraud/whitelisted-partners
+  method: delete
+  operationId: delete-whitelisted-partner
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/partner/partnerize-tags/features
+  method: get
+  operationId: listPartnerizeTagFeatures
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/partner/partnerize-tags/{tagId}/features
+  method: get
+  operationId: listPartnerizeTagEnabledFeatures
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/partner/partnerize-tags/{tagId}/features
+  method: post
+  operationId: enablePartnerizeTagFeature
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/partner/partnerize-tags/{tagId}/features/{featureName}
+  method: delete
+  operationId: disablePartnerizeTagFeature
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /v3/brand/partnerize-tags/features
+  method: get
+  operationId: listPartnerizeTagFeatures
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/brand/partnerize-tags/{tagId}/features
+  method: get
+  operationId: listPartnerizeTagEnabledFeatures
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/brand/partnerize-tags/{tagId}/features
+  method: post
+  operationId: enablePartnerizeTagFeature
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/brand/partnerize-tags/{tagId}/features/{featureName}
+  method: delete
+  operationId: disablePartnerizeTagFeature
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /v3/partner/partnerize-tags
+  method: get
+  operationId: listPartnerizeTags
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/partner/partnerize-tags
+  method: post
+  operationId: createPartnerizeTag
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/partner/partnerize-tags/{partnerizeTagId}
+  method: get
+  operationId: getPartnerizeTag
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/partner/partnerize-tags/{partnerizeTagId}
+  method: patch
+  operationId: updatePartnerizeTag
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/partner/partnerize-tags/{partnerizeTagId}
+  method: delete
+  operationId: deletePartnerizeTag
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/brand/partnerize-tags
+  method: get
+  operationId: listPartnerizeTags
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/brand/partnerize-tags
+  method: post
+  operationId: createPartnerizeTag
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/brand/partnerize-tags/{partnerizeTagId}
+  method: get
+  operationId: getPartnerizeTag
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/brand/partnerize-tags/{partnerizeTagId}
+  method: patch
+  operationId: updatePartnerizeTag
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v3/brand/partnerize-tags/{partnerizeTagId}
+  method: delete
+  operationId: deletePartnerizeTag
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /reference/partnership_model
+  method: get
+  operationId: List Partnership Models
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /user/publisher/{publisher_id}/payment_detail
+  method: get
+  operationId: List Payment Details
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /user/publisher/{publisher_id}/payment_detail
+  method: post
+  operationId: Create Payment Details
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/communication-placeholders
+  method: get
+  operationId: get-communication-placeholders
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
 - path: /v2/platform-communications/events
   method: get
   operationId: get-platform-communication-events
@@ -2079,9 +3114,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /v2/communication-placeholders
+- path: /v2/campaigns/{campaignId}/attribution/preferred-partners
   method: get
-  operationId: get-communication-placeholders
+  operationId: get-v2-attribution-preferred-partner
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -2089,19 +3124,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /v2/communication-templates
-  method: get
-  operationId: list-communication-template
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/communication-templates
+- path: /v2/campaigns/{campaignId}/attribution/preferred-partners
   method: post
-  operationId: create-communication-template
+  operationId: post-v2-campaigns-campaignId-attribution-preferred-partners
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -2115,35 +3140,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /v2/communication-templates/{id}
-  method: get
-  operationId: read-communication-template
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/communication-templates/{id}
-  method: patch
-  operationId: patch-communication-template
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/communication-templates/{id}
+- path: /v2/campaigns/{campaignId}/attribution/preferred-partners
   method: delete
-  operationId: delete-communication-template
+  operationId: bulk-delete-v2-campaigns-campaignId-attribution-preferred-partners
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -2157,45 +3156,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /v2/communication-templates/{id}/thumbnail
-  method: get
-  operationId: fetch-communication-template-thumbnail
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v3/brand/{brand}/deeplink-domains
-  method: get
-  operationId: get_deeplink_domains
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v3/brand/{brand}/deeplink-domains
-  method: patch
-  operationId: add_deeplink_domains
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/brand/{brand}/deeplink-domains
+- path: /v2/campaigns/{campaignId}/attribution/preferred-partners/{id}
   method: delete
-  operationId: delete_deeplink_domains
+  operationId: delete-v2-campaigns-campaignId-attribution-preferred-partners-id
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -2209,9 +3172,45 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /v3/brand/campaigns/{campaignID}/conversions/bulk
+- path: /v2/campaigns/{campaignId}/attribution/preferred-partners/{id}
+  method: get
+  operationId: get-v2-campaigns-campaignId-attribution-preferred-partners-id
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/campaigns/{campaignId}/attribution/preferred-partners/{id}
+  method: patch
+  operationId: patch-v2-campaigns-campaignId-attribution-preferred-partners-id
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /campaign/{campaign_id}/feed
+  method: get
+  operationId: List all Product Feeds
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /campaign/{campaign_id}/feed
   method: post
-  operationId: v3-conversion-bulk-update
+  operationId: Create a Product Feed for a Campaign
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -2225,9 +3224,25 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /job/{jobID}
+- path: /campaign/{campaign_id}/feed
+  method: put
+  operationId: Update a Campaign Feed
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/campaigns/{campaignId}/publishers/{publisherId}/commissions/promotion
   method: get
-  operationId: get_job_v1
+  operationId: get-publisher-commissions-promotion
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -2235,9 +3250,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /v3/jobs
+- path: /v2/campaigns/{campaignId}/commissions/promotions
   method: get
-  operationId: get_jobs
+  operationId: get-promotional-commissions
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -2245,39 +3260,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /v3/jobs/{jobID}
-  method: get
-  operationId: get_job
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v3/jobs/{jobID}/tasks
-  method: get
-  operationId: get_job_tasks
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v3/jobs/{jobID}/tasks/{taskID}
-  method: get
-  operationId: get_task
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v3/jobs/{jobID}/replay
+- path: /v2/campaigns/{campaignId}/commissions/promotions
   method: post
-  operationId: replay_job
+  operationId: create-promotional-commission
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -2291,9 +3276,51 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /v3/jobs/{jobID}/tasks/{taskID}/replay
+- path: /v2/campaigns/{campaignId}/commissions/promotions/{promotionalId}
+  method: get
+  operationId: get-promotional-commission
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/campaigns/{campaignId}/commissions/promotions/{promotionalId}
+  method: delete
+  operationId: delete-promotional-commission
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/campaigns/{campaignId}/commissions/promotions/{promotionalId}
+  method: patch
+  operationId: update-promotional-commission
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/campaigns/{campaignId}/commissions/promotions/{promotionalId}/retire
   method: post
-  operationId: replay_job
+  operationId: retire-promotional-commission
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -2307,9 +3334,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /reporting/report_advertiser/campaign/{campaign_id}/conversion.{format}
+- path: /reference/promotional_method
   method: get
-  operationId: brand-conversions
+  operationId: List all Promotional Method
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -2317,9 +3344,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /reporting/report_advertiser/campaign/{campaign_id}/click.{format}
+- path: /v2/networks/{network_id}/publishers
   method: get
-  operationId: brand-clicks
+  operationId: get-publishers
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -2327,9 +3354,25 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /reporting/export/export/click.csv
+- path: /v2/networks/{network_id}/publishers.csv
+  method: post
+  operationId: export-publishers
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/networks/{network_id}/publishers/{publisher_id}
   method: get
-  operationId: Export Clicks
+  operationId: get-publisher-details
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -2337,9 +3380,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /reporting/export/export/conversion.csv
+- path: /v2/networks/{network_id}/publishers/ids
   method: get
-  operationId: Export Conversions
+  operationId: get-publishers-ids
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -2347,16 +3390,70 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /reporting/export/export/conversion_item.csv
-  method: get
-  operationId: Export Conversion Items
+- path: /v2/networks/{network_id}/partner-collections
+  method: post
+  operationId: post-publisher-collection
   x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
     token:
-      max-ttl: 3600
-    audit: none
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/networks/{network_id}/partner-collections/{collection-id}
+  method: delete
+  operationId: deleteV2NetworksByNetworkIdPartnerCollectionsByCollectionId
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/networks/{network_id}/partner-collections/{collection-id}/partners
+  method: post
+  operationId: post-publisher-collection-partners
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/networks/{network_id}/partner-collections/{collection-id}/partners
+  method: delete
+  operationId: delete-publisher-collection-partners
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
 - path: /campaign/{campaign_id}/reporting/meta/reports
   method: get
   operationId: List all Meta Reports for a Campaign
@@ -2439,178 +3536,6 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /v2/campaigns/{campaign_id}/fraud/incidents
-  method: get
-  operationId: get-incidents
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaign_id}/fraud/metrics
-  method: get
-  operationId: get-fraud-metrics
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaign_id}/fraud/incidents/{incident_id}
-  method: get
-  operationId: get-incident
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaign_id}/fraud/incidents/{incident_id}
-  method: delete
-  operationId: delete-incident
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaign_id}/fraud/incidents-aggregation
-  method: get
-  operationId: get-incidents-aggregation
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaign_id}/fraud/incidents/{incident_id}/reject-partner
-  method: post
-  operationId: fraud-reject-partner
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaign_id}/fraud/whitelisted-partners
-  method: get
-  operationId: get-whitelisted-partners
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaign_id}/fraud/whitelisted-partners
-  method: post
-  operationId: fraud-whitelist-partner
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaign_id}/fraud/whitelisted-partners
-  method: delete
-  operationId: delete-whitelisted-partner
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaign_id}/fraud/incidents/{incident_id}/reject-conversions
-  method: post
-  operationId: fraud-reject-conversions
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaign_id}/fraud/incidents/{incident_id}/pend-conversions
-  method: post
-  operationId: fraud-pend-conversions
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/campaigns/{campaign_id}/fraud/incident-partners
-  method: get
-  operationId: get-incident-partners
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /report/campaign_group/{campaign_group_id}/filter_sets/{filter_set_id}
-  method: delete
-  operationId: Delete Campaign Group Saved Report
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /report/campaign_group/{campaign_group_id}/filter_sets/{filter_set_id}
   method: get
   operationId: Retrieve Campaign Group Saved Report
@@ -2624,888 +3549,6 @@ operations:
 - path: /report/campaign_group/{campaign_group_id}/filter_sets/{filter_set_id}
   method: put
   operationId: Update Campaign Group Saved Report
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/brand/analytics/clicks/count
-  method: post
-  operationId: postClicksCount
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/brand/analytics/clicks/explode
-  method: post
-  operationId: postClicksExplode
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/brand/analytics/clicks/filter
-  method: post
-  operationId: postClicksFilter
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/brand/analytics/clicks/timeseries
-  method: post
-  operationId: postClicksTimeseries
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/brand/analytics/conversions/count
-  method: post
-  operationId: postConversionsCount
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/brand/analytics/conversions/explode
-  method: post
-  operationId: postConversionsExplode
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/brand/analytics/conversions/filter
-  method: post
-  operationId: postConversionsFilter
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/brand/analytics/conversions/timeseries
-  method: post
-  operationId: postConversionsTimeseries
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/brand/analytics/impressions/count
-  method: post
-  operationId: postImpressionsCount
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/brand/analytics/impressions/explode
-  method: post
-  operationId: postImpressionsExplode
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/brand/analytics/impressions/filter
-  method: post
-  operationId: postImpressionsFilter
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/brand/analytics/impressions/timeseries
-  method: post
-  operationId: postImpressionsTimeseries
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/brand/campaign-groups/{campaign_group_id}/campaigns
-  method: get
-  operationId: Retrieve a List of Campaigns in a Campaign Group
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v3/brand/campaigns
-  method: get
-  operationId: listCampaigns
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v3/brand/campaigns/{campaignId}
-  method: get
-  operationId: getCampaign
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v3/brand/campaigns/{campaignId}
-  method: patch
-  operationId: partialUpdateCampaign
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/brand/partnerize-tags
-  method: get
-  operationId: listPartnerizeTags
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v3/brand/partnerize-tags
-  method: post
-  operationId: createPartnerizeTag
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/brand/partnerize-tags/{partnerizeTagId}
-  method: get
-  operationId: getPartnerizeTag
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v3/brand/partnerize-tags/{partnerizeTagId}
-  method: patch
-  operationId: updatePartnerizeTag
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/brand/partnerize-tags/{partnerizeTagId}
-  method: delete
-  operationId: deletePartnerizeTag
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/brand/partnerize-tags/features
-  method: get
-  operationId: listPartnerizeTagFeatures
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v3/brand/partnerize-tags/{tagId}/features
-  method: get
-  operationId: listPartnerizeTagEnabledFeatures
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v3/brand/partnerize-tags/{tagId}/features
-  method: post
-  operationId: enablePartnerizeTagFeature
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/brand/partnerize-tags/{tagId}/features/{featureName}
-  method: delete
-  operationId: disablePartnerizeTagFeature
-  x-agentic-access:
-    action-class: acting
-    consequence: safety-critical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 120
-      exchange: true
-      purpose-required: true
-      proof-of-possession: true
-    escalation:
-      human-in-the-loop: required
-    audit: required
-- path: /v3/brand/network-terms-and-conditions
-  method: get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v3/brand/network-terms-and-conditions-acknowledgments
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/network/{networkId}/commission-groups
-  method: get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v3/network/{networkId}/brands
-  method: get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v3/brand
-  method: get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v3/brand/participations/{participationId}/paid_search_violation
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/brand/participations/{participationId}/paid_search_violation
-  method: get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v3/brand/participations/{participationId}/paid_search_violation/{paidSearchViolationId}
-  method: delete
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/brand/user
-  method: patch
-  operationId: updateCurrentUser
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /reference/vertical
-  method: get
-  operationId: List all Verticals
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /reference/locale
-  method: get
-  operationId: List all Locales
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /reference/country
-  method: get
-  operationId: List all Countries
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /reference/currency
-  method: get
-  operationId: List all Currencies
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /reference/currency/country
-  method: get
-  operationId: List Country Currency Combinations
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /reference/us_state
-  method: get
-  operationId: List US States
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /reference/timezone
-  method: get
-  operationId: List all Timezones
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /reference/device
-  method: get
-  operationId: List all Devices
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /reference/campaign_extra_field
-  method: get
-  operationId: List all Campaign Extra Fields
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /reference/user_context
-  method: get
-  operationId: List all User Contexts
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /reference/traffic_source
-  method: get
-  operationId: List Traffic Sources
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /reference/website_type
-  method: get
-  operationId: List Website Types
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /reference/promotional_method
-  method: get
-  operationId: List all Promotional Method
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /reference/conversion_type
-  method: get
-  operationId: List Conversion Type
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /reference/conversion_metric
-  method: get
-  operationId: List Conversion Metrics
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /reference/partnership_model
-  method: get
-  operationId: List Partnership Models
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /user/publisher/{publisher_id}/campaign/{status}
-  method: get
-  operationId: List Campaigns
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /user/publisher/{publisher_id}/campaign/{status}
-  method: post
-  operationId: Request Access to Campaigns
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /user/publisher/{publisher_id}/campaign/{campaign_id}/voucher
-  method: get
-  operationId: List Campaign Voucher Codes
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /user/publisher/{publisher_id}/creative
-  method: get
-  operationId: List all Creatives on each participating Campaign
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /user/publisher/{publisher_id}/campaign/{campaign_id}/creative
-  method: get
-  operationId: List Creatives on a Campaign
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /user/publisher/{publisher_id}/feed
-  method: get
-  operationId: List all Available Feeds
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /user/publisher/{publisher_id}/campaign/custom_terms/{custom_terms_id}
-  method: get
-  operationId: Retrieve Partner Custom Terms and Conditions
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /reference/publisher/camref/{publisher_id}
-  method: get
-  operationId: List Campaign References
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /user/publisher/{publisher_id}
-  method: get
-  operationId: getPartner
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /user/publisher/{publisher_id}
-  method: post
-  operationId: updatePartner
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /user/publisher/{publisher_id}/website
-  method: get
-  operationId: List all Partner Websites
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /user/publisher/{publisher_id}/website
-  method: post
-  operationId: Create Partner Website
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /user/publisher/{publisher_id}/website
-  method: put
-  operationId: Update Partner Websites
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /user/publisher/{publisher_id}/website/{website_id}
-  method: get
-  operationId: Retrieve a Partner Website
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /user/publisher/{publisher_id}/database
-  method: get
-  operationId: List Partner Databases
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /user/publisher/{publisher_id}/database
-  method: post
-  operationId: Create Partner Database
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /user/publisher/{publisher_id}/database
-  method: put
-  operationId: Update Partner Databases
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /user/publisher/{publisher_id}/database/{database_id}
-  method: get
-  operationId: Retrieve a Partner Database
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /user/publisher/{publisher_id}/tq
-  method: get
-  operationId: List Transaction Queries
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /user/publisher/{publisher_id}/tq/create
-  method: post
-  operationId: Create Transaction Queries
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /user/publisher/{publisher_id}/tq/{transaction_query_id}/delete
-  method: post
-  operationId: Delete a Transaction Query
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -3539,9 +3582,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /user/publisher/{publisher_id}/payment_detail
+- path: /v2/campaigns/{campaignId}/attribution/split
   method: get
-  operationId: List Payment Details
+  operationId: get-v2-campaigns-campaignId-attribution-split
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -3549,27 +3592,25 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /user/publisher/{publisher_id}/payment_detail
-  method: post
-  operationId: Create Payment Details
+- path: /v2/campaigns/{campaignId}/attribution/split
+  method: patch
+  operationId: patch-v2-campaigns-campaignId-attribution-split
   x-agentic-access:
     action-class: acting
-    consequence: physical
+    consequence: write
     subject: required
     audience: null
     token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
+      max-ttl: 900
     escalation:
       human-in-the-loop: conditional
       triggers:
       - abnormal
       - high-value
     audit: required
-- path: /user/publisher/{publisher_id}/available_commission
+- path: /user/publisher/{publisher_id}/payment/summary
   method: get
-  operationId: Retrieve Available Commission
+  operationId: Partner payments summary
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -3577,9 +3618,181 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /user/publisher/{publisher_id}/payment/summary
+- path: /v2/campaigns/{campaignId}/attribution/suppressed-codes
   method: get
-  operationId: Partner payments summary
+  operationId: get-v2-attribution-suppressed-codes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/campaigns/{campaignId}/attribution/suppressed-codes
+  method: post
+  operationId: post-v2-campaigns-campaignId-attribution-suppressed-codes
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/campaigns/{campaignId}/attribution/suppressed-codes
+  method: delete
+  operationId: bulk-delete-v2-campaigns-campaignId-attribution-suppressed-codes
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/campaigns/{campaignId}/attribution/suppressed-codes/{id}
+  method: get
+  operationId: get-campaigns-campaignId-attribution-suppressed-codes-id
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/campaigns/{campaignId}/attribution/suppressed-codes/{id}
+  method: patch
+  operationId: patch-v2-campaigns-campaignId-attribution-suppressed-codes-id
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/campaigns/{campaignId}/attribution/suppressed-codes/{id}
+  method: delete
+  operationId: delete-campaigns-campaignId-attribution-suppressed-codes-id
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /user/publisher/{publisher_id}/campaign/custom_terms/{custom_terms_id}
+  method: get
+  operationId: Retrieve Partner Custom Terms and Conditions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/publishers/{publisherId}/campaigns/terms?campaigns={campaigns}
+  method: get
+  operationId: getV2PublishersByPublisherIdCampaignsTerms?campaigns={campaigns}
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/campaigns/{campaignId}/publishers/{publisherId}/commissions/tier
+  method: get
+  operationId: get-publisher-commissions-tier
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/campaigns/{campaignId}/commissions/tiers
+  method: get
+  operationId: get-commission-tiers
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/campaigns/{campaignId}/commissions/tiers
+  method: post
+  operationId: create-commission-tier
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/campaigns/{campaignId}/commissions/tiers/{tierId}
+  method: delete
+  operationId: delete-commission-tier
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v2/campaigns/{campaignId}/commissions/tiers/{tierId}
+  method: patch
+  operationId: update-commission-tier
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /reference/timezone
+  method: get
+  operationId: List all Timezones
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -3639,9 +3852,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /v2/campaigns/{campaignId}/publishers/{publisherId}/commissions/default
+- path: /reference/traffic_source
   method: get
-  operationId: get-publisher-commissions-default
+  operationId: List Traffic Sources
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -3649,9 +3862,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /v2/campaigns/{campaignId}/publishers/{publisherId}/commissions/campaign
+- path: /user/publisher/{publisher_id}/tq
   method: get
-  operationId: get-publisher-commissions-campaign
+  operationId: List Transaction Queries
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -3659,99 +3872,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /v2/campaigns/{campaignId}/publishers/{publisherId}/commissions/voucher
-  method: get
-  operationId: get-publisher-commissions-voucher
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaignId}/publishers/{publisherId}/commissions/promotion
-  method: get
-  operationId: get-publisher-commissions-promotion
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaignId}/publishers/{publisherId}/commissions/tier
-  method: get
-  operationId: get-publisher-commissions-tier
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaignId}/publishers/{publisherId}/commissions/active
-  method: get
-  operationId: get-active-publisher-commissions
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/campaigns/{campaignId}/publishers/{publisherId}/attribution
-  method: get
-  operationId: get-partners-attribution
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /user/publisher/{publisherId}/commission_group
-  method: get
-  operationId: get-partner-commission-groups
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/publishers/{publisherId}/discovery/advertisers
-  method: get
-  operationId: getBrands
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/publishers/{publisherId}/discovery/advertisers/{advertiserId}
-  method: get
-  operationId: getBrand
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/publishers/{publisher_id}/invitations/advertisers/
-  method: get
-  operationId: List Invitations
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v2/publishers/{publisherId}/invitations/accept
+- path: /user/publisher/{publisher_id}/tq/create
   method: post
-  operationId: acceptInvitations
+  operationId: Create Transaction Queries
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -3765,9 +3888,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /v2/publishers/{publisherId}/invitations/decline
+- path: /user/publisher/{publisher_id}/tq/{transaction_query_id}/delete
   method: post
-  operationId: declineInvitations
+  operationId: Delete a Transaction Query
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -3781,24 +3904,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /v2/publishers/{publisherId}/campaign-requests
-  method: post
-  operationId: createCampaignRequests
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v2/publishers/{publisherId}/campaigns/terms?campaigns={campaigns}
+- path: /campaign/{campaign_id}/tq_reasons
   method: get
+  operationId: List Transaction Query Reasons
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -3806,301 +3914,41 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /job/{jobID}
+- path: /campaign/{campaign_id}/tq_reasons
+  method: post
+  operationId: Create a Transaction Query Reason
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /campaign/{campaign_id}/tq_reasons/{transaction_query_reason_id}/delete
+  method: post
+  operationId: Delete a Transaction Query Reason
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /reference/us_state
   method: get
-  operationId: get_job_v1
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /reporting/report_publisher/publisher/{publisher_id}/conversion.{format}
-  method: get
-  operationId: partner-conversions
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /reporting/report_publisher/publisher/{publisher_id}/click.{format}
-  method: get
-  operationId: partner-clicks
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /reporting/report_publisher/publisher/{publisher_id}/payable
-  method: get
-  operationId: partner-payable
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /reporting/export/export/click.csv
-  method: get
-  operationId: Export Clicks
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /reporting/export/export/conversion.csv
-  method: get
-  operationId: Export Conversions
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /reporting/export/export/conversion_item.csv
-  method: get
-  operationId: Export Conversion Items
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v3/partner/analytics/clicks/count
-  method: post
-  operationId: postClicksCount
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/partner/analytics/clicks/explode
-  method: post
-  operationId: postClicksExplode
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/partner/analytics/clicks/filter
-  method: post
-  operationId: postClicksFilter
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/partner/analytics/clicks/timeseries
-  method: post
-  operationId: postClicksTimeseries
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/partner/analytics/conversions/count
-  method: post
-  operationId: postConversionsCount
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/partner/analytics/conversions/explode
-  method: post
-  operationId: postConversionsExplode
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/partner/analytics/conversions/filter
-  method: post
-  operationId: postConversionsFilter
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/partner/analytics/conversions/timeseries
-  method: post
-  operationId: postConversionsTimeseries
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/partner/analytics/impressions/count
-  method: post
-  operationId: postImpressionsCount
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/partner/analytics/impressions/explode
-  method: post
-  operationId: postImpressionsExplode
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/partner/analytics/impressions/filter
-  method: post
-  operationId: postImpressionsFilter
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v3/partner/analytics/impressions/timeseries
-  method: post
-  operationId: postImpressionsTimeseries
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /reference/country
-  method: get
-  operationId: List all Countries
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /reference/currency
-  method: get
-  operationId: List all Currencies
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /reference/timezone
-  method: get
-  operationId: List all Timezones
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /reference/device
-  method: get
-  operationId: List all Devices
+  operationId: List US States
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -4118,9 +3966,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /reference/traffic_source
+- path: /reference/vertical
   method: get
-  operationId: List Traffic Sources
+  operationId: List all Verticals
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -4128,9 +3976,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /reference/conversion_type
+- path: /campaign/{campaign_id}/voucher_code
   method: get
-  operationId: List Conversion Type
+  operationId: List all Voucher Codes
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -4138,39 +3986,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /reference/conversion_metric
-  method: get
-  operationId: List Conversion Metrics
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /reference/partnership_model
-  method: get
-  operationId: List Partnership Models
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v3/partner/partnerize-tags
-  method: get
-  operationId: listPartnerizeTags
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v3/partner/partnerize-tags
+- path: /campaign/{campaign_id}/voucher_code
   method: post
-  operationId: createPartnerizeTag
+  operationId: Create Voucher Codes
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4184,29 +4002,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /v3/partner/{partnerId}/participations
-  method: get
-  operationId: listPartnerParticipations
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v3/partner/partnerize-tags/{partnerizeTagId}
-  method: get
-  operationId: getPartnerizeTag
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v3/partner/partnerize-tags/{partnerizeTagId}
-  method: patch
-  operationId: updatePartnerizeTag
+- path: /campaign/{campaign_id}/voucher_code
+  method: put
+  operationId: Update Voucher Codes
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4220,9 +4018,91 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /v3/partner/partnerize-tags/{partnerizeTagId}
+- path: /campaign/{campaign_id}/voucher_code/{voucher_code_id}
+  method: get
+  operationId: Retrieve a Voucher Code
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /user/publisher/{publisher_id}/campaign/{campaign_id}/voucher
+  method: get
+  operationId: List Campaign Voucher Codes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/campaigns/{campaignId}/publishers/{publisherId}/commissions/voucher
+  method: get
+  operationId: get-publisher-commissions-voucher
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /campaign/{campaignId}/optimisation/voucher/commission
+  method: get
+  operationId: get-voucher-commissions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /campaign/{campaignId}/optimisation/voucher/commission
+  method: post
+  operationId: post-voucher-commission
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /campaign/{campaignId}/optimisation/voucher/commission/{commissionId}
+  method: get
+  operationId: get-voucher-commission
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /campaign/{campaignId}/optimisation/voucher/commission/{commissionId}
+  method: put
+  operationId: get-voucher-commissions
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /campaign/{campaignId}/optimisation/voucher/commission/{commissionId}
   method: delete
-  operationId: deletePartnerizeTag
+  operationId: delete-voucher-commission
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4236,29 +4116,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /v3/partner/partnerize-tags/features
-  method: get
-  operationId: listPartnerizeTagFeatures
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v3/partner/partnerize-tags/{tagId}/features
-  method: get
-  operationId: listPartnerizeTagEnabledFeatures
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v3/partner/partnerize-tags/{tagId}/features
+- path: /campaign/{campaignId}/optimisation/voucher/commission/{commissionId}/retire
   method: post
-  operationId: enablePartnerizeTagFeature
+  operationId: retire-voucher-commission
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4272,25 +4132,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /v3/partner/partnerize-tags/{tagId}/features/{featureName}
-  method: delete
-  operationId: disablePartnerizeTagFeature
-  x-agentic-access:
-    action-class: acting
-    consequence: safety-critical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 120
-      exchange: true
-      purpose-required: true
-      proof-of-possession: true
-    escalation:
-      human-in-the-loop: required
-    audit: required
-- path: /v3/partner/my-brands
+- path: /reference/website_type
   method: get
-  operationId: listMyBrands
+  operationId: List Website Types
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -4298,9 +4142,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /v3/partner/campaign-terms-and-conditions
+- path: /user/publisher/{publisher_id}/website
   method: get
-  operationId: listCampaignTerms
+  operationId: List all Partner Websites
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -4308,29 +4152,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /v3/partner/campaign-terms-and-conditions/{id}
-  method: get
-  operationId: retrieveCampaignTerms
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v3/partner/campaign-terms-and-conditions-acknowledgments
-  method: get
-  operationId: listCampaignTermAcknowledgments
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v3/partner/campaign-terms-and-conditions-acknowledgments
+- path: /user/publisher/{publisher_id}/website
   method: post
-  operationId: createCampaignTermAcknowledgment
+  operationId: Create Partner Website
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4344,9 +4168,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /v3/partner/user
-  method: patch
-  operationId: updateCurrentUser
+- path: /user/publisher/{publisher_id}/website
+  method: put
+  operationId: Update Partner Websites
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4360,9 +4184,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /v3/partner/campaign-terms-and-conditions-acknowledgments/{id}
+- path: /user/publisher/{publisher_id}/website/{website_id}
   method: get
-  operationId: retrieveCampaignTermAcknowledgment
+  operationId: Retrieve a Partner Website
   x-agentic-access:
     action-class: connected
     consequence: read

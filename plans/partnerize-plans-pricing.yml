@@ -66,3 +66,22 @@ notes:
     management, and agency-supported management.
   - Programs can be structured for single or global regions and multiple
     currencies.
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - negotiated
+  units: []
+  plans:
+  - name: License Model
+    access: other
+    model: negotiated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Performance Model
+    access: other
+    model: negotiated
+    model_how: derived
+    units: []
+    periods: []

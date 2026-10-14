@@ -12,9 +12,32 @@ checked:
 - https://n8n.io/integrations/partnerize/
 - https://storage.googleapis.com/tcfac/additional-consent-providers.csv
 - https://zapier.com/apps/partnerize/integrations
+- okta/integrations/okta-integration-edges.yml
 summary: null
 marketplace_apps: []
 edges:
+- partner_name: Hightouch
+  partner: hightouch
+  partner_match: aggregator
+  marketplace: coverage
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: connector-coverage
+  evidence: https://hightouch.com/docs/destinations/partnerize
+  coverage_role:
+  - destination
+  cdp_signals:
+    destination:
+      catalog_entries:
+      - partnerize
+      status: released
+      sync_types:
+      - Events
+      sync_modes:
+      - insert
+  detected_by: sweep-cdp.py
+  first_seen: '2026-10-14'
 - partner_name: Google Ad Tech Providers
   partner: null
   partner_match: domain
@@ -38,26 +61,25 @@ edges:
     detected: '2026-10-14'
   detected_by: sweep-adtech.py
   detected: '2026-10-14'
-- partner_name: Hightouch
-  partner: hightouch
-  partner_match: aggregator
-  marketplace: coverage
+- partner_name: Okta (own)
+  partner: okta
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
   channel: partner-built
-  direction: partner-built
-  type: coverage
-  relationship: connector-coverage
-  evidence: https://hightouch.com/docs/destinations/partnerize
-  coverage_role:
-  - destination
-  cdp_signals:
-    destination:
-      catalog_entries:
-      - partnerize
-      status: released
-      sync_types:
-      - Events
-      sync_modes:
-      - insert
-  detected_by: sweep-cdp.py
-  first_seen: '2026-10-14'
+  marketplace: own
+  evidence: https://www.okta.com/integrations/partnerize/
+  mirror_of: okta/integrations/okta-integration-edges.yml
+  apps:
+  - Partnerize
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: Single Sign-On
+  badges:
+  - OKTA_VERIFIED
+  features:
+  - SAML
 templates: []

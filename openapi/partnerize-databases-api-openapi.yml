@@ -247,22 +247,6 @@ paths:
       x-operation-id-original: Retrieve a Partner Database
 components:
   schemas:
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
-    Partner_Database_Wrapper:
-      properties:
-        database:
-          allOf:
-          - type: object
-            properties:
-              database_id:
-                description: ID of the partner database
-                type: string
-          - $ref: '#/components/schemas/Partner_Database'
-      type: object
     Partner_Database:
       properties:
         publisher_id:
@@ -288,6 +272,22 @@ components:
       - database_name
       - creation_method
       - size
+      type: object
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
+    Partner_Database_Wrapper:
+      properties:
+        database:
+          allOf:
+          - type: object
+            properties:
+              database_id:
+                description: ID of the partner database
+                type: string
+          - $ref: '#/components/schemas/Partner_Database'
       type: object
 x-tagGroups:
 - name: Partner Management (v1)

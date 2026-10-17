@@ -626,6 +626,43 @@ paths:
       x-operation-id-original: List all Creatives for a Campaign by Tags
 components:
   schemas:
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
+    Creative_Tag:
+      properties:
+        campaign_id:
+          description: ID of the Campaign
+          type: string
+        creative_tag_id:
+          description: ID of the Creative Tag
+          type: string
+        creatives:
+          items:
+            properties:
+              creative_id:
+                description: ID of the Creative
+                type: string
+              creative_item_id:
+                description: ID of the Creative Item
+                type: string
+          type: array
+        name:
+          type: string
+        created_by:
+          type: string
+        created_at:
+          type: string
+      required:
+      - name
+      type: object
+    Creative_Wrapper:
+      properties:
+        creative:
+          $ref: '#/components/schemas/Creative'
+      type: object
     Creative_Item:
       properties:
         content_type:
@@ -662,43 +699,6 @@ components:
           type: string
       required:
       - creative_type_id
-      type: object
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
-    Creative_Tag_Wrapper:
-      properties:
-        creative_tag:
-          $ref: '#/components/schemas/Creative_Tag'
-      type: object
-    Creative_Tag:
-      properties:
-        campaign_id:
-          description: ID of the Campaign
-          type: string
-        creative_tag_id:
-          description: ID of the Creative Tag
-          type: string
-        creatives:
-          items:
-            properties:
-              creative_id:
-                description: ID of the Creative
-                type: string
-              creative_item_id:
-                description: ID of the Creative Item
-                type: string
-          type: array
-        name:
-          type: string
-        created_by:
-          type: string
-        created_at:
-          type: string
-      required:
-      - name
       type: object
     Creative:
       properties:
@@ -757,10 +757,10 @@ components:
       required:
       - creative_type_id
       type: object
-    Creative_Wrapper:
+    Creative_Tag_Wrapper:
       properties:
-        creative:
-          $ref: '#/components/schemas/Creative'
+        creative_tag:
+          $ref: '#/components/schemas/Creative_Tag'
       type: object
 x-tagGroups:
 - name: Networks and Brands Management (v1)

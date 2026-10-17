@@ -175,6 +175,18 @@ paths:
       x-operation-id-original: Create Payment Details
 components:
   schemas:
+    Currency:
+      enum:
+      - GBP
+      - USD
+      - EUR
+      - JPY
+      type: string
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
     Country:
       enum:
       - AD
@@ -427,18 +439,6 @@ components:
       - ZA
       - ZM
       - ZW
-      type: string
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
-    Currency:
-      enum:
-      - GBP
-      - USD
-      - EUR
-      - JPY
       type: string
     Payment_Details:
       properties:

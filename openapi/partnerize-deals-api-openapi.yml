@@ -263,11 +263,6 @@ paths:
       x-operation-id-original: Delete a Campaign
 components:
   schemas:
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
     Country:
       enum:
       - AD
@@ -520,6 +515,11 @@ components:
       - ZA
       - ZM
       - ZW
+      type: string
+    YesOrNo:
+      enum:
+      - y
+      - n
       type: string
     Deal:
       properties:

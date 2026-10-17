@@ -256,6 +256,44 @@ paths:
                       week_start: monday
 components:
   schemas:
+    Currency:
+      enum:
+      - GBP
+      - USD
+      - EUR
+      - JPY
+      type: string
+    Partner_Website:
+      properties:
+        publisher_id:
+          description: ID of the partner the website belongs to
+          type: string
+        active:
+          $ref: '#/components/schemas/YesOrNo'
+        primary:
+          $ref: '#/components/schemas/YesOrNo'
+        website_country:
+          $ref: '#/components/schemas/Country'
+        website_name:
+          type: string
+        website_type:
+          type: number
+        website_type_name:
+          type: string
+        website_url:
+          type: string
+        website_vertical:
+          type: number
+        website_vertical_name:
+          type: string
+      required:
+      - website_url
+      type: object
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
     Locale:
       enum:
       - bg
@@ -306,111 +344,6 @@ components:
       - zh_cn
       - zh_hk
       type: string
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
-    Partner:
-      properties:
-        abn:
-          type: string
-        account_name:
-          type: string
-        campaign_select:
-          type: string
-        company_name:
-          type: string
-        company_division:
-          type: string
-        company_logo:
-          type:
-          - string
-          - 'null'
-        contact_email:
-          type: string
-          format: email
-        contact_locale:
-          $ref: '#/components/schemas/Locale'
-        contact_name:
-          type: string
-        default_currency:
-          $ref: '#/components/schemas/Currency'
-        description:
-          type: string
-          description: Description of the publisher
-        foreign_identifier:
-          type: string
-        gst_registered:
-          type: string
-        im_provider:
-          type: string
-        im_username:
-          type: string
-        is_affiliate_user:
-          $ref: '#/components/schemas/YesOrNo'
-        is_foreign_network:
-          description: Reporting only flag. All conversions will be automatically approved but will not be invoiceable.
-          $ref: '#/components/schemas/YesOrNo'
-        is_lead_user:
-          $ref: '#/components/schemas/YesOrNo'
-        legal_entity:
-          $ref: '#/components/schemas/Country'
-        network_id:
-          type: string
-          description: ID of the network this publisher belongs to
-        network_notes:
-          type: string
-        network_status:
-          $ref: '#/components/schemas/Status'
-        operating_country:
-          $ref: '#/components/schemas/Country'
-        phone:
-          type: string
-          description: Primary contact telephone number
-        phone_area:
-          type: string
-          description: Phone prefix to declare country or region
-        promotional_method_name:
-          type: string
-        promotional_method:
-          type: integer
-        publisher_id:
-          type: string
-          description: ID of the publisher
-        reporting_identifier:
-          type: string
-        reporting_timezone:
-          type: string
-        signup_ip:
-          type: string
-          format: ipv4
-        uk_vat_registered:
-          $ref: '#/components/schemas/YesOrNo'
-        us_tax_state:
-          type: string
-        vat_number:
-          type: integer
-        vertical:
-          type: integer
-        vertical_name:
-          type: string
-        week_start:
-          type: string
-    Currency:
-      enum:
-      - GBP
-      - USD
-      - EUR
-      - JPY
-      type: string
-    Status:
-      type: string
-      enum:
-      - a
-      - p
-      - r
-      - n
     Partner_Database:
       properties:
         publisher_id:
@@ -436,32 +369,6 @@ components:
       - database_name
       - creation_method
       - size
-      type: object
-    Partner_Website:
-      properties:
-        publisher_id:
-          description: ID of the partner the website belongs to
-          type: string
-        active:
-          $ref: '#/components/schemas/YesOrNo'
-        primary:
-          $ref: '#/components/schemas/YesOrNo'
-        website_country:
-          $ref: '#/components/schemas/Country'
-        website_name:
-          type: string
-        website_type:
-          type: number
-        website_type_name:
-          type: string
-        website_url:
-          type: string
-        website_vertical:
-          type: number
-        website_vertical_name:
-          type: string
-      required:
-      - website_url
       type: object
     Country:
       enum:
@@ -716,6 +623,99 @@ components:
       - ZM
       - ZW
       type: string
+    Status:
+      type: string
+      enum:
+      - a
+      - p
+      - r
+      - n
+    Partner:
+      properties:
+        abn:
+          type: string
+        account_name:
+          type: string
+        campaign_select:
+          type: string
+        company_name:
+          type: string
+        company_division:
+          type: string
+        company_logo:
+          type:
+          - string
+          - 'null'
+        contact_email:
+          type: string
+          format: email
+        contact_locale:
+          $ref: '#/components/schemas/Locale'
+        contact_name:
+          type: string
+        default_currency:
+          $ref: '#/components/schemas/Currency'
+        description:
+          type: string
+          description: Description of the publisher
+        foreign_identifier:
+          type: string
+        gst_registered:
+          type: string
+        im_provider:
+          type: string
+        im_username:
+          type: string
+        is_affiliate_user:
+          $ref: '#/components/schemas/YesOrNo'
+        is_foreign_network:
+          description: Reporting only flag. All conversions will be automatically approved but will not be invoiceable.
+          $ref: '#/components/schemas/YesOrNo'
+        is_lead_user:
+          $ref: '#/components/schemas/YesOrNo'
+        legal_entity:
+          $ref: '#/components/schemas/Country'
+        network_id:
+          type: string
+          description: ID of the network this publisher belongs to
+        network_notes:
+          type: string
+        network_status:
+          $ref: '#/components/schemas/Status'
+        operating_country:
+          $ref: '#/components/schemas/Country'
+        phone:
+          type: string
+          description: Primary contact telephone number
+        phone_area:
+          type: string
+          description: Phone prefix to declare country or region
+        promotional_method_name:
+          type: string
+        promotional_method:
+          type: integer
+        publisher_id:
+          type: string
+          description: ID of the publisher
+        reporting_identifier:
+          type: string
+        reporting_timezone:
+          type: string
+        signup_ip:
+          type: string
+          format: ipv4
+        uk_vat_registered:
+          $ref: '#/components/schemas/YesOrNo'
+        us_tax_state:
+          type: string
+        vat_number:
+          type: integer
+        vertical:
+          type: integer
+        vertical_name:
+          type: string
+        week_start:
+          type: string
 x-tagGroups:
 - name: Partner Management (v1)
   tags:

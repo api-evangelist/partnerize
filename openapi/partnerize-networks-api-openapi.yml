@@ -57,33 +57,16 @@ paths:
       summary: List Networks
 components:
   schemas:
-    Network:
+    Network_Wrapper:
       properties:
-        auto_approve_publishers:
-          $ref: '#/components/schemas/YesOrNo'
-        cm_client_id:
-          type: string
-        default_campaign_id:
-          type: string
-        network_application_id:
-          type: string
-        network_contact_email:
-          type: string
-        network_description:
-          description: Description of the network
-          type: string
-        network_id:
-          description: ID of the network
-          type: string
-        network_locale:
-          $ref: '#/components/schemas/Locale'
-        network_name:
-          description: Name of the network
-          type: string
-        network_notes:
-          description: Any additional notes for the network
-          type: string
+        network:
+          $ref: '#/components/schemas/Network'
       type: object
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
     Locale:
       enum:
       - bg
@@ -134,15 +117,32 @@ components:
       - zh_cn
       - zh_hk
       type: string
-    YesOrNo:
-      enum:
-      - y
-      - n
-      type: string
-    Network_Wrapper:
+    Network:
       properties:
-        network:
-          $ref: '#/components/schemas/Network'
+        auto_approve_publishers:
+          $ref: '#/components/schemas/YesOrNo'
+        cm_client_id:
+          type: string
+        default_campaign_id:
+          type: string
+        network_application_id:
+          type: string
+        network_contact_email:
+          type: string
+        network_description:
+          description: Description of the network
+          type: string
+        network_id:
+          description: ID of the network
+          type: string
+        network_locale:
+          $ref: '#/components/schemas/Locale'
+        network_name:
+          description: Name of the network
+          type: string
+        network_notes:
+          description: Any additional notes for the network
+          type: string
       type: object
 x-tagGroups:
 - name: Networks and Brands Management (v1)

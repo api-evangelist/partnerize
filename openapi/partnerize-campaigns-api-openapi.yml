@@ -1107,10 +1107,12 @@ paths:
       x-operation-id-original: List all Brand Campaigns
 components:
   schemas:
-    YesOrNo:
+    Currency:
       enum:
-      - y
-      - n
+      - GBP
+      - USD
+      - EUR
+      - JPY
       type: string
     Campaign_Wrapper:
       properties:
@@ -1405,6 +1407,11 @@ components:
       - title
       - destination_url
       type: object
+    YesOrNo:
+      enum:
+      - y
+      - n
+      type: string
     Status:
       type: string
       enum:
@@ -1412,13 +1419,6 @@ components:
       - p
       - r
       - n
-    Currency:
-      enum:
-      - GBP
-      - USD
-      - EUR
-      - JPY
-      type: string
 x-tagGroups:
 - name: Networks and Brands Management (v1)
   tags:

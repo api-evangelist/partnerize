@@ -139,6 +139,18 @@ paths:
       x-operation-id-original: Retrieve an Invoice
 components:
   schemas:
+    Currency:
+      enum:
+      - GBP
+      - USD
+      - EUR
+      - JPY
+      type: string
+    Invoice_Wrapper:
+      properties:
+        invoice:
+          $ref: '#/components/schemas/Invoice'
+      type: object
     Invoice:
       properties:
         average_conversion_age:
@@ -207,18 +219,6 @@ components:
       - Europe/London
       - CET
       - GMT
-      type: string
-    Invoice_Wrapper:
-      properties:
-        invoice:
-          $ref: '#/components/schemas/Invoice'
-      type: object
-    Currency:
-      enum:
-      - GBP
-      - USD
-      - EUR
-      - JPY
       type: string
 x-tagGroups:
 - name: Networks and Brands Management (v1)

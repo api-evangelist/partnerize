@@ -152,6 +152,26 @@ paths:
       x-operation-id-original: Update Campaign Group Saved Report
 components:
   schemas:
+    Filter_Set_Body:
+      content:
+        application/json:
+          schema:
+            example:
+              data: '{"report":{"pivot":"publisher","metric":"clicks"},"grouping":"","reportColumns":{},"currency":{"original":"GLOBAL","output":"GBP"},"statuses":{"approved":false,"pending":false,"rejected":false,"mixed":false},"period":["2017-02-13T00:00:00.000Z","2017-02-14T00:00:00.000Z"],"intervalCode":"PT1H","graphedCounterType":"clicks","compatibilityVersion":4}'
+              is_default: false
+              name: My lovely filters set
+            properties:
+              data:
+                description: Must be a valid JSON string
+                type: string
+              is_default:
+                type: boolean
+              name:
+                type: string
+            required:
+            - name
+            - data
+            type: object
     Brand_Filter_Set:
       properties:
         filter_set:
@@ -178,26 +198,6 @@ components:
               type: string
           type: object
       type: object
-    Filter_Set_Body:
-      content:
-        application/json:
-          schema:
-            example:
-              data: '{"report":{"pivot":"publisher","metric":"clicks"},"grouping":"","reportColumns":{},"currency":{"original":"GLOBAL","output":"GBP"},"statuses":{"approved":false,"pending":false,"rejected":false,"mixed":false},"period":["2017-02-13T00:00:00.000Z","2017-02-14T00:00:00.000Z"],"intervalCode":"PT1H","graphedCounterType":"clicks","compatibilityVersion":4}'
-              is_default: false
-              name: My lovely filters set
-            properties:
-              data:
-                description: Must be a valid JSON string
-                type: string
-              is_default:
-                type: boolean
-              name:
-                type: string
-            required:
-            - name
-            - data
-            type: object
 x-tagGroups:
 - name: Networks and Brands Management (v1)
   tags:

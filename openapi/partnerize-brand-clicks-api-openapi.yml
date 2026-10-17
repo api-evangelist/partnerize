@@ -175,6 +175,13 @@ paths:
       summary: Retrieve a Brand Clicks Report
 components:
   schemas:
+    Currency:
+      enum:
+      - GBP
+      - USD
+      - EUR
+      - JPY
+      type: string
     Brand_Clicks:
       properties:
         unique_click_count:
@@ -250,13 +257,6 @@ components:
         publisher_name:
           type: string
       type: object
-    Currency:
-      enum:
-      - GBP
-      - USD
-      - EUR
-      - JPY
-      type: string
 x-tagGroups:
 - name: Networks and Brands Management (v1)
   tags:

@@ -264,6 +264,11 @@ paths:
       x-operation-id-original: Retrieve a Voucher Code
 components:
   schemas:
+    Voucher_Code_Wrapper:
+      properties:
+        voucher_code:
+          $ref: '#/components/schemas/Voucher_Code'
+      type: object
     YesOrNo:
       enum:
       - y
@@ -321,11 +326,6 @@ components:
       required:
       - name
       - campaign_id
-      type: object
-    Voucher_Code_Wrapper:
-      properties:
-        voucher_code:
-          $ref: '#/components/schemas/Voucher_Code'
       type: object
     Commission_Group_Wrapper:
       properties:
